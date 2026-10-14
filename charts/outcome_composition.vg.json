@@ -1,0 +1,153 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "100% stacked bars comparing national RSPCA 2024-25 outcome composition for dogs and cats.",
+  "width": "container",
+  "height": 180,
+  "background": "#ffffff",
+  "autosize": {
+    "type": "fit-x",
+    "contains": "padding",
+    "resize": true
+  },
+  "title": {
+    "text": "What happens after dogs and cats enter the RSPCA network?",
+    "subtitle": [
+      "Each bar shows the composition of recorded 2024–25 outcomes within species.",
+      "Reunited combines reclaimed and returned-to-owner records."
+    ],
+    "anchor": "start",
+    "fontSize": 24,
+    "subtitleFontSize": 13,
+    "subtitlePadding": 8,
+    "offset": 14
+  },
+  "data": {
+    "url": "data/chart6_outcome_composition.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "count": "number",
+        "total": "number",
+        "share": "number",
+        "order": "number"
+      }
+    }
+  },
+  "mark": {
+    "type": "bar",
+    "height": 42
+  },
+  "encoding": {
+    "y": {
+      "field": "species",
+      "type": "nominal",
+      "sort": [
+        "Dog",
+        "Cat"
+      ],
+      "title": null,
+      "axis": {
+        "labelFontSize": 14,
+        "labelFontWeight": 600,
+        "ticks": false,
+        "domain": false,
+        "labelPadding": 10
+      }
+    },
+    "x": {
+      "field": "count",
+      "type": "quantitative",
+      "stack": "normalize",
+      "axis": {
+        "title": "Share of recorded outcomes",
+        "format": ".0%",
+        "values": [
+          0,
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1
+        ],
+        "grid": false,
+        "domain": false,
+        "labelFontSize": 12,
+        "titleFontSize": 13,
+        "titlePadding": 12
+      }
+    },
+    "color": {
+      "field": "category",
+      "type": "nominal",
+      "sort": [
+        "Rehomed",
+        "Reunited",
+        "Transferred",
+        "In Care",
+        "Euthanased",
+        "Other"
+      ],
+      "scale": {
+        "domain": [
+          "Rehomed",
+          "Reunited",
+          "Transferred",
+          "In Care",
+          "Euthanased",
+          "Other"
+        ],
+        "range": [
+          "#2f7f80",
+          "#6fa6a3",
+          "#aac8c3",
+          "#d4dfdc",
+          "#a96f64",
+          "#d8d2c9"
+        ]
+      },
+      "legend": null
+    },
+    "order": {
+      "field": "order",
+      "type": "quantitative"
+    },
+    "tooltip": [
+      {
+        "field": "species",
+        "type": "nominal",
+        "title": "Animal"
+      },
+      {
+        "field": "category",
+        "type": "nominal",
+        "title": "Outcome"
+      },
+      {
+        "field": "count",
+        "type": "quantitative",
+        "title": "Animals",
+        "format": ","
+      },
+      {
+        "field": "share",
+        "type": "quantitative",
+        "title": "Share",
+        "format": ".1%"
+      }
+    ]
+  },
+  "config": {
+    "font": "Source Sans 3, Arial, sans-serif",
+    "view": {
+      "stroke": null
+    },
+    "title": {
+      "font": "Source Sans 3, Arial, sans-serif",
+      "subtitleFont": "Source Sans 3, Arial, sans-serif"
+    },
+    "axis": {
+      "labelColor": "#40555d",
+      "titleColor": "#40555d"
+    }
+  }
+}
