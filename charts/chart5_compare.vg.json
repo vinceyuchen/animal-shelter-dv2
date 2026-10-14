@@ -13,13 +13,13 @@
     "text": "How do the recorded reasons differ by species?",
     "subtitle": [
       "Shares are calculated within each species total.",
-      "Dogs extend left; cats extend right."
+      "Dogs extend left from 0%; cats extend right."
     ],
     "anchor": "start",
-    "fontSize": 24,
-    "subtitleFontSize": 13,
+    "fontSize": 21,
+    "subtitleFontSize": 12,
     "subtitlePadding": 8,
-    "offset": 14
+    "offset": 12
   },
   "data": {
     "url": "data/chart5_compare.csv",
@@ -132,7 +132,13 @@
     },
     "title": {
       "font": "Source Sans 3, Arial, sans-serif",
-      "subtitleFont": "Source Sans 3, Arial, sans-serif"
+      "subtitleFont": "Source Sans 3, Arial, sans-serif",
+      "color": "#173642",
+      "subtitleColor": "#607077"
+    },
+    "axis": {
+      "labelColor": "#52666f",
+      "titleColor": "#40555d"
     }
   }
 }
