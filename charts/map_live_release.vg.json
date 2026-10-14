@@ -132,18 +132,7 @@
         "scheme": "blues",
         "clamp": true
       },
-      "legend": {
-        "format": ".0%",
-        "orient": "bottom",
-        "direction": "horizontal",
-        "gradientLength": 260,
-        "gradientThickness": 14,
-        "title": "Live release rate",
-        "titleOrient": "left",
-        "titleLimit": 180,
-        "labelLimit": 70,
-        "offset": 14
-      }
+      "legend": null
     },
     "tooltip": [
       {
