@@ -38,10 +38,10 @@
     "type": "mercator"
   },
   "data": {
-    "url": "data/australia_states.geojson",
+    "url": "data/australia_states.topojson",
     "format": {
-      "type": "json",
-      "property": "features"
+      "type": "topojson",
+      "feature": "states"
     }
   },
   "transform": [
