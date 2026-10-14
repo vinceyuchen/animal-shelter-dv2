@@ -134,8 +134,10 @@
       },
       "legend": {
         "format": ".0%",
-        "gradientLength": 180,
-        "titleLimit": 180
+        "gradientLength": 150,
+        "titleLimit": 140,
+        "labelLimit": 80,
+        "orient": "right"
       }
     },
     "tooltip": [
@@ -195,5 +197,10 @@
       "font": "Source Sans 3, Arial, sans-serif",
       "subtitleFont": "Source Sans 3, Arial, sans-serif"
     }
+  },
+  "autosize": {
+    "type": "fit-x",
+    "contains": "padding",
+    "resize": true
   }
 }
