@@ -153,3 +153,19 @@ h1 {
   .callout-grid { grid-template-columns: 1fr; }
   .section { padding: 44px 0 64px; }
 }
+
+
+/* Keep Vega controls and legends visually aligned within each chart card. */
+.vis-card .vega-bindings {
+  margin-top: 10px;
+}
+
+.vis-card .vega-bind {
+  font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+  .vis-card {
+    padding: 18px;
+  }
+}
