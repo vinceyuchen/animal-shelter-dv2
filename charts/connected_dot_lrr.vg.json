@@ -1,0 +1,241 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Connected dot plot comparing 2024-25 RSPCA dog and cat live release rates by state/territory.",
+  "width": "container",
+  "height": 430,
+  "background": "#ffffff",
+  "autosize": {
+    "type": "fit-x",
+    "contains": "padding",
+    "resize": true
+  },
+  "title": {
+    "text": "How wide is the dog–cat live-release gap?",
+    "subtitle": [
+      "Each line connects dogs and cats within the same RSPCA state/territory network.",
+      "States are ordered by the size of the gap, not by the overall rate."
+    ],
+    "anchor": "start",
+    "fontSize": 24,
+    "subtitleFontSize": 13,
+    "subtitlePadding": 8,
+    "offset": 14
+  },
+  "data": {
+    "url": "data/chart4_dog_cat_lrr.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "dog_lrr": "number",
+        "cat_lrr": "number",
+        "gap_pp": "number",
+        "abs_gap_pp": "number"
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "stroke": "#b9c7c9",
+        "strokeWidth": 3
+      },
+      "encoding": {
+        "y": {
+          "field": "state_name",
+          "type": "nominal",
+          "sort": {
+            "field": "abs_gap_pp",
+            "order": "descending"
+          },
+          "title": null,
+          "axis": {
+            "labelFontSize": 13,
+            "labelLimit": 150,
+            "ticks": false,
+            "domain": false
+          }
+        },
+        "x": {
+          "field": "cat_lrr",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0.65,
+              0.98
+            ],
+            "nice": false
+          },
+          "axis": {
+            "title": "Live release rate",
+            "format": ".0%",
+            "tickCount": 7,
+            "grid": true,
+            "gridColor": "#e7eeec",
+            "domain": false,
+            "labelFontSize": 12,
+            "titleFontSize": 13,
+            "titlePadding": 12
+          }
+        },
+        "x2": {
+          "field": "dog_lrr"
+        },
+        "tooltip": [
+          {
+            "field": "state_name",
+            "type": "nominal",
+            "title": "State / territory"
+          },
+          {
+            "field": "dog_lrr",
+            "type": "quantitative",
+            "title": "Dogs",
+            "format": ".1%"
+          },
+          {
+            "field": "cat_lrr",
+            "type": "quantitative",
+            "title": "Cats",
+            "format": ".1%"
+          },
+          {
+            "field": "gap_pp",
+            "type": "quantitative",
+            "title": "Dog − cat gap (pp)",
+            "format": "+.1f"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "fold": [
+            "dog_lrr",
+            "cat_lrr"
+          ],
+          "as": [
+            "series",
+            "rate"
+          ]
+        },
+        {
+          "calculate": "datum.series == 'dog_lrr' ? 'Dogs' : 'Cats'",
+          "as": "species"
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "size": 155,
+        "stroke": "#ffffff",
+        "strokeWidth": 1.4,
+        "opacity": 0.95
+      },
+      "encoding": {
+        "y": {
+          "field": "state_name",
+          "type": "nominal",
+          "sort": {
+            "field": "abs_gap_pp",
+            "order": "descending"
+          },
+          "title": null,
+          "axis": {
+            "labelFontSize": 13,
+            "labelLimit": 150,
+            "ticks": false,
+            "domain": false
+          }
+        },
+        "x": {
+          "field": "rate",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0.65,
+              0.98
+            ],
+            "nice": false
+          },
+          "axis": {
+            "title": "Live release rate",
+            "format": ".0%",
+            "tickCount": 7,
+            "grid": true,
+            "gridColor": "#e7eeec",
+            "domain": false,
+            "labelFontSize": 12,
+            "titleFontSize": 13,
+            "titlePadding": 12
+          }
+        },
+        "color": {
+          "field": "species",
+          "type": "nominal",
+          "title": null,
+          "scale": {
+            "domain": [
+              "Dogs",
+              "Cats"
+            ],
+            "range": [
+              "#173642",
+              "#3f7f80"
+            ]
+          },
+          "legend": {
+            "orient": "bottom",
+            "direction": "horizontal",
+            "columns": 2,
+            "symbolType": "circle",
+            "symbolSize": 120,
+            "labelFontSize": 12,
+            "offset": 12
+          }
+        },
+        "tooltip": [
+          {
+            "field": "state_name",
+            "type": "nominal",
+            "title": "State / territory"
+          },
+          {
+            "field": "species",
+            "type": "nominal",
+            "title": "Animal"
+          },
+          {
+            "field": "rate",
+            "type": "quantitative",
+            "title": "Live release rate",
+            "format": ".1%"
+          },
+          {
+            "field": "gap_pp",
+            "type": "quantitative",
+            "title": "Dog − cat gap (pp)",
+            "format": "+.1f"
+          }
+        ]
+      }
+    }
+  ],
+  "config": {
+    "font": "Source Sans 3, Arial, sans-serif",
+    "view": {
+      "stroke": null
+    },
+    "title": {
+      "font": "Source Sans 3, Arial, sans-serif",
+      "subtitleFont": "Source Sans 3, Arial, sans-serif"
+    },
+    "axis": {
+      "labelColor": "#40555d",
+      "titleColor": "#40555d"
+    },
+    "legend": {
+      "labelColor": "#40555d"
+    }
+  }
+}
