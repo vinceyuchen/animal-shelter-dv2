@@ -2,13 +2,18 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Connected dot plot comparing 2024-25 RSPCA dog and cat live release rates by state/territory.",
   "width": "container",
-  "height": 400,
+  "height": 410,
   "background": "#ffffff",
+  "autosize": {
+    "type": "fit-x",
+    "contains": "padding",
+    "resize": true
+  },
   "title": {
     "text": "How wide is the dog–cat live-release gap?",
     "subtitle": [
-      "Each line connects dogs and cats within the same RSPCA state/territory network.",
-      "States are ordered by the size of the dog–cat gap."
+      "Each horizontal segment connects dogs and cats within the same RSPCA jurisdiction.",
+      "States are ordered by the absolute size of the gap."
     ],
     "anchor": "start",
     "fontSize": 24,
@@ -21,111 +26,108 @@
     "format": {
       "type": "csv",
       "parse": {
-        "dog_lrr": "number",
-        "cat_lrr": "number",
+        "rate": "number",
         "gap_pp": "number",
-        "abs_gap_pp": "number"
+        "abs_gap_pp": "number",
+        "species_order": "number"
+      }
+    }
+  },
+  "encoding": {
+    "y": {
+      "field": "state_name",
+      "type": "nominal",
+      "sort": [
+        "Tasmania",
+        "Western Australia",
+        "Queensland",
+        "New South Wales",
+        "South Australia",
+        "Victoria",
+        "Australian Capital Territory",
+        "Northern Territory"
+      ],
+      "title": null,
+      "axis": {
+        "labelFontSize": 13,
+        "labelLimit": 170,
+        "ticks": false,
+        "domain": false,
+        "labelPadding": 8
+      }
+    },
+    "x": {
+      "field": "rate",
+      "type": "quantitative",
+      "scale": {
+        "domain": [
+          0.65,
+          0.98
+        ],
+        "nice": false
+      },
+      "axis": {
+        "title": "Live release rate",
+        "format": ".0%",
+        "values": [
+          0.65,
+          0.7,
+          0.75,
+          0.8,
+          0.85,
+          0.9,
+          0.95
+        ],
+        "grid": true,
+        "gridColor": "#e7eeec",
+        "domain": false,
+        "labelFontSize": 12,
+        "titleFontSize": 13,
+        "titlePadding": 12
       }
     }
   },
   "layer": [
     {
       "mark": {
-        "type": "rule",
+        "type": "line",
         "stroke": "#bcc9cb",
         "strokeWidth": 3
       },
       "encoding": {
-        "y": {
+        "detail": {
           "field": "state_name",
-          "type": "nominal",
-          "sort": [
-            "Tasmania",
-            "Western Australia",
-            "Queensland",
-            "New South Wales",
-            "South Australia",
-            "Victoria",
-            "Australian Capital Territory",
-            "Northern Territory"
-          ],
-          "title": null,
-          "axis": {
-            "labelFontSize": 13,
-            "labelLimit": 165,
-            "ticks": false,
-            "domain": false
-          }
+          "type": "nominal"
         },
-        "x": {
-          "field": "cat_lrr",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              0.65,
-              0.98
-            ],
-            "nice": false
-          },
-          "axis": {
-            "title": "Live release rate",
-            "format": ".0%",
-            "values": [
-              0.65,
-              0.7,
-              0.75,
-              0.8,
-              0.85,
-              0.9,
-              0.95
-            ],
-            "grid": true,
-            "gridColor": "#e7eeec",
-            "domain": false,
-            "labelFontSize": 12,
-            "titleFontSize": 13,
-            "titlePadding": 12
-          }
-        },
-        "x2": {
-          "field": "dog_lrr"
+        "order": {
+          "field": "species_order",
+          "type": "quantitative"
         }
       }
     },
     {
       "mark": {
-        "type": "circle",
-        "size": 170,
-        "color": "#173642",
+        "type": "point",
+        "filled": true,
+        "size": 175,
         "stroke": "#ffffff",
         "strokeWidth": 1.4
       },
       "encoding": {
-        "y": {
-          "field": "state_name",
+        "color": {
+          "field": "species",
           "type": "nominal",
-          "sort": [
-            "Tasmania",
-            "Western Australia",
-            "Queensland",
-            "New South Wales",
-            "South Australia",
-            "Victoria",
-            "Australian Capital Territory",
-            "Northern Territory"
-          ],
-          "title": null
-        },
-        "x": {
-          "field": "dog_lrr",
-          "type": "quantitative",
           "scale": {
             "domain": [
-              0.65,
-              0.98
+              "Dogs",
+              "Cats"
             ],
-            "nice": false
-          }
+            "range": [
+              "#173642",
+              "#3f7f80"
+            ]
+          },
+          "legend": null
         },
         "tooltip": [
           {
@@ -134,77 +136,14 @@
             "title": "State / territory"
           },
           {
-            "field": "dog_lrr",
-            "type": "quantitative",
-            "title": "Dogs",
-            "format": ".1%"
-          },
-          {
-            "field": "cat_lrr",
-            "type": "quantitative",
-            "title": "Cats",
-            "format": ".1%"
-          },
-          {
-            "field": "gap_pp",
-            "type": "quantitative",
-            "title": "Dog − cat gap (pp)",
-            "format": ".1f"
-          }
-        ]
-      }
-    },
-    {
-      "mark": {
-        "type": "circle",
-        "size": 170,
-        "color": "#3f7f80",
-        "stroke": "#ffffff",
-        "strokeWidth": 1.4
-      },
-      "encoding": {
-        "y": {
-          "field": "state_name",
-          "type": "nominal",
-          "sort": [
-            "Tasmania",
-            "Western Australia",
-            "Queensland",
-            "New South Wales",
-            "South Australia",
-            "Victoria",
-            "Australian Capital Territory",
-            "Northern Territory"
-          ],
-          "title": null
-        },
-        "x": {
-          "field": "cat_lrr",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              0.65,
-              0.98
-            ],
-            "nice": false
-          }
-        },
-        "tooltip": [
-          {
-            "field": "state_name",
+            "field": "species",
             "type": "nominal",
-            "title": "State / territory"
+            "title": "Animal"
           },
           {
-            "field": "dog_lrr",
+            "field": "rate",
             "type": "quantitative",
-            "title": "Dogs",
-            "format": ".1%"
-          },
-          {
-            "field": "cat_lrr",
-            "type": "quantitative",
-            "title": "Cats",
+            "title": "Live release rate",
             "format": ".1%"
           },
           {
@@ -217,12 +156,6 @@
       }
     }
   ],
-  "resolve": {
-    "scale": {
-      "x": "shared",
-      "y": "shared"
-    }
-  },
   "config": {
     "font": "Source Sans 3, Arial, sans-serif",
     "view": {
