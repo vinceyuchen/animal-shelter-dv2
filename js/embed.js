@@ -14,5 +14,9 @@ vegaEmbed("#map-locations", "charts/map_rspca_locations.vg.json", embedOptions)
   .catch(console.error);
 
 
-vegaEmbed("#connected-dot-lrr", "charts/connected_dot_lrr.vg.json?v=20261014-5", embedOptions)
+vegaEmbed("#connected-dot-lrr", "charts/connected_dot_lrr.vg.json?v=20261014-6", embedOptions)
+  .catch(console.error);
+
+
+vegaEmbed("#butterfly-euthanasia", "charts/butterfly_euthanasia.vg.json?v=20261014-1", embedOptions)
   .catch(console.error);
