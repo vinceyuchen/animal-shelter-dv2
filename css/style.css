@@ -271,3 +271,35 @@ h1 {
 
 .dog-dot { background: #173642; }
 .cat-dot { background: #3f7f80; }
+
+
+.outcome-key {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 18px;
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.outcome-key span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+}
+
+.key-swatch {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  border-radius: 3px;
+}
+
+.k-rehomed { background: #2f7f80; }
+.k-reunited { background: #6fa6a3; }
+.k-transferred { background: #aac8c3; }
+.k-inc { background: #d4dfdc; }
+.k-euth { background: #a96f64; }
+.k-other { background: #d8d2c9; }
