@@ -1,0 +1,183 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "RSPCA 2024-25 live release rate by Australian state and species.",
+  "width": "container",
+  "height": 520,
+  "background": "#ffffff",
+  "title": {
+    "text": "Where do live-release outcomes differ most?",
+    "subtitle": [
+      "RSPCA 2024–25. LRR counts animals rehomed, reunited or transferred among eligible outcomes.",
+      "Select dogs or cats. These figures describe the RSPCA network, not every Australian shelter."
+    ],
+    "anchor": "start",
+    "fontSize": 24,
+    "subtitleFontSize": 13,
+    "subtitlePadding": 8,
+    "offset": 14
+  },
+  "params": [
+    {
+      "name": "Species_selection",
+      "value": "Dog",
+      "bind": {
+        "input": "select",
+        "options": [
+          "Dog",
+          "Cat"
+        ],
+        "labels": [
+          "Dogs",
+          "Cats"
+        ],
+        "name": "Animal: "
+      }
+    }
+  ],
+  "projection": {
+    "type": "equalEarth"
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "https://geo.abs.gov.au/arcgis/rest/services/ASGS2021/STE/FeatureServer/1/query?where=1%3D1&outFields=state_code_2021%2Cstate_name_2021&returnGeometry=true&outSR=4326&f=geojson",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.properties.state_code_2021 != '9'"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "fill": "#eef1f2",
+        "stroke": "#ffffff",
+        "strokeWidth": 0.9
+      }
+    },
+    {
+      "data": {
+        "url": "data/map1_state_lrr.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "live_release_rate": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.species == Species_selection"
+        },
+        {
+          "lookup": "state_name",
+          "from": {
+            "data": {
+              "url": "https://geo.abs.gov.au/arcgis/rest/services/ASGS2021/STE/FeatureServer/1/query?where=1%3D1&outFields=state_code_2021%2Cstate_name_2021&returnGeometry=true&outSR=4326&f=geojson",
+              "format": {
+                "type": "json",
+                "property": "features"
+              }
+            },
+            "key": "properties.state_name_2021"
+          },
+          "as": "geo"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#ffffff",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "shape": {
+          "field": "geo",
+          "type": "geojson"
+        },
+        "color": {
+          "field": "live_release_rate",
+          "type": "quantitative",
+          "title": "Live release rate",
+          "scale": {
+            "domain": [
+              0.65,
+              0.95
+            ],
+            "scheme": "blues",
+            "clamp": true
+          },
+          "legend": {
+            "format": ".0%",
+            "gradientLength": 180,
+            "titleLimit": 180
+          }
+        },
+        "tooltip": [
+          {
+            "field": "state_name",
+            "type": "nominal",
+            "title": "State / territory"
+          },
+          {
+            "field": "species",
+            "type": "nominal",
+            "title": "Animal"
+          },
+          {
+            "field": "live_release_rate",
+            "type": "quantitative",
+            "title": "Live release rate",
+            "format": ".1%"
+          },
+          {
+            "field": "rehomed",
+            "type": "quantitative",
+            "title": "Rehomed",
+            "format": ","
+          },
+          {
+            "field": "reunited_count",
+            "type": "quantitative",
+            "title": "Reunited with owner",
+            "format": ","
+          },
+          {
+            "field": "transferred",
+            "type": "quantitative",
+            "title": "Transferred",
+            "format": ","
+          },
+          {
+            "field": "euthanased",
+            "type": "quantitative",
+            "title": "Euthanased",
+            "format": ","
+          },
+          {
+            "field": "lrr_eligible",
+            "type": "quantitative",
+            "title": "Eligible outcomes",
+            "format": ","
+          }
+        ]
+      }
+    }
+  ],
+  "config": {
+    "font": "Source Sans 3, Arial, sans-serif",
+    "view": {
+      "stroke": null
+    },
+    "legend": {
+      "labelFontSize": 12,
+      "titleFontSize": 12
+    },
+    "title": {
+      "font": "Source Sans 3, Arial, sans-serif",
+      "subtitleFont": "Source Sans 3, Arial, sans-serif"
+    }
+  }
+}
