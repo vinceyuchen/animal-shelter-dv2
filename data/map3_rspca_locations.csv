@@ -1,0 +1,19 @@
+state,facility,suburb,address,latitude,longitude,source_scope
+ACT,RSPCA ACT,Weston,"12 Kirkpatrick Street, Weston ACT 2611",-35.32143,149.05531,Official RSPCA address
+NSW,Sydney Adoption Centre,Yagoona,"201 Rookwood Rd, Yagoona NSW 2199",-33.89118,151.03977,Official RSPCA address
+NSW,Hunter Shelter,Rutherford,"6-10 Burlington Place, Rutherford NSW 2320",-32.71438,151.50514,Official RSPCA address
+NSW,Illawarra Shelter,Unanderra,"54 Industrial Road, Unanderra NSW 2526",-34.4520,150.8470,Official RSPCA address
+NSW,Coffs Harbour Shelter,Coffs Harbour,"25 Dowsett Drive, Coffs Harbour NSW 2450",-30.31819,153.12545,Official RSPCA address
+NT,RSPCA Darwin Regional Branch,Berrimah,"80 Boulter Road, Berrimah NT 0828",-12.41610,130.91857,Official RSPCA address
+QLD,Brisbane Animal Care Campus,Wacol,"139 Wacol Station Road, Wacol QLD 4076",-27.58626,152.92241,Official RSPCA address
+QLD,Bundaberg Shelter,Branyan,"31 Doblo Street, Branyan QLD 4670",-24.9060,152.2790,Official RSPCA address
+QLD,Cairns Animal Care Centre,Aeroglen,"Cnr Arnold St & Greenbank Rd, Aeroglen QLD 4870",-16.8780,145.7550,Official RSPCA address
+QLD,Dakabin Animal Care Centre,Dakabin,"3 Goodwin Road, Dakabin QLD 4503",-27.2250,152.9910,Official RSPCA address
+QLD,Gympie Animal Care Centre,Glanmire,"Lot 6 Laurenceson Road, Glanmire QLD 4570",-26.23185,152.69391,Official RSPCA address
+QLD,Mackay Animal Care Centre,Mackay Harbour,"Cnr Strickland Rd & Mount Bassett Cemetery Rd, Mackay Harbour QLD 4740",-21.1080,149.2210,Official RSPCA address
+QLD,Toowoomba Animal Care Centre,Wellcamp,"36 Airport Drive, Wellcamp QLD 4350",-27.56495,151.80772,Official RSPCA address
+SA,Animal Care Campus,O'Halloran Hill,"9A Majors Road, O'Halloran Hill SA 5158",-35.05747,138.55256,Official RSPCA address
+TAS,Devonport Animal Care Centre,Spreyton,"108 Tarleton Road, Spreyton TAS 7310",-41.2200,146.3500,Official RSPCA address
+VIC,RSPCA Burwood East,Burwood East,"3 Burwood Hwy, Burwood East VIC 3151",-37.85175,145.13422,Official RSPCA address
+VIC,RSPCA Peninsula,Pearcedale,"1030 Robinsons Road, Pearcedale VIC 3912",-38.19061,145.25420,Official RSPCA address
+WA,RSPCA WA Animal Care Centre,Malaga,"108 Malaga Drive, Malaga WA 6090",-31.85271,115.88134,Official RSPCA address
