@@ -1,0 +1,141 @@
+:root {
+  --ink: #173642;
+  --muted: #607077;
+  --paper: #ffffff;
+  --page: #f4f7f5;
+  --line: #dfe7e4;
+  --accent: #3f7f80;
+  --soft: #eaf3f1;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: "Source Sans 3", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.shell {
+  width: min(1160px, 92vw);
+  margin-inline: auto;
+}
+
+.hero {
+  padding: clamp(56px, 9vw, 110px) 0 clamp(40px, 6vw, 76px);
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: .095em;
+  text-transform: uppercase;
+}
+
+h1, h2 {
+  font-family: "Fraunces", Georgia, serif;
+  letter-spacing: -.025em;
+}
+
+h1 {
+  max-width: 900px;
+  margin: 0;
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: .96;
+}
+
+.deck {
+  margin: 14px 0 0;
+  color: var(--accent);
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  font-weight: 600;
+}
+
+.lede {
+  max-width: 70ch;
+  margin: 24px 0 0;
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+.section {
+  padding: 60px 0 84px;
+  border-top: 1px solid var(--line);
+}
+
+.section-heading {
+  max-width: 760px;
+  margin-bottom: 28px;
+}
+
+.section-heading h2 {
+  margin: 0 0 12px;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.05;
+}
+
+.section-heading p:last-child {
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
+.vis-card {
+  width: 100%;
+  padding: clamp(14px, 2.5vw, 28px);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(23, 54, 66, .045);
+}
+
+.source-note {
+  max-width: 92ch;
+  margin: 16px 4px 0;
+  color: var(--muted);
+  font-size: .82rem;
+  line-height: 1.5;
+}
+
+.callout-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 10px 0 22px;
+}
+
+.callout {
+  padding: 18px 20px;
+  background: var(--soft);
+  border-radius: 14px;
+}
+
+.callout-number {
+  display: block;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.callout-label {
+  display: block;
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: .92rem;
+}
+
+.vega-embed, .vega-embed > div { width: 100%; }
+
+@media (max-width: 720px) {
+  body { font-size: 16px; }
+  .callout-grid { grid-template-columns: 1fr; }
+  .section { padding: 44px 0 64px; }
+}
