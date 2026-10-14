@@ -14,5 +14,5 @@ vegaEmbed("#map-locations", "charts/map_rspca_locations.vg.json", embedOptions)
   .catch(console.error);
 
 
-vegaEmbed("#connected-dot-lrr", "charts/connected_dot_lrr.vg.json?v=20261014-4", embedOptions)
+vegaEmbed("#connected-dot-lrr", "charts/connected_dot_lrr.vg.json?v=20261014-5", embedOptions)
   .catch(console.error);
