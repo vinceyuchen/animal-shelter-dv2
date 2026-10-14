@@ -134,10 +134,15 @@
       },
       "legend": {
         "format": ".0%",
-        "gradientLength": 150,
-        "titleLimit": 140,
-        "labelLimit": 80,
-        "orient": "right"
+        "orient": "bottom",
+        "direction": "horizontal",
+        "gradientLength": 260,
+        "gradientThickness": 14,
+        "title": "Live release rate",
+        "titleOrient": "left",
+        "titleLimit": 180,
+        "labelLimit": 70,
+        "offset": 14
       }
     },
     "tooltip": [
