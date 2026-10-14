@@ -1,7 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "100 percent stacked bars comparing RSPCA 2024-25 outcome composition for dogs and cats.",
   "width": "container",
-  "height": 180,
+  "height": 190,
   "background": "#ffffff",
   "autosize": {
     "type": "fit-x",
@@ -11,7 +12,7 @@
   "title": {
     "text": "What happens after dogs and cats enter the RSPCA network?",
     "subtitle": [
-      "Each row shows 100% of recorded 2024-25 outcomes within species.",
+      "Each row shows the composition of recorded 2024-25 outcomes within species.",
       "Reunited combines reclaimed and returned-to-owner records."
     ],
     "anchor": "start",
@@ -21,22 +22,96 @@
     "offset": 14
   },
   "data": {
-    "url": "data/chart6_outcome_composition.csv?v=20261014-3",
-    "format": {
-      "type": "csv",
-      "parse": {
-        "count": "number",
-        "total": "number",
-        "share": "number",
-        "start": "number",
-        "end": "number",
-        "order": "number"
+    "values": [
+      {
+        "species": "Dog",
+        "category": "Rehomed",
+        "count": 6839,
+        "share": 0.431428211,
+        "order": 0
+      },
+      {
+        "species": "Dog",
+        "category": "Reunited",
+        "count": 3930,
+        "share": 0.2479182438,
+        "order": 1
+      },
+      {
+        "species": "Dog",
+        "category": "Transferred",
+        "count": 529,
+        "share": 0.0333711834,
+        "order": 2
+      },
+      {
+        "species": "Dog",
+        "category": "In Care",
+        "count": 1672,
+        "share": 0.1054756498,
+        "order": 3
+      },
+      {
+        "species": "Dog",
+        "category": "Euthanased",
+        "count": 2768,
+        "share": 0.1746151905,
+        "order": 4
+      },
+      {
+        "species": "Dog",
+        "category": "Other",
+        "count": 114,
+        "share": 0.0071915216,
+        "order": 5
+      },
+      {
+        "species": "Cat",
+        "category": "Rehomed",
+        "count": 16445,
+        "share": 0.641405671,
+        "order": 0
+      },
+      {
+        "species": "Cat",
+        "category": "Reunited",
+        "count": 1360,
+        "share": 0.0530441905,
+        "order": 1
+      },
+      {
+        "species": "Cat",
+        "category": "Transferred",
+        "count": 298,
+        "share": 0.0116229182,
+        "order": 2
+      },
+      {
+        "species": "Cat",
+        "category": "In Care",
+        "count": 2128,
+        "share": 0.0829985569,
+        "order": 3
+      },
+      {
+        "species": "Cat",
+        "category": "Euthanased",
+        "count": 5089,
+        "share": 0.1984866804,
+        "order": 4
+      },
+      {
+        "species": "Cat",
+        "category": "Other",
+        "count": 319,
+        "share": 0.0124419829,
+        "order": 5
       }
-    }
+    ]
   },
   "mark": {
     "type": "bar",
-    "cornerRadius": 2
+    "size": 48
   },
   "encoding": {
     "y": {
@@ -56,8 +131,9 @@
       }
     },
     "x": {
-      "field": "start",
+      "field": "share",
       "type": "quantitative",
+      "stack": "zero",
       "scale": {
         "domain": [
           0,
@@ -83,9 +159,6 @@
         "titlePadding": 12
       }
     },
-    "x2": {
-      "field": "end"
-    },
     "color": {
       "field": "category",
       "type": "nominal",
@@ -95,7 +168,7 @@
           "Reunited",
           "Transferred",
           "In Care",
-          "Euthanasia",
+          "Euthanased",
           "Other"
         ],
         "range": [
@@ -108,6 +181,10 @@
         ]
       },
       "legend": null
+    },
+    "order": {
+      "field": "order",
+      "type": "quantitative"
     },
     "tooltip": [
       {
