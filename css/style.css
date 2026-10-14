@@ -303,3 +303,56 @@ h1 {
 .k-inc { background: #d4dfdc; }
 .k-euth { background: #a96f64; }
 .k-other { background: #d8d2c9; }
+
+
+.project-notes {
+  padding-bottom: 56px;
+}
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.notes-card {
+  padding: 22px 24px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 8px 26px rgba(23, 54, 66, .035);
+}
+
+.notes-card h3 {
+  margin: 0 0 14px;
+  color: var(--ink);
+  font-size: 1.05rem;
+}
+
+.notes-card p {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: .9rem;
+  line-height: 1.55;
+}
+
+.notes-card p:last-child {
+  margin-bottom: 0;
+}
+
+.site-footer {
+  padding: 24px 0 40px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: .82rem;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+@media (max-width: 850px) {
+  .notes-grid {
+    grid-template-columns: 1fr;
+  }
+}
