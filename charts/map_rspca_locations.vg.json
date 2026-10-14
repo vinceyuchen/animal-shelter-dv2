@@ -5,16 +5,16 @@
   "height": 520,
   "background": "#ffffff",
   "title": {
-    "text": "Where are RSPCA shelter and adoption facilities located?",
+    "text": "Where are the verified RSPCA facilities shown here located?",
     "subtitle": [
       "Each dot is a verified RSPCA-operated shelter, animal care centre or adoption centre from official state/territory pages.",
       "The map shows facility location, not capacity or animal intake."
     ],
     "anchor": "start",
-    "fontSize": 24,
-    "subtitleFontSize": 13,
+    "fontSize": 21,
+    "subtitleFontSize": 12,
     "subtitlePadding": 8,
-    "offset": 14
+    "offset": 12
   },
   "projection": {
     "type": "mercator"
@@ -101,7 +101,13 @@
     },
     "title": {
       "font": "Source Sans 3, Arial, sans-serif",
-      "subtitleFont": "Source Sans 3, Arial, sans-serif"
+      "subtitleFont": "Source Sans 3, Arial, sans-serif",
+      "color": "#173642",
+      "subtitleColor": "#607077"
+    },
+    "axis": {
+      "labelColor": "#52666f",
+      "titleColor": "#40555d"
     }
   },
   "autosize": {
