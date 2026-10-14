@@ -124,23 +124,27 @@
           "title": "Animals recorded",
           "scale": {
             "range": [
-              180,
-              5200
+              160,
+              4200
             ]
           },
           "legend": {
-            "format": ",.0f",
-            "symbolFillColor": "#3f7f80",
-            "symbolStrokeColor": "#ffffff",
+            "title": "Animals recorded",
+            "orient": "bottom",
+            "direction": "horizontal",
+            "columns": 4,
             "values": [
               2000,
               6000,
               10000,
               14000
             ],
-            "titleLimit": 130,
-            "labelLimit": 85,
-            "orient": "right"
+            "format": ",.0f",
+            "symbolFillColor": "#3f7f80",
+            "symbolStrokeColor": "#ffffff",
+            "titleLimit": 180,
+            "labelLimit": 80,
+            "offset": 14
           }
         },
         "color": {
