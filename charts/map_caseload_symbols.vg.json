@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "RSPCA 2024-25 companion-animal caseload by Australian state and territory.",
+  "description": "RSPCA 2024-25 companion-animal caseload by Australian state/territory using local geometry and representative points.",
   "width": "container",
   "height": 520,
   "background": "#ffffff",
@@ -8,7 +8,7 @@
     "text": "Where did the RSPCA network record the largest caseload?",
     "subtitle": [
       "Circle area represents reported dogs, cats or both in 2024–25.",
-      "The points are official ABS State/Territory representative points; totals describe RSPCA reporting coverage."
+      "Points are representative state/territory positions; totals describe RSPCA reporting coverage."
     ],
     "anchor": "start",
     "fontSize": 24,
@@ -37,12 +37,12 @@
     }
   ],
   "projection": {
-    "type": "equalEarth"
+    "type": "mercator"
   },
   "layer": [
     {
       "data": {
-        "url": "https://geo.abs.gov.au/arcgis/rest/services/ASGS2021/STE/FeatureServer/1/query?where=1%3D1&outFields=state_code_2021%2Cstate_name_2021&returnGeometry=true&outSR=4326&f=geojson",
+        "url": "data/australia_states.geojson",
         "format": {
           "type": "json",
           "property": "features"
@@ -50,7 +50,7 @@
       },
       "transform": [
         {
-          "filter": "datum.properties.state_code_2021 != '9'"
+          "filter": "datum.properties.STATE_CODE != '9'"
         }
       ],
       "mark": {
@@ -62,28 +62,16 @@
     },
     {
       "data": {
-        "url": "https://geo.abs.gov.au/arcgis/rest/services/ASGS2021/STE/FeatureServer/2/query?where=1%3D1&outFields=state_code_2021%2Cstate_name_2021&returnGeometry=true&outSR=4326&f=geojson",
+        "url": "data/map2_state_points.csv",
         "format": {
-          "type": "json",
-          "property": "features"
+          "type": "csv",
+          "parse": {
+            "longitude": "number",
+            "latitude": "number"
+          }
         }
       },
       "transform": [
-        {
-          "filter": "datum.properties.state_code_2021 != '9'"
-        },
-        {
-          "calculate": "datum.properties.state_name_2021",
-          "as": "state_name"
-        },
-        {
-          "calculate": "datum.geometry.coordinates[0][0]",
-          "as": "longitude"
-        },
-        {
-          "calculate": "datum.geometry.coordinates[0][1]",
-          "as": "latitude"
-        },
         {
           "lookup": "state_name",
           "from": {
@@ -100,12 +88,9 @@
             },
             "key": "state_name",
             "fields": [
-              "state",
               "dogs_total",
               "cats_total",
-              "companion_total",
-              "dog_share",
-              "cat_share"
+              "companion_total"
             ]
           }
         },
