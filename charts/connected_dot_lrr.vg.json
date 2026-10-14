@@ -53,7 +53,8 @@
         "labelLimit": 170,
         "ticks": false,
         "domain": false,
-        "labelPadding": 8
+        "labelPadding": 8,
+        "labelExpr": "datum.label == 'Australian Capital Territory' ? 'ACT' : datum.label"
       }
     },
     "x": {
