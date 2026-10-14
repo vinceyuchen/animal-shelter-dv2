@@ -60,7 +60,7 @@ h1 {
 }
 
 .lede {
-  max-width: 70ch;
+  max-width: 64ch;
   margin: 24px 0 0;
   color: var(--muted);
   font-size: 1.08rem;
@@ -72,13 +72,13 @@ h1 {
 }
 
 .section-heading {
-  max-width: 760px;
+  max-width: 720px;
   margin-bottom: 28px;
 }
 
 .section-heading h2 {
   margin: 0 0 12px;
-  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-size: clamp(2rem, 4.4vw, 2.85rem);
   line-height: 1.05;
 }
 
@@ -97,10 +97,10 @@ h1 {
 }
 
 .source-note {
-  max-width: 92ch;
+  max-width: 86ch;
   margin: 16px 4px 0;
-  color: var(--muted);
-  font-size: .82rem;
+  color: #52666f;
+  font-size: .88rem;
   line-height: 1.5;
 }
 
@@ -178,7 +178,7 @@ h1 {
 }
 
 .manual-legend {
-  width: min(620px, 100%);
+  width: min(420px, 100%);
   margin: 14px auto 0;
   color: var(--muted);
   font-size: 0.82rem;
@@ -228,8 +228,7 @@ h1 {
 }
 
 .bubble-2k { width: 16px; height: 16px; }
-.bubble-6k { width: 27px; height: 27px; }
-.bubble-10k { width: 35px; height: 35px; }
+.bubble-8k { width: 32px; height: 32px; }
 .bubble-14k { width: 42px; height: 42px; }
 
 @media (max-width: 720px) {
@@ -355,4 +354,13 @@ h1 {
   .notes-grid {
     grid-template-columns: 1fr;
   }
+}
+
+
+.bubble-legend {
+  width: min(520px, 100%);
+}
+
+#connected-dot-lrr {
+  padding-left: 18px;
 }
