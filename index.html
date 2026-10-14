@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Behind the Shelter Doors · DV2 Map Prototype</title>
+  <title>Behind the Shelter Doors · FIT3179 Data Visualisation 2</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261014-3">
+  <link rel="stylesheet" href="css/style.css?v=20261014-polish1">
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
@@ -26,7 +26,7 @@
 
     <section class="section shell">
       <div class="section-heading">
-        <p class="eyebrow">01 · Where the pressure falls</p>
+        <p class="eyebrow">01 · Where outcomes diverge</p>
         <h2>The same network produces very different outcomes</h2>
         <p>
           Live release rate compares eligible animals that were rehomed, reunited with owners
@@ -74,8 +74,7 @@
           <span class="manual-legend-title">Animals recorded</span>
           <div class="bubble-items">
             <div class="bubble-item"><span class="bubble bubble-2k"></span><span>2,000</span></div>
-            <div class="bubble-item"><span class="bubble bubble-6k"></span><span>6,000</span></div>
-            <div class="bubble-item"><span class="bubble bubble-10k"></span><span>10,000</span></div>
+            <div class="bubble-item"><span class="bubble bubble-8k"></span><span>8,000</span></div>
             <div class="bubble-item"><span class="bubble bubble-14k"></span><span>14,000</span></div>
           </div>
         </div>
@@ -90,10 +89,10 @@
     <section class="section shell">
       <div class="section-heading">
         <p class="eyebrow">03 · Where care is physically located</p>
-        <h2>RSPCA facilities cluster around Australia’s populated coast</h2>
+        <h2>Verified RSPCA facilities cluster around Australia’s populated coast</h2>
         <p>
-          Physical shelter and adoption facilities are not evenly distributed across the continent.
-          This verified set of RSPCA-operated sites is concentrated around major coastal population centres,
+          The verified RSPCA-operated sites shown here are not evenly distributed across the continent.
+          They are concentrated around major coastal population centres,
           with much larger gaps across inland Australia.
         </p>
       </div>
@@ -129,8 +128,8 @@
       <div class="vis-card">
         <div id="connected-dot-lrr" class="vis-host"></div>
         <div class="dot-key" aria-label="Connected dot plot legend">
-          <span class="dot-key-item"><span class="dot-key-dot dog-dot"></span>Dogs</span>
-          <span class="dot-key-item"><span class="dot-key-dot cat-dot"></span>Cats</span>
+          <span class="dot-key-item"><span class="dot-key-dot dog-dot"></span>Dogs ←</span>
+          <span class="dot-key-item"><span class="dot-key-dot cat-dot"></span>→ Cats</span>
         </div>
       </div>
       <p class="source-note">
@@ -142,41 +141,7 @@
 
     <section class="section shell">
       <div class="section-heading">
-        <p class="eyebrow">05 · Why euthanasia happens</p>
-        <h2>The reasons differ sharply between dogs and cats</h2>
-        <p>
-          Among animals euthanased by the RSPCA network in 2024–25, behavioural reasons dominate for dogs,
-          while medical reasons make up the largest share for cats. Looking at composition rather than raw
-          counts makes the species difference easier to see.
-        </p>
-      </div>
-      <div class="callout-grid">
-        <div class="callout">
-          <span class="callout-number">59.7%</span>
-          <span class="callout-label">of dog euthanasia cases were recorded as behavioural</span>
-        </div>
-        <div class="callout">
-          <span class="callout-number">46.7%</span>
-          <span class="callout-label">of cat euthanasia cases were recorded as medical</span>
-        </div>
-      </div>
-      <div class="vis-card">
-        <div id="butterfly-euthanasia" class="vis-host"></div>
-        <div class="dot-key" aria-label="Butterfly chart legend">
-          <span class="dot-key-item"><span class="dot-key-dot dog-dot"></span>Dogs</span>
-          <span class="dot-key-item"><span class="dot-key-dot cat-dot"></span>Cats</span>
-        </div>
-      </div>
-      <p class="source-note">
-        Source: RSPCA Australia Annual Statistics 2024–25. Percentages are calculated within the national
-        dog and cat euthanasia totals reported by the RSPCA network. Categories follow the source report’s
-        reason classifications.
-      </p>
-    </section>
-
-    <section class="section shell">
-      <div class="section-heading">
-        <p class="eyebrow">06 · What happens after intake</p>
+        <p class="eyebrow">05 · What happens after intake</p>
         <h2>Cats are more often rehomed; dogs are far more often reunited</h2>
         <p>
           The overall outcome mix differs substantially by species. In 2024–25, almost two-thirds of
@@ -211,6 +176,42 @@
         the RSPCA reporting network rather than all Australian shelters.
       </p>
     </section>
+
+    <section class="section shell">
+      <div class="section-heading">
+        <p class="eyebrow">06 · Why euthanasia happens</p>
+        <h2>The reasons differ sharply between dogs and cats</h2>
+        <p>
+          Among animals euthanased by the RSPCA network in 2024–25, behavioural reasons dominate for dogs,
+          while medical reasons make up the largest share for cats. Looking at composition rather than raw
+          counts makes the species difference easier to see.
+        </p>
+      </div>
+      <div class="callout-grid">
+        <div class="callout">
+          <span class="callout-number">59.7%</span>
+          <span class="callout-label">of dog euthanasia cases were recorded as behavioural</span>
+        </div>
+        <div class="callout">
+          <span class="callout-number">46.7%</span>
+          <span class="callout-label">of cat euthanasia cases were recorded as medical</span>
+        </div>
+      </div>
+      <div class="vis-card">
+        <div id="butterfly-euthanasia" class="vis-host"></div>
+        <div class="dot-key" aria-label="Butterfly chart legend">
+          <span class="dot-key-item"><span class="dot-key-dot dog-dot"></span>Dogs</span>
+          <span class="dot-key-item"><span class="dot-key-dot cat-dot"></span>Cats</span>
+        </div>
+      </div>
+      <p class="source-note">
+        Source: RSPCA Australia Annual Statistics 2024–25. Percentages are calculated within the national
+        dog and cat euthanasia totals reported by the RSPCA network. Categories follow the source report’s
+        reason classifications.
+      </p>
+    </section>
+
+    
 
     <section class="section shell project-notes">
       <div class="section-heading">
