@@ -16,10 +16,10 @@
       "Reunited combines reclaimed and returned-to-owner records."
     ],
     "anchor": "start",
-    "fontSize": 24,
-    "subtitleFontSize": 13,
+    "fontSize": 21,
+    "subtitleFontSize": 12,
     "subtitlePadding": 8,
-    "offset": 14
+    "offset": 12
   },
   "data": {
     "values": [
@@ -218,10 +218,12 @@
     },
     "title": {
       "font": "Source Sans 3, Arial, sans-serif",
-      "subtitleFont": "Source Sans 3, Arial, sans-serif"
+      "subtitleFont": "Source Sans 3, Arial, sans-serif",
+      "color": "#173642",
+      "subtitleColor": "#607077"
     },
     "axis": {
-      "labelColor": "#40555d",
+      "labelColor": "#52666f",
       "titleColor": "#40555d"
     }
   }
