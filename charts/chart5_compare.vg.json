@@ -1,0 +1,138 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Mirrored bar comparison of reason composition by species.",
+  "width": "container",
+  "height": 330,
+  "background": "#ffffff",
+  "autosize": {
+    "type": "fit-x",
+    "contains": "padding",
+    "resize": true
+  },
+  "title": {
+    "text": "How do the recorded reasons differ by species?",
+    "subtitle": [
+      "Shares are calculated within each species total.",
+      "Dogs extend left; cats extend right."
+    ],
+    "anchor": "start",
+    "fontSize": 24,
+    "subtitleFontSize": 13,
+    "subtitlePadding": 8,
+    "offset": 14
+  },
+  "data": {
+    "url": "data/chart5_compare.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "count": "number",
+        "share": "number",
+        "signed_share": "number"
+      }
+    }
+  },
+  "mark": {
+    "type": "bar"
+  },
+  "encoding": {
+    "y": {
+      "field": "reason",
+      "type": "nominal",
+      "sort": [
+        "Behavioural",
+        "Medical",
+        "Infectious",
+        "Other",
+        "Legal"
+      ],
+      "title": null,
+      "axis": {
+        "labelFontSize": 13,
+        "labelLimit": 120,
+        "ticks": false,
+        "domain": false,
+        "labelPadding": 10
+      }
+    },
+    "x": {
+      "field": "signed_share",
+      "type": "quantitative",
+      "scale": {
+        "domain": [
+          -0.65,
+          0.65
+        ],
+        "nice": false
+      },
+      "axis": {
+        "title": "Share within species",
+        "values": [
+          -0.6,
+          -0.4,
+          -0.2,
+          0,
+          0.2,
+          0.4,
+          0.6
+        ],
+        "format": ".0%",
+        "grid": true,
+        "gridColor": "#e7eeec",
+        "domain": false,
+        "labelFontSize": 12,
+        "titleFontSize": 13,
+        "titlePadding": 12
+      }
+    },
+    "color": {
+      "field": "species",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Dog",
+          "Cat"
+        ],
+        "range": [
+          "#173642",
+          "#3f7f80"
+        ]
+      },
+      "legend": null
+    },
+    "tooltip": [
+      {
+        "field": "species",
+        "type": "nominal",
+        "title": "Animal"
+      },
+      {
+        "field": "reason",
+        "type": "nominal",
+        "title": "Reason"
+      },
+      {
+        "field": "count",
+        "type": "quantitative",
+        "title": "Count",
+        "format": ","
+      },
+      {
+        "field": "share",
+        "type": "quantitative",
+        "title": "Share",
+        "format": ".1%"
+      }
+    ]
+  },
+  "config": {
+    "font": "Source Sans 3, Arial, sans-serif",
+    "view": {
+      "stroke": null
+    },
+    "title": {
+      "font": "Source Sans 3, Arial, sans-serif",
+      "subtitleFont": "Source Sans 3, Arial, sans-serif"
+    }
+  }
+}
