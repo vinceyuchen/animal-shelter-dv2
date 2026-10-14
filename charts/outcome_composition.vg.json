@@ -21,7 +21,7 @@
     "offset": 14
   },
   "data": {
-    "url": "data/chart6_outcome_composition.csv",
+    "url": "data/chart6_outcome_composition.csv?v=20261014-3",
     "format": {
       "type": "csv",
       "parse": {
