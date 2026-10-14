@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Behind the Shelter Doors · DV2 Map Prototype</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <main>
+    <section class="hero shell">
+      <p class="eyebrow">FIT3179 · Data Visualisation 2</p>
+      <h1>Behind the Shelter Doors</h1>
+      <p class="deck">Where Australia’s animals go when they need a second chance.</p>
+      <p class="lede">
+        Australia’s shelter system is not a single, uniform network. This project follows
+        where pressure appears, when demand changes, and how outcomes differ for dogs and cats.
+      </p>
+    </section>
+
+    <section class="section shell">
+      <div class="section-heading">
+        <p class="eyebrow">01 · Where the pressure falls</p>
+        <h2>The same network produces very different outcomes</h2>
+        <p>
+          Live release rate compares eligible animals that were rehomed, reunited with owners
+          or transferred. Use the animal selector to compare dogs and cats.
+        </p>
+      </div>
+      <div id="map-live-release" class="vis-card"></div>
+      <p class="source-note">
+        Source: RSPCA Australia Annual Statistics 2024–25. Geography: Australian Bureau of Statistics,
+        ASGS Edition 3 State and Territory boundaries. RSPCA coverage differs by jurisdiction,
+        so this map describes the RSPCA network rather than every Australian shelter.
+      </p>
+    </section>
+
+    <section class="section shell">
+      <div class="section-heading">
+        <p class="eyebrow">02 · Scale is not the same as performance</p>
+        <h2>Queensland and the Northern Territory dominate the reported caseload</h2>
+        <p>
+          This map switches from outcome <strong>rate</strong> to reported <strong>magnitude</strong>.
+          Circle area represents the number of dogs, cats, or both recorded by each RSPCA state
+          or territory society in 2024–25.
+        </p>
+      </div>
+      <div class="callout-grid">
+        <div class="callout">
+          <span class="callout-number">14,420</span>
+          <span class="callout-label">dogs + cats reported by RSPCA Queensland</span>
+        </div>
+        <div class="callout">
+          <span class="callout-number">9,941</span>
+          <span class="callout-label">dogs + cats reported by RSPCA Northern Territory</span>
+        </div>
+      </div>
+      <div id="map-caseload" class="vis-card"></div>
+      <p class="source-note">
+        Source: RSPCA Australia Annual Statistics 2024–25. Point positions use the official ABS
+        State/Territory representative-point layer. Large circles should not be interpreted as
+        higher population need: RSPCA reporting coverage and local-council pound contracts differ by jurisdiction.
+      </p>
+    </section>
+  </main>
+  <script src="js/embed.js"></script>
+</body>
+</html>
