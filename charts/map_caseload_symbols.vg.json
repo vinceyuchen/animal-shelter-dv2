@@ -128,24 +128,7 @@
               4200
             ]
           },
-          "legend": {
-            "title": "Animals recorded",
-            "orient": "bottom",
-            "direction": "horizontal",
-            "columns": 4,
-            "values": [
-              2000,
-              6000,
-              10000,
-              14000
-            ],
-            "format": ",.0f",
-            "symbolFillColor": "#3f7f80",
-            "symbolStrokeColor": "#ffffff",
-            "titleLimit": 180,
-            "labelLimit": 80,
-            "offset": 14
-          }
+          "legend": null
         },
         "color": {
           "value": "#3f7f80"
