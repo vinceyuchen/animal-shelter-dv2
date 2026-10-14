@@ -2,6 +2,8 @@
 
 FIT3179 Data Visualisation 2 project.
 
+**Live site:** https://vinceyuchen.github.io/animal-shelter-dv2/
+
 ## Working title
 **Behind the Shelter Doors** — Where Australia’s animals go when they need a second chance.
 
