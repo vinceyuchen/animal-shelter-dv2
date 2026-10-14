@@ -16,10 +16,10 @@
       "States are ordered by the absolute size of the gap."
     ],
     "anchor": "start",
-    "fontSize": 24,
-    "subtitleFontSize": 13,
+    "fontSize": 21,
+    "subtitleFontSize": 12,
     "subtitlePadding": 8,
-    "offset": 14
+    "offset": 12
   },
   "data": {
     "url": "data/chart4_dog_cat_lrr.csv",
@@ -50,7 +50,7 @@
       "title": null,
       "axis": {
         "labelFontSize": 13,
-        "labelLimit": 170,
+        "labelLimit": 185,
         "ticks": false,
         "domain": false,
         "labelPadding": 8,
@@ -164,11 +164,19 @@
     },
     "title": {
       "font": "Source Sans 3, Arial, sans-serif",
-      "subtitleFont": "Source Sans 3, Arial, sans-serif"
+      "subtitleFont": "Source Sans 3, Arial, sans-serif",
+      "color": "#173642",
+      "subtitleColor": "#607077"
     },
     "axis": {
-      "labelColor": "#40555d",
+      "labelColor": "#52666f",
       "titleColor": "#40555d"
     }
+  },
+  "padding": {
+    "left": 28,
+    "right": 8,
+    "top": 8,
+    "bottom": 8
   }
 }
