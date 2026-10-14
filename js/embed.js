@@ -12,3 +12,7 @@ vegaEmbed("#map-caseload", "charts/map_caseload_symbols.vg.json", embedOptions)
 
 vegaEmbed("#map-locations", "charts/map_rspca_locations.vg.json", embedOptions)
   .catch(console.error);
+
+
+vegaEmbed("#connected-dot-lrr", "charts/connected_dot_lrr.vg.json", embedOptions)
+  .catch(console.error);
