@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "100% stacked bars comparing national RSPCA 2024-25 outcome composition for dogs and cats.",
+  "description": "Outcome composition comparison for dogs and cats using precomputed 100% bar segment positions.",
   "width": "container",
   "height": 180,
   "background": "#ffffff",
@@ -12,7 +12,7 @@
   "title": {
     "text": "What happens after dogs and cats enter the RSPCA network?",
     "subtitle": [
-      "Each bar shows the composition of recorded 2024–25 outcomes within species.",
+      "Each row is a 100% composition of recorded 2024–25 outcomes within species.",
       "Reunited combines reclaimed and returned-to-owner records."
     ],
     "anchor": "start",
@@ -29,13 +29,15 @@
         "count": "number",
         "total": "number",
         "share": "number",
+        "start": "number",
+        "end": "number",
         "order": "number"
       }
     }
   },
   "mark": {
     "type": "bar",
-    "height": 42
+    "cornerRadius": 2
   },
   "encoding": {
     "y": {
@@ -55,9 +57,15 @@
       }
     },
     "x": {
-      "field": "count",
+      "field": "start",
       "type": "quantitative",
-      "stack": "normalize",
+      "scale": {
+        "domain": [
+          0,
+          1
+        ],
+        "nice": false
+      },
       "axis": {
         "title": "Share of recorded outcomes",
         "format": ".0%",
@@ -76,17 +84,12 @@
         "titlePadding": 12
       }
     },
+    "x2": {
+      "field": "end"
+    },
     "color": {
       "field": "category",
       "type": "nominal",
-      "sort": [
-        "Rehomed",
-        "Reunited",
-        "Transferred",
-        "In Care",
-        "Euthanased",
-        "Other"
-      ],
       "scale": {
         "domain": [
           "Rehomed",
@@ -106,10 +109,6 @@
         ]
       },
       "legend": null
-    },
-    "order": {
-      "field": "order",
-      "type": "quantitative"
     },
     "tooltip": [
       {
