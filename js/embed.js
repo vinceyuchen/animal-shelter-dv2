@@ -17,3 +17,7 @@ vegaEmbed("#connected-dot-lrr", "charts/connected_dot_lrr.vg.json?v=20261014-6",
 
 vegaEmbed("#butterfly-euthanasia", "charts/chart5_compare.vg.json?v=20261014-3", embedOptions)
   .catch(console.error);
+
+
+vegaEmbed("#outcome-composition", "charts/outcome_composition.vg.json?v=20261014-1", embedOptions)
+  .catch(console.error);
