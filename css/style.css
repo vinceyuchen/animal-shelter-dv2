@@ -132,7 +132,21 @@ h1 {
   font-size: .92rem;
 }
 
-.vega-embed, .vega-embed > div { width: 100%; }
+.vis-card {
+  overflow: hidden;
+}
+
+.vis-card .vega-embed,
+.vis-card .vega-embed > div {
+  width: 100%;
+  max-width: 100%;
+}
+
+.vis-card .vega-embed svg,
+.vis-card .vega-embed canvas {
+  display: block;
+  max-width: 100%;
+}
 
 @media (max-width: 720px) {
   body { font-size: 16px; }
