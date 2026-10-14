@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "RSPCA 2024-25 live release rate by Australian state and species.",
+  "description": "RSPCA 2024-25 live release rate by Australian state/territory and species, using local state geometry.",
   "width": "container",
   "height": 520,
   "background": "#ffffff",
@@ -35,137 +35,153 @@
     }
   ],
   "projection": {
-    "type": "equalEarth"
+    "type": "mercator"
   },
-  "layer": [
+  "data": {
+    "url": "data/australia_states.geojson",
+    "format": {
+      "type": "json",
+      "property": "features"
+    }
+  },
+  "transform": [
     {
-      "data": {
-        "url": "https://geo.abs.gov.au/arcgis/rest/services/ASGS2021/STE/FeatureServer/1/query?where=1%3D1&outFields=state_code_2021%2Cstate_name_2021&returnGeometry=true&outSR=4326&f=geojson",
-        "format": {
-          "type": "json",
-          "property": "features"
-        }
-      },
-      "transform": [
-        {
-          "filter": "datum.properties.state_code_2021 != '9'"
-        }
-      ],
-      "mark": {
-        "type": "geoshape",
-        "fill": "#eef1f2",
-        "stroke": "#ffffff",
-        "strokeWidth": 0.9
+      "filter": "datum.properties.STATE_CODE != '9'"
+    },
+    {
+      "lookup": "properties.STATE_NAME",
+      "from": {
+        "data": {
+          "url": "data/map1_state_lrr_wide.csv",
+          "format": {
+            "type": "csv",
+            "parse": {
+              "dog_lrr": "number",
+              "cat_lrr": "number",
+              "dog_rehomed": "number",
+              "cat_rehomed": "number",
+              "dog_reunited": "number",
+              "cat_reunited": "number",
+              "dog_transferred": "number",
+              "cat_transferred": "number",
+              "dog_euthanased": "number",
+              "cat_euthanased": "number",
+              "dog_eligible": "number",
+              "cat_eligible": "number"
+            }
+          }
+        },
+        "key": "state_name",
+        "fields": [
+          "state",
+          "dog_lrr",
+          "cat_lrr",
+          "dog_rehomed",
+          "cat_rehomed",
+          "dog_reunited",
+          "cat_reunited",
+          "dog_transferred",
+          "cat_transferred",
+          "dog_euthanased",
+          "cat_euthanased",
+          "dog_eligible",
+          "cat_eligible"
+        ]
       }
     },
     {
-      "data": {
-        "url": "data/map1_state_lrr.csv",
-        "format": {
-          "type": "csv",
-          "parse": {
-            "live_release_rate": "number"
-          }
-        }
-      },
-      "transform": [
-        {
-          "filter": "datum.species == Species_selection"
-        },
-        {
-          "lookup": "state_name",
-          "from": {
-            "data": {
-              "url": "https://geo.abs.gov.au/arcgis/rest/services/ASGS2021/STE/FeatureServer/1/query?where=1%3D1&outFields=state_code_2021%2Cstate_name_2021&returnGeometry=true&outSR=4326&f=geojson",
-              "format": {
-                "type": "json",
-                "property": "features"
-              }
-            },
-            "key": "properties.state_name_2021"
-          },
-          "as": "geo"
-        }
-      ],
-      "mark": {
-        "type": "geoshape",
-        "stroke": "#ffffff",
-        "strokeWidth": 1
-      },
-      "encoding": {
-        "shape": {
-          "field": "geo",
-          "type": "geojson"
-        },
-        "color": {
-          "field": "live_release_rate",
-          "type": "quantitative",
-          "title": "Live release rate",
-          "scale": {
-            "domain": [
-              0.65,
-              0.95
-            ],
-            "scheme": "blues",
-            "clamp": true
-          },
-          "legend": {
-            "format": ".0%",
-            "gradientLength": 180,
-            "titleLimit": 180
-          }
-        },
-        "tooltip": [
-          {
-            "field": "state_name",
-            "type": "nominal",
-            "title": "State / territory"
-          },
-          {
-            "field": "species",
-            "type": "nominal",
-            "title": "Animal"
-          },
-          {
-            "field": "live_release_rate",
-            "type": "quantitative",
-            "title": "Live release rate",
-            "format": ".1%"
-          },
-          {
-            "field": "rehomed",
-            "type": "quantitative",
-            "title": "Rehomed",
-            "format": ","
-          },
-          {
-            "field": "reunited_count",
-            "type": "quantitative",
-            "title": "Reunited with owner",
-            "format": ","
-          },
-          {
-            "field": "transferred",
-            "type": "quantitative",
-            "title": "Transferred",
-            "format": ","
-          },
-          {
-            "field": "euthanased",
-            "type": "quantitative",
-            "title": "Euthanased",
-            "format": ","
-          },
-          {
-            "field": "lrr_eligible",
-            "type": "quantitative",
-            "title": "Eligible outcomes",
-            "format": ","
-          }
-        ]
-      }
+      "calculate": "Species_selection == 'Dog' ? datum.dog_lrr : datum.cat_lrr",
+      "as": "selected_lrr"
+    },
+    {
+      "calculate": "Species_selection == 'Dog' ? datum.dog_rehomed : datum.cat_rehomed",
+      "as": "selected_rehomed"
+    },
+    {
+      "calculate": "Species_selection == 'Dog' ? datum.dog_reunited : datum.cat_reunited",
+      "as": "selected_reunited"
+    },
+    {
+      "calculate": "Species_selection == 'Dog' ? datum.dog_transferred : datum.cat_transferred",
+      "as": "selected_transferred"
+    },
+    {
+      "calculate": "Species_selection == 'Dog' ? datum.dog_euthanased : datum.cat_euthanased",
+      "as": "selected_euthanased"
+    },
+    {
+      "calculate": "Species_selection == 'Dog' ? datum.dog_eligible : datum.cat_eligible",
+      "as": "selected_eligible"
     }
   ],
+  "mark": {
+    "type": "geoshape",
+    "stroke": "#ffffff",
+    "strokeWidth": 1
+  },
+  "encoding": {
+    "color": {
+      "field": "selected_lrr",
+      "type": "quantitative",
+      "title": "Live release rate",
+      "scale": {
+        "domain": [
+          0.65,
+          0.95
+        ],
+        "scheme": "blues",
+        "clamp": true
+      },
+      "legend": {
+        "format": ".0%",
+        "gradientLength": 180,
+        "titleLimit": 180
+      }
+    },
+    "tooltip": [
+      {
+        "field": "properties.STATE_NAME",
+        "type": "nominal",
+        "title": "State / territory"
+      },
+      {
+        "field": "selected_lrr",
+        "type": "quantitative",
+        "title": "Live release rate",
+        "format": ".1%"
+      },
+      {
+        "field": "selected_rehomed",
+        "type": "quantitative",
+        "title": "Rehomed",
+        "format": ","
+      },
+      {
+        "field": "selected_reunited",
+        "type": "quantitative",
+        "title": "Reunited with owner",
+        "format": ","
+      },
+      {
+        "field": "selected_transferred",
+        "type": "quantitative",
+        "title": "Transferred",
+        "format": ","
+      },
+      {
+        "field": "selected_euthanased",
+        "type": "quantitative",
+        "title": "Euthanased",
+        "format": ","
+      },
+      {
+        "field": "selected_eligible",
+        "type": "quantitative",
+        "title": "Eligible outcomes",
+        "format": ","
+      }
+    ]
+  },
   "config": {
     "font": "Source Sans 3, Arial, sans-serif",
     "view": {
