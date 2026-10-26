@@ -405,3 +405,112 @@ h1, h2, h3, .hero h1, .section-heading h2, .hero .deck,
   background: linear-gradient(to right, var(--dv2-live-low), var(--dv2-live-high)) !important;
 }
 /* DV2 DESIGN SYSTEM END */
+
+
+/* DV2 TYPOGRAPHY SYSTEM START */
+
+:root {
+  --dv2-heading: "Fraunces", Georgia, serif;
+  --dv2-body: Helvetica, Arial, sans-serif;
+}
+
+body {
+  font-family: var(--dv2-body);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.hero h1 {
+  font-family: var(--dv2-heading);
+  font-size: clamp(44px, 4.8vw, 54px);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  max-width: 850px;
+}
+
+.hero .deck {
+  font-family: var(--dv2-body);
+  font-size: clamp(19px, 2vw, 22px);
+  font-weight: 600;
+  line-height: 1.45;
+  max-width: 780px;
+}
+
+.hero .lede {
+  font-family: var(--dv2-body);
+  font-size: 17px;
+  line-height: 1.7;
+  max-width: 700px;
+}
+
+.section-heading h2 {
+  font-family: var(--dv2-heading);
+  font-size: clamp(28px, 3vw, 32px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  max-width: 800px;
+}
+
+.section-heading > p:not(.eyebrow) {
+  font-family: var(--dv2-body);
+  font-size: 17px;
+  line-height: 1.7;
+  max-width: 740px;
+}
+
+.eyebrow {
+  font-family: var(--dv2-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+}
+
+.source-note,
+.manual-legend,
+.dot-key,
+.outcome-key,
+.callout-label,
+.notes-card,
+.site-footer {
+  font-family: var(--dv2-body);
+  line-height: 1.55;
+}
+
+.source-note {
+  font-size: 13.5px;
+}
+
+.callout-number {
+  font-family: var(--dv2-heading);
+  font-size: clamp(25px, 3vw, 32px);
+  line-height: 1.15;
+}
+
+.notes-card h3 {
+  font-family: var(--dv2-body);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .section-heading h2 {
+    font-size: 27px;
+  }
+
+  .section-heading > p:not(.eyebrow),
+  .hero .lede {
+    font-size: 16px;
+  }
+}
+
+/* DV2 TYPOGRAPHY SYSTEM END */

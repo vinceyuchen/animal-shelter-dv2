@@ -11,10 +11,12 @@
       "The map shows facility location, not capacity or animal intake."
     ],
     "anchor": "start",
-    "fontSize": 21,
+    "fontSize": 18,
     "subtitleFontSize": 12,
     "subtitlePadding": 8,
-    "offset": 12
+    "offset": 12,
+    "font": "Helvetica, Arial, sans-serif",
+    "subtitleFont": "Helvetica, Arial, sans-serif"
   },
   "projection": {
     "type": "mercator"

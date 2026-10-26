@@ -16,10 +16,12 @@
       "Dogs extend left; cats extend right."
     ],
     "anchor": "start",
-    "fontSize": 24,
-    "subtitleFontSize": 13,
+    "fontSize": 18,
+    "subtitleFontSize": 12,
     "subtitlePadding": 8,
-    "offset": 14
+    "offset": 14,
+    "font": "Helvetica, Arial, sans-serif",
+    "subtitleFont": "Helvetica, Arial, sans-serif"
   },
   "data": {
     "url": "data/chart5_euthanasia_reasons.csv",
@@ -143,17 +145,23 @@
     }
   ],
   "config": {
-    "font": "Source Sans 3, Arial, sans-serif",
+    "font": "Helvetica, Arial, sans-serif",
     "view": {
       "stroke": null
     },
     "title": {
-      "font": "Source Sans 3, Arial, sans-serif",
-      "subtitleFont": "Source Sans 3, Arial, sans-serif"
+      "font": "Helvetica, Arial, sans-serif",
+      "subtitleFont": "Helvetica, Arial, sans-serif"
     },
     "axis": {
       "labelColor": "#40555d",
-      "titleColor": "#40555d"
+      "titleColor": "#40555d",
+      "labelFont": "Helvetica, Arial, sans-serif",
+      "titleFont": "Helvetica, Arial, sans-serif"
+    },
+    "legend": {
+      "labelFont": "Helvetica, Arial, sans-serif",
+      "titleFont": "Helvetica, Arial, sans-serif"
     }
   }
 }

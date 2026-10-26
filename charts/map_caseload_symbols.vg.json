@@ -11,10 +11,12 @@
       "Points are representative state/territory positions; totals describe RSPCA reporting coverage."
     ],
     "anchor": "start",
-    "fontSize": 21,
+    "fontSize": 18,
     "subtitleFontSize": 12,
     "subtitlePadding": 8,
-    "offset": 12
+    "offset": 12,
+    "font": "Helvetica, Arial, sans-serif",
+    "subtitleFont": "Helvetica, Arial, sans-serif"
   },
   "params": [
     {

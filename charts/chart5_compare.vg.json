@@ -16,10 +16,12 @@
       "Dogs extend left from 0%; cats extend right."
     ],
     "anchor": "start",
-    "fontSize": 21,
+    "fontSize": 18,
     "subtitleFontSize": 12,
     "subtitlePadding": 8,
-    "offset": 12
+    "offset": 12,
+    "font": "Helvetica, Arial, sans-serif",
+    "subtitleFont": "Helvetica, Arial, sans-serif"
   },
   "data": {
     "url": "data/chart5_compare.csv",

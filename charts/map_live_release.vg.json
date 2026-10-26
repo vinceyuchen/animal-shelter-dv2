@@ -11,10 +11,12 @@
       "Select dogs or cats. These figures describe the RSPCA network, not every Australian shelter."
     ],
     "anchor": "start",
-    "fontSize": 21,
+    "fontSize": 18,
     "subtitleFontSize": 12,
     "subtitlePadding": 8,
-    "offset": 12
+    "offset": 12,
+    "font": "Helvetica, Arial, sans-serif",
+    "subtitleFont": "Helvetica, Arial, sans-serif"
   },
   "params": [
     {
