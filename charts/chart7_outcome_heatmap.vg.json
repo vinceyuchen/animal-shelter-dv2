@@ -1,0 +1,204 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 390,
+  "data": {
+    "url": "data/chart7_outcome_heatmap.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "count": "number",
+        "total": "number",
+        "share": "number",
+        "share_pct": "number"
+      }
+    }
+  },
+  "params": [
+    {
+      "name": "speciesFilter",
+      "value": "Dog",
+      "bind": {
+        "input": "select",
+        "options": [
+          "Dog",
+          "Cat"
+        ],
+        "labels": [
+          "Dogs",
+          "Cats"
+        ],
+        "name": "Species: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "datum.species == speciesFilter"
+    },
+    {
+      "calculate": "datum.share_pct >= 35 ? 'white' : '#173042'",
+      "as": "labelColor"
+    }
+  ],
+  "title": {
+    "text": "Which outcomes take up the largest share in each state?",
+    "subtitle": "Heatmap shows the composition of recorded outcomes within each state. Use the selector to compare dogs and cats.",
+    "anchor": "start",
+    "font": "Helvetica, Arial, sans-serif",
+    "subtitleFont": "Helvetica, Arial, sans-serif",
+    "fontSize": 18,
+    "subtitleFontSize": 12
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rect",
+        "stroke": "white",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "x": {
+          "field": "outcome_group",
+          "type": "ordinal",
+          "sort": [
+            "Rehomed",
+            "Reunited",
+            "Transferred",
+            "In Care",
+            "Euthanased",
+            "Other"
+          ],
+          "title": null,
+          "axis": {
+            "labelAngle": 0,
+            "labelLimit": 120
+          }
+        },
+        "y": {
+          "field": "state",
+          "type": "ordinal",
+          "sort": [
+            "ACT",
+            "NSW",
+            "NT",
+            "QLD",
+            "SA",
+            "TAS",
+            "VIC",
+            "WA"
+          ],
+          "title": null
+        },
+        "color": {
+          "field": "share_pct",
+          "type": "quantitative",
+          "title": "Share within state (%)",
+          "scale": {
+            "scheme": "teals"
+          },
+          "legend": {
+            "format": ".0f"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "species",
+            "type": "nominal",
+            "title": "Species"
+          },
+          {
+            "field": "outcome_group",
+            "type": "nominal",
+            "title": "Outcome"
+          },
+          {
+            "field": "count",
+            "type": "quantitative",
+            "title": "Count",
+            "format": ","
+          },
+          {
+            "field": "share_pct",
+            "type": "quantitative",
+            "title": "Share",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "font": "Helvetica, Arial, sans-serif",
+        "fontSize": 11,
+        "baseline": "middle"
+      },
+      "encoding": {
+        "x": {
+          "field": "outcome_group",
+          "type": "ordinal",
+          "sort": [
+            "Rehomed",
+            "Reunited",
+            "Transferred",
+            "In Care",
+            "Euthanased",
+            "Other"
+          ]
+        },
+        "y": {
+          "field": "state",
+          "type": "ordinal",
+          "sort": [
+            "ACT",
+            "NSW",
+            "NT",
+            "QLD",
+            "SA",
+            "TAS",
+            "VIC",
+            "WA"
+          ]
+        },
+        "text": {
+          "field": "share_label"
+        },
+        "color": {
+          "field": "labelColor",
+          "type": "nominal",
+          "scale": null
+        }
+      }
+    }
+  ],
+  "config": {
+    "font": "Helvetica, Arial, sans-serif",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Helvetica, Arial, sans-serif",
+      "titleFont": "Helvetica, Arial, sans-serif",
+      "labelColor": "#30485a",
+      "titleColor": "#30485a",
+      "gridColor": "#d6dfde"
+    },
+    "legend": {
+      "labelFont": "Helvetica, Arial, sans-serif",
+      "titleFont": "Helvetica, Arial, sans-serif",
+      "labelColor": "#30485a",
+      "titleColor": "#30485a"
+    }
+  },
+  "autosize": {
+    "type": "fit-x",
+    "contains": "padding",
+    "resize": true
+  }
+}

@@ -20,3 +20,14 @@ vegaEmbed("#butterfly-euthanasia", "charts/chart5_compare.vg.json?v=20261027-typ
 
 vegaEmbed("#outcome-composition", "charts/outcome_composition.vg.json?v=20261027-typefix", embedOptions)
   .catch(console.error);
+
+/* CHART7 EMBED START */
+document.addEventListener("DOMContentLoaded", function () {
+  if (document.querySelector("#vis-chart7")) {
+    vegaEmbed("#vis-chart7", "charts/chart7_outcome_heatmap.vg.json?v=20261027-chart7", {
+      actions: false,
+      renderer: "svg"
+    }).catch(console.error);
+  }
+});
+/* CHART7 EMBED END */
