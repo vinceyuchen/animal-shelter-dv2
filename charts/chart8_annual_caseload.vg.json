@@ -1,0 +1,577 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Reported RSPCA state society dogs and cats, 2020-21 to 2024-25. NSW and NT excluded due to substantial reporting coverage changes.",
+  "width": "container",
+  "height": 380,
+  "background": "#ffffff",
+  "autosize": {
+    "type": "fit-x",
+    "contains": "padding",
+    "resize": true
+  },
+  "title": {
+    "text": "How did reported dogs and cats change over five years?",
+    "subtitle": [
+      "RSPCA annual statistics, 2020–21 to 2024–25. Select a jurisdiction.",
+      "Reported caseload is not a national shelter intake estimate. NSW and NT excluded."
+    ],
+    "anchor": "start",
+    "font": "Helvetica, Arial, sans-serif",
+    "subtitleFont": "Helvetica, Arial, sans-serif",
+    "fontSize": 18,
+    "subtitleFontSize": 12,
+    "subtitlePadding": 8,
+    "offset": 12
+  },
+  "data": {
+    "values": [
+      {
+        "financial_year": "2020-21",
+        "state": "ACT",
+        "state_name": "Australian Capital Territory",
+        "species": "Dogs",
+        "count": 617
+      },
+      {
+        "financial_year": "2020-21",
+        "state": "ACT",
+        "state_name": "Australian Capital Territory",
+        "species": "Cats",
+        "count": 1766
+      },
+      {
+        "financial_year": "2020-21",
+        "state": "QLD",
+        "state_name": "Queensland",
+        "species": "Dogs",
+        "count": 7424
+      },
+      {
+        "financial_year": "2020-21",
+        "state": "QLD",
+        "state_name": "Queensland",
+        "species": "Cats",
+        "count": 10983
+      },
+      {
+        "financial_year": "2020-21",
+        "state": "SA",
+        "state_name": "South Australia",
+        "species": "Dogs",
+        "count": 2257
+      },
+      {
+        "financial_year": "2020-21",
+        "state": "SA",
+        "state_name": "South Australia",
+        "species": "Cats",
+        "count": 5251
+      },
+      {
+        "financial_year": "2020-21",
+        "state": "TAS",
+        "state_name": "Tasmania",
+        "species": "Dogs",
+        "count": 109
+      },
+      {
+        "financial_year": "2020-21",
+        "state": "TAS",
+        "state_name": "Tasmania",
+        "species": "Cats",
+        "count": 971
+      },
+      {
+        "financial_year": "2020-21",
+        "state": "VIC",
+        "state_name": "Victoria",
+        "species": "Dogs",
+        "count": 3909
+      },
+      {
+        "financial_year": "2020-21",
+        "state": "VIC",
+        "state_name": "Victoria",
+        "species": "Cats",
+        "count": 9091
+      },
+      {
+        "financial_year": "2020-21",
+        "state": "WA",
+        "state_name": "Western Australia",
+        "species": "Dogs",
+        "count": 718
+      },
+      {
+        "financial_year": "2020-21",
+        "state": "WA",
+        "state_name": "Western Australia",
+        "species": "Cats",
+        "count": 726
+      },
+      {
+        "financial_year": "2021-22",
+        "state": "ACT",
+        "state_name": "Australian Capital Territory",
+        "species": "Dogs",
+        "count": 600
+      },
+      {
+        "financial_year": "2021-22",
+        "state": "ACT",
+        "state_name": "Australian Capital Territory",
+        "species": "Cats",
+        "count": 1501
+      },
+      {
+        "financial_year": "2021-22",
+        "state": "QLD",
+        "state_name": "Queensland",
+        "species": "Dogs",
+        "count": 6359
+      },
+      {
+        "financial_year": "2021-22",
+        "state": "QLD",
+        "state_name": "Queensland",
+        "species": "Cats",
+        "count": 9633
+      },
+      {
+        "financial_year": "2021-22",
+        "state": "SA",
+        "state_name": "South Australia",
+        "species": "Dogs",
+        "count": 2242
+      },
+      {
+        "financial_year": "2021-22",
+        "state": "SA",
+        "state_name": "South Australia",
+        "species": "Cats",
+        "count": 6237
+      },
+      {
+        "financial_year": "2021-22",
+        "state": "TAS",
+        "state_name": "Tasmania",
+        "species": "Dogs",
+        "count": 118
+      },
+      {
+        "financial_year": "2021-22",
+        "state": "TAS",
+        "state_name": "Tasmania",
+        "species": "Cats",
+        "count": 1365
+      },
+      {
+        "financial_year": "2021-22",
+        "state": "VIC",
+        "state_name": "Victoria",
+        "species": "Dogs",
+        "count": 3547
+      },
+      {
+        "financial_year": "2021-22",
+        "state": "VIC",
+        "state_name": "Victoria",
+        "species": "Cats",
+        "count": 6830
+      },
+      {
+        "financial_year": "2021-22",
+        "state": "WA",
+        "state_name": "Western Australia",
+        "species": "Dogs",
+        "count": 823
+      },
+      {
+        "financial_year": "2021-22",
+        "state": "WA",
+        "state_name": "Western Australia",
+        "species": "Cats",
+        "count": 898
+      },
+      {
+        "financial_year": "2022-23",
+        "state": "ACT",
+        "state_name": "Australian Capital Territory",
+        "species": "Dogs",
+        "count": 641
+      },
+      {
+        "financial_year": "2022-23",
+        "state": "ACT",
+        "state_name": "Australian Capital Territory",
+        "species": "Cats",
+        "count": 1754
+      },
+      {
+        "financial_year": "2022-23",
+        "state": "QLD",
+        "state_name": "Queensland",
+        "species": "Dogs",
+        "count": 6637
+      },
+      {
+        "financial_year": "2022-23",
+        "state": "QLD",
+        "state_name": "Queensland",
+        "species": "Cats",
+        "count": 9054
+      },
+      {
+        "financial_year": "2022-23",
+        "state": "SA",
+        "state_name": "South Australia",
+        "species": "Dogs",
+        "count": 2396
+      },
+      {
+        "financial_year": "2022-23",
+        "state": "SA",
+        "state_name": "South Australia",
+        "species": "Cats",
+        "count": 5637
+      },
+      {
+        "financial_year": "2022-23",
+        "state": "TAS",
+        "state_name": "Tasmania",
+        "species": "Dogs",
+        "count": 162
+      },
+      {
+        "financial_year": "2022-23",
+        "state": "TAS",
+        "state_name": "Tasmania",
+        "species": "Cats",
+        "count": 1552
+      },
+      {
+        "financial_year": "2022-23",
+        "state": "VIC",
+        "state_name": "Victoria",
+        "species": "Dogs",
+        "count": 3283
+      },
+      {
+        "financial_year": "2022-23",
+        "state": "VIC",
+        "state_name": "Victoria",
+        "species": "Cats",
+        "count": 6582
+      },
+      {
+        "financial_year": "2022-23",
+        "state": "WA",
+        "state_name": "Western Australia",
+        "species": "Dogs",
+        "count": 898
+      },
+      {
+        "financial_year": "2022-23",
+        "state": "WA",
+        "state_name": "Western Australia",
+        "species": "Cats",
+        "count": 968
+      },
+      {
+        "financial_year": "2023-24",
+        "state": "ACT",
+        "state_name": "Australian Capital Territory",
+        "species": "Dogs",
+        "count": 676
+      },
+      {
+        "financial_year": "2023-24",
+        "state": "ACT",
+        "state_name": "Australian Capital Territory",
+        "species": "Cats",
+        "count": 2065
+      },
+      {
+        "financial_year": "2023-24",
+        "state": "QLD",
+        "state_name": "Queensland",
+        "species": "Dogs",
+        "count": 6531
+      },
+      {
+        "financial_year": "2023-24",
+        "state": "QLD",
+        "state_name": "Queensland",
+        "species": "Cats",
+        "count": 7650
+      },
+      {
+        "financial_year": "2023-24",
+        "state": "SA",
+        "state_name": "South Australia",
+        "species": "Dogs",
+        "count": 1814
+      },
+      {
+        "financial_year": "2023-24",
+        "state": "SA",
+        "state_name": "South Australia",
+        "species": "Cats",
+        "count": 3033
+      },
+      {
+        "financial_year": "2023-24",
+        "state": "TAS",
+        "state_name": "Tasmania",
+        "species": "Dogs",
+        "count": 130
+      },
+      {
+        "financial_year": "2023-24",
+        "state": "TAS",
+        "state_name": "Tasmania",
+        "species": "Cats",
+        "count": 1063
+      },
+      {
+        "financial_year": "2023-24",
+        "state": "VIC",
+        "state_name": "Victoria",
+        "species": "Dogs",
+        "count": 2550
+      },
+      {
+        "financial_year": "2023-24",
+        "state": "VIC",
+        "state_name": "Victoria",
+        "species": "Cats",
+        "count": 4611
+      },
+      {
+        "financial_year": "2023-24",
+        "state": "WA",
+        "state_name": "Western Australia",
+        "species": "Dogs",
+        "count": 903
+      },
+      {
+        "financial_year": "2023-24",
+        "state": "WA",
+        "state_name": "Western Australia",
+        "species": "Cats",
+        "count": 918
+      },
+      {
+        "financial_year": "2024-25",
+        "state": "ACT",
+        "state_name": "Australian Capital Territory",
+        "species": "Dogs",
+        "count": 595
+      },
+      {
+        "financial_year": "2024-25",
+        "state": "ACT",
+        "state_name": "Australian Capital Territory",
+        "species": "Cats",
+        "count": 1935
+      },
+      {
+        "financial_year": "2024-25",
+        "state": "QLD",
+        "state_name": "Queensland",
+        "species": "Dogs",
+        "count": 6401
+      },
+      {
+        "financial_year": "2024-25",
+        "state": "QLD",
+        "state_name": "Queensland",
+        "species": "Cats",
+        "count": 8019
+      },
+      {
+        "financial_year": "2024-25",
+        "state": "SA",
+        "state_name": "South Australia",
+        "species": "Dogs",
+        "count": 1963
+      },
+      {
+        "financial_year": "2024-25",
+        "state": "SA",
+        "state_name": "South Australia",
+        "species": "Cats",
+        "count": 3355
+      },
+      {
+        "financial_year": "2024-25",
+        "state": "TAS",
+        "state_name": "Tasmania",
+        "species": "Dogs",
+        "count": 379
+      },
+      {
+        "financial_year": "2024-25",
+        "state": "TAS",
+        "state_name": "Tasmania",
+        "species": "Cats",
+        "count": 700
+      },
+      {
+        "financial_year": "2024-25",
+        "state": "VIC",
+        "state_name": "Victoria",
+        "species": "Dogs",
+        "count": 2015
+      },
+      {
+        "financial_year": "2024-25",
+        "state": "VIC",
+        "state_name": "Victoria",
+        "species": "Cats",
+        "count": 3830
+      },
+      {
+        "financial_year": "2024-25",
+        "state": "WA",
+        "state_name": "Western Australia",
+        "species": "Dogs",
+        "count": 975
+      },
+      {
+        "financial_year": "2024-25",
+        "state": "WA",
+        "state_name": "Western Australia",
+        "species": "Cats",
+        "count": 920
+      }
+    ]
+  },
+  "params": [
+    {
+      "name": "Chart8State",
+      "value": "QLD",
+      "bind": {
+        "input": "select",
+        "options": [
+          "ACT",
+          "QLD",
+          "SA",
+          "TAS",
+          "VIC",
+          "WA"
+        ],
+        "labels": [
+          "Australian Capital Territory",
+          "Queensland",
+          "South Australia",
+          "Tasmania",
+          "Victoria",
+          "Western Australia"
+        ],
+        "name": "Jurisdiction: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "datum.state == Chart8State"
+    }
+  ],
+  "mark": {
+    "type": "line",
+    "point": {
+      "filled": true,
+      "size": 100
+    },
+    "strokeWidth": 3
+  },
+  "encoding": {
+    "x": {
+      "field": "financial_year",
+      "type": "ordinal",
+      "sort": [
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ],
+      "title": "Financial year",
+      "axis": {
+        "labelAngle": 0,
+        "labelFontSize": 12
+      }
+    },
+    "y": {
+      "field": "count",
+      "type": "quantitative",
+      "title": "Animals recorded by RSPCA",
+      "scale": {
+        "zero": true
+      },
+      "axis": {
+        "format": ",d",
+        "tickCount": 5,
+        "gridColor": "#e5ecec"
+      }
+    },
+    "color": {
+      "field": "species",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Dogs",
+          "Cats"
+        ],
+        "range": [
+          "#235789",
+          "#C46A2D"
+        ]
+      },
+      "legend": {
+        "orient": "top",
+        "title": null,
+        "labelFontSize": 13
+      }
+    },
+    "tooltip": [
+      {
+        "field": "state_name",
+        "type": "nominal",
+        "title": "Jurisdiction"
+      },
+      {
+        "field": "financial_year",
+        "type": "nominal",
+        "title": "Financial year"
+      },
+      {
+        "field": "species",
+        "type": "nominal",
+        "title": "Species"
+      },
+      {
+        "field": "count",
+        "type": "quantitative",
+        "title": "Animals recorded",
+        "format": ","
+      }
+    ]
+  },
+  "config": {
+    "font": "Helvetica, Arial, sans-serif",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Helvetica, Arial, sans-serif",
+      "titleFont": "Helvetica, Arial, sans-serif",
+      "labelColor": "#536b73",
+      "titleColor": "#173642"
+    },
+    "legend": {
+      "labelFont": "Helvetica, Arial, sans-serif"
+    }
+  }
+}

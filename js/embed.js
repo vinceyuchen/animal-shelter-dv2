@@ -56,3 +56,12 @@ vegaEmbed("#outcome-composition", "charts/outcome_composition.vg.json?v=20261027
   }
 })();
 /* CHART7 EMBED END */
+
+/* CHART8 EMBED START */
+vegaEmbed("#chart8-annual-caseload", "charts/chart8_annual_caseload.vg.json?v=20261027-chart8-safe",
+  {actions:false,renderer:"svg"}).catch(function(err) {
+    console.error("Chart 8:",err);
+    const el=document.getElementById("chart8-annual-caseload");
+    if(el) el.textContent="Chart 8 could not render. See the browser console.";
+  });
+/* CHART8 EMBED END */

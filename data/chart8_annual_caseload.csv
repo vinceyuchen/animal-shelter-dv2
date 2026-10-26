@@ -1,0 +1,61 @@
+financial_year,state,state_name,species,count
+2020-21,ACT,Australian Capital Territory,Dogs,617
+2020-21,ACT,Australian Capital Territory,Cats,1766
+2020-21,QLD,Queensland,Dogs,7424
+2020-21,QLD,Queensland,Cats,10983
+2020-21,SA,South Australia,Dogs,2257
+2020-21,SA,South Australia,Cats,5251
+2020-21,TAS,Tasmania,Dogs,109
+2020-21,TAS,Tasmania,Cats,971
+2020-21,VIC,Victoria,Dogs,3909
+2020-21,VIC,Victoria,Cats,9091
+2020-21,WA,Western Australia,Dogs,718
+2020-21,WA,Western Australia,Cats,726
+2021-22,ACT,Australian Capital Territory,Dogs,600
+2021-22,ACT,Australian Capital Territory,Cats,1501
+2021-22,QLD,Queensland,Dogs,6359
+2021-22,QLD,Queensland,Cats,9633
+2021-22,SA,South Australia,Dogs,2242
+2021-22,SA,South Australia,Cats,6237
+2021-22,TAS,Tasmania,Dogs,118
+2021-22,TAS,Tasmania,Cats,1365
+2021-22,VIC,Victoria,Dogs,3547
+2021-22,VIC,Victoria,Cats,6830
+2021-22,WA,Western Australia,Dogs,823
+2021-22,WA,Western Australia,Cats,898
+2022-23,ACT,Australian Capital Territory,Dogs,641
+2022-23,ACT,Australian Capital Territory,Cats,1754
+2022-23,QLD,Queensland,Dogs,6637
+2022-23,QLD,Queensland,Cats,9054
+2022-23,SA,South Australia,Dogs,2396
+2022-23,SA,South Australia,Cats,5637
+2022-23,TAS,Tasmania,Dogs,162
+2022-23,TAS,Tasmania,Cats,1552
+2022-23,VIC,Victoria,Dogs,3283
+2022-23,VIC,Victoria,Cats,6582
+2022-23,WA,Western Australia,Dogs,898
+2022-23,WA,Western Australia,Cats,968
+2023-24,ACT,Australian Capital Territory,Dogs,676
+2023-24,ACT,Australian Capital Territory,Cats,2065
+2023-24,QLD,Queensland,Dogs,6531
+2023-24,QLD,Queensland,Cats,7650
+2023-24,SA,South Australia,Dogs,1814
+2023-24,SA,South Australia,Cats,3033
+2023-24,TAS,Tasmania,Dogs,130
+2023-24,TAS,Tasmania,Cats,1063
+2023-24,VIC,Victoria,Dogs,2550
+2023-24,VIC,Victoria,Cats,4611
+2023-24,WA,Western Australia,Dogs,903
+2023-24,WA,Western Australia,Cats,918
+2024-25,ACT,Australian Capital Territory,Dogs,595
+2024-25,ACT,Australian Capital Territory,Cats,1935
+2024-25,QLD,Queensland,Dogs,6401
+2024-25,QLD,Queensland,Cats,8019
+2024-25,SA,South Australia,Dogs,1963
+2024-25,SA,South Australia,Cats,3355
+2024-25,TAS,Tasmania,Dogs,379
+2024-25,TAS,Tasmania,Cats,700
+2024-25,VIC,Victoria,Dogs,2015
+2024-25,VIC,Victoria,Cats,3830
+2024-25,WA,Western Australia,Dogs,975
+2024-25,WA,Western Australia,Cats,920
