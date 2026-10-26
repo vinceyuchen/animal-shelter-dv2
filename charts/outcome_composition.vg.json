@@ -172,12 +172,12 @@
           "Other"
         ],
         "range": [
-          "#2f7f80",
-          "#6fa6a3",
-          "#aac8c3",
-          "#d4dfdc",
-          "#a96f64",
-          "#d8d2c9"
+          "#2B8C78",
+          "#5B87C2",
+          "#A88E5A",
+          "#9FAAAE",
+          "#B65C6A",
+          "#D9C8B2"
         ]
       },
       "legend": null
@@ -212,19 +212,25 @@
     ]
   },
   "config": {
-    "font": "Source Sans 3, Arial, sans-serif",
+    "font": "Helvetica, Arial, sans-serif",
     "view": {
       "stroke": null
     },
     "title": {
-      "font": "Source Sans 3, Arial, sans-serif",
-      "subtitleFont": "Source Sans 3, Arial, sans-serif",
+      "font": "Helvetica, Arial, sans-serif",
+      "subtitleFont": "Helvetica, Arial, sans-serif",
       "color": "#173642",
       "subtitleColor": "#607077"
     },
     "axis": {
       "labelColor": "#52666f",
-      "titleColor": "#40555d"
+      "titleColor": "#40555d",
+      "labelFont": "Helvetica, Arial, sans-serif",
+      "titleFont": "Helvetica, Arial, sans-serif"
+    },
+    "legend": {
+      "labelFont": "Helvetica, Arial, sans-serif",
+      "titleFont": "Helvetica, Arial, sans-serif"
     }
   }
 }

@@ -94,8 +94,8 @@
           "Cat"
         ],
         "range": [
-          "#173642",
-          "#3f7f80"
+          "#235789",
+          "#C46A2D"
         ]
       },
       "legend": null
@@ -126,19 +126,25 @@
     ]
   },
   "config": {
-    "font": "Source Sans 3, Arial, sans-serif",
+    "font": "Helvetica, Arial, sans-serif",
     "view": {
       "stroke": null
     },
     "title": {
-      "font": "Source Sans 3, Arial, sans-serif",
-      "subtitleFont": "Source Sans 3, Arial, sans-serif",
+      "font": "Helvetica, Arial, sans-serif",
+      "subtitleFont": "Helvetica, Arial, sans-serif",
       "color": "#173642",
       "subtitleColor": "#607077"
     },
     "axis": {
       "labelColor": "#52666f",
-      "titleColor": "#40555d"
+      "titleColor": "#40555d",
+      "labelFont": "Helvetica, Arial, sans-serif",
+      "titleFont": "Helvetica, Arial, sans-serif"
+    },
+    "legend": {
+      "labelFont": "Helvetica, Arial, sans-serif",
+      "titleFont": "Helvetica, Arial, sans-serif"
     }
   }
 }

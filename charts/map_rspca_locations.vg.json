@@ -55,7 +55,7 @@
         "type": "circle",
         "size": 95,
         "opacity": 0.82,
-        "color": "#2f7f80",
+        "color": "#63794A",
         "stroke": "#ffffff",
         "strokeWidth": 1.3,
         "tooltip": true
@@ -95,19 +95,25 @@
     }
   ],
   "config": {
-    "font": "Source Sans 3, Arial, sans-serif",
+    "font": "Helvetica, Arial, sans-serif",
     "view": {
       "stroke": null
     },
     "title": {
-      "font": "Source Sans 3, Arial, sans-serif",
-      "subtitleFont": "Source Sans 3, Arial, sans-serif",
+      "font": "Helvetica, Arial, sans-serif",
+      "subtitleFont": "Helvetica, Arial, sans-serif",
       "color": "#173642",
       "subtitleColor": "#607077"
     },
     "axis": {
       "labelColor": "#52666f",
-      "titleColor": "#40555d"
+      "titleColor": "#40555d",
+      "labelFont": "Helvetica, Arial, sans-serif",
+      "titleFont": "Helvetica, Arial, sans-serif"
+    },
+    "legend": {
+      "labelFont": "Helvetica, Arial, sans-serif",
+      "titleFont": "Helvetica, Arial, sans-serif"
     }
   },
   "autosize": {

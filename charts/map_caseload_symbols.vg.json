@@ -131,7 +131,7 @@
           "legend": null
         },
         "color": {
-          "value": "#3f7f80"
+          "value": "#5B7482"
         },
         "tooltip": [
           {
@@ -167,23 +167,27 @@
     }
   ],
   "config": {
-    "font": "Source Sans 3, Arial, sans-serif",
+    "font": "Helvetica, Arial, sans-serif",
     "view": {
       "stroke": null
     },
     "legend": {
       "labelFontSize": 12,
-      "titleFontSize": 12
+      "titleFontSize": 12,
+      "labelFont": "Helvetica, Arial, sans-serif",
+      "titleFont": "Helvetica, Arial, sans-serif"
     },
     "title": {
-      "font": "Source Sans 3, Arial, sans-serif",
-      "subtitleFont": "Source Sans 3, Arial, sans-serif",
+      "font": "Helvetica, Arial, sans-serif",
+      "subtitleFont": "Helvetica, Arial, sans-serif",
       "color": "#173642",
       "subtitleColor": "#607077"
     },
     "axis": {
       "labelColor": "#52666f",
-      "titleColor": "#40555d"
+      "titleColor": "#40555d",
+      "labelFont": "Helvetica, Arial, sans-serif",
+      "titleFont": "Helvetica, Arial, sans-serif"
     }
   },
   "autosize": {

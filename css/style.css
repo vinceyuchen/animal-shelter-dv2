@@ -364,3 +364,44 @@ h1 {
 #connected-dot-lrr {
   padding-left: 18px;
 }
+
+/* DV2 DESIGN SYSTEM START: coherent typography and semantic encodings
+   Important: dog/cat colours apply only when species is encoded by colour.
+   LRR uses its own sequential scale, and outcomes use outcome-category colours. */
+:root {
+  --dv2-font-body: Helvetica, Arial, sans-serif;
+  --dv2-font-display: "Fraunces", Georgia, serif;
+  --dv2-dog: #235789;
+  --dv2-cat: #C46A2D;
+  --dv2-live-low: #EDF0F8;
+  --dv2-live-high: #5B5A93;
+  --dv2-caseload: #5B7482;
+  --dv2-facility: #63794A;
+  --dv2-outcome-rehomed: #2B8C78;
+  --dv2-outcome-reunited: #5B87C2;
+  --dv2-outcome-transferred: #A88E5A;
+  --dv2-outcome-in-care: #9FAAAE;
+  --dv2-outcome-euthanased: #B65C6A;
+  --dv2-outcome-other: #D9C8B2;
+}
+html, body, p, label, button, select, input, textarea, a, li,
+.source-note, .section-heading p, .lede, .eyebrow, .dot-key,
+.manual-legend, .outcome-key, .callout-label, .notes-card p,
+.notes-card strong, .vis-host { font-family: var(--dv2-font-body) !important; }
+h1, h2, h3, .hero h1, .section-heading h2, .hero .deck,
+.callout-number { font-family: var(--dv2-font-display) !important; }
+.dot-key .dog-dot { background-color: var(--dv2-dog) !important; }
+.dot-key .cat-dot { background-color: var(--dv2-cat) !important; }
+.callout-number.dog-metric { color: var(--dv2-dog) !important; }
+.callout-number.cat-metric { color: var(--dv2-cat) !important; }
+.outcome-key .k-rehomed { background-color: var(--dv2-outcome-rehomed) !important; }
+.outcome-key .k-reunited { background-color: var(--dv2-outcome-reunited) !important; }
+.outcome-key .k-transferred { background-color: var(--dv2-outcome-transferred) !important; }
+.outcome-key .k-inc { background-color: var(--dv2-outcome-in-care) !important; }
+.outcome-key .k-euth { background-color: var(--dv2-outcome-euthanased) !important; }
+.outcome-key .k-other { background-color: var(--dv2-outcome-other) !important; }
+.bubble-legend .bubble { background: var(--dv2-caseload) !important; }
+.gradient-legend .gradient-bar {
+  background: linear-gradient(to right, var(--dv2-live-low), var(--dv2-live-high)) !important;
+}
+/* DV2 DESIGN SYSTEM END */
