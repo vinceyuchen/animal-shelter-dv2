@@ -514,3 +514,14 @@ body {
 }
 
 /* DV2 TYPOGRAPHY SYSTEM END */
+
+
+/* Chart 7 rendering */
+#vis-chart7 {
+  width: 100%;
+  min-height: 470px;
+}
+
+#vis-chart7 .vega-embed {
+  width: 100%;
+}

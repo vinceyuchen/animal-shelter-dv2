@@ -21,13 +21,38 @@ vegaEmbed("#butterfly-euthanasia", "charts/chart5_compare.vg.json?v=20261027-typ
 vegaEmbed("#outcome-composition", "charts/outcome_composition.vg.json?v=20261027-typefix", embedOptions)
   .catch(console.error);
 
+
 /* CHART7 EMBED START */
-document.addEventListener("DOMContentLoaded", function () {
-  if (document.querySelector("#vis-chart7")) {
-    vegaEmbed("#vis-chart7", "charts/chart7_outcome_heatmap.vg.json?v=20261027-chart7", {
-      actions: false,
-      renderer: "svg"
-    }).catch(console.error);
+(function () {
+  function renderChart7() {
+    const host = document.getElementById("vis-chart7");
+    if (!host) return;
+
+    function showError(error) {
+      console.error("Chart 7 error:", error);
+      host.textContent =
+        "Chart 7 could not load. Please check the browser console.";
+      host.style.color = "#a33b36";
+      host.style.padding = "24px";
+    }
+
+    try {
+      vegaEmbed(
+        "#vis-chart7",
+        "charts/chart7_outcome_heatmap.vg.json?v=20261027-repair2",
+        { actions: false, renderer: "svg" }
+      ).catch(showError);
+    } catch (error) {
+      showError(error);
+    }
   }
-});
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", renderChart7, {
+      once: true
+    });
+  } else {
+    renderChart7();
+  }
+})();
 /* CHART7 EMBED END */
