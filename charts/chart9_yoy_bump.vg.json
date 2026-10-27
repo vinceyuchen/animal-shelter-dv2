@@ -12,8 +12,8 @@
   "title": {
     "text": "Which jurisdictions had the fastest year-on-year change?",
     "subtitle": [
-      "State colours and line patterns trace six RSPCA jurisdictions; the end labels identify each state.",
-      "Rank is the change in reported caseload, not welfare performance."
+      "Distinct lines and end labels identify each jurisdiction; hover for exact annual changes.",
+      "Rank #1 means the greatest reported growth (or smallest decline), not the best welfare outcome."
     ],
     "anchor": "start",
     "font": "Helvetica, Arial, sans-serif",
@@ -919,14 +919,7 @@
           "#71882E"
         ]
       },
-      "legend": {
-        "orient": "bottom",
-        "columns": 3,
-        "labelFontSize": 12,
-        "symbolStrokeWidth": 3,
-        "symbolSize": 150,
-        "titleFontSize": 12
-      }
+      "legend": null
     },
     "detail": {
       "field": "state",
