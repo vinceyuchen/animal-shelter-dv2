@@ -17,9 +17,9 @@ const charts = [
   ['09','Year-on-year bump','chart9-yoy-bump'],
   ['10','Outcome Sankey','chart10-outcome-sankey'],
   ['11','Foster care lollipop','chart11-foster'],
-  ['12','Cat share slope','chart12-cat-share-slope'],
-  ['13','Townsville streamgraph','chart13-townsville'],
-  ['14','Victoria foster concentration treemap','chart14-foster-treemap'],
+  ['12','Victoria foster concentration treemap','chart14-foster-treemap'],
+  ['13','Cat share slope','chart12-cat-share-slope'],
+  ['14','Townsville streamgraph','chart13-townsville'],
 ];
 
 const browser = await chromium.launch({ headless: true });
@@ -60,6 +60,17 @@ try {
         overflowing: document.documentElement.scrollWidth > window.innerWidth + 5,
       }));
 
+      const actualOrder = await page.locator('section[id^="section-"]').evaluateAll(sections =>
+        sections.map(section => ({id: section.id, charts: Array.from(section.querySelectorAll('.vis-host[id]')).map(host => host.id)}))
+      );
+      view.chapterOrder = actualOrder.map(item => item.id);
+      for (let i = 0; i < 14; i++) {
+        const expectedId = 'section-' + String(i + 1).padStart(2, '0');
+        const expectedChart = charts[i][2];
+        if (actualOrder[i]?.id !== expectedId || !actualOrder[i]?.charts.includes(expectedChart)) {
+          view.errors.push('Story order mismatch in section ' + expectedId + ': expected ' + expectedChart);
+        }
+      }
       for (const [number, name, id] of charts) {
         const host = page.locator('#' + id);
         const count = await host.count();
@@ -115,7 +126,7 @@ report.passed = report.views.every(view =>
   view.chartResults.length === 14 &&
   view.chartResults.every(chart => chart.rendered && (view.viewport.width < 1024 || !chart.internalOverflow)) &&
   !view.overflow?.overflowing &&
-  !view.errors.some(error => /Navigation:|Uncaught|could not render|failed to render/i.test(error))
+  !view.errors.some(error => /Navigation:|Uncaught|could not render|failed to render|Story order mismatch/i.test(error))
 );
 const lines = ['# DV2 Browser Audit', '', 'Website: ' + URL, 'Checked: ' + report.checkedUTC, 'Result: ' + (report.passed ? 'PASS' : 'REVIEW REQUIRED'), ''];
 for (const view of report.views) {
