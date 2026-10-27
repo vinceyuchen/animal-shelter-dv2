@@ -12,10 +12,10 @@ vegaEmbed("#map-caseload", "charts/map_caseload_symbols.vg.json?v=20261028-fixed
 vegaEmbed("#map-locations-plot", "charts/map_rspca_locations.vg.json?v=20261027-rubric3", embedOptions)
   .catch(console.error);
 
-vegaEmbed("#connected-dot-lrr", "charts/connected_dot_lrr.vg.json?v=20261027-colour13-v1", embedOptions)
+vegaEmbed("#connected-dot-lrr", "charts/connected_dot_lrr.vg.json?v=20261028-anotations1", embedOptions)
   .catch(console.error);
 
-vegaEmbed("#butterfly-euthanasia", "charts/chart5_compare.vg.json?v=20261027-colour13-v1", embedOptions)
+vegaEmbed("#butterfly-euthanasia", "charts/chart5_compare.vg.json?v=20261028-anotations1", embedOptions)
   .catch(console.error);
 
 vegaEmbed("#outcome-composition", "charts/outcome_composition.vg.json?v=20261027-colour13-v1", embedOptions)

@@ -157,6 +157,52 @@
           }
         ]
       }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.state == 'TAS' && datum.species == 'Dogs'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "bottom",
+        "dx": -7,
+        "dy": -16,
+        "font": "Helvetica, Arial, sans-serif",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#173642"
+      },
+      "encoding": {
+        "text": {
+          "value": "10.7 pp dog advantage"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.state == 'WA' && datum.species == 'Cats'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "bottom",
+        "dx": 7,
+        "dy": -16,
+        "font": "Helvetica, Arial, sans-serif",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#173642"
+      },
+      "encoding": {
+        "text": {
+          "value": "6.8 pp cat advantage"
+        }
+      }
     }
   ],
   "config": {

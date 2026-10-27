@@ -34,9 +34,6 @@
       }
     }
   },
-  "mark": {
-    "type": "bar"
-  },
   "encoding": {
     "y": {
       "field": "reason",
@@ -148,5 +145,54 @@
       "labelFont": "Helvetica, Arial, sans-serif",
       "titleFont": "Helvetica, Arial, sans-serif"
     }
-  }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "bar"
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.species == 'Dog' && datum.reason == 'Behavioural'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 9,
+        "font": "Helvetica, Arial, sans-serif",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#FFFFFF"
+      },
+      "encoding": {
+        "text": {
+          "value": "59.7%"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.species == 'Cat' && datum.reason == 'Medical'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 8,
+        "font": "Helvetica, Arial, sans-serif",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#173642"
+      },
+      "encoding": {
+        "text": {
+          "value": "46.7%"
+        }
+      }
+    }
+  ]
 }
