@@ -65,6 +65,7 @@ jobs:
             "css/style.css"
             "charts/chart5_compare.vg.json"
             "charts/chart11_foster_lollipop.vg.json"
+            "charts/chart9_yoy_bump.vg.json"
             "charts/chart7_outcome_heatmap.vg.json"
             "charts/map_caseload_symbols.vg.json"
           )
