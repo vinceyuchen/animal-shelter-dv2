@@ -1,0 +1,42 @@
+name: DV2 live browser visual audit
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "index.html"
+      - "css/**"
+      - "js/**"
+      - "charts/**"
+      - ".github/workflows/dv2-live-audit.yml"
+      - "scripts/dv2-browser-audit.mjs"
+
+permissions:
+  contents: read
+
+jobs:
+  browser-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright and browser
+        run: |
+          npm install --no-save --no-package-lock playwright@1.57.0
+          npx playwright install --with-deps chromium
+      - name: Inspect the actual published GitHub Pages website
+        run: node scripts/dv2-browser-audit.mjs
+      - name: Upload full screenshots, section screenshots and report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dv2-live-browser-audit
+          path: dv2-browser-audit/
+          if-no-files-found: warn
+          retention-days: 14
