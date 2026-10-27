@@ -128,6 +128,13 @@ try {
           };
           try {
             await select7.selectOption('Cat');
+            await page.waitForTimeout(600);
+            view.rubricChecks.chart7AfterCats = {
+              selection: await select7.inputValue(),
+              kpis: await kpis.allTextContents(),
+              aside: await page.locator('#section-07 .dv2-story-aside').innerText(),
+              connected: await select7.getAttribute('data-dv2-story-connected')
+            };
             await valuesMatch('26.7%', '74.1%');
             await page.waitForFunction(() =>
               (document.querySelector('#section-07 .dv2-story-aside strong')?.textContent || '').startsWith('Cats:'),
@@ -175,7 +182,7 @@ report.passed = report.views.every(view =>
   view.chartResults.length === 14 &&
   view.chartResults.every(chart => chart.rendered && (view.viewport.width < 1024 || !chart.internalOverflow)) &&
   !view.overflow?.overflowing &&
-  !view.errors.some(error => /Navigation:|Uncaught|could not render|failed to render|Story order mismatch|Rubric-specific|Chart 7 species/i.test(error))
+  !view.errors.some(error => /Navigation:|Uncaught|could not render|failed to render|Story order mismatch|Rubric-specific|Chart 7 KPI|Chart 7 species/i.test(error))
 );
 const lines = ['# DV2 Browser Audit', '', 'Website: ' + URL, 'Checked: ' + report.checkedUTC, 'Result: ' + (report.passed ? 'PASS' : 'REVIEW REQUIRED'), ''];
 for (const view of report.views) {
