@@ -164,6 +164,36 @@ try {
           view.errors.push('Round 2 annotation failure: ' + String(error));
         }
       }
+      // Round 3: inspect actual computed figure-ground styling and shared layout grid.
+      view.figureGround = await page.evaluate(() => {
+        const bodyBackground = getComputedStyle(document.body).backgroundColor;
+        const sections = [...document.querySelectorAll('section.section[id^="section-"]')];
+        const alignment = sections.map(section => {
+          const heading = section.querySelector('.section-heading');
+          const card = section.querySelector('.vis-card');
+          if (!heading || !card) return {id:section.id, found:false};
+          const h = heading.getBoundingClientRect();
+          const c = card.getBoundingClientRect();
+          return {id:section.id, found:true, leftGap:Math.round(Math.abs(h.left-c.left)), width:Math.round(c.width)};
+        });
+        const aside = document.querySelector('.dv2-story-aside');
+        const note = document.querySelector('.source-note');
+        const card = document.querySelector('#section-09 .vis-card');
+        return {
+          bodyBackground,
+          asideRule: aside ? getComputedStyle(aside).borderLeftColor : null,
+          noteRule: note ? getComputedStyle(note).borderTopStyle : null,
+          chartBackground: card ? getComputedStyle(card).backgroundColor : null,
+          alignment
+        };
+      });
+      if (view.figureGround.bodyBackground !== 'rgb(245, 247, 248)' ||
+          view.figureGround.asideRule !== 'rgb(183, 196, 203)' ||
+          view.figureGround.chartBackground !== 'rgb(255, 255, 255)' ||
+          view.figureGround.noteRule !== 'solid' ||
+          view.figureGround.alignment.some(item => !item.found || item.leftGap > 10 || item.width < 350)) {
+        view.errors.push('Figure-ground and layout alignment regression: ' + JSON.stringify(view.figureGround));
+      }
       if (config.name === 'desktop') {
         // Rubric-specific regressions: honesty of annotations, scale, byline and selected sample.
         const checkContent = await page.evaluate(() => {
@@ -274,7 +304,7 @@ report.passed = report.views.every(view =>
   view.chartResults.length === 14 &&
   view.chartResults.every(chart => chart.rendered && (view.viewport.width < 1024 || !chart.internalOverflow)) &&
   !view.overflow?.overflowing &&
-  !view.errors.some(error => /Navigation:|Uncaught|could not render|failed to render|Story order mismatch|Rubric-specific|Stale embed script|Chart 11 spec is stale|Butterfly text visibility|Chart 7 KPI|Chart 7 species|Dynamic story failed|Round 2 annotation failure/i.test(error))
+  !view.errors.some(error => /Navigation:|Uncaught|could not render|failed to render|Story order mismatch|Rubric-specific|Stale embed script|Chart 11 spec is stale|Butterfly text visibility|Chart 7 KPI|Chart 7 species|Dynamic story failed|Round 2 annotation failure|Figure-ground and layout alignment regression/i.test(error))
 );
 const lines = ['# DV2 Browser Audit', '', 'Website: ' + URL, 'Checked: ' + report.checkedUTC, 'Result: ' + (report.passed ? 'PASS' : 'REVIEW REQUIRED'), ''];
 for (const view of report.views) {
