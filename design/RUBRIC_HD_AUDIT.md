@@ -56,3 +56,11 @@
 - Simplified the Chart 13 and Chart 14 questions for general readers. Scoped Townsville's averages to one centre and an unsegmented source.
 - Added a browser regression test checking whether Chart 8 (jurisdiction) and Chart 9 (species metric) sidebar findings change with the selector.
 - **Remaining review:** perform human visual inspection of all callouts and graphics; do not claim a 5/5 until the final rendered version is confirmed accessible, engaging and coherent.
+
+## Round 2, final close-up review
+
+- Choropleth: dynamic labels show the reported live-release rates for WA and Tasmania, sourced from map data and updated when the species selector changes.
+- Location map: two unobtrusive in-chart labels state that the 18 facilities are selected verified examples, **not** the full RSPCA facility population.
+- Townsville streamgraph: two in-band peak labels calculate their months and averages via a grouped maximum (Reclaims: May 84.4; Adoptions: December 100.4).
+- Live browser regression checks verify that the labels are visible and that switching to Cats updates the choropleth numbers.
+- No numeric records, category palettes, or existing legend definitions were changed. Inspect both laptop and desktop screenshots before claiming the aesthetic is finished.

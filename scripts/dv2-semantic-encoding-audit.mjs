@@ -7,6 +7,9 @@ const expect = (ok, message) => { if (!ok) failures.push(message); };
 
 const files = {
   map: json('charts/map_caseload_symbols.vg.json'),
+  mapLrr: json('charts/map_live_release.vg.json'),
+  mapFacilities: json('charts/map_rspca_locations.vg.json'),
+  seasonal: json('charts/chart13_townsville_seasonality.vg.json'),
   heat: json('charts/chart7_outcome_heatmap.vg.json'),
   comparison: json('charts/connected_dot_lrr.vg.json'),
   butterfly: json('charts/chart5_compare.vg.json'),
@@ -57,6 +60,24 @@ const relativeLuminance = hex => {
 };
 const contrast = (relativeLuminance(grey[1])+0.05)/(relativeLuminance('#173642')+0.05);
 expect(contrast >= 4.5, 'Chart 7 minimum text contrast must exceed 4.5:1');
+// Round 2: direct annotations reflect each plotted data source and selection.
+expect(files.mapLrr.layer?.length === 3 &&
+  files.mapLrr.layer.slice(1).every(layer => layer.transform.some(t =>
+    t.calculate?.includes("Species_selection"))),
+  'Choropleth direct rate labels must be bound to the species selector');
+expect(files.mapFacilities.layer?.length === 4 &&
+  files.mapFacilities.layer[2].data.values[0].note === '18 verified examples',
+  'Point map must identify its 18-site sample without implying a full census');
+expect(files.seasonal.layer?.length === 3 &&
+  files.seasonal.layer.slice(1).every(layer =>
+    layer.transform.some(step => step.window?.[0]?.op === 'max')),
+  'Streamgraph labels should derive peaks from observed monthly values');
+for (const [series,month,count] of [['Reclaimed','May',84.4],['Adopted','Dec',100.4]]) {
+  const actual = files.seasonal.data.values.filter(row => row.series === series)
+    .reduce((best,row) => row.mean_count > best.mean_count ? row : best);
+  expect(actual.month === month && Math.abs(actual.mean_count - count) < 1e-8,
+    'Peak annotation must match observed mean for ' + series);
+}
 const html = read('index.html');
 expect(html.includes('pp means <em>percentage points</em>'),
   'Chart 4 must define percentage points at first use');

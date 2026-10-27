@@ -96,7 +96,7 @@ try {
 
       if (config.name === 'desktop') {
         const activeEmbedScript = await page.locator('script[src^="js/embed.js"]').getAttribute('src');
-        if (!activeEmbedScript?.includes('20261028-idiom-audit3')) {
+        if (!activeEmbedScript?.includes('20261028-fine-annotations1')) {
           view.errors.push('Stale embed script was served: ' + activeEmbedScript);
         }
         const liveLollipop = await page.evaluate(async () => {
@@ -127,6 +127,35 @@ try {
 
         if (liveLollipop.width !== 315 || liveLollipop.labels < 12) {
           view.errors.push('Chart 11 spec is stale in live site: ' + JSON.stringify(liveLollipop));
+        }
+      }
+      if (config.name === 'desktop') {
+        const labelCheck = async (id, text) => {
+          const label = page.locator('#' + id + ' svg text').filter({hasText:text});
+          if (await label.count() < 1 || !(await label.first().isVisible())) {
+            throw new Error('Missing visible annotation in ' + id + ': ' + text);
+          }
+        };
+        try {
+          await labelCheck('map-live-release', 'WA · 75.4%');
+          await labelCheck('map-live-release', 'TAS · 93.1%');
+          const mapSpecies = page.locator('#section-01 .dv2-control-toolbar select');
+          if (await mapSpecies.count() !== 1) throw new Error('Choropleth species selector missing');
+          await mapSpecies.selectOption('Cat');
+          await page.waitForFunction(() => 
+            [...document.querySelectorAll('#map-live-release svg text')]
+              .some(el => el.textContent?.includes('WA · 82.2%')),
+            {timeout: 12000});
+          await labelCheck('map-live-release', 'TAS · 82.4%');
+          await mapSpecies.selectOption('Dog');
+          await labelCheck('map-locations-plot', '18 verified examples');
+          await labelCheck('map-locations-plot', 'Selected sites, not a census');
+          await labelCheck('chart13-townsville', 'Reclaims peak · May 84.4');
+          await labelCheck('chart13-townsville', 'Adoptions peak · Dec 100.4');
+          view.rubricChecks.round2VisibleAnnotations = true;
+        } catch (error) {
+          view.rubricChecks.round2VisibleAnnotations = false;
+          view.errors.push('Round 2 annotation failure: ' + String(error));
         }
       }
       if (config.name === 'desktop') {
@@ -239,7 +268,7 @@ report.passed = report.views.every(view =>
   view.chartResults.length === 14 &&
   view.chartResults.every(chart => chart.rendered && (view.viewport.width < 1024 || !chart.internalOverflow)) &&
   !view.overflow?.overflowing &&
-  !view.errors.some(error => /Navigation:|Uncaught|could not render|failed to render|Story order mismatch|Rubric-specific|Stale embed script|Chart 11 spec is stale|Butterfly text visibility|Chart 7 KPI|Chart 7 species|Dynamic story failed/i.test(error))
+  !view.errors.some(error => /Navigation:|Uncaught|could not render|failed to render|Story order mismatch|Rubric-specific|Stale embed script|Chart 11 spec is stale|Butterfly text visibility|Chart 7 KPI|Chart 7 species|Dynamic story failed|Round 2 annotation failure/i.test(error))
 );
 const lines = ['# DV2 Browser Audit', '', 'Website: ' + URL, 'Checked: ' + report.checkedUTC, 'Result: ' + (report.passed ? 'PASS' : 'REVIEW REQUIRED'), ''];
 for (const view of report.views) {
