@@ -1,0 +1,340 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Top 12 reporting entities by counted foster placements in Victorian shelters and pounds in calendar year 2025. Counts are instances, not distinct animals.",
+  "data": {
+    "values": [
+      {
+        "reporting_entity": "The Lost Dogs Home North Melbourne",
+        "species": "Dogs",
+        "placements": 523,
+        "total_placements": 4151,
+        "calendar_year": "2025"
+      },
+      {
+        "reporting_entity": "The Lost Dogs Home North Melbourne",
+        "species": "Cats",
+        "placements": 3628,
+        "total_placements": 4151,
+        "calendar_year": "2025"
+      },
+      {
+        "reporting_entity": "The Lost Dogs Home Cranbourne",
+        "species": "Dogs",
+        "placements": 199,
+        "total_placements": 1870,
+        "calendar_year": "2025"
+      },
+      {
+        "reporting_entity": "The Lost Dogs Home Cranbourne",
+        "species": "Cats",
+        "placements": 1671,
+        "total_placements": 1870,
+        "calendar_year": "2025"
+      },
+      {
+        "reporting_entity": "Geelong Animal Welfare Society",
+        "species": "Dogs",
+        "placements": 261,
+        "total_placements": 1374,
+        "calendar_year": "2025"
+      },
+      {
+        "reporting_entity": "Geelong Animal Welfare Society",
+        "species": "Cats",
+        "placements": 1113,
+        "total_placements": 1374,
+        "calendar_year": "2025"
+      },
+      {
+        "reporting_entity": "Victorian Animal Aid Trust Coldstream",
+        "species": "Dogs",
+        "placements": 28,
+        "total_placements": 879,
+        "calendar_year": "2025"
+      },
+      {
+        "reporting_entity": "Victorian Animal Aid Trust Coldstream",
+        "species": "Cats",
+        "placements": 851,
+        "total_placements": 879,
+        "calendar_year": "2025"
+      },
+      {
+        "reporting_entity": "Forever Friends Animal Rescue",
+        "species": "Dogs",
+        "placements": 218,
+        "total_placements": 847,
+        "calendar_year": "2025"
+      },
+      {
+        "reporting_entity": "Forever Friends Animal Rescue",
+        "species": "Cats",
+        "placements": 629,
+        "total_placements": 847,
+        "calendar_year": "2025"
+      },
+      {
+        "reporting_entity": "RSPCA Burwood",
+        "species": "Dogs",
+        "placements": 239,
+        "total_placements": 831,
+        "calendar_year": "2025"
+      },
+      {
+        "reporting_entity": "RSPCA Burwood",
+        "species": "Cats",
+        "placements": 592,
+        "total_placements": 831,
+        "calendar_year": "2025"
+      },
+      {
+        "reporting_entity": "Lort Smith",
+        "species": "Dogs",
+        "placements": 93,
+        "total_placements": 811,
+        "calendar_year": "2025"
+      },
+      {
+        "reporting_entity": "Lort Smith",
+        "species": "Cats",
+        "placements": 718,
+        "total_placements": 811,
+        "calendar_year": "2025"
+      },
+      {
+        "reporting_entity": "Cat Protection Society of Victoria",
+        "species": "Dogs",
+        "placements": 0,
+        "total_placements": 784,
+        "calendar_year": "2025"
+      },
+      {
+        "reporting_entity": "Cat Protection Society of Victoria",
+        "species": "Cats",
+        "placements": 784,
+        "total_placements": 784,
+        "calendar_year": "2025"
+      },
+      {
+        "reporting_entity": "RSPCA Pearcedale",
+        "species": "Dogs",
+        "placements": 140,
+        "total_placements": 766,
+        "calendar_year": "2025"
+      },
+      {
+        "reporting_entity": "RSPCA Pearcedale",
+        "species": "Cats",
+        "placements": 626,
+        "total_placements": 766,
+        "calendar_year": "2025"
+      },
+      {
+        "reporting_entity": "Australian Animal Protection Society",
+        "species": "Dogs",
+        "placements": 297,
+        "total_placements": 718,
+        "calendar_year": "2025"
+      },
+      {
+        "reporting_entity": "Australian Animal Protection Society",
+        "species": "Cats",
+        "placements": 421,
+        "total_placements": 718,
+        "calendar_year": "2025"
+      },
+      {
+        "reporting_entity": "Second Chance Animal Rescue",
+        "species": "Dogs",
+        "placements": 181,
+        "total_placements": 448,
+        "calendar_year": "2025"
+      },
+      {
+        "reporting_entity": "Second Chance Animal Rescue",
+        "species": "Cats",
+        "placements": 267,
+        "total_placements": 448,
+        "calendar_year": "2025"
+      },
+      {
+        "reporting_entity": "City of Ballarat Animal Shelter",
+        "species": "Dogs",
+        "placements": 106,
+        "total_placements": 318,
+        "calendar_year": "2025"
+      },
+      {
+        "reporting_entity": "City of Ballarat Animal Shelter",
+        "species": "Cats",
+        "placements": 212,
+        "total_placements": 318,
+        "calendar_year": "2025"
+      }
+    ]
+  },
+  "background": "#ffffff",
+  "title": {
+    "text": "Where was foster care most frequently recorded?",
+    "subtitle": [
+      "Victoria shelter/pound reports, 2025. Top 12 reporting entities by total placements.",
+      "Dogs and cats share the same numerical scale. Counts are placements, not unique animals."
+    ],
+    "font": "Helvetica, Arial, sans-serif",
+    "subtitleFont": "Helvetica, Arial, sans-serif",
+    "fontSize": 18,
+    "subtitleFontSize": 12,
+    "anchor": "start"
+  },
+  "facet": {
+    "column": {
+      "field": "species",
+      "type": "nominal",
+      "sort": [
+        "Dogs",
+        "Cats"
+      ],
+      "header": {
+        "title": null,
+        "labelFont": "Helvetica, Arial, sans-serif",
+        "labelFontSize": 15,
+        "labelColor": "#173642",
+        "labelFontWeight": "bold"
+      }
+    }
+  },
+  "spec": {
+    "width": 340,
+    "height": {
+      "step": 29
+    },
+    "encoding": {
+      "y": {
+        "field": "reporting_entity",
+        "type": "nominal",
+        "sort": [
+          "The Lost Dogs Home North Melbourne",
+          "The Lost Dogs Home Cranbourne",
+          "Geelong Animal Welfare Society",
+          "Victorian Animal Aid Trust Coldstream",
+          "Forever Friends Animal Rescue",
+          "RSPCA Burwood",
+          "Lort Smith",
+          "Cat Protection Society of Victoria",
+          "RSPCA Pearcedale",
+          "Australian Animal Protection Society",
+          "Second Chance Animal Rescue",
+          "City of Ballarat Animal Shelter"
+        ],
+        "title": null,
+        "axis": {
+          "labelFontSize": 11,
+          "labelLimit": 175,
+          "ticks": false,
+          "domain": false
+        }
+      },
+      "x": {
+        "field": "placements",
+        "type": "quantitative",
+        "title": "Foster-care placements (instances)",
+        "scale": {
+          "zero": true
+        },
+        "axis": {
+          "format": ",d",
+          "tickCount": 5,
+          "labelFontSize": 12,
+          "grid": true,
+          "gridColor": "#e4eceb",
+          "titleFontSize": 12
+        }
+      },
+      "color": {
+        "field": "species",
+        "type": "nominal",
+        "scale": {
+          "domain": [
+            "Dogs",
+            "Cats"
+          ],
+          "range": [
+            "#235789",
+            "#C46A2D"
+          ]
+        },
+        "legend": null
+      }
+    },
+    "layer": [
+      {
+        "mark": {
+          "type": "rule",
+          "strokeWidth": 2,
+          "opacity": 0.6
+        },
+        "encoding": {
+          "x2": {
+            "datum": 0
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "point",
+          "filled": true,
+          "size": 115,
+          "stroke": "#ffffff",
+          "strokeWidth": 1
+        },
+        "encoding": {
+          "tooltip": [
+            {
+              "field": "reporting_entity",
+              "type": "nominal",
+              "title": "Reporting entity"
+            },
+            {
+              "field": "species",
+              "type": "nominal",
+              "title": "Species"
+            },
+            {
+              "field": "placements",
+              "type": "quantitative",
+              "title": "Foster placements",
+              "format": ","
+            },
+            {
+              "field": "total_placements",
+              "type": "quantitative",
+              "title": "Dogs + cats placements",
+              "format": ","
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "resolve": {
+    "scale": {
+      "x": "shared"
+    }
+  },
+  "config": {
+    "font": "Helvetica, Arial, sans-serif",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#52666f",
+      "titleColor": "#173642"
+    },
+    "title": {
+      "font": "Helvetica, Arial, sans-serif",
+      "subtitleFont": "Helvetica, Arial, sans-serif",
+      "color": "#173642",
+      "subtitleColor": "#607077"
+    }
+  }
+}

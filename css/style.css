@@ -536,3 +536,7 @@ body {
   min-width: 990px;
 }
 /* CHART10 LAYOUT END */
+
+/* CHART11 RESPONSIVE FACETS */
+.chart11-scroll { overflow-x: auto; }
+#chart11-foster { min-width: 1120px; }

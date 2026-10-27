@@ -114,3 +114,12 @@ vegaEmbed("#chart8-annual-caseload", "charts/chart8_annual_caseload.vg.json?v=20
   }
 })();
 /* CHART10 EMBED END */
+
+/* CHART11 EMBED START */
+vegaEmbed('#chart11-foster','charts/chart11_foster_lollipop.vg.json?v=20261027-chart11',{actions:false,renderer:'svg'})
+  .catch(function(err){
+    console.error('Chart 11 error:',err);
+    const el=document.getElementById('chart11-foster');
+    if(el) el.textContent='Chart 11 could not render. Check the browser console.';
+  });
+/* CHART11 EMBED END */
