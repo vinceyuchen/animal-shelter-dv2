@@ -106,6 +106,25 @@ try {
           return {width:spec.spec?.width,labels:spec.spec?.encoding?.y?.axis?.labelFontSize};
         });
         view.assetVersion = {embedScript:activeEmbedScript,chart11:liveLollipop};
+        // An SVG can render successfully while its annotations inherit the wrong
+        // species fill colour and disappear against the bars. Verify the glyphs.
+        const butterflyLabels = await page.locator('#butterfly-euthanasia svg text').evaluateAll(nodes => {
+          const find = target => nodes.find(node => node.textContent?.trim() === target);
+          const dog = find('59.7%'), cat = find('46.7%');
+          return {
+            dogVisible: !!dog,
+            catVisible: !!cat,
+            dogFill: dog ? getComputedStyle(dog).fill : null,
+            catFill: cat ? getComputedStyle(cat).fill : null
+          };
+        });
+        view.rubricChecks = {...(view.rubricChecks || {}), butterflyLabels};
+        if (!butterflyLabels.dogVisible || !butterflyLabels.catVisible ||
+            butterflyLabels.dogFill !== 'rgb(255, 255, 255)' ||
+            butterflyLabels.catFill !== 'rgb(23, 54, 66)') {
+          view.errors.push('Butterfly text visibility/colour regression: ' + JSON.stringify(butterflyLabels));
+        }
+
         if (liveLollipop.width !== 315 || liveLollipop.labels < 12) {
           view.errors.push('Chart 11 spec is stale in live site: ' + JSON.stringify(liveLollipop));
         }
@@ -198,7 +217,7 @@ report.passed = report.views.every(view =>
   view.chartResults.length === 14 &&
   view.chartResults.every(chart => chart.rendered && (view.viewport.width < 1024 || !chart.internalOverflow)) &&
   !view.overflow?.overflowing &&
-  !view.errors.some(error => /Navigation:|Uncaught|could not render|failed to render|Story order mismatch|Rubric-specific|Chart 7 KPI|Chart 7 species/i.test(error))
+  !view.errors.some(error => /Navigation:|Uncaught|could not render|failed to render|Story order mismatch|Rubric-specific|Stale embed script|Chart 11 spec is stale|Butterfly text visibility|Chart 7 KPI|Chart 7 species/i.test(error))
 );
 const lines = ['# DV2 Browser Audit', '', 'Website: ' + URL, 'Checked: ' + report.checkedUTC, 'Result: ' + (report.passed ? 'PASS' : 'REVIEW REQUIRED'), ''];
 for (const view of report.views) {
