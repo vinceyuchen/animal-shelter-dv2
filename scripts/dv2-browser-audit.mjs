@@ -19,6 +19,7 @@ const charts = [
   ['11','Foster care lollipop','chart11-foster'],
   ['12','Cat share slope','chart12-cat-share-slope'],
   ['13','Townsville streamgraph','chart13-townsville'],
+  ['14','Victoria foster concentration treemap','chart14-foster-treemap'],
 ];
 
 const browser = await chromium.launch({ headless: true });
@@ -48,7 +49,7 @@ try {
       const response = await page.goto(URL, { waitUntil: 'domcontentloaded', timeout: 60000 });
       view.httpStatus = response?.status() ?? null;
       await page.waitForFunction(
-        () => document.querySelectorAll('.vega-embed svg, .vega-embed canvas').length >= 13,
+        () => document.querySelectorAll('.vega-embed svg, .vega-embed canvas').length  >= 14,
         { timeout: 45000 }
       ).catch(() => {});
       await page.waitForTimeout(1000);
@@ -107,7 +108,7 @@ try {
 
 report.passed = report.views.every(view =>
   view.httpStatus === 200 &&
-  view.chartResults.length === 13 &&
+  view.chartResults.length === 14 &&
   view.chartResults.every(chart => chart.rendered) &&
   !view.overflow?.overflowing &&
   !view.errors.some(error => /Navigation:|Uncaught|could not render|failed to render/i.test(error))
