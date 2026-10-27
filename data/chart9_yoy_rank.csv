@@ -1,0 +1,73 @@
+metric,financial_year,year_order,state,state_name,rank,current_count,previous_count,change_pct
+Dogs + cats,2021-22,1,TAS,Tasmania,1,1483,1080,37.3148
+Dogs + cats,2021-22,1,WA,Western Australia,2,1721,1444,19.1828
+Dogs + cats,2021-22,1,SA,South Australia,3,8479,7508,12.9329
+Dogs + cats,2021-22,1,ACT,ACT,4,2101,2383,-11.8338
+Dogs + cats,2021-22,1,QLD,Queensland,5,15992,18407,-13.12
+Dogs + cats,2021-22,1,VIC,Victoria,6,10377,13000,-20.1769
+Dogs + cats,2022-23,2,TAS,Tasmania,1,1714,1483,15.5765
+Dogs + cats,2022-23,2,ACT,ACT,2,2395,2101,13.9933
+Dogs + cats,2022-23,2,WA,Western Australia,3,1866,1721,8.4253
+Dogs + cats,2022-23,2,QLD,Queensland,4,15691,15992,-1.8822
+Dogs + cats,2022-23,2,VIC,Victoria,5,9865,10377,-4.934
+Dogs + cats,2022-23,2,SA,South Australia,6,8033,8479,-5.2601
+Dogs + cats,2023-24,3,ACT,ACT,1,2741,2395,14.4468
+Dogs + cats,2023-24,3,WA,Western Australia,2,1821,1866,-2.4116
+Dogs + cats,2023-24,3,QLD,Queensland,3,14181,15691,-9.6234
+Dogs + cats,2023-24,3,VIC,Victoria,4,7161,9865,-27.41
+Dogs + cats,2023-24,3,TAS,Tasmania,5,1193,1714,-30.3967
+Dogs + cats,2023-24,3,SA,South Australia,6,4847,8033,-39.6614
+Dogs + cats,2024-25,4,SA,South Australia,1,5318,4847,9.7174
+Dogs + cats,2024-25,4,WA,Western Australia,2,1895,1821,4.0637
+Dogs + cats,2024-25,4,QLD,Queensland,3,14420,14181,1.6854
+Dogs + cats,2024-25,4,ACT,ACT,4,2530,2741,-7.6979
+Dogs + cats,2024-25,4,TAS,Tasmania,5,1079,1193,-9.5557
+Dogs + cats,2024-25,4,VIC,Victoria,6,5845,7161,-18.3773
+Dogs,2021-22,1,WA,Western Australia,1,823,718,14.624
+Dogs,2021-22,1,TAS,Tasmania,2,118,109,8.2569
+Dogs,2021-22,1,SA,South Australia,3,2242,2257,-0.6646
+Dogs,2021-22,1,ACT,ACT,4,600,617,-2.7553
+Dogs,2021-22,1,VIC,Victoria,5,3547,3909,-9.2607
+Dogs,2021-22,1,QLD,Queensland,6,6359,7424,-14.3454
+Dogs,2022-23,2,TAS,Tasmania,1,162,118,37.2881
+Dogs,2022-23,2,WA,Western Australia,2,898,823,9.113
+Dogs,2022-23,2,SA,South Australia,3,2396,2242,6.8689
+Dogs,2022-23,2,ACT,ACT,4,641,600,6.8333
+Dogs,2022-23,2,QLD,Queensland,5,6637,6359,4.3718
+Dogs,2022-23,2,VIC,Victoria,6,3283,3547,-7.4429
+Dogs,2023-24,3,ACT,ACT,1,676,641,5.4602
+Dogs,2023-24,3,WA,Western Australia,2,903,898,0.5568
+Dogs,2023-24,3,QLD,Queensland,3,6531,6637,-1.5971
+Dogs,2023-24,3,TAS,Tasmania,4,130,162,-19.7531
+Dogs,2023-24,3,VIC,Victoria,5,2550,3283,-22.3271
+Dogs,2023-24,3,SA,South Australia,6,1814,2396,-24.2905
+Dogs,2024-25,4,TAS,Tasmania,1,379,130,191.5385
+Dogs,2024-25,4,SA,South Australia,2,1963,1814,8.2139
+Dogs,2024-25,4,WA,Western Australia,3,975,903,7.9734
+Dogs,2024-25,4,QLD,Queensland,4,6401,6531,-1.9905
+Dogs,2024-25,4,ACT,ACT,5,595,676,-11.9822
+Dogs,2024-25,4,VIC,Victoria,6,2015,2550,-20.9804
+Cats,2021-22,1,TAS,Tasmania,1,1365,971,40.5767
+Cats,2021-22,1,WA,Western Australia,2,898,726,23.6915
+Cats,2021-22,1,SA,South Australia,3,6237,5251,18.7774
+Cats,2021-22,1,QLD,Queensland,4,9633,10983,-12.2917
+Cats,2021-22,1,ACT,ACT,5,1501,1766,-15.0057
+Cats,2021-22,1,VIC,Victoria,6,6830,9091,-24.8708
+Cats,2022-23,2,ACT,ACT,1,1754,1501,16.8554
+Cats,2022-23,2,TAS,Tasmania,2,1552,1365,13.6996
+Cats,2022-23,2,WA,Western Australia,3,968,898,7.7951
+Cats,2022-23,2,VIC,Victoria,4,6582,6830,-3.631
+Cats,2022-23,2,QLD,Queensland,5,9054,9633,-6.0106
+Cats,2022-23,2,SA,South Australia,6,5637,6237,-9.62
+Cats,2023-24,3,ACT,ACT,1,2065,1754,17.7309
+Cats,2023-24,3,WA,Western Australia,2,918,968,-5.1653
+Cats,2023-24,3,QLD,Queensland,3,7650,9054,-15.507
+Cats,2023-24,3,VIC,Victoria,4,4611,6582,-29.9453
+Cats,2023-24,3,TAS,Tasmania,5,1063,1552,-31.5077
+Cats,2023-24,3,SA,South Australia,6,3033,5637,-46.1948
+Cats,2024-25,4,SA,South Australia,1,3355,3033,10.6166
+Cats,2024-25,4,QLD,Queensland,2,8019,7650,4.8235
+Cats,2024-25,4,WA,Western Australia,3,920,918,0.2179
+Cats,2024-25,4,ACT,ACT,4,1935,2065,-6.2954
+Cats,2024-25,4,VIC,Victoria,5,3830,4611,-16.9378
+Cats,2024-25,4,TAS,Tasmania,6,700,1063,-34.1486

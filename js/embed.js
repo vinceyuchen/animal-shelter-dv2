@@ -65,3 +65,27 @@ vegaEmbed("#chart8-annual-caseload", "charts/chart8_annual_caseload.vg.json?v=20
     if(el) el.textContent="Chart 8 could not render. See the browser console.";
   });
 /* CHART8 EMBED END */
+
+/* CHART9 EMBED START */
+(function() {
+  function renderChart9() {
+    const host = document.getElementById("chart9-yoy-bump");
+    if (!host) return;
+    vegaEmbed(
+      "#chart9-yoy-bump",
+      "charts/chart9_yoy_bump.vg.json?v=20261027-chart9v1",
+      { actions: false, renderer: "svg" }
+    ).catch(function(error) {
+      console.error("Chart 9 error:", error);
+      host.textContent = "Chart 9 could not load. Check the browser console.";
+      host.style.color = "#a33b36";
+      host.style.padding = "20px";
+    });
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", renderChart9, { once: true });
+  } else {
+    renderChart9();
+  }
+})();
+/* CHART9 EMBED END */

@@ -1,0 +1,1022 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Bump chart ranking year-on-year percentage change in reported RSPCA caseloads within six selected jurisdictions, 2021-22 to 2024-25.",
+  "width": "container",
+  "height": 420,
+  "background": "#ffffff",
+  "autosize": {
+    "type": "fit-x",
+    "contains": "padding",
+    "resize": true
+  },
+  "title": {
+    "text": "Which jurisdictions had the fastest year-on-year change?",
+    "subtitle": [
+      "Rank 1 = highest percentage growth (or smallest decline) among six selected RSPCA jurisdictions.",
+      "These are changes in reported caseload, not changes in animal welfare performance."
+    ],
+    "anchor": "start",
+    "font": "Helvetica, Arial, sans-serif",
+    "subtitleFont": "Helvetica, Arial, sans-serif",
+    "fontSize": 18,
+    "subtitleFontSize": 12,
+    "subtitlePadding": 8,
+    "offset": 12
+  },
+  "data": {
+    "values": [
+      {
+        "metric": "Dogs + cats",
+        "financial_year": "2021-22",
+        "year_order": 1,
+        "state": "TAS",
+        "state_name": "Tasmania",
+        "rank": 1,
+        "current_count": 1483,
+        "previous_count": 1080,
+        "change_pct": 37.3148
+      },
+      {
+        "metric": "Dogs + cats",
+        "financial_year": "2021-22",
+        "year_order": 1,
+        "state": "WA",
+        "state_name": "Western Australia",
+        "rank": 2,
+        "current_count": 1721,
+        "previous_count": 1444,
+        "change_pct": 19.1828
+      },
+      {
+        "metric": "Dogs + cats",
+        "financial_year": "2021-22",
+        "year_order": 1,
+        "state": "SA",
+        "state_name": "South Australia",
+        "rank": 3,
+        "current_count": 8479,
+        "previous_count": 7508,
+        "change_pct": 12.9329
+      },
+      {
+        "metric": "Dogs + cats",
+        "financial_year": "2021-22",
+        "year_order": 1,
+        "state": "ACT",
+        "state_name": "ACT",
+        "rank": 4,
+        "current_count": 2101,
+        "previous_count": 2383,
+        "change_pct": -11.8338
+      },
+      {
+        "metric": "Dogs + cats",
+        "financial_year": "2021-22",
+        "year_order": 1,
+        "state": "QLD",
+        "state_name": "Queensland",
+        "rank": 5,
+        "current_count": 15992,
+        "previous_count": 18407,
+        "change_pct": -13.12
+      },
+      {
+        "metric": "Dogs + cats",
+        "financial_year": "2021-22",
+        "year_order": 1,
+        "state": "VIC",
+        "state_name": "Victoria",
+        "rank": 6,
+        "current_count": 10377,
+        "previous_count": 13000,
+        "change_pct": -20.1769
+      },
+      {
+        "metric": "Dogs + cats",
+        "financial_year": "2022-23",
+        "year_order": 2,
+        "state": "TAS",
+        "state_name": "Tasmania",
+        "rank": 1,
+        "current_count": 1714,
+        "previous_count": 1483,
+        "change_pct": 15.5765
+      },
+      {
+        "metric": "Dogs + cats",
+        "financial_year": "2022-23",
+        "year_order": 2,
+        "state": "ACT",
+        "state_name": "ACT",
+        "rank": 2,
+        "current_count": 2395,
+        "previous_count": 2101,
+        "change_pct": 13.9933
+      },
+      {
+        "metric": "Dogs + cats",
+        "financial_year": "2022-23",
+        "year_order": 2,
+        "state": "WA",
+        "state_name": "Western Australia",
+        "rank": 3,
+        "current_count": 1866,
+        "previous_count": 1721,
+        "change_pct": 8.4253
+      },
+      {
+        "metric": "Dogs + cats",
+        "financial_year": "2022-23",
+        "year_order": 2,
+        "state": "QLD",
+        "state_name": "Queensland",
+        "rank": 4,
+        "current_count": 15691,
+        "previous_count": 15992,
+        "change_pct": -1.8822
+      },
+      {
+        "metric": "Dogs + cats",
+        "financial_year": "2022-23",
+        "year_order": 2,
+        "state": "VIC",
+        "state_name": "Victoria",
+        "rank": 5,
+        "current_count": 9865,
+        "previous_count": 10377,
+        "change_pct": -4.934
+      },
+      {
+        "metric": "Dogs + cats",
+        "financial_year": "2022-23",
+        "year_order": 2,
+        "state": "SA",
+        "state_name": "South Australia",
+        "rank": 6,
+        "current_count": 8033,
+        "previous_count": 8479,
+        "change_pct": -5.2601
+      },
+      {
+        "metric": "Dogs + cats",
+        "financial_year": "2023-24",
+        "year_order": 3,
+        "state": "ACT",
+        "state_name": "ACT",
+        "rank": 1,
+        "current_count": 2741,
+        "previous_count": 2395,
+        "change_pct": 14.4468
+      },
+      {
+        "metric": "Dogs + cats",
+        "financial_year": "2023-24",
+        "year_order": 3,
+        "state": "WA",
+        "state_name": "Western Australia",
+        "rank": 2,
+        "current_count": 1821,
+        "previous_count": 1866,
+        "change_pct": -2.4116
+      },
+      {
+        "metric": "Dogs + cats",
+        "financial_year": "2023-24",
+        "year_order": 3,
+        "state": "QLD",
+        "state_name": "Queensland",
+        "rank": 3,
+        "current_count": 14181,
+        "previous_count": 15691,
+        "change_pct": -9.6234
+      },
+      {
+        "metric": "Dogs + cats",
+        "financial_year": "2023-24",
+        "year_order": 3,
+        "state": "VIC",
+        "state_name": "Victoria",
+        "rank": 4,
+        "current_count": 7161,
+        "previous_count": 9865,
+        "change_pct": -27.41
+      },
+      {
+        "metric": "Dogs + cats",
+        "financial_year": "2023-24",
+        "year_order": 3,
+        "state": "TAS",
+        "state_name": "Tasmania",
+        "rank": 5,
+        "current_count": 1193,
+        "previous_count": 1714,
+        "change_pct": -30.3967
+      },
+      {
+        "metric": "Dogs + cats",
+        "financial_year": "2023-24",
+        "year_order": 3,
+        "state": "SA",
+        "state_name": "South Australia",
+        "rank": 6,
+        "current_count": 4847,
+        "previous_count": 8033,
+        "change_pct": -39.6614
+      },
+      {
+        "metric": "Dogs + cats",
+        "financial_year": "2024-25",
+        "year_order": 4,
+        "state": "SA",
+        "state_name": "South Australia",
+        "rank": 1,
+        "current_count": 5318,
+        "previous_count": 4847,
+        "change_pct": 9.7174
+      },
+      {
+        "metric": "Dogs + cats",
+        "financial_year": "2024-25",
+        "year_order": 4,
+        "state": "WA",
+        "state_name": "Western Australia",
+        "rank": 2,
+        "current_count": 1895,
+        "previous_count": 1821,
+        "change_pct": 4.0637
+      },
+      {
+        "metric": "Dogs + cats",
+        "financial_year": "2024-25",
+        "year_order": 4,
+        "state": "QLD",
+        "state_name": "Queensland",
+        "rank": 3,
+        "current_count": 14420,
+        "previous_count": 14181,
+        "change_pct": 1.6854
+      },
+      {
+        "metric": "Dogs + cats",
+        "financial_year": "2024-25",
+        "year_order": 4,
+        "state": "ACT",
+        "state_name": "ACT",
+        "rank": 4,
+        "current_count": 2530,
+        "previous_count": 2741,
+        "change_pct": -7.6979
+      },
+      {
+        "metric": "Dogs + cats",
+        "financial_year": "2024-25",
+        "year_order": 4,
+        "state": "TAS",
+        "state_name": "Tasmania",
+        "rank": 5,
+        "current_count": 1079,
+        "previous_count": 1193,
+        "change_pct": -9.5557
+      },
+      {
+        "metric": "Dogs + cats",
+        "financial_year": "2024-25",
+        "year_order": 4,
+        "state": "VIC",
+        "state_name": "Victoria",
+        "rank": 6,
+        "current_count": 5845,
+        "previous_count": 7161,
+        "change_pct": -18.3773
+      },
+      {
+        "metric": "Dogs",
+        "financial_year": "2021-22",
+        "year_order": 1,
+        "state": "WA",
+        "state_name": "Western Australia",
+        "rank": 1,
+        "current_count": 823,
+        "previous_count": 718,
+        "change_pct": 14.624
+      },
+      {
+        "metric": "Dogs",
+        "financial_year": "2021-22",
+        "year_order": 1,
+        "state": "TAS",
+        "state_name": "Tasmania",
+        "rank": 2,
+        "current_count": 118,
+        "previous_count": 109,
+        "change_pct": 8.2569
+      },
+      {
+        "metric": "Dogs",
+        "financial_year": "2021-22",
+        "year_order": 1,
+        "state": "SA",
+        "state_name": "South Australia",
+        "rank": 3,
+        "current_count": 2242,
+        "previous_count": 2257,
+        "change_pct": -0.6646
+      },
+      {
+        "metric": "Dogs",
+        "financial_year": "2021-22",
+        "year_order": 1,
+        "state": "ACT",
+        "state_name": "ACT",
+        "rank": 4,
+        "current_count": 600,
+        "previous_count": 617,
+        "change_pct": -2.7553
+      },
+      {
+        "metric": "Dogs",
+        "financial_year": "2021-22",
+        "year_order": 1,
+        "state": "VIC",
+        "state_name": "Victoria",
+        "rank": 5,
+        "current_count": 3547,
+        "previous_count": 3909,
+        "change_pct": -9.2607
+      },
+      {
+        "metric": "Dogs",
+        "financial_year": "2021-22",
+        "year_order": 1,
+        "state": "QLD",
+        "state_name": "Queensland",
+        "rank": 6,
+        "current_count": 6359,
+        "previous_count": 7424,
+        "change_pct": -14.3454
+      },
+      {
+        "metric": "Dogs",
+        "financial_year": "2022-23",
+        "year_order": 2,
+        "state": "TAS",
+        "state_name": "Tasmania",
+        "rank": 1,
+        "current_count": 162,
+        "previous_count": 118,
+        "change_pct": 37.2881
+      },
+      {
+        "metric": "Dogs",
+        "financial_year": "2022-23",
+        "year_order": 2,
+        "state": "WA",
+        "state_name": "Western Australia",
+        "rank": 2,
+        "current_count": 898,
+        "previous_count": 823,
+        "change_pct": 9.113
+      },
+      {
+        "metric": "Dogs",
+        "financial_year": "2022-23",
+        "year_order": 2,
+        "state": "SA",
+        "state_name": "South Australia",
+        "rank": 3,
+        "current_count": 2396,
+        "previous_count": 2242,
+        "change_pct": 6.8689
+      },
+      {
+        "metric": "Dogs",
+        "financial_year": "2022-23",
+        "year_order": 2,
+        "state": "ACT",
+        "state_name": "ACT",
+        "rank": 4,
+        "current_count": 641,
+        "previous_count": 600,
+        "change_pct": 6.8333
+      },
+      {
+        "metric": "Dogs",
+        "financial_year": "2022-23",
+        "year_order": 2,
+        "state": "QLD",
+        "state_name": "Queensland",
+        "rank": 5,
+        "current_count": 6637,
+        "previous_count": 6359,
+        "change_pct": 4.3718
+      },
+      {
+        "metric": "Dogs",
+        "financial_year": "2022-23",
+        "year_order": 2,
+        "state": "VIC",
+        "state_name": "Victoria",
+        "rank": 6,
+        "current_count": 3283,
+        "previous_count": 3547,
+        "change_pct": -7.4429
+      },
+      {
+        "metric": "Dogs",
+        "financial_year": "2023-24",
+        "year_order": 3,
+        "state": "ACT",
+        "state_name": "ACT",
+        "rank": 1,
+        "current_count": 676,
+        "previous_count": 641,
+        "change_pct": 5.4602
+      },
+      {
+        "metric": "Dogs",
+        "financial_year": "2023-24",
+        "year_order": 3,
+        "state": "WA",
+        "state_name": "Western Australia",
+        "rank": 2,
+        "current_count": 903,
+        "previous_count": 898,
+        "change_pct": 0.5568
+      },
+      {
+        "metric": "Dogs",
+        "financial_year": "2023-24",
+        "year_order": 3,
+        "state": "QLD",
+        "state_name": "Queensland",
+        "rank": 3,
+        "current_count": 6531,
+        "previous_count": 6637,
+        "change_pct": -1.5971
+      },
+      {
+        "metric": "Dogs",
+        "financial_year": "2023-24",
+        "year_order": 3,
+        "state": "TAS",
+        "state_name": "Tasmania",
+        "rank": 4,
+        "current_count": 130,
+        "previous_count": 162,
+        "change_pct": -19.7531
+      },
+      {
+        "metric": "Dogs",
+        "financial_year": "2023-24",
+        "year_order": 3,
+        "state": "VIC",
+        "state_name": "Victoria",
+        "rank": 5,
+        "current_count": 2550,
+        "previous_count": 3283,
+        "change_pct": -22.3271
+      },
+      {
+        "metric": "Dogs",
+        "financial_year": "2023-24",
+        "year_order": 3,
+        "state": "SA",
+        "state_name": "South Australia",
+        "rank": 6,
+        "current_count": 1814,
+        "previous_count": 2396,
+        "change_pct": -24.2905
+      },
+      {
+        "metric": "Dogs",
+        "financial_year": "2024-25",
+        "year_order": 4,
+        "state": "TAS",
+        "state_name": "Tasmania",
+        "rank": 1,
+        "current_count": 379,
+        "previous_count": 130,
+        "change_pct": 191.5385
+      },
+      {
+        "metric": "Dogs",
+        "financial_year": "2024-25",
+        "year_order": 4,
+        "state": "SA",
+        "state_name": "South Australia",
+        "rank": 2,
+        "current_count": 1963,
+        "previous_count": 1814,
+        "change_pct": 8.2139
+      },
+      {
+        "metric": "Dogs",
+        "financial_year": "2024-25",
+        "year_order": 4,
+        "state": "WA",
+        "state_name": "Western Australia",
+        "rank": 3,
+        "current_count": 975,
+        "previous_count": 903,
+        "change_pct": 7.9734
+      },
+      {
+        "metric": "Dogs",
+        "financial_year": "2024-25",
+        "year_order": 4,
+        "state": "QLD",
+        "state_name": "Queensland",
+        "rank": 4,
+        "current_count": 6401,
+        "previous_count": 6531,
+        "change_pct": -1.9905
+      },
+      {
+        "metric": "Dogs",
+        "financial_year": "2024-25",
+        "year_order": 4,
+        "state": "ACT",
+        "state_name": "ACT",
+        "rank": 5,
+        "current_count": 595,
+        "previous_count": 676,
+        "change_pct": -11.9822
+      },
+      {
+        "metric": "Dogs",
+        "financial_year": "2024-25",
+        "year_order": 4,
+        "state": "VIC",
+        "state_name": "Victoria",
+        "rank": 6,
+        "current_count": 2015,
+        "previous_count": 2550,
+        "change_pct": -20.9804
+      },
+      {
+        "metric": "Cats",
+        "financial_year": "2021-22",
+        "year_order": 1,
+        "state": "TAS",
+        "state_name": "Tasmania",
+        "rank": 1,
+        "current_count": 1365,
+        "previous_count": 971,
+        "change_pct": 40.5767
+      },
+      {
+        "metric": "Cats",
+        "financial_year": "2021-22",
+        "year_order": 1,
+        "state": "WA",
+        "state_name": "Western Australia",
+        "rank": 2,
+        "current_count": 898,
+        "previous_count": 726,
+        "change_pct": 23.6915
+      },
+      {
+        "metric": "Cats",
+        "financial_year": "2021-22",
+        "year_order": 1,
+        "state": "SA",
+        "state_name": "South Australia",
+        "rank": 3,
+        "current_count": 6237,
+        "previous_count": 5251,
+        "change_pct": 18.7774
+      },
+      {
+        "metric": "Cats",
+        "financial_year": "2021-22",
+        "year_order": 1,
+        "state": "QLD",
+        "state_name": "Queensland",
+        "rank": 4,
+        "current_count": 9633,
+        "previous_count": 10983,
+        "change_pct": -12.2917
+      },
+      {
+        "metric": "Cats",
+        "financial_year": "2021-22",
+        "year_order": 1,
+        "state": "ACT",
+        "state_name": "ACT",
+        "rank": 5,
+        "current_count": 1501,
+        "previous_count": 1766,
+        "change_pct": -15.0057
+      },
+      {
+        "metric": "Cats",
+        "financial_year": "2021-22",
+        "year_order": 1,
+        "state": "VIC",
+        "state_name": "Victoria",
+        "rank": 6,
+        "current_count": 6830,
+        "previous_count": 9091,
+        "change_pct": -24.8708
+      },
+      {
+        "metric": "Cats",
+        "financial_year": "2022-23",
+        "year_order": 2,
+        "state": "ACT",
+        "state_name": "ACT",
+        "rank": 1,
+        "current_count": 1754,
+        "previous_count": 1501,
+        "change_pct": 16.8554
+      },
+      {
+        "metric": "Cats",
+        "financial_year": "2022-23",
+        "year_order": 2,
+        "state": "TAS",
+        "state_name": "Tasmania",
+        "rank": 2,
+        "current_count": 1552,
+        "previous_count": 1365,
+        "change_pct": 13.6996
+      },
+      {
+        "metric": "Cats",
+        "financial_year": "2022-23",
+        "year_order": 2,
+        "state": "WA",
+        "state_name": "Western Australia",
+        "rank": 3,
+        "current_count": 968,
+        "previous_count": 898,
+        "change_pct": 7.7951
+      },
+      {
+        "metric": "Cats",
+        "financial_year": "2022-23",
+        "year_order": 2,
+        "state": "VIC",
+        "state_name": "Victoria",
+        "rank": 4,
+        "current_count": 6582,
+        "previous_count": 6830,
+        "change_pct": -3.631
+      },
+      {
+        "metric": "Cats",
+        "financial_year": "2022-23",
+        "year_order": 2,
+        "state": "QLD",
+        "state_name": "Queensland",
+        "rank": 5,
+        "current_count": 9054,
+        "previous_count": 9633,
+        "change_pct": -6.0106
+      },
+      {
+        "metric": "Cats",
+        "financial_year": "2022-23",
+        "year_order": 2,
+        "state": "SA",
+        "state_name": "South Australia",
+        "rank": 6,
+        "current_count": 5637,
+        "previous_count": 6237,
+        "change_pct": -9.62
+      },
+      {
+        "metric": "Cats",
+        "financial_year": "2023-24",
+        "year_order": 3,
+        "state": "ACT",
+        "state_name": "ACT",
+        "rank": 1,
+        "current_count": 2065,
+        "previous_count": 1754,
+        "change_pct": 17.7309
+      },
+      {
+        "metric": "Cats",
+        "financial_year": "2023-24",
+        "year_order": 3,
+        "state": "WA",
+        "state_name": "Western Australia",
+        "rank": 2,
+        "current_count": 918,
+        "previous_count": 968,
+        "change_pct": -5.1653
+      },
+      {
+        "metric": "Cats",
+        "financial_year": "2023-24",
+        "year_order": 3,
+        "state": "QLD",
+        "state_name": "Queensland",
+        "rank": 3,
+        "current_count": 7650,
+        "previous_count": 9054,
+        "change_pct": -15.507
+      },
+      {
+        "metric": "Cats",
+        "financial_year": "2023-24",
+        "year_order": 3,
+        "state": "VIC",
+        "state_name": "Victoria",
+        "rank": 4,
+        "current_count": 4611,
+        "previous_count": 6582,
+        "change_pct": -29.9453
+      },
+      {
+        "metric": "Cats",
+        "financial_year": "2023-24",
+        "year_order": 3,
+        "state": "TAS",
+        "state_name": "Tasmania",
+        "rank": 5,
+        "current_count": 1063,
+        "previous_count": 1552,
+        "change_pct": -31.5077
+      },
+      {
+        "metric": "Cats",
+        "financial_year": "2023-24",
+        "year_order": 3,
+        "state": "SA",
+        "state_name": "South Australia",
+        "rank": 6,
+        "current_count": 3033,
+        "previous_count": 5637,
+        "change_pct": -46.1948
+      },
+      {
+        "metric": "Cats",
+        "financial_year": "2024-25",
+        "year_order": 4,
+        "state": "SA",
+        "state_name": "South Australia",
+        "rank": 1,
+        "current_count": 3355,
+        "previous_count": 3033,
+        "change_pct": 10.6166
+      },
+      {
+        "metric": "Cats",
+        "financial_year": "2024-25",
+        "year_order": 4,
+        "state": "QLD",
+        "state_name": "Queensland",
+        "rank": 2,
+        "current_count": 8019,
+        "previous_count": 7650,
+        "change_pct": 4.8235
+      },
+      {
+        "metric": "Cats",
+        "financial_year": "2024-25",
+        "year_order": 4,
+        "state": "WA",
+        "state_name": "Western Australia",
+        "rank": 3,
+        "current_count": 920,
+        "previous_count": 918,
+        "change_pct": 0.2179
+      },
+      {
+        "metric": "Cats",
+        "financial_year": "2024-25",
+        "year_order": 4,
+        "state": "ACT",
+        "state_name": "ACT",
+        "rank": 4,
+        "current_count": 1935,
+        "previous_count": 2065,
+        "change_pct": -6.2954
+      },
+      {
+        "metric": "Cats",
+        "financial_year": "2024-25",
+        "year_order": 4,
+        "state": "VIC",
+        "state_name": "Victoria",
+        "rank": 5,
+        "current_count": 3830,
+        "previous_count": 4611,
+        "change_pct": -16.9378
+      },
+      {
+        "metric": "Cats",
+        "financial_year": "2024-25",
+        "year_order": 4,
+        "state": "TAS",
+        "state_name": "Tasmania",
+        "rank": 6,
+        "current_count": 700,
+        "previous_count": 1063,
+        "change_pct": -34.1486
+      }
+    ]
+  },
+  "params": [
+    {
+      "name": "Chart9Metric",
+      "value": "Dogs + cats",
+      "bind": {
+        "input": "select",
+        "name": "Compare: ",
+        "options": [
+          "Dogs + cats",
+          "Dogs",
+          "Cats"
+        ],
+        "labels": [
+          "Dogs + cats",
+          "Dogs",
+          "Cats"
+        ]
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "datum.metric == Chart9Metric"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "financial_year",
+      "type": "ordinal",
+      "sort": [
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ],
+      "title": "Financial year (change from previous year)",
+      "axis": {
+        "labelAngle": 0,
+        "labelFontSize": 12,
+        "titleFontSize": 13,
+        "grid": true,
+        "gridColor": "#edf1f2",
+        "labelPadding": 10,
+        "titlePadding": 12
+      }
+    },
+    "y": {
+      "field": "rank",
+      "type": "quantitative",
+      "title": "Rank of year-on-year percentage change",
+      "scale": {
+        "domain": [
+          1,
+          6
+        ],
+        "reverse": true,
+        "nice": false,
+        "zero": false
+      },
+      "axis": {
+        "values": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "labelExpr": "'#' + datum.value",
+        "labelFontSize": 13,
+        "titleFontSize": 13,
+        "grid": true,
+        "gridColor": "#e9edef",
+        "domain": false,
+        "ticks": false,
+        "titlePadding": 12
+      }
+    },
+    "color": {
+      "field": "state",
+      "type": "nominal",
+      "title": "RSPCA jurisdiction",
+      "scale": {
+        "domain": [
+          "ACT",
+          "QLD",
+          "SA",
+          "TAS",
+          "VIC",
+          "WA"
+        ],
+        "range": [
+          "#6950A1",
+          "#07827A",
+          "#C07822",
+          "#A84677",
+          "#2B5F91",
+          "#71882E"
+        ]
+      },
+      "legend": {
+        "orient": "bottom",
+        "columns": 3,
+        "labelFontSize": 12,
+        "symbolStrokeWidth": 3,
+        "symbolSize": 150,
+        "titleFontSize": 12
+      }
+    },
+    "detail": {
+      "field": "state",
+      "type": "nominal"
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 3.3,
+        "opacity": 0.9
+      },
+      "encoding": {
+        "order": {
+          "field": "year_order",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 160,
+        "stroke": "#ffffff",
+        "strokeWidth": 1.1
+      },
+      "encoding": {
+        "tooltip": [
+          {
+            "field": "state_name",
+            "type": "nominal",
+            "title": "Jurisdiction"
+          },
+          {
+            "field": "metric",
+            "type": "nominal",
+            "title": "Animals"
+          },
+          {
+            "field": "financial_year",
+            "type": "nominal",
+            "title": "Financial year"
+          },
+          {
+            "field": "rank",
+            "type": "quantitative",
+            "title": "Growth rank"
+          },
+          {
+            "field": "change_pct",
+            "type": "quantitative",
+            "title": "Year-on-year change",
+            "format": "+.1f"
+          },
+          {
+            "field": "previous_count",
+            "type": "quantitative",
+            "title": "Previous year count",
+            "format": ","
+          },
+          {
+            "field": "current_count",
+            "type": "quantitative",
+            "title": "Current year count",
+            "format": ","
+          }
+        ]
+      }
+    }
+  ],
+  "config": {
+    "font": "Helvetica, Arial, sans-serif",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Helvetica, Arial, sans-serif",
+      "titleFont": "Helvetica, Arial, sans-serif",
+      "labelColor": "#536b73",
+      "titleColor": "#173642"
+    },
+    "legend": {
+      "labelFont": "Helvetica, Arial, sans-serif",
+      "titleFont": "Helvetica, Arial, sans-serif"
+    },
+    "title": {
+      "color": "#173642",
+      "subtitleColor": "#607077"
+    }
+  }
+}
