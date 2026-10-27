@@ -12,8 +12,8 @@
   "title": {
     "text": "Which jurisdictions had the fastest year-on-year change?",
     "subtitle": [
-      "Rank 1 = highest percentage growth (or smallest decline) among six selected RSPCA jurisdictions.",
-      "These are changes in reported caseload, not changes in animal welfare performance."
+      "Lines rank the year-on-year changes of six RSPCA jurisdictions (1 = highest growth / least decline).",
+      "End-of-line labels identify every jurisdiction. Ranking refers to reported caseload, not welfare performance."
     ],
     "anchor": "start",
     "font": "Helvetica, Arial, sans-serif",
@@ -1001,14 +1001,14 @@
     {
       "transform": [
         {
-          "filter": "datum.financial_year === '2024-25' && datum.rank === 1"
+          "filter": "datum.financial_year === '2024-25'"
         }
       ],
       "mark": {
         "type": "text",
         "align": "right",
         "dx": -10,
-        "dy": -14,
+        "dy": -13,
         "font": "Helvetica, Arial, sans-serif",
         "fontWeight": "bold",
         "fontSize": 12
@@ -1022,7 +1022,7 @@
           {
             "field": "state_name",
             "type": "nominal",
-            "title": "Top-ranked jurisdiction"
+            "title": "Jurisdiction"
           },
           {
             "field": "change_pct",
