@@ -1,0 +1,445 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Slopegraph comparing cats percentage of reported RSPCA dog and cat caseload in two financial years across six selected jurisdictions.",
+  "background": "#ffffff",
+  "width": "container",
+  "height": 455,
+  "autosize": {
+    "type": "fit-x",
+    "contains": "padding",
+    "resize": true
+  },
+  "padding": {
+    "left": 112,
+    "right": 130,
+    "top": 10,
+    "bottom": 10
+  },
+  "title": {
+    "text": "How did the share of cats change across jurisdictions?",
+    "subtitle": [
+      "Each slope joins the 2020–21 and 2024–25 shares for one RSPCA jurisdiction.",
+      "A higher line means a greater share of recorded dogs + cats were cats, not better welfare outcomes."
+    ],
+    "anchor": "start",
+    "font": "Helvetica, Arial, sans-serif",
+    "subtitleFont": "Helvetica, Arial, sans-serif",
+    "fontSize": 18,
+    "subtitleFontSize": 12,
+    "subtitlePadding": 8,
+    "offset": 12
+  },
+  "data": {
+    "values": [
+      {
+        "state": "ACT",
+        "state_name": "Australian Capital Territory",
+        "financial_year": "2020-21",
+        "year_order": 0,
+        "dogs_count": 617,
+        "cats_count": 1766,
+        "companion_total": 2383,
+        "cat_share_pct": 74.10827,
+        "endpoint_label": "ACT  74.1%",
+        "label_y": 74.10827
+      },
+      {
+        "state": "ACT",
+        "state_name": "Australian Capital Territory",
+        "financial_year": "2024-25",
+        "year_order": 1,
+        "dogs_count": 595,
+        "cats_count": 1935,
+        "companion_total": 2530,
+        "cat_share_pct": 76.48221,
+        "endpoint_label": "ACT  76.5%",
+        "label_y": 76.48221
+      },
+      {
+        "state": "QLD",
+        "state_name": "Queensland",
+        "financial_year": "2020-21",
+        "year_order": 0,
+        "dogs_count": 7424,
+        "cats_count": 10983,
+        "companion_total": 18407,
+        "cat_share_pct": 59.66752,
+        "endpoint_label": "QLD  59.7%",
+        "label_y": 59.66752
+      },
+      {
+        "state": "QLD",
+        "state_name": "Queensland",
+        "financial_year": "2024-25",
+        "year_order": 1,
+        "dogs_count": 6401,
+        "cats_count": 8019,
+        "companion_total": 14420,
+        "cat_share_pct": 55.61026,
+        "endpoint_label": "QLD  55.6%",
+        "label_y": 55.61026
+      },
+      {
+        "state": "SA",
+        "state_name": "South Australia",
+        "financial_year": "2020-21",
+        "year_order": 0,
+        "dogs_count": 2257,
+        "cats_count": 5251,
+        "companion_total": 7508,
+        "cat_share_pct": 69.93873,
+        "endpoint_label": "SA  69.9%",
+        "label_y": 69.93873
+      },
+      {
+        "state": "SA",
+        "state_name": "South Australia",
+        "financial_year": "2024-25",
+        "year_order": 1,
+        "dogs_count": 1963,
+        "cats_count": 3355,
+        "companion_total": 5318,
+        "cat_share_pct": 63.08763,
+        "endpoint_label": "SA  63.1%",
+        "label_y": 59.02609
+      },
+      {
+        "state": "TAS",
+        "state_name": "Tasmania",
+        "financial_year": "2020-21",
+        "year_order": 0,
+        "dogs_count": 109,
+        "cats_count": 971,
+        "companion_total": 1080,
+        "cat_share_pct": 89.90741,
+        "endpoint_label": "TAS  89.9%",
+        "label_y": 89.90741
+      },
+      {
+        "state": "TAS",
+        "state_name": "Tasmania",
+        "financial_year": "2024-25",
+        "year_order": 1,
+        "dogs_count": 379,
+        "cats_count": 700,
+        "companion_total": 1079,
+        "cat_share_pct": 64.87488,
+        "endpoint_label": "TAS  64.9%",
+        "label_y": 62.27609
+      },
+      {
+        "state": "VIC",
+        "state_name": "Victoria",
+        "financial_year": "2020-21",
+        "year_order": 0,
+        "dogs_count": 3909,
+        "cats_count": 9091,
+        "companion_total": 13000,
+        "cat_share_pct": 69.93077,
+        "endpoint_label": "VIC  69.9%",
+        "label_y": 66.68873
+      },
+      {
+        "state": "VIC",
+        "state_name": "Victoria",
+        "financial_year": "2024-25",
+        "year_order": 1,
+        "dogs_count": 2015,
+        "cats_count": 3830,
+        "companion_total": 5845,
+        "cat_share_pct": 65.52609,
+        "endpoint_label": "VIC  65.5%",
+        "label_y": 65.52609
+      },
+      {
+        "state": "WA",
+        "state_name": "Western Australia",
+        "financial_year": "2020-21",
+        "year_order": 0,
+        "dogs_count": 718,
+        "cats_count": 726,
+        "companion_total": 1444,
+        "cat_share_pct": 50.27701,
+        "endpoint_label": "WA  50.3%",
+        "label_y": 50.27701
+      },
+      {
+        "state": "WA",
+        "state_name": "Western Australia",
+        "financial_year": "2024-25",
+        "year_order": 1,
+        "dogs_count": 975,
+        "cats_count": 920,
+        "companion_total": 1895,
+        "cat_share_pct": 48.54881,
+        "endpoint_label": "WA  48.5%",
+        "label_y": 48.54881
+      }
+    ]
+  },
+  "encoding": {
+    "x": {
+      "field": "financial_year",
+      "type": "ordinal",
+      "sort": [
+        "2020-21",
+        "2024-25"
+      ],
+      "title": null,
+      "axis": {
+        "orient": "top",
+        "labelAngle": 0,
+        "labelFontSize": 14,
+        "labelFontWeight": "bold",
+        "labelPadding": 15,
+        "domain": false,
+        "ticks": false
+      }
+    },
+    "color": {
+      "field": "state",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "ACT",
+          "QLD",
+          "SA",
+          "TAS",
+          "VIC",
+          "WA"
+        ],
+        "range": [
+          "#6950A1",
+          "#07827A",
+          "#C07822",
+          "#A84677",
+          "#2B5F91",
+          "#71882E"
+        ]
+      },
+      "legend": null
+    },
+    "detail": {
+      "field": "state",
+      "type": "nominal"
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 2.7,
+        "opacity": 0.88
+      },
+      "encoding": {
+        "y": {
+          "field": "cat_share_pct",
+          "type": "quantitative",
+          "title": "Cats as a share of reported dogs + cats",
+          "scale": {
+            "domain": [
+              44,
+              95
+            ],
+            "zero": false,
+            "nice": false
+          },
+          "axis": {
+            "format": ".0f",
+            "values": [
+              45,
+              55,
+              65,
+              75,
+              85,
+              95
+            ],
+            "labelExpr": "datum.value + '%'",
+            "labelFontSize": 12,
+            "titleFontSize": 13,
+            "grid": true,
+            "gridColor": "#e8eff0",
+            "domain": false,
+            "tickSize": 0,
+            "titlePadding": 14
+          }
+        },
+        "order": {
+          "field": "year_order",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 130,
+        "stroke": "#ffffff",
+        "strokeWidth": 1.1
+      },
+      "encoding": {
+        "y": {
+          "field": "cat_share_pct",
+          "type": "quantitative",
+          "title": "Cats as a share of reported dogs + cats",
+          "scale": {
+            "domain": [
+              44,
+              95
+            ],
+            "zero": false,
+            "nice": false
+          },
+          "axis": {
+            "format": ".0f",
+            "values": [
+              45,
+              55,
+              65,
+              75,
+              85,
+              95
+            ],
+            "labelExpr": "datum.value + '%'",
+            "labelFontSize": 12,
+            "titleFontSize": 13,
+            "grid": true,
+            "gridColor": "#e8eff0",
+            "domain": false,
+            "tickSize": 0,
+            "titlePadding": 14
+          }
+        },
+        "tooltip": [
+          {
+            "field": "state_name",
+            "type": "nominal",
+            "title": "Jurisdiction"
+          },
+          {
+            "field": "financial_year",
+            "type": "nominal",
+            "title": "Financial year"
+          },
+          {
+            "field": "dogs_count",
+            "type": "quantitative",
+            "title": "Dogs recorded",
+            "format": ","
+          },
+          {
+            "field": "cats_count",
+            "type": "quantitative",
+            "title": "Cats recorded",
+            "format": ","
+          },
+          {
+            "field": "companion_total",
+            "type": "quantitative",
+            "title": "Dogs + cats recorded",
+            "format": ","
+          },
+          {
+            "field": "cat_share_pct",
+            "type": "quantitative",
+            "title": "Cats share (%)",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "abs(datum.label_y - datum.cat_share_pct) > 0.12"
+        }
+      ],
+      "mark": {
+        "type": "rule",
+        "strokeWidth": 1,
+        "opacity": 0.65
+      },
+      "encoding": {
+        "y": {
+          "field": "cat_share_pct",
+          "type": "quantitative"
+        },
+        "y2": {
+          "field": "label_y"
+        },
+        "color": {
+          "value": "#9aabad"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.financial_year == '2020-21'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "middle",
+        "dx": -13,
+        "font": "Helvetica, Arial, sans-serif",
+        "fontSize": 12,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "y": {
+          "field": "label_y",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "endpoint_label",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.financial_year == '2024-25'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 13,
+        "font": "Helvetica, Arial, sans-serif",
+        "fontSize": 12,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "y": {
+          "field": "label_y",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "endpoint_label",
+          "type": "nominal"
+        }
+      }
+    }
+  ],
+  "config": {
+    "font": "Helvetica, Arial, sans-serif",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Helvetica, Arial, sans-serif",
+      "titleFont": "Helvetica, Arial, sans-serif",
+      "labelColor": "#536b73",
+      "titleColor": "#173642"
+    },
+    "title": {
+      "color": "#173642",
+      "subtitleColor": "#607077"
+    }
+  }
+}

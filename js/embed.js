@@ -123,3 +123,27 @@ vegaEmbed('#chart11-foster','charts/chart11_foster_lollipop.vg.json?v=20261027-c
     if(el) el.textContent='Chart 11 could not render. Check the browser console.';
   });
 /* CHART11 EMBED END */
+
+/* CHART12 EMBED START */
+(function () {
+  function renderChart12() {
+    const host = document.getElementById("chart12-cat-share-slope");
+    if (!host) return;
+    vegaEmbed(
+      "#chart12-cat-share-slope",
+      "charts/chart12_cat_share_slope.vg.json?v=20261027-chart12v1",
+      { actions: false, renderer: "svg" }
+    ).catch(function (error) {
+      console.error("Chart 12 rendering error:", error);
+      host.textContent = "Chart 12 could not load. Please check the browser console.";
+      host.style.color = "#a33b36";
+      host.style.padding = "20px";
+    });
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", renderChart12, { once: true });
+  } else {
+    renderChart12();
+  }
+})();
+/* CHART12 EMBED END */
