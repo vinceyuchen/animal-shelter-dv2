@@ -55,3 +55,9 @@ Townsville's Adopted is styled like Rehomed; Reclaimed is styled like Reunited. 
 ## Signed-position encodings are not negative rates
 
 - Chart 6 uses signed values only to place Dogs on the left and Cats on the right. Its tick labels deliberately use `abs()`, so both sides display non-negative within-species percentages. The axis title also explicitly describes its two halves.
+
+## Round 3: Redundant channels and neutral UI
+
+The categorical jurisdiction palette remains **unchanged and identical** across Chart 9 and Chart 13. The six states also have the same explicit line-dash encodings in both charts, reinforced by direct labels. The added line style is a redundant recognition cue for colour-blind viewers, not a seventh data category.
+
+Editorial accents, including navigation, chapter separators, Key Finding borders and reading-hint rails, now use slate-grey UI tokens rather than similar green decorative accents. Outcome and species hues are reserved for data categories; map gradients remain quantitative.

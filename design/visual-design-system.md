@@ -29,3 +29,11 @@
 4. Quantitative fields use ordered scales and clearly labelled legends. Chart 1 uses a distinct purple live-release scale; Chart 7 uses a light neutral greyscale for outcome shares with dark legible percentage labels; Chart 2 uses a fixed quantitative symbol-area domain across every species selection.
 5. Text legibility and colour-blind accessibility: colour must not be the sole cue where possible; use labels, positions or legend.
 6. Sources and caveats remain unchanged. Do not change underlying numbers when applying the theme.
+
+## Round 3: Figure–ground and spacing
+
+- Neutral page `#F5F7F8` contrasts with white chart cards.
+- Callouts use a soft grey `#EEF2F4` and an understated border; source notes receive a thin neutral rule.
+- Interactive controls and chart/aside grids retain the original functional layout, with a consistent 32px desktop gap and constrained mobile spacing.
+- Headings and body typography remain Fraunces + Helvetica.
+- The newly added line patterns in Charts 9 and 13 are identical by jurisdiction, supplementing consistent categorical colours.

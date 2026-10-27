@@ -64,3 +64,11 @@
 - Townsville streamgraph: two in-band peak labels calculate their months and averages via a grouped maximum (Reclaims: May 84.4; Adoptions: December 100.4).
 - Live browser regression checks verify that the labels are visible and that switching to Cats updates the choropleth numbers.
 - No numeric records, category palettes, or existing legend definitions were changed. Inspect both laptop and desktop screenshots before claiming the aesthetic is finished.
+
+## Round 3: Layout, colour and figure–ground (3%)
+
+- **Implemented:** editorial teal decoration changed to neutral slate tokens so decorative UI is not mistaken for the green Rehomed encoding.
+- **Implemented:** matching jurisdiction-specific dash patterns for lines in the bump and slope charts. No data, categorical hex colours, or quantitative colour scales changed.
+- **Implemented:** callout borders, source-note separators, and figure/insight spacing standardised without removing chart context.
+- **Verification:** the CI semantic audit checks state palette/pattern correspondence. The Chromium visual audit checks body/card background, insight border colour and left-edge chart/heading alignment at both 1440px and 1024px.
+- **Residual risk:** an HD judgement on perceived colour differentiation, responsive readability and aesthetics is not replaceable by automated tests. The teacher's exact score remains unknown.
