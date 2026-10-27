@@ -227,9 +227,10 @@ h1 {
   box-shadow: 0 0 0 1px rgba(63, 127, 128, 0.15);
 }
 
-.bubble-2k { width: 16px; height: 16px; }
-.bubble-8k { width: 32px; height: 32px; }
-.bubble-14k { width: 42px; height: 42px; }
+.bubble-2k { width: 25px; height: 25px; }
+.bubble-8k { width: 49px; height: 49px; }
+.bubble-14k { width: 65px; height: 65px; }
+/* Symbol diameters represent Vega areas at 2k / 8k / 14k with shared 0–15k domain. */
 
 @media (max-width: 720px) {
   .manual-legend {
@@ -689,3 +690,10 @@ html { scroll-padding-top: 90px; }
 .chart11-scroll { overflow-x:visible !important; }
 #chart11-foster .vega-embed svg { width:100% !important; height:auto !important; max-width:100%; }
 /* DV2 NO HORIZONTAL CHART SCROLL END */
+
+/* Four chapters match the original hand-drawn planning sketch. */
+.dv2-chapter-bridge{margin-top:32px;margin-bottom:0;padding:22px 26px 18px;background:#fff;border-top:3px solid #ccd8dc;border-bottom:1px solid var(--line)}
+.dv2-chapter-bridge span{display:block;font:700 12px/1.5 Helvetica,Arial,sans-serif;letter-spacing:.12em;color:#425f6d}
+.dv2-chapter-bridge p{margin:6px 0 0;max-width:78ch;font:400 16px/1.55 Helvetica,Arial,sans-serif;color:#3f565e}
+.dv2-chapter-bridge + .section{padding-top:28px}
+@media(max-width:650px){.dv2-chapter-bridge{padding:16px 18px;margin-top:26px}.dv2-chapter-bridge p{font-size:15px}}

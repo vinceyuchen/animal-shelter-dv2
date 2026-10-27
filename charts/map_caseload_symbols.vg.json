@@ -7,8 +7,8 @@
   "title": {
     "text": "Where did the RSPCA network record the largest caseload?",
     "subtitle": [
-      "Circle area represents reported dogs, cats or both in 2024–25.",
-      "Points are representative state/territory positions; totals describe RSPCA reporting coverage."
+      "Circle area shows reported dogs, cats or both on the same numerical size scale.",
+      "Points represent state/territory locations; counts reflect RSPCA reporting coverage."
     ],
     "anchor": "start",
     "fontSize": 18,
@@ -125,10 +125,15 @@
           "type": "quantitative",
           "title": "Animals recorded",
           "scale": {
+            "domain": [
+              0,
+              15000
+            ],
             "range": [
-              160,
-              4200
-            ]
+              0,
+              3600
+            ],
+            "zero": true
           },
           "legend": null
         },
