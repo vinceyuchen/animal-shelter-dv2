@@ -5,10 +5,10 @@
   "height": 520,
   "background": "#ffffff",
   "title": {
-    "text": "Where are the verified RSPCA facilities shown here located?",
+    "text": "Where are these selected RSPCA facilities located?",
     "subtitle": [
-      "Each dot is a verified RSPCA-operated shelter, animal care centre or adoption centre from official state/territory pages.",
-      "The map shows facility location, not capacity or animal intake."
+      "A selected, address-verified sample of RSPCA-operated care and adoption sites (not a complete facility census).",
+      "Points locate example facilities only; they do not describe availability, capacity or access."
     ],
     "anchor": "start",
     "fontSize": 18,

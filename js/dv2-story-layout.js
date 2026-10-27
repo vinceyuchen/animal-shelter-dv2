@@ -38,13 +38,34 @@
     const euth = maxShare("Euthanased");
     const rehomed = maxShare("Rehomed");
     if (!euth || !rehomed) return;
+
+    const section = aside?.closest("section");
+    const grid = section?.querySelector("[data-chart7-kpis]");
+    const formatRate = row => Number(row.share_pct).toFixed(1) + "%";
+    const name = code => states[code] || code;
+    if (grid) {
+      const elements = {
+        eNumber: grid.querySelector("[data-chart7-euth-number]"),
+        eLabel: grid.querySelector("[data-chart7-euth-label]"),
+        rNumber: grid.querySelector("[data-chart7-rehome-number]"),
+        rLabel: grid.querySelector("[data-chart7-rehome-label]")
+      };
+      if (Object.values(elements).every(Boolean)) {
+        elements.eNumber.textContent = formatRate(euth);
+        elements.eLabel.textContent = (species === "Dog" ? "Dogs" : "Cats") + " · " + name(euth.state) + ": highest euthanasia share";
+        elements.rNumber.textContent = formatRate(rehomed);
+        elements.rLabel.textContent = (species === "Dog" ? "Dogs" : "Cats") + " · " + name(rehomed.state) + ": highest rehoming share";
+      }
+    }
+
     writeInsight(aside,
-      species + " outcomes: " + states[euth.state] +
-      " had the highest euthanasia share (" + euth.share_pct.toFixed(1) +
-      "%), while " + states[rehomed.state] +
-      " had the highest rehoming share (" + rehomed.share_pct.toFixed(1) + "%).",
-      "Percentages use each jurisdiction's recorded " +
-      species.toLowerCase() + " outcomes as the denominator. They do not compare all Australian shelters."
+      (species === "Dog" ? "Dogs" : "Cats") + ": " + name(euth.state) +
+      " had the highest euthanasia share (" + formatRate(euth) +
+      "), while " + name(rehomed.state) +
+      " had the highest rehoming share (" + formatRate(rehomed) + ").",
+      "The heatmap and key percentages refer only to the selected species. " +
+      "Each rate divides an outcome count by that jurisdiction's recorded species total, " +
+      "not all Australian shelter outcomes."
     );
   }
 

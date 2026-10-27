@@ -22,7 +22,7 @@
         Australia’s shelter system is not a single, uniform network. This project follows
         where pressure appears, when demand changes, and how outcomes differ for dogs and cats.
       </p>
-      <p class="dv2-hero-byline">Created by <strong>Vince</strong> · 27 October 2026 · FIT3179</p>
+      <p class="dv2-hero-byline">Created by <strong>Yu Chen</strong> · 24 October 2026 · FIT3179</p>
     </section>
 
     <!-- DV2 DESKTOP QUICK NAV START -->
@@ -53,7 +53,7 @@
         <div class="manual-legend gradient-legend" aria-label="Live release rate legend">
           <span class="manual-legend-title">Live release rate</span>
           <div class="gradient-bar"></div>
-          <div class="legend-scale"><span>65%</span><span>95%</span></div>
+          <div class="legend-scale"><span>65%</span><span>100%</span></div>
         </div>
       </div>
       <p class="source-note">
@@ -104,19 +104,21 @@
     <section class="section shell" id="section-03">
       <div class="section-heading">
         <p class="eyebrow">03 · Where care is physically located</p>
-        <h2>Where are RSPCA facilities located?</h2>
+        <h2>Where are some verified RSPCA facilities located?</h2>
         <p>
-          The verified RSPCA-operated sites shown here are not evenly distributed across the continent.
-          They are concentrated around major coastal population centres,
-          with much larger gaps across inland Australia.
+          These points are <strong>selected, address-verified examples</strong> of RSPCA-operated animal care facilities.
+          They help locate facilities in geographic context, but they are <strong>not a complete list</strong>.
+          Gaps on this map cannot demonstrate where shelters are absent or less accessible.
         </p>
       </div>
       <div id="map-locations" class="vis-card"><div id="map-locations-plot" class="vis-host"></div></div>
       <p class="source-note">
         Sources: official RSPCA state and territory shelter/location pages and RSPCA Adopt a Pet.
-        Points represent verified RSPCA-operated shelters, animal care centres or adoption centres included in this working dataset;
-        partner stores, council pounds and non-RSPCA shelters are not shown. Coordinates are geocoded from published addresses
-        and are intended for national-scale location context.
+        Points are a <strong>non-exhaustive, selected sample</strong> of RSPCA-operated shelters,
+        animal care centres and adoption centres; partner stores, council pounds, non-RSPCA facilities and
+        other RSPCA sites may be missing. Coordinates are geocoded from published addresses.
+        <strong>Do not interpret empty map areas as proof that no shelters exist there</strong>,
+        or compare facility density from these selected points.
       </p>
     </section>
 
@@ -251,14 +253,14 @@
     </p>
   </div>
 
-  <div class="callout-grid">
+  <div class="callout-grid" data-chart7-kpis aria-label="Key percentages for the selected animal">
     <div class="callout">
-      <div class="callout-number">26.4%</div>
-      <div class="callout-label">NT: highest dog euthanasia share</div>
+      <div class="callout-number" data-chart7-euth-number aria-live="polite">26.4%</div>
+      <div class="callout-label" data-chart7-euth-label">Dogs · NT: highest euthanasia share</div>
     </div>
     <div class="callout">
-      <div class="callout-number">74.1%</div>
-      <div class="callout-label">ACT: highest cat rehoming share</div>
+      <div class="callout-number" data-chart7-rehome-number aria-live="polite">58.3%</div>
+      <div class="callout-label" data-chart7-rehome-label">Dogs · NSW: highest rehoming share</div>
     </div>
   </div>
 
@@ -272,14 +274,14 @@
   <aside class="dv2-story-aside" aria-label="Key finding for this chart">
 <p class="dv2-story-kicker">KEY FINDING</p>
 <h3>Local differences within the network</h3>
-<p><strong>Northern Territory:</strong> euthanasia made up 26.4% of recorded dog outcomes. <strong>ACT:</strong> rehoming made up 74.1% of recorded cat outcomes.</p><p>These examples refer to both species; the selector changes the heatmap only. Reporting coverage differs between jurisdictions.</p>
+<p><strong>Dogs:</strong> Northern Territory has the highest euthanasia share (26.4%), while New South Wales has the highest rehoming share (58.3%).</p><p>The heatmap, key percentages and this finding all update when you switch species. Each percentage uses that jurisdiction's recorded species outcomes as the denominator.</p>
 </aside>
 </div>
 <!-- DV2 STORY GRID END -->
 
   <p class="source-note">
     Source: RSPCA Australia Annual Statistics 2024–25. Heatmap values show the share of each
-    recorded outcome within each state and species total. Reunited combines reclaimed and returned.
+    recorded outcome within each state and species total. Reunited combines reclaimed and returned. The key percentages and findings above correspond to the species currently selected; they are not cross-species comparisons.
   </p>
 </section>
 <!-- CHART7 END -->
@@ -560,7 +562,7 @@
     </article>
     <article class="dv2-note-panel">
       <h3>Project and tools</h3>
-      <p><strong>Course:</strong> FIT3179 Data Visualisation 2<br><strong>Topic:</strong> Animal Shelter<br><strong>Project year:</strong> 2026<br><strong>Updated:</strong> 27 October 2026</p>
+      <p><strong>Course:</strong> FIT3179 Data Visualisation 2<br><strong>Topic:</strong> Animal Shelter<br><strong>Project year:</strong> 2026<br><strong>Project date:</strong> 24 October 2026</p>
       <p><strong>Built with:</strong> Vega-Lite and Vega-Embed, HTML, CSS, JavaScript and Python-supported data preparation. <a href="https://github.com/vinceyuchen/animal-shelter-dv2" target="_blank" rel="noopener noreferrer">Source code and processed data on GitHub</a>.</p>
       <h3>AI acknowledgement</h3>
       <p>Generative AI assisted with code drafting, debugging, data preparation and written explanations. The author remains responsible for checking source data, calculations, interpretation and final visualisation decisions.</p>
@@ -569,7 +571,7 @@
 </section>
 
     <footer class="site-footer shell">
-      <p>Behind the Shelter Doors · Created by Vince · FIT3179 Data Visualisation 2 · 2026</p>
+      <p>Behind the Shelter Doors · Created by Yu Chen · FIT3179 Data Visualisation 2 · 2026</p>
     </footer>
 
 

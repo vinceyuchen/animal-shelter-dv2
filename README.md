@@ -2,8 +2,8 @@
 
 **Live single-page visualisation:** https://vinceyuchen.github.io/animal-shelter-dv2/
 
-**Author:** Vince (GitHub: [@vinceyuchen](https://github.com/vinceyuchen))  
-**Updated:** 27 October 2026  
+**Author:** Yu Chen (GitHub: [@vinceyuchen](https://github.com/vinceyuchen))  
+**Project date:** 24 October 2026  
 **Assigned topic:** Animal Shelter
 
 ## Domain, who, what, why and how

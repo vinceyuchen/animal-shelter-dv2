@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "RSPCA 2024-25 live release rate by Australian state/territory and species, using local state geometry.",
+  "description": "RSPCA 2024-25 live release rate by Australian state/territory and species, using local state geometry. The sequential colour scale displays the full 65% to 100% live-release range without clipping the observed NSW cat rate above 95%.",
   "width": "container",
   "height": 520,
   "background": "#ffffff",
@@ -129,9 +129,9 @@
       "scale": {
         "domain": [
           0.65,
-          0.95
+          1
         ],
-        "clamp": true,
+        "clamp": false,
         "range": [
           "#EDF0F8",
           "#5B5A93"
