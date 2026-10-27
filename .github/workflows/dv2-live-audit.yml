@@ -66,6 +66,7 @@ jobs:
             "charts/chart5_compare.vg.json"
             "charts/chart11_foster_lollipop.vg.json"
             "charts/chart9_yoy_bump.vg.json"
+            "charts/chart12_cat_share_slope.vg.json"
             "charts/map_live_release.vg.json"
             "charts/map_rspca_locations.vg.json"
             "charts/chart13_townsville_seasonality.vg.json"
