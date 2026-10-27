@@ -6,7 +6,7 @@ const embedOptions = {
 vegaEmbed("#map-live-release", "charts/map_live_release.vg.json?v=20261027-rubric3", embedOptions)
   .catch(console.error);
 
-vegaEmbed("#map-caseload", "charts/map_caseload_symbols.vg.json?v=20261027-colour13-v1", embedOptions)
+vegaEmbed("#map-caseload", "charts/map_caseload_symbols.vg.json?v=20261028-fixed-area1", embedOptions)
   .catch(console.error);
 
 vegaEmbed("#map-locations-plot", "charts/map_rspca_locations.vg.json?v=20261027-rubric3", embedOptions)
@@ -39,7 +39,7 @@ vegaEmbed("#outcome-composition", "charts/outcome_composition.vg.json?v=20261027
     try {
       vegaEmbed(
         "#vis-chart7",
-        "charts/chart7_outcome_heatmap.vg.json?v=20261028-neutral-share-v1",
+        "charts/chart7_outcome_heatmap.vg.json?v=20261028-readable-grey2",
         { actions: false, renderer: "svg" }
       ).catch(showError);
     } catch (error) {
