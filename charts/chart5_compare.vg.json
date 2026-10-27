@@ -164,13 +164,16 @@
         "align": "left",
         "dx": 9,
         "font": "Helvetica, Arial, sans-serif",
-        "fontSize": 12,
+        "fontSize": 13,
         "fontWeight": "bold",
         "color": "#FFFFFF"
       },
       "encoding": {
         "text": {
           "value": "59.7%"
+        },
+        "color": {
+          "value": "#FFFFFF"
         }
       }
     },
@@ -185,13 +188,16 @@
         "align": "left",
         "dx": 8,
         "font": "Helvetica, Arial, sans-serif",
-        "fontSize": 12,
+        "fontSize": 13,
         "fontWeight": "bold",
         "color": "#173642"
       },
       "encoding": {
         "text": {
           "value": "46.7%"
+        },
+        "color": {
+          "value": "#173642"
         }
       }
     }
