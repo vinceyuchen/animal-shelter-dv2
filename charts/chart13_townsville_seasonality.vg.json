@@ -12,8 +12,8 @@
   "title": {
     "text": "When do recorded adoptions and reclaims peak?",
     "subtitle": [
-      "Townsville Animal Care and Adoption Centre, monthly average across 2021–2025 (5 complete calendar years).",
-      "Band thickness represents average recorded monthly outcomes."
+      "Townsville, monthly averages across 2021–2025. Labels identify each category's peak.",
+      "Band thickness shows average numbers recorded, not individual animal movements."
     ],
     "font": "Helvetica",
     "fontSize": 18,
@@ -62,21 +62,21 @@
         "month": "Mar",
         "month_num": 3,
         "series": "Reclaimed",
-        "mean_count": 77.0,
+        "mean_count": 77,
         "years": 5
       },
       {
         "month": "Apr",
         "month_num": 4,
         "series": "Adopted",
-        "mean_count": 81.0,
+        "mean_count": 81,
         "years": 5
       },
       {
         "month": "Apr",
         "month_num": 4,
         "series": "Reclaimed",
-        "mean_count": 75.0,
+        "mean_count": 75,
         "years": 5
       },
       {
@@ -97,7 +97,7 @@
         "month": "Jun",
         "month_num": 6,
         "series": "Adopted",
-        "mean_count": 91.0,
+        "mean_count": 91,
         "years": 5
       },
       {
@@ -193,94 +193,6 @@
       }
     ]
   },
-  "mark": {
-    "type": "area",
-    "interpolate": "monotone",
-    "opacity": 0.92
-  },
-  "encoding": {
-    "x": {
-      "field": "month",
-      "type": "ordinal",
-      "sort": [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec"
-      ],
-      "title": "Month",
-      "axis": {
-        "labelAngle": 0,
-        "labelFontSize": 12
-      }
-    },
-    "y": {
-      "field": "mean_count",
-      "type": "quantitative",
-      "stack": "center",
-      "axis": null
-    },
-    "color": {
-      "field": "series",
-      "type": "nominal",
-      "scale": {
-        "domain": [
-          "Adopted",
-          "Reclaimed"
-        ],
-        "range": [
-          "#2B8C78",
-          "#5B87C2"
-        ]
-      },
-      "legend": {
-        "orient": "bottom",
-        "title": null,
-        "labelFontSize": 13,
-        "labelLimit": 140,
-        "columns": 2
-      }
-    },
-    "order": {
-      "field": "series",
-      "type": "nominal",
-      "sort": [
-        "Adopted",
-        "Reclaimed"
-      ]
-    },
-    "tooltip": [
-      {
-        "field": "month",
-        "type": "nominal",
-        "title": "Month"
-      },
-      {
-        "field": "series",
-        "type": "nominal",
-        "title": "Category"
-      },
-      {
-        "field": "mean_count",
-        "type": "quantitative",
-        "title": "Average monthly records",
-        "format": ",.1f"
-      },
-      {
-        "field": "years",
-        "type": "quantitative",
-        "title": "Years averaged"
-      }
-    ]
-  },
   "config": {
     "font": "Helvetica, Arial, sans-serif",
     "view": {
@@ -303,5 +215,221 @@
       "font": "Helvetica, Arial, sans-serif",
       "subtitleFont": "Helvetica, Arial, sans-serif"
     }
-  }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "area",
+        "interpolate": "monotone",
+        "opacity": 0.92
+      },
+      "encoding": {
+        "x": {
+          "field": "month",
+          "type": "ordinal",
+          "sort": [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec"
+          ],
+          "title": "Month",
+          "axis": {
+            "labelAngle": 0,
+            "labelFontSize": 12
+          }
+        },
+        "y": {
+          "field": "mean_count",
+          "type": "quantitative",
+          "stack": "center",
+          "axis": null
+        },
+        "color": {
+          "field": "series",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Adopted",
+              "Reclaimed"
+            ],
+            "range": [
+              "#2B8C78",
+              "#5B87C2"
+            ]
+          },
+          "legend": {
+            "orient": "bottom",
+            "title": null,
+            "labelFontSize": 13,
+            "labelLimit": 140,
+            "columns": 2
+          }
+        },
+        "order": {
+          "field": "series",
+          "type": "nominal",
+          "sort": [
+            "Adopted",
+            "Reclaimed"
+          ]
+        },
+        "tooltip": [
+          {
+            "field": "month",
+            "type": "nominal",
+            "title": "Month"
+          },
+          {
+            "field": "series",
+            "type": "nominal",
+            "title": "Category"
+          },
+          {
+            "field": "mean_count",
+            "type": "quantitative",
+            "title": "Average monthly records",
+            "format": ",.1f"
+          },
+          {
+            "field": "years",
+            "type": "quantitative",
+            "title": "Years averaged"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "window": [
+            {
+              "op": "max",
+              "field": "mean_count",
+              "as": "series_max"
+            }
+          ],
+          "groupby": [
+            "series"
+          ]
+        },
+        {
+          "filter": "datum.series === 'Reclaimed' && datum.mean_count === datum.series_max"
+        },
+        {
+          "calculate": "'Reclaims peak · ' + datum.month + ' ' + format(datum.mean_count, '.1f')",
+          "as": "peak_label"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "font": "Helvetica, Arial, sans-serif",
+        "fontSize": 13,
+        "fontWeight": "bold",
+        "color": "#FFFFFF",
+        "stroke": "#173642",
+        "strokeWidth": 1.6,
+        "align": "center",
+        "baseline": "middle",
+        "dx": 0
+      },
+      "encoding": {
+        "x": {
+          "field": "month",
+          "type": "ordinal",
+          "sort": [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec"
+          ]
+        },
+        "y": {
+          "value": 85
+        },
+        "text": {
+          "field": "peak_label",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "window": [
+            {
+              "op": "max",
+              "field": "mean_count",
+              "as": "series_max"
+            }
+          ],
+          "groupby": [
+            "series"
+          ]
+        },
+        {
+          "filter": "datum.series === 'Adopted' && datum.mean_count === datum.series_max"
+        },
+        {
+          "calculate": "'Adoptions peak · ' + datum.month + ' ' + format(datum.mean_count, '.1f')",
+          "as": "peak_label"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "font": "Helvetica, Arial, sans-serif",
+        "fontSize": 13,
+        "fontWeight": "bold",
+        "color": "#FFFFFF",
+        "stroke": "#173642",
+        "strokeWidth": 1.6,
+        "align": "right",
+        "baseline": "middle",
+        "dx": -6
+      },
+      "encoding": {
+        "x": {
+          "field": "month",
+          "type": "ordinal",
+          "sort": [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec"
+          ]
+        },
+        "y": {
+          "value": 246
+        },
+        "text": {
+          "field": "peak_label",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
 }

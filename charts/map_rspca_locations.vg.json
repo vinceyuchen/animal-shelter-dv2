@@ -97,6 +97,66 @@
           "value": "#63794A"
         }
       }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "note": "18 verified examples"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "font": "Helvetica, Arial, sans-serif",
+        "fontSize": 13,
+        "fontWeight": "bold",
+        "color": "#173642",
+        "align": "left",
+        "baseline": "top"
+      },
+      "encoding": {
+        "x": {
+          "value": 12
+        },
+        "y": {
+          "value": 44
+        },
+        "text": {
+          "field": "note",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "note": "Selected sites, not a census"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "font": "Helvetica, Arial, sans-serif",
+        "fontSize": 12,
+        "fontWeight": "normal",
+        "color": "#536B73",
+        "align": "left",
+        "baseline": "top"
+      },
+      "encoding": {
+        "x": {
+          "value": 12
+        },
+        "y": {
+          "value": 65
+        },
+        "text": {
+          "field": "note",
+          "type": "nominal"
+        }
+      }
     }
   ],
   "config": {

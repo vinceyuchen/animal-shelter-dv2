@@ -7,8 +7,8 @@
   "title": {
     "text": "Where do live-release outcomes differ most?",
     "subtitle": [
-      "RSPCA 2024–25. LRR counts animals rehomed, reunited or transferred among eligible outcomes.",
-      "Select dogs or cats. These figures describe the RSPCA network, not every Australian shelter."
+      "Select Dogs or Cats to compare RSPCA live-release rates. WA and Tasmania labels follow the selection.",
+      "Rates describe eligible outcomes within each jurisdiction, not every shelter admission."
     ],
     "anchor": "start",
     "fontSize": 18,
@@ -39,150 +39,6 @@
   "projection": {
     "type": "mercator"
   },
-  "data": {
-    "url": "data/australia_states.topojson",
-    "format": {
-      "type": "topojson",
-      "feature": "states"
-    }
-  },
-  "transform": [
-    {
-      "filter": "datum.properties.STATE_CODE != '9'"
-    },
-    {
-      "lookup": "properties.STATE_NAME",
-      "from": {
-        "data": {
-          "url": "data/map1_state_lrr_wide.csv",
-          "format": {
-            "type": "csv",
-            "parse": {
-              "dog_lrr": "number",
-              "cat_lrr": "number",
-              "dog_rehomed": "number",
-              "cat_rehomed": "number",
-              "dog_reunited": "number",
-              "cat_reunited": "number",
-              "dog_transferred": "number",
-              "cat_transferred": "number",
-              "dog_euthanased": "number",
-              "cat_euthanased": "number",
-              "dog_eligible": "number",
-              "cat_eligible": "number"
-            }
-          }
-        },
-        "key": "state_name",
-        "fields": [
-          "state",
-          "dog_lrr",
-          "cat_lrr",
-          "dog_rehomed",
-          "cat_rehomed",
-          "dog_reunited",
-          "cat_reunited",
-          "dog_transferred",
-          "cat_transferred",
-          "dog_euthanased",
-          "cat_euthanased",
-          "dog_eligible",
-          "cat_eligible"
-        ]
-      }
-    },
-    {
-      "calculate": "Species_selection == 'Dog' ? datum.dog_lrr : datum.cat_lrr",
-      "as": "selected_lrr"
-    },
-    {
-      "calculate": "Species_selection == 'Dog' ? datum.dog_rehomed : datum.cat_rehomed",
-      "as": "selected_rehomed"
-    },
-    {
-      "calculate": "Species_selection == 'Dog' ? datum.dog_reunited : datum.cat_reunited",
-      "as": "selected_reunited"
-    },
-    {
-      "calculate": "Species_selection == 'Dog' ? datum.dog_transferred : datum.cat_transferred",
-      "as": "selected_transferred"
-    },
-    {
-      "calculate": "Species_selection == 'Dog' ? datum.dog_euthanased : datum.cat_euthanased",
-      "as": "selected_euthanased"
-    },
-    {
-      "calculate": "Species_selection == 'Dog' ? datum.dog_eligible : datum.cat_eligible",
-      "as": "selected_eligible"
-    }
-  ],
-  "mark": {
-    "type": "geoshape",
-    "stroke": "#ffffff",
-    "strokeWidth": 1
-  },
-  "encoding": {
-    "color": {
-      "field": "selected_lrr",
-      "type": "quantitative",
-      "title": "Live release rate",
-      "scale": {
-        "domain": [
-          0.65,
-          1
-        ],
-        "clamp": false,
-        "range": [
-          "#EDF0F8",
-          "#5B5A93"
-        ]
-      },
-      "legend": null
-    },
-    "tooltip": [
-      {
-        "field": "properties.STATE_NAME",
-        "type": "nominal",
-        "title": "State / territory"
-      },
-      {
-        "field": "selected_lrr",
-        "type": "quantitative",
-        "title": "Live release rate",
-        "format": ".1%"
-      },
-      {
-        "field": "selected_rehomed",
-        "type": "quantitative",
-        "title": "Rehomed",
-        "format": ","
-      },
-      {
-        "field": "selected_reunited",
-        "type": "quantitative",
-        "title": "Reunited with owner",
-        "format": ","
-      },
-      {
-        "field": "selected_transferred",
-        "type": "quantitative",
-        "title": "Transferred",
-        "format": ","
-      },
-      {
-        "field": "selected_euthanased",
-        "type": "quantitative",
-        "title": "Euthanased",
-        "format": ","
-      },
-      {
-        "field": "selected_eligible",
-        "type": "quantitative",
-        "title": "Eligible outcomes",
-        "format": ","
-      }
-    ]
-  },
   "config": {
     "font": "Helvetica, Arial, sans-serif",
     "view": {
@@ -211,5 +67,293 @@
     "type": "fit-x",
     "contains": "padding",
     "resize": true
-  }
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "data/australia_states.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "states"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.properties.STATE_CODE != '9'"
+        },
+        {
+          "lookup": "properties.STATE_NAME",
+          "from": {
+            "data": {
+              "url": "data/map1_state_lrr_wide.csv",
+              "format": {
+                "type": "csv",
+                "parse": {
+                  "dog_lrr": "number",
+                  "cat_lrr": "number",
+                  "dog_rehomed": "number",
+                  "cat_rehomed": "number",
+                  "dog_reunited": "number",
+                  "cat_reunited": "number",
+                  "dog_transferred": "number",
+                  "cat_transferred": "number",
+                  "dog_euthanased": "number",
+                  "cat_euthanased": "number",
+                  "dog_eligible": "number",
+                  "cat_eligible": "number"
+                }
+              }
+            },
+            "key": "state_name",
+            "fields": [
+              "state",
+              "dog_lrr",
+              "cat_lrr",
+              "dog_rehomed",
+              "cat_rehomed",
+              "dog_reunited",
+              "cat_reunited",
+              "dog_transferred",
+              "cat_transferred",
+              "dog_euthanased",
+              "cat_euthanased",
+              "dog_eligible",
+              "cat_eligible"
+            ]
+          }
+        },
+        {
+          "calculate": "Species_selection == 'Dog' ? datum.dog_lrr : datum.cat_lrr",
+          "as": "selected_lrr"
+        },
+        {
+          "calculate": "Species_selection == 'Dog' ? datum.dog_rehomed : datum.cat_rehomed",
+          "as": "selected_rehomed"
+        },
+        {
+          "calculate": "Species_selection == 'Dog' ? datum.dog_reunited : datum.cat_reunited",
+          "as": "selected_reunited"
+        },
+        {
+          "calculate": "Species_selection == 'Dog' ? datum.dog_transferred : datum.cat_transferred",
+          "as": "selected_transferred"
+        },
+        {
+          "calculate": "Species_selection == 'Dog' ? datum.dog_euthanased : datum.cat_euthanased",
+          "as": "selected_euthanased"
+        },
+        {
+          "calculate": "Species_selection == 'Dog' ? datum.dog_eligible : datum.cat_eligible",
+          "as": "selected_eligible"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#ffffff",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "color": {
+          "field": "selected_lrr",
+          "type": "quantitative",
+          "title": "Live release rate",
+          "scale": {
+            "domain": [
+              0.65,
+              1
+            ],
+            "clamp": false,
+            "range": [
+              "#EDF0F8",
+              "#5B5A93"
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "properties.STATE_NAME",
+            "type": "nominal",
+            "title": "State / territory"
+          },
+          {
+            "field": "selected_lrr",
+            "type": "quantitative",
+            "title": "Live release rate",
+            "format": ".1%"
+          },
+          {
+            "field": "selected_rehomed",
+            "type": "quantitative",
+            "title": "Rehomed",
+            "format": ","
+          },
+          {
+            "field": "selected_reunited",
+            "type": "quantitative",
+            "title": "Reunited with owner",
+            "format": ","
+          },
+          {
+            "field": "selected_transferred",
+            "type": "quantitative",
+            "title": "Transferred",
+            "format": ","
+          },
+          {
+            "field": "selected_euthanased",
+            "type": "quantitative",
+            "title": "Euthanased",
+            "format": ","
+          },
+          {
+            "field": "selected_eligible",
+            "type": "quantitative",
+            "title": "Eligible outcomes",
+            "format": ","
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/map2_state_points.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "longitude": "number",
+            "latitude": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.state === 'WA'"
+        },
+        {
+          "lookup": "state_name",
+          "from": {
+            "data": {
+              "url": "data/map1_state_lrr_wide.csv",
+              "format": {
+                "type": "csv",
+                "parse": {
+                  "dog_lrr": "number",
+                  "cat_lrr": "number"
+                }
+              }
+            },
+            "key": "state_name",
+            "fields": [
+              "dog_lrr",
+              "cat_lrr"
+            ]
+          }
+        },
+        {
+          "calculate": "Species_selection === 'Dog' ? datum.dog_lrr : datum.cat_lrr",
+          "as": "highlight_lrr"
+        },
+        {
+          "calculate": "'WA · ' + format(datum.highlight_lrr, '.1%')",
+          "as": "highlight_label"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "font": "Helvetica, Arial, sans-serif",
+        "fontSize": 13,
+        "fontWeight": "bold",
+        "color": "#173642",
+        "align": "center",
+        "baseline": "middle",
+        "dx": 0,
+        "dy": 0
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "highlight_label",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/map2_state_points.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "longitude": "number",
+            "latitude": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.state === 'TAS'"
+        },
+        {
+          "lookup": "state_name",
+          "from": {
+            "data": {
+              "url": "data/map1_state_lrr_wide.csv",
+              "format": {
+                "type": "csv",
+                "parse": {
+                  "dog_lrr": "number",
+                  "cat_lrr": "number"
+                }
+              }
+            },
+            "key": "state_name",
+            "fields": [
+              "dog_lrr",
+              "cat_lrr"
+            ]
+          }
+        },
+        {
+          "calculate": "Species_selection === 'Dog' ? datum.dog_lrr : datum.cat_lrr",
+          "as": "highlight_lrr"
+        },
+        {
+          "calculate": "'TAS · ' + format(datum.highlight_lrr, '.1%')",
+          "as": "highlight_label"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "font": "Helvetica, Arial, sans-serif",
+        "fontSize": 13,
+        "fontWeight": "bold",
+        "color": "#173642",
+        "align": "right",
+        "baseline": "middle",
+        "dx": -12,
+        "dy": 7
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "highlight_label",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
 }
