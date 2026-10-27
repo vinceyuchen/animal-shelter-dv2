@@ -3,9 +3,9 @@
 **Project title:** Behind the Shelter Doors  
 **Public single-page visualisation:** https://vinceyuchen.github.io/animal-shelter-dv2/  
 **GitHub repository:** https://github.com/vinceyuchen/animal-shelter-dv2  
-**Sketch PDF URL:** [Add the URL to your own hand-drawn A4 sketch PDF after uploading it to GitHub.]  
-**Author:** Vince / @vinceyuchen  
-**Date:** 27 October 2026
+**Sketch PDF URL:** [Upload the original hand-drawn A4 sketch PDF to the GitHub repository and replace this bracketed note with the actual published URL.]  
+**Author:** Yu Chen (GitHub: @vinceyuchen)  
+**Original project date:** 24 October 2026 (subsequent code refinements documented in GitHub commits)
 
 ## Domain, Why and Who
 
@@ -45,3 +45,9 @@ RSPCA reports describe the participating RSPCA reporting network, not all Austra
 All diagrams and maps in the web page are implemented with Vega or Vega-Lite and are stored as human-readable specifications in the GitHub repository. Data-driven metrics have been cross-checked across charts, and the public page has passed Chromium render checks at desktop and small-laptop widths. Generative AI assisted with drafting text and code, debugging, data preparation and visualisation feedback. The author remains responsible for checking original sources, calculations, attribution, interpretation and final design choices.
 
 **Reminder:** This document is a drafting aid for the Moodle submission template, not a replacement for the required hand-drawn sketch PDF, interview, or any submission fields.
+
+## Planning sketch and final visualisation
+
+The original A4 sketch contains four hand-drawn sections (Geography, Outcomes, Changes, Beyond) and fourteen chart thumbnails. The final website preserves this four-part, fourteen-chart plan. As a **planning document**, the sketch also contains provisional annotations, including an old handwritten date and a preliminary generalisation about cat outcomes. The final narrative supersedes those provisional statements: the 2024–25 RSPCA data show cats had a higher **rehomed share** of recorded outcomes than dogs, and euthanasia outcomes differ by reporting jurisdiction. These are observed associations, not causal conclusions.
+
+The final website also differentiates the separate Victorian foster-placement records and Townsville seasonality case study from national RSPCA reporting; these sources are not summed together.
