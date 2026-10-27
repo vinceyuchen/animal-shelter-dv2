@@ -96,7 +96,7 @@ try {
 
       if (config.name === 'desktop') {
         const activeEmbedScript = await page.locator('script[src^="js/embed.js"]').getAttribute('src');
-        if (!activeEmbedScript?.includes('20261028-fine-annotations1')) {
+        if (!activeEmbedScript?.includes('20261028-fine-annotations2')) {
           view.errors.push('Stale embed script was served: ' + activeEmbedScript);
         }
         const liveLollipop = await page.evaluate(async () => {
@@ -132,7 +132,7 @@ try {
       if (config.name === 'desktop') {
         const labelCheck = async (id, text) => {
           const label = page.locator('#' + id + ' svg text').filter({hasText:text});
-          if (await label.count() < 1 || !(await label.first().isVisible())) {
+          if (await label.count() !== 1 || !(await label.first().isVisible())) {
             throw new Error('Missing visible annotation in ' + id + ': ' + text);
           }
         };

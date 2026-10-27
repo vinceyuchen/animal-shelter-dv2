@@ -70,7 +70,8 @@ expect(files.mapFacilities.layer?.length === 4 &&
   'Point map must identify its 18-site sample without implying a full census');
 expect(files.seasonal.layer?.length === 3 &&
   files.seasonal.layer.slice(1).every(layer =>
-    layer.transform.some(step => step.window?.[0]?.op === 'max')),
+    layer.transform.some(step => step.window?.[0]?.op === 'max' &&
+      JSON.stringify(step.frame) === '[null,null]')),
   'Streamgraph labels should derive peaks from observed monthly values');
 for (const [series,month,count] of [['Reclaimed','May',84.4],['Adopted','Dec',100.4]]) {
   const actual = files.seasonal.data.values.filter(row => row.series === series)
