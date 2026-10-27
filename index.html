@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261027-finale1">
+  <link rel="stylesheet" href="css/style.css?v=20261027-story-layout2">
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
@@ -159,7 +159,10 @@
           <span class="callout-label">of recorded dog outcomes were reunited with owners</span>
         </div>
       </div>
-      <div class="vis-card">
+      <!-- DV2 STORY GRID START -->
+<div class="dv2-story-grid">
+  <div class="dv2-story-figure">
+<div class="vis-card">
         <div id="outcome-composition" class="vis-host"></div>
         <div class="outcome-key" aria-label="Outcome composition legend">
           <span><i class="key-swatch k-rehomed"></i>Rehomed</span>
@@ -170,6 +173,14 @@
           <span><i class="key-swatch k-other"></i>Other</span>
         </div>
       </div>
+  </div>
+  <aside class="dv2-story-aside" aria-label="Key finding for this chart">
+<p class="dv2-story-kicker">KEY FINDING</p>
+<h3>Composition, not counts</h3>
+<p><strong>64.1% of recorded cat outcomes</strong> were rehoming, while <strong>24.8% of recorded dog outcomes</strong> were reunions with owners.</p><p>The bars use each species' own total. Equal segment width does not mean equal animal counts.</p>
+</aside>
+</div>
+<!-- DV2 STORY GRID END -->
       <p class="source-note">
         Source: RSPCA Australia Annual Statistics 2024–25. Reunited combines the source categories
         Reclaimed and Returned. Percentages are calculated within each species total and describe
@@ -236,9 +247,20 @@
     </div>
   </div>
 
-  <div class="vis-card">
+  <!-- DV2 STORY GRID START -->
+<div class="dv2-story-grid">
+  <div class="dv2-story-figure">
+<div class="vis-card">
     <div id="vis-chart7" class="vis-host"></div>
   </div>
+  </div>
+  <aside class="dv2-story-aside" aria-label="Key finding for this chart">
+<p class="dv2-story-kicker">KEY FINDING</p>
+<h3>Local differences within the network</h3>
+<p><strong>Northern Territory:</strong> euthanasia made up 26.4% of recorded dog outcomes. <strong>ACT:</strong> rehoming made up 74.1% of recorded cat outcomes.</p><p>These examples refer to both species; the selector changes the heatmap only. Reporting coverage differs between jurisdictions.</p>
+</aside>
+</div>
+<!-- DV2 STORY GRID END -->
 
   <p class="source-note">
     Source: RSPCA Australia Annual Statistics 2024–25. Heatmap values show the share of each
@@ -255,7 +277,18 @@
     <p>Select a jurisdiction to compare dogs and cats from 2020–21 to 2024–25.
        The figures represent animals reported by the RSPCA network, not all Australian shelter admissions.</p>
   </div>
-  <div class="vis-card"><div id="chart8-annual-caseload" class="vis-host"></div></div>
+  <!-- DV2 STORY GRID START -->
+<div class="dv2-story-grid">
+  <div class="dv2-story-figure">
+<div class="vis-card"><div id="chart8-annual-caseload" class="vis-host"></div></div>
+  </div>
+  <aside class="dv2-story-aside" aria-label="Key finding for this chart">
+<p class="dv2-story-kicker">KEY FINDING</p>
+<h3>What the trend does and does not tell us</h3>
+<p>In the default <strong>Queensland</strong> view, reported cats fell from 10,983 in 2020–21 to 8,019 in 2024–25.</p><p>Choose another jurisdiction to explore its trend. RSPCA coverage and local contracts may also affect totals.</p>
+</aside>
+</div>
+<!-- DV2 STORY GRID END -->
   <p class="source-note">Source: RSPCA Australia Annual Statistics 2020–21 to 2024–25.
      NSW and NT are excluded because reporting coverage changed substantially.
      Trends in the six included jurisdictions may also reflect changes in reporting scope,
@@ -275,9 +308,20 @@
       Use the menu to switch between dogs, cats and both combined.
     </p>
   </div>
-  <div class="vis-card">
+  <!-- DV2 STORY GRID START -->
+<div class="dv2-story-grid">
+  <div class="dv2-story-figure">
+<div class="vis-card">
     <div id="chart9-yoy-bump" class="vis-host"></div>
   </div>
+  </div>
+  <aside class="dv2-story-aside" aria-label="Key finding for this chart">
+<p class="dv2-story-kicker">KEY FINDING</p>
+<h3>Why rankings move</h3>
+<p><strong>South Australia</strong> rose from #6 in 2023–24 to #1 in 2024–25 for the combined dog-and-cat year-on-year change (+9.7%).</p><p>Rank #1 means fastest reported growth among six jurisdictions, <em>not</em> best animal welfare outcomes. This example is for the default combined selection.</p>
+</aside>
+</div>
+<!-- DV2 STORY GRID END -->
   <p class="source-note">
     Key finding: for dogs and cats combined, South Australia moved from 6th in
     2023–24 to 1st in 2024–25 among these six jurisdictions (+9.7% in 2024–25).
@@ -407,7 +451,18 @@
     <h2>When do adoptions and reclaims change through the year?</h2>
     <p>Townsville City Council publishes monthly records from its Animal Care and Adoption Centre. This streamgraph compares the seasonal pattern of reported adoptions and reclaims. This is a local case study, not a national estimate. The source CSV does not split adopted or reclaimed counts by dogs versus cats.</p>
   </div>
-  <div class="vis-card"><div id="chart13-townsville" class="vis-host"></div></div>
+  <!-- DV2 STORY GRID START -->
+<div class="dv2-story-grid">
+  <div class="dv2-story-figure">
+<div class="vis-card"><div id="chart13-townsville" class="vis-host"></div></div>
+  </div>
+  <aside class="dv2-story-aside" aria-label="Key finding for this chart">
+<p class="dv2-story-kicker">KEY FINDING</p>
+<h3>A local seasonal signal</h3>
+<p><strong>Adoptions peak in Dec</strong> (average 100.4 recorded cases); <strong>reclaims peak in May</strong> (average 84.4 recorded cases).</p><p>These are averages for 2021–2025 from one Townsville centre, not an Australia-wide seasonal pattern.</p>
+</aside>
+</div>
+<!-- DV2 STORY GRID END -->
   <p class="source-note">Source: <a href="https://data.gov.au/data/dataset/414d816a-f79c-45c7-af7f-46af1b923bdd" target="_blank" rel="noopener noreferrer">Townsville City Council, Animals Adopted and Reclaimed (CC BY 4.0)</a>. Means of 5 complete calendar years (2021, 2022, 2023, 2024, 2025). Counts are recorded adoptions and reclaims, not shelter admissions or unique animals; monthly changes may also reflect operating practices and reporting. This streamgraph displays mean monthly values and does not track individual animal pathways. Townsville figures must not be added to RSPCA national figures.</p>
 </section>
 <!-- CHART13 END -->
@@ -472,5 +527,6 @@
 
 </main>
   <script src="js/embed.js?v=20261027-finale1"></script>
+  <script src="js/dv2-story-layout.js?v=20261027-story-layout2" defer></script>
 </body>
 </html>
