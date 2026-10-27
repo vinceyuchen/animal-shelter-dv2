@@ -177,8 +177,8 @@
   "title": {
     "text": "Where was foster care most frequently recorded?",
     "subtitle": [
-      "Victoria shelter/pound reports, 2025. Top 12 reporting entities by total placements.",
-      "Dogs and cats share the same numerical scale. Counts are placements, not unique animals."
+      "Victoria 2025: twelve selected shelter/pound entities, ranked by total foster placement episodes.",
+      "Compare the same numerical scale for dogs and cats; placements are not unique animals."
     ],
     "font": "Helvetica, Arial, sans-serif",
     "subtitleFont": "Helvetica, Arial, sans-serif",
@@ -197,14 +197,14 @@
       "header": {
         "title": null,
         "labelFont": "Helvetica, Arial, sans-serif",
-        "labelFontSize": 15,
+        "labelFontSize": 16,
         "labelColor": "#173642",
         "labelFontWeight": "bold"
       }
     }
   },
   "spec": {
-    "width": 265,
+    "width": 315,
     "height": {
       "step": 29
     },
@@ -228,7 +228,7 @@
         ],
         "title": null,
         "axis": {
-          "labelFontSize": 11,
+          "labelFontSize": 12,
           "labelLimit": 340,
           "ticks": false,
           "domain": false
@@ -283,7 +283,7 @@
         "mark": {
           "type": "point",
           "filled": true,
-          "size": 115,
+          "size": 130,
           "stroke": "#ffffff",
           "strokeWidth": 1
         },
