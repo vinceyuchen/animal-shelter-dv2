@@ -30,6 +30,26 @@ jobs:
         run: |
           npm install --no-save --no-package-lock playwright@1.57.0
           npx playwright install --with-deps chromium
+      - name: Wait for this commit's GitHub Pages HTML
+        run: |
+          set -euo pipefail
+          LOCAL_SHA=$(sha256sum index.html | cut -d' ' -f1)
+          for attempt in $(seq 1 36); do
+            if curl --silent --show-error --fail --max-time 12 \
+              -H 'Cache-Control: no-cache' \
+              "https://vinceyuchen.github.io/animal-shelter-dv2/?audit_rev=${GITHUB_SHA}&attempt=${attempt}" \
+              -o /tmp/dv2-online.html; then
+              REMOTE_SHA=$(sha256sum /tmp/dv2-online.html | cut -d' ' -f1)
+              if [ "$LOCAL_SHA" = "$REMOTE_SHA" ]; then
+                echo "Published HTML matches the commit under test."
+                exit 0
+              fi
+            fi
+            echo "Waiting for the current GitHub Pages deployment, attempt $attempt/36."
+            sleep 5
+          done
+          echo "GitHub Pages did not publish this commit's HTML; inspection was not run against a stale version." >&2
+          exit 1
       - name: Inspect the actual published GitHub Pages website
         run: node scripts/dv2-browser-audit.mjs
       - name: Upload full screenshots, section screenshots and report
