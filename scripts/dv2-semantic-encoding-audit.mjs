@@ -83,6 +83,8 @@ for (const [series,month,count] of [['Reclaimed','May',84.4],['Adopted','Dec',10
 const jurisdiction = ['ACT','QLD','SA','TAS','VIC','WA'];
 const bumpColour = files.bump.encoding.color.scale;
 const slopeColour = files.slope.encoding.color.scale;
+expect(files.bump.encoding.color.legend === null,
+  'The six direct endpoint labels should replace the redundant, cluttered bump legend');
 const bumpDashes = files.bump.layer[0].encoding.strokeDash?.scale;
 const slopeDashes = files.slope.layer[0].encoding.strokeDash?.scale;
 expect(JSON.stringify(bumpColour.domain) === JSON.stringify(jurisdiction) &&
