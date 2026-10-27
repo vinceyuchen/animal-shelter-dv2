@@ -12,6 +12,7 @@ on:
       - ".github/workflows/dv2-live-audit.yml"
       - "scripts/dv2-browser-audit.mjs"
       - "scripts/dv2-data-integrity.mjs"
+      - "scripts/dv2-semantic-encoding-audit.mjs"
 
 permissions:
   contents: read
@@ -29,6 +30,8 @@ jobs:
           node-version: '22'
       - name: Verify consistency of 14 chart datasets
         run: node scripts/dv2-data-integrity.mjs
+      - name: Validate semantic colours, scales and chapter consistency
+        run: node scripts/dv2-semantic-encoding-audit.mjs
       - name: Install Playwright and browser
         run: |
           npm install --no-save --no-package-lock playwright@1.57.0
