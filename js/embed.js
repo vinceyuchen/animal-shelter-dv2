@@ -3,13 +3,13 @@ const embedOptions = {
   renderer: "svg"
 };
 
-vegaEmbed("#map-live-release", "charts/map_live_release.vg.json?v=20261027-colour13-v1", embedOptions)
+vegaEmbed("#map-live-release", "charts/map_live_release.vg.json?v=20261027-rubric3", embedOptions)
   .catch(console.error);
 
 vegaEmbed("#map-caseload", "charts/map_caseload_symbols.vg.json?v=20261027-colour13-v1", embedOptions)
   .catch(console.error);
 
-vegaEmbed("#map-locations-plot", "charts/map_rspca_locations.vg.json?v=20261027-colour13-v1", embedOptions)
+vegaEmbed("#map-locations-plot", "charts/map_rspca_locations.vg.json?v=20261027-rubric3", embedOptions)
   .catch(console.error);
 
 vegaEmbed("#connected-dot-lrr", "charts/connected_dot_lrr.vg.json?v=20261027-colour13-v1", embedOptions)

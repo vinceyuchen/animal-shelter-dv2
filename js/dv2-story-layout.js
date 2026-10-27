@@ -130,7 +130,7 @@
       if (rows) describe[id](rows, select.value, panel);
     };
     select.addEventListener("change", refresh);
-    fetch(src, {cache: "force-cache"})
+    fetch(src, {cache: "no-cache"})
       .then(response => {
         if (!response.ok) throw new Error("Unable to load chart story data: " + src);
         return response.json();
