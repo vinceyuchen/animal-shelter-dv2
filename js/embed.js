@@ -39,7 +39,7 @@ vegaEmbed("#outcome-composition", "charts/outcome_composition.vg.json?v=20261027
     try {
       vegaEmbed(
         "#vis-chart7",
-        "charts/chart7_outcome_heatmap.vg.json?v=20261027-colour13-v1",
+        "charts/chart7_outcome_heatmap.vg.json?v=20261028-neutral-share-v1",
         { actions: false, renderer: "svg" }
       ).catch(showError);
     } catch (error) {

@@ -42,7 +42,7 @@ Townsville's Adopted is styled like Rehomed; Reclaimed is styled like Reunited. 
 - Chart 1 live-release **rate**: continuous gradient #EDF0F8 → #5B5A93, same as manual HTML legend.
 - Chart 2 total reported **caseload**: neutral #5B7482; size encodes magnitude.
 - Chart 3 selected facility **locations**: olive #63794A.
-- Chart 7 outcome **percent**: sequential quantitative gradient is retained; its colour encodes values, not outcome category.
+- Chart 7 outcome **percent**: neutral sequential greyscale #F2F2F2 → #404040. The fill represents each cell's percentage, **not** Rehomed, dogs, cats, or any category; outcome type is encoded by column position. This avoids reusing the Rehomed green.
 
 ## Review checklist
 
