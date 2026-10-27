@@ -336,11 +336,11 @@
       "mark": {
         "type": "text",
         "font": "Helvetica, Arial, sans-serif",
-        "fontSize": 13,
+        "fontSize": 14,
         "fontWeight": "bold",
         "color": "#FFFFFF",
         "stroke": "#173642",
-        "strokeWidth": 1.2,
+        "strokeWidth": 0.5,
         "align": "center",
         "baseline": "middle",
         "dx": 0
@@ -402,11 +402,11 @@
       "mark": {
         "type": "text",
         "font": "Helvetica, Arial, sans-serif",
-        "fontSize": 13,
+        "fontSize": 14,
         "fontWeight": "bold",
         "color": "#FFFFFF",
         "stroke": "#173642",
-        "strokeWidth": 1.2,
+        "strokeWidth": 0.5,
         "align": "right",
         "baseline": "middle",
         "dx": -6
