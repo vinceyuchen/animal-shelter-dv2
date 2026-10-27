@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Bump chart ranking year-on-year percentage change in reported RSPCA caseloads within six selected jurisdictions, 2021-22 to 2024-25.",
+  "description": "Bump chart ranking year-on-year percentage change in reported RSPCA caseloads within six selected jurisdictions, 2021-22 to 2024-25. The most recent first-place jurisdiction is labelled directly.",
   "width": "container",
   "height": 420,
   "background": "#ffffff",
@@ -994,6 +994,41 @@
             "type": "quantitative",
             "title": "Current year count",
             "format": ","
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.financial_year === '2024-25' && datum.rank === 1"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -10,
+        "dy": -14,
+        "font": "Helvetica, Arial, sans-serif",
+        "fontWeight": "bold",
+        "fontSize": 12
+      },
+      "encoding": {
+        "text": {
+          "field": "state",
+          "type": "nominal"
+        },
+        "tooltip": [
+          {
+            "field": "state_name",
+            "type": "nominal",
+            "title": "Top-ranked jurisdiction"
+          },
+          {
+            "field": "change_pct",
+            "type": "quantitative",
+            "format": "+.1f",
+            "title": "Year-on-year change (%)"
           }
         ]
       }
