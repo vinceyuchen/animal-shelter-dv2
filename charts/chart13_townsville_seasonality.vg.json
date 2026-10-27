@@ -244,7 +244,10 @@
       "legend": {
         "orient": "bottom",
         "title": null,
-        "labelFontSize": 12
+        "labelFontSize": 12,
+        "labelLimit": 200,
+        "columns": 2,
+        "labelExpr": "datum.label === 'Adopted (species not specified)' ? 'Adopted' : datum.label === 'Reclaimed (species not specified)' ? 'Reclaimed' : datum.label"
       }
     },
     "order": {
@@ -280,20 +283,26 @@
     ]
   },
   "config": {
-    "font": "Helvetica",
+    "font": "Helvetica, Arial, sans-serif",
     "view": {
       "stroke": null
     },
     "axis": {
       "labelColor": "#536B73",
-      "titleColor": "#173642"
+      "titleColor": "#173642",
+      "labelFont": "Helvetica, Arial, sans-serif",
+      "titleFont": "Helvetica, Arial, sans-serif"
     },
     "legend": {
-      "labelColor": "#173642"
+      "labelColor": "#173642",
+      "labelFont": "Helvetica, Arial, sans-serif",
+      "titleFont": "Helvetica, Arial, sans-serif"
     },
     "title": {
       "color": "#173642",
-      "subtitleColor": "#607077"
+      "subtitleColor": "#607077",
+      "font": "Helvetica, Arial, sans-serif",
+      "subtitleFont": "Helvetica, Arial, sans-serif"
     }
   }
 }

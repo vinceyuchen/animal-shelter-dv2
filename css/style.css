@@ -540,3 +540,37 @@ body {
 /* CHART11 RESPONSIVE FACETS */
 .chart11-scroll { overflow-x: auto; }
 #chart11-foster { min-width: 1120px; }
+
+/* DV2 COLOUR SYSTEM V13 START */
+/* Colour follows the ENCODED VARIABLE, not the section or chart number. */
+:root {
+  --dv2-dog: #235789;
+  --dv2-cat: #C46A2D;
+  --dv2-act: #6950A1;
+  --dv2-qld: #07827A;
+  --dv2-sa: #C07822;
+  --dv2-tas: #A84677;
+  --dv2-vic: #2B5F91;
+  --dv2-wa: #71882E;
+  --dv2-live-low: #EDF0F8;
+  --dv2-live-high: #5B5A93;
+  --dv2-caseload: #5B7482;
+  --dv2-facility: #63794A;
+  --dv2-outcome-rehomed: #2B8C78;
+  --dv2-outcome-reunited: #5B87C2;
+  --dv2-outcome-transferred: #A88E5A;
+  --dv2-outcome-in-care: #9FAAAE;
+  --dv2-outcome-euthanased: #B65C6A;
+  --dv2-outcome-other: #D9C8B2;
+}
+.dot-key .dog-dot {background:var(--dv2-dog) !important;}
+.dot-key .cat-dot {background:var(--dv2-cat) !important;}
+.outcome-key .k-rehomed {background:var(--dv2-outcome-rehomed) !important;}
+.outcome-key .k-reunited {background:var(--dv2-outcome-reunited) !important;}
+.outcome-key .k-transferred {background:var(--dv2-outcome-transferred) !important;}
+.outcome-key .k-inc {background:var(--dv2-outcome-in-care) !important;}
+.outcome-key .k-euth {background:var(--dv2-outcome-euthanased) !important;}
+.outcome-key .k-other {background:var(--dv2-outcome-other) !important;}
+.bubble-legend .bubble {background:var(--dv2-caseload) !important;}
+.gradient-legend .gradient-bar {background:linear-gradient(to right, var(--dv2-live-low), var(--dv2-live-high)) !important;}
+/* DV2 COLOUR SYSTEM V13 END */

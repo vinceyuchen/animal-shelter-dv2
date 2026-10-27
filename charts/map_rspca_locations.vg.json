@@ -92,7 +92,10 @@
             "type": "nominal",
             "title": "Address"
           }
-        ]
+        ],
+        "color": {
+          "value": "#63794A"
+        }
       }
     }
   ],

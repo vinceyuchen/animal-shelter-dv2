@@ -571,7 +571,12 @@
       "titleColor": "#173642"
     },
     "legend": {
-      "labelFont": "Helvetica, Arial, sans-serif"
+      "labelFont": "Helvetica, Arial, sans-serif",
+      "titleFont": "Helvetica, Arial, sans-serif"
+    },
+    "title": {
+      "font": "Helvetica, Arial, sans-serif",
+      "subtitleFont": "Helvetica, Arial, sans-serif"
     }
   }
 }

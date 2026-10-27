@@ -328,13 +328,19 @@
     },
     "axis": {
       "labelColor": "#52666f",
-      "titleColor": "#173642"
+      "titleColor": "#173642",
+      "labelFont": "Helvetica, Arial, sans-serif",
+      "titleFont": "Helvetica, Arial, sans-serif"
     },
     "title": {
       "font": "Helvetica, Arial, sans-serif",
       "subtitleFont": "Helvetica, Arial, sans-serif",
       "color": "#173642",
       "subtitleColor": "#607077"
+    },
+    "legend": {
+      "labelFont": "Helvetica, Arial, sans-serif",
+      "titleFont": "Helvetica, Arial, sans-serif"
     }
   }
 }

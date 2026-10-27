@@ -1016,7 +1016,9 @@
     },
     "title": {
       "color": "#173642",
-      "subtitleColor": "#607077"
+      "subtitleColor": "#607077",
+      "font": "Helvetica, Arial, sans-serif",
+      "subtitleFont": "Helvetica, Arial, sans-serif"
     }
   }
 }

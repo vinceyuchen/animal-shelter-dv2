@@ -908,6 +908,10 @@
       "titleFont": "Helvetica, Arial, sans-serif",
       "labelColor": "#30485a",
       "titleColor": "#30485a"
+    },
+    "title": {
+      "font": "Helvetica, Arial, sans-serif",
+      "subtitleFont": "Helvetica, Arial, sans-serif"
     }
   },
   "autosize": {

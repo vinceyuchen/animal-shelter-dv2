@@ -3,22 +3,22 @@ const embedOptions = {
   renderer: "svg"
 };
 
-vegaEmbed("#map-live-release", "charts/map_live_release.vg.json?v=20261027-typefix", embedOptions)
+vegaEmbed("#map-live-release", "charts/map_live_release.vg.json?v=20261027-colour13-v1", embedOptions)
   .catch(console.error);
 
-vegaEmbed("#map-caseload", "charts/map_caseload_symbols.vg.json?v=20261027-typefix", embedOptions)
+vegaEmbed("#map-caseload", "charts/map_caseload_symbols.vg.json?v=20261027-colour13-v1", embedOptions)
   .catch(console.error);
 
-vegaEmbed("#map-locations", "charts/map_rspca_locations.vg.json?v=20261027-typefix", embedOptions)
+vegaEmbed("#map-locations", "charts/map_rspca_locations.vg.json?v=20261027-colour13-v1", embedOptions)
   .catch(console.error);
 
-vegaEmbed("#connected-dot-lrr", "charts/connected_dot_lrr.vg.json?v=20261027-typefix", embedOptions)
+vegaEmbed("#connected-dot-lrr", "charts/connected_dot_lrr.vg.json?v=20261027-colour13-v1", embedOptions)
   .catch(console.error);
 
-vegaEmbed("#butterfly-euthanasia", "charts/chart5_compare.vg.json?v=20261027-typefix", embedOptions)
+vegaEmbed("#butterfly-euthanasia", "charts/chart5_compare.vg.json?v=20261027-colour13-v1", embedOptions)
   .catch(console.error);
 
-vegaEmbed("#outcome-composition", "charts/outcome_composition.vg.json?v=20261027-typefix", embedOptions)
+vegaEmbed("#outcome-composition", "charts/outcome_composition.vg.json?v=20261027-colour13-v1", embedOptions)
   .catch(console.error);
 
 
@@ -39,7 +39,7 @@ vegaEmbed("#outcome-composition", "charts/outcome_composition.vg.json?v=20261027
     try {
       vegaEmbed(
         "#vis-chart7",
-        "charts/chart7_outcome_heatmap.vg.json?v=20261027-repair2",
+        "charts/chart7_outcome_heatmap.vg.json?v=20261027-colour13-v1",
         { actions: false, renderer: "svg" }
       ).catch(showError);
     } catch (error) {
@@ -58,7 +58,7 @@ vegaEmbed("#outcome-composition", "charts/outcome_composition.vg.json?v=20261027
 /* CHART7 EMBED END */
 
 /* CHART8 EMBED START */
-vegaEmbed("#chart8-annual-caseload", "charts/chart8_annual_caseload.vg.json?v=20261027-chart8-safe",
+vegaEmbed("#chart8-annual-caseload", "charts/chart8_annual_caseload.vg.json?v=20261027-colour13-v1",
   {actions:false,renderer:"svg"}).catch(function(err) {
     console.error("Chart 8:",err);
     const el=document.getElementById("chart8-annual-caseload");
@@ -73,7 +73,7 @@ vegaEmbed("#chart8-annual-caseload", "charts/chart8_annual_caseload.vg.json?v=20
     if (!host) return;
     vegaEmbed(
       "#chart9-yoy-bump",
-      "charts/chart9_yoy_bump.vg.json?v=20261027-chart9v1",
+      "charts/chart9_yoy_bump.vg.json?v=20261027-colour13-v1",
       { actions: false, renderer: "svg" }
     ).catch(function(error) {
       console.error("Chart 9 error:", error);
@@ -103,7 +103,7 @@ vegaEmbed("#chart8-annual-caseload", "charts/chart8_annual_caseload.vg.json?v=20
     };
     vegaEmbed(
       "#chart10-outcome-sankey",
-      "charts/chart10_outcome_sankey.vg.json?v=20261027-chart10",
+      "charts/chart10_outcome_sankey.vg.json?v=20261027-colour13-v1",
       { actions: false, renderer: "svg", mode: "vega" }
     ).catch(showError);
   }
@@ -116,7 +116,7 @@ vegaEmbed("#chart8-annual-caseload", "charts/chart8_annual_caseload.vg.json?v=20
 /* CHART10 EMBED END */
 
 /* CHART11 EMBED START */
-vegaEmbed('#chart11-foster','charts/chart11_foster_lollipop.vg.json?v=20261027-chart11',{actions:false,renderer:'svg'})
+vegaEmbed('#chart11-foster','charts/chart11_foster_lollipop.vg.json?v=20261027-colour13-v1',{actions:false,renderer:'svg'})
   .catch(function(err){
     console.error('Chart 11 error:',err);
     const el=document.getElementById('chart11-foster');
@@ -131,7 +131,7 @@ vegaEmbed('#chart11-foster','charts/chart11_foster_lollipop.vg.json?v=20261027-c
     if (!host) return;
     vegaEmbed(
       "#chart12-cat-share-slope",
-      "charts/chart12_cat_share_slope.vg.json?v=20261027-chart12v1",
+      "charts/chart12_cat_share_slope.vg.json?v=20261027-colour13-v1",
       { actions: false, renderer: "svg" }
     ).catch(function (error) {
       console.error("Chart 12 rendering error:", error);
@@ -153,7 +153,7 @@ vegaEmbed('#chart11-foster','charts/chart11_foster_lollipop.vg.json?v=20261027-c
   function renderChart13() {
     const target = document.getElementById('chart13-townsville');
     if (!target) return;
-    vegaEmbed('#chart13-townsville', 'charts/chart13_townsville_seasonality.vg.json?v=20261027-seasonalfix',
+    vegaEmbed('#chart13-townsville', 'charts/chart13_townsville_seasonality.vg.json?v=20261027-colour13-v1',
       { actions:false, renderer:'svg' }).catch(function(error) {
         console.error('Chart 13 error:', error);
         target.textContent = 'Chart 13 could not render. Check the browser console.';
