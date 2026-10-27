@@ -33,9 +33,9 @@
 | 9 | Bump/rank chart | Compare rankings of jurisdiction-level year-on-year change |
 | 10 | Sankey/alluvial chart | Compare counts flowing from aggregate species categories to recorded outcome classifications |
 | 11 | Faceted lollipop plot | Compare reported foster placement episodes across 12 selected Victorian entities and species |
-| 12 | Slopegraph | Compare the cat proportion of dog-and-cat reporting between two financial years |
-| 13 | Streamgraph | Explore mean monthly adopted/reclaimed records over five complete years for one Townsville centre |
-| 14 | Nested treemap (hierarchical area encoding) | Show placement concentration among the 12 selected Victorian reporting entities while subdividing each tile into dogs and cats |
+| 12 | Nested treemap (hierarchical area encoding) | Show foster placement concentration across the 12 selected Victorian reporting entities, subdivided into dogs and cats |
+| 13 | Slopegraph | Compare the cat proportion of dog-and-cat reporting between two financial years |
+| 14 | Streamgraph | Explore average monthly adoption/reclaim records for five complete years at one Townsville centre |
 
 **Marking caution:** A chart's label does not alone establish that it is an 'advanced idiom'. In particular, bars, dot plots and ordinary line charts remain basic under the published rubric. Complex idioms must be used meaningfully, not merely counted.
 
