@@ -152,6 +152,12 @@ try {
           await labelCheck('map-locations-plot', 'Selected sites, not a census');
           await labelCheck('chart13-townsville', 'Reclaims peak · May 84.4');
           await labelCheck('chart13-townsville', 'Adoptions peak · Dec 100.4');
+          const peakMarkCount = await page.locator('#chart13-townsville svg text')
+            .evaluateAll(nodes => nodes.filter(node =>
+              /(?:Reclaims|Adoptions) peak/.test(node.textContent || '')).length);
+          if (peakMarkCount !== 2) {
+            throw new Error('Expected exactly two monthly peak labels; saw ' + peakMarkCount);
+          }
           view.rubricChecks.round2VisibleAnnotations = true;
         } catch (error) {
           view.rubricChecks.round2VisibleAnnotations = false;
