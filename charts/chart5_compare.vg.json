@@ -12,8 +12,8 @@
   "title": {
     "text": "How do the recorded reasons differ by species?",
     "subtitle": [
-      "Shares are calculated within each species total.",
-      "Dogs extend left from 0%; cats extend right."
+      "Both sides show positive shares of each species' recorded euthanasia reasons.",
+      "Dogs extend to the left; cats extend to the right of the centre line."
     ],
     "anchor": "start",
     "fontSize": 18,
@@ -65,7 +65,7 @@
         "nice": false
       },
       "axis": {
-        "title": "Share within species",
+        "title": "Share within species (dogs left, cats right)",
         "values": [
           -0.6,
           -0.4,
@@ -81,7 +81,8 @@
         "domain": false,
         "labelFontSize": 12,
         "titleFontSize": 13,
-        "titlePadding": 12
+        "titlePadding": 12,
+        "labelExpr": "format(abs(datum.value), '.0%')"
       }
     },
     "color": {
