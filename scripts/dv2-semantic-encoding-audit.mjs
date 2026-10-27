@@ -79,6 +79,21 @@ for (const [series,month,count] of [['Reclaimed','May',84.4],['Adopted','Dec',10
   expect(actual.month === month && Math.abs(actual.mean_count - count) < 1e-8,
     'Peak annotation must match observed mean for ' + series);
 }
+// Round 3: geographical series gain redundant line patterns without changing colour meaning.
+const jurisdiction = ['ACT','QLD','SA','TAS','VIC','WA'];
+const bumpColour = files.bump.encoding.color.scale;
+const slopeColour = files.slope.encoding.color.scale;
+const bumpDashes = files.bump.layer[0].encoding.strokeDash?.scale;
+const slopeDashes = files.slope.layer[0].encoding.strokeDash?.scale;
+expect(JSON.stringify(bumpColour.domain) === JSON.stringify(jurisdiction) &&
+       JSON.stringify(slopeColour) === JSON.stringify(bumpColour) &&
+       JSON.stringify(bumpDashes) === JSON.stringify(slopeDashes) &&
+       JSON.stringify(bumpDashes?.domain) === JSON.stringify(jurisdiction) &&
+       bumpDashes?.range?.length === 6 &&
+       new Set(bumpDashes.range.map(x => JSON.stringify(x))).size === 6,
+  'Jurisdictions need identical colour and uniquely distinguishable line patterns across both charts');
+expect(css.includes('--accent: #50636E;') && css.includes('--dv2-ui-border: #B7C4CB;'),
+  'Editorial decoration should use neutral UI colours rather than data-category hues');
 const html = read('index.html');
 expect(html.includes('pp means <em>percentage points</em>'),
   'Chart 4 must define percentage points at first use');
