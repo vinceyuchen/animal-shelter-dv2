@@ -204,7 +204,7 @@
     }
   },
   "spec": {
-    "width": 340,
+    "width": 265,
     "height": {
       "step": 29
     },
@@ -229,7 +229,7 @@
         "title": null,
         "axis": {
           "labelFontSize": 11,
-          "labelLimit": 175,
+          "labelLimit": 340,
           "ticks": false,
           "domain": false
         }
@@ -342,5 +342,6 @@
       "labelFont": "Helvetica, Arial, sans-serif",
       "titleFont": "Helvetica, Arial, sans-serif"
     }
-  }
+  },
+  "spacing": 12
 }

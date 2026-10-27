@@ -116,7 +116,7 @@ vegaEmbed("#chart8-annual-caseload", "charts/chart8_annual_caseload.vg.json?v=20
 /* CHART10 EMBED END */
 
 /* CHART11 EMBED START */
-vegaEmbed('#chart11-foster','charts/chart11_foster_lollipop.vg.json?v=20261027-colour13-v1',{actions:false,renderer:'svg'})
+vegaEmbed('#chart11-foster','charts/chart11_foster_lollipop.vg.json?v=20261027-finale1',{actions:false,renderer:'svg'})
   .catch(function(err){
     console.error('Chart 11 error:',err);
     const el=document.getElementById('chart11-foster');
@@ -153,7 +153,7 @@ vegaEmbed('#chart11-foster','charts/chart11_foster_lollipop.vg.json?v=20261027-c
   function renderChart13() {
     const target = document.getElementById('chart13-townsville');
     if (!target) return;
-    vegaEmbed('#chart13-townsville', 'charts/chart13_townsville_seasonality.vg.json?v=20261027-colour13-v1',
+    vegaEmbed('#chart13-townsville', 'charts/chart13_townsville_seasonality.vg.json?v=20261027-finale1',
       { actions:false, renderer:'svg' }).catch(function(error) {
         console.error('Chart 13 error:', error);
         target.textContent = 'Chart 13 could not render. Check the browser console.';

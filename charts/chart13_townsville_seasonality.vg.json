@@ -26,168 +26,168 @@
       {
         "month": "Jan",
         "month_num": 1,
-        "series": "Adopted (species not specified)",
+        "series": "Adopted",
         "mean_count": 89.4,
         "years": 5
       },
       {
         "month": "Jan",
         "month_num": 1,
-        "series": "Reclaimed (species not specified)",
+        "series": "Reclaimed",
         "mean_count": 61.8,
         "years": 5
       },
       {
         "month": "Feb",
         "month_num": 2,
-        "series": "Adopted (species not specified)",
+        "series": "Adopted",
         "mean_count": 93.8,
         "years": 5
       },
       {
         "month": "Feb",
         "month_num": 2,
-        "series": "Reclaimed (species not specified)",
+        "series": "Reclaimed",
         "mean_count": 63.2,
         "years": 5
       },
       {
         "month": "Mar",
         "month_num": 3,
-        "series": "Adopted (species not specified)",
+        "series": "Adopted",
         "mean_count": 86.6,
         "years": 5
       },
       {
         "month": "Mar",
         "month_num": 3,
-        "series": "Reclaimed (species not specified)",
+        "series": "Reclaimed",
         "mean_count": 77.0,
         "years": 5
       },
       {
         "month": "Apr",
         "month_num": 4,
-        "series": "Adopted (species not specified)",
+        "series": "Adopted",
         "mean_count": 81.0,
         "years": 5
       },
       {
         "month": "Apr",
         "month_num": 4,
-        "series": "Reclaimed (species not specified)",
+        "series": "Reclaimed",
         "mean_count": 75.0,
         "years": 5
       },
       {
         "month": "May",
         "month_num": 5,
-        "series": "Adopted (species not specified)",
+        "series": "Adopted",
         "mean_count": 93.4,
         "years": 5
       },
       {
         "month": "May",
         "month_num": 5,
-        "series": "Reclaimed (species not specified)",
+        "series": "Reclaimed",
         "mean_count": 84.4,
         "years": 5
       },
       {
         "month": "Jun",
         "month_num": 6,
-        "series": "Adopted (species not specified)",
+        "series": "Adopted",
         "mean_count": 91.0,
         "years": 5
       },
       {
         "month": "Jun",
         "month_num": 6,
-        "series": "Reclaimed (species not specified)",
+        "series": "Reclaimed",
         "mean_count": 83.8,
         "years": 5
       },
       {
         "month": "Jul",
         "month_num": 7,
-        "series": "Adopted (species not specified)",
+        "series": "Adopted",
         "mean_count": 94.2,
         "years": 5
       },
       {
         "month": "Jul",
         "month_num": 7,
-        "series": "Reclaimed (species not specified)",
+        "series": "Reclaimed",
         "mean_count": 77.4,
         "years": 5
       },
       {
         "month": "Aug",
         "month_num": 8,
-        "series": "Adopted (species not specified)",
+        "series": "Adopted",
         "mean_count": 92.4,
         "years": 5
       },
       {
         "month": "Aug",
         "month_num": 8,
-        "series": "Reclaimed (species not specified)",
+        "series": "Reclaimed",
         "mean_count": 82.4,
         "years": 5
       },
       {
         "month": "Sep",
         "month_num": 9,
-        "series": "Adopted (species not specified)",
+        "series": "Adopted",
         "mean_count": 95.6,
         "years": 5
       },
       {
         "month": "Sep",
         "month_num": 9,
-        "series": "Reclaimed (species not specified)",
+        "series": "Reclaimed",
         "mean_count": 83.2,
         "years": 5
       },
       {
         "month": "Oct",
         "month_num": 10,
-        "series": "Adopted (species not specified)",
+        "series": "Adopted",
         "mean_count": 87.4,
         "years": 5
       },
       {
         "month": "Oct",
         "month_num": 10,
-        "series": "Reclaimed (species not specified)",
+        "series": "Reclaimed",
         "mean_count": 69.2,
         "years": 5
       },
       {
         "month": "Nov",
         "month_num": 11,
-        "series": "Adopted (species not specified)",
+        "series": "Adopted",
         "mean_count": 73.4,
         "years": 5
       },
       {
         "month": "Nov",
         "month_num": 11,
-        "series": "Reclaimed (species not specified)",
+        "series": "Reclaimed",
         "mean_count": 71.8,
         "years": 5
       },
       {
         "month": "Dec",
         "month_num": 12,
-        "series": "Adopted (species not specified)",
+        "series": "Adopted",
         "mean_count": 100.4,
         "years": 5
       },
       {
         "month": "Dec",
         "month_num": 12,
-        "series": "Reclaimed (species not specified)",
+        "series": "Reclaimed",
         "mean_count": 76.4,
         "years": 5
       }
@@ -233,8 +233,8 @@
       "type": "nominal",
       "scale": {
         "domain": [
-          "Adopted (species not specified)",
-          "Reclaimed (species not specified)"
+          "Adopted",
+          "Reclaimed"
         ],
         "range": [
           "#2B8C78",
@@ -244,18 +244,17 @@
       "legend": {
         "orient": "bottom",
         "title": null,
-        "labelFontSize": 12,
-        "labelLimit": 200,
-        "columns": 2,
-        "labelExpr": "datum.label === 'Adopted (species not specified)' ? 'Adopted' : datum.label === 'Reclaimed (species not specified)' ? 'Reclaimed' : datum.label"
+        "labelFontSize": 13,
+        "labelLimit": 140,
+        "columns": 2
       }
     },
     "order": {
       "field": "series",
       "type": "nominal",
       "sort": [
-        "Adopted (species not specified)",
-        "Reclaimed (species not specified)"
+        "Adopted",
+        "Reclaimed"
       ]
     },
     "tooltip": [

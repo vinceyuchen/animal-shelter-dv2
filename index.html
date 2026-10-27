@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261027-colour13-v1">
+  <link rel="stylesheet" href="css/style.css?v=20261027-finale1">
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
@@ -412,61 +412,57 @@
 </section>
 <!-- CHART13 END -->
 
-    <section class="section shell project-notes">
-      <div class="section-heading">
-        <p class="eyebrow">Sources · Method · Acknowledgements</p>
-        <h2>About this visualisation</h2>
-        <p>
-          This project combines official RSPCA reporting with Australian geographic data to explain
-          where shelter pressure appears and how outcomes differ across species and jurisdictions.
-          Additional sources will be added here as the remaining visualisations are completed.
-        </p>
-      </div>
+    <!-- DV2 CONCLUSION START -->
+<section class="section shell dv2-conclusion" id="conclusion">
+  <p class="eyebrow">THE BIG PICTURE · WHAT WE LEARNED</p>
+  <h2>Different places, different pathways into care</h2>
+  <p class="dv2-section-lede">Australia's shelter story cannot be reduced to a single count or a single outcome rate. Read together, these charts point to three important findings.</p>
+  <div class="dv2-conclusion-grid">
+    <article class="dv2-insight"><span class="dv2-insight-no">01 / OUTCOMES</span><h3>Dogs and cats follow different pathways</h3><p>In RSPCA's 2024–25 reporting, rehoming accounted for 64.1% of recorded cat outcomes, while reunification accounted for 24.8% of dog outcomes. Looking only at the overall rate hides these differences.</p></article>
+    <article class="dv2-insight"><span class="dv2-insight-no">02 / PLACE AND TIME</span><h3>Where and when we count matters</h3><p>Reported caseload and outcome composition vary by jurisdiction. Five-year RSPCA trends also depend on reporting coverage, while the monthly Townsville series offers a local view of seasonality rather than a national pattern.</p></article>
+    <article class="dv2-insight"><span class="dv2-insight-no">03 / CARE BEYOND ADOPTION</span><h3>Foster care is part of the wider system</h3><p>Victoria's 2025 shelter and pound data reveal foster placements beyond the RSPCA outcome summaries. These are placement episodes, not counts of unique animals, and cannot be combined directly with RSPCA caseloads.</p></article>
+  </div>
+  <p class="dv2-final-takeaway"><strong>Takeaway:</strong> Animal welfare cannot be ranked from these counts alone. Rates, recording scope, local conditions and the different paths through care must be considered together.</p>
+</section>
+<!-- DV2 CONCLUSION END -->
 
-      <div class="notes-grid">
-        <article class="notes-card">
-          <h3>Data sources</h3>
-          <p>
-            <strong>RSPCA Australia Annual Statistics 2024–25</strong><br>
-            State and territory outcomes, live-release calculations, caseload totals and euthanasia reasons.
-          </p>
-          <p>
-            <strong>Australian Bureau of Statistics, ASGS Edition 3</strong><br>
-            State and Territory geography used for national mapping.
-          </p>
-          <p>
-            <strong>Official RSPCA state and territory location pages</strong><br>
-            Shelter, animal-care-centre and adoption-centre locations used in the facility map.
-          </p>
-        </article>
-
-        <article class="notes-card">
-          <h3>Scope and method</h3>
-          <p>
-            RSPCA reporting coverage differs by jurisdiction, so figures on this page describe the
-            RSPCA reporting network rather than every Australian shelter or council pound.
-          </p>
-          <p>
-            Derived measures, including live-release rate and within-species percentages, are calculated
-            from the published source categories. Definitions are stated beside the relevant charts.
-          </p>
-        </article>
-
-        <article class="notes-card">
-          <h3>Project details</h3>
-          <p>
-            <strong>FIT3179 Data Visualisation 2</strong><br>
-            Topic: Animal Shelter<br>
-            Last updated: 14 October 2026
-          </p>
-          <p>
-            <strong>AI acknowledgement</strong><br>
-            Generative AI was used for code assistance, debugging and drafting support. Data interpretation,
-            visual design decisions and final checking remain the responsibility of the author.
-          </p>
-        </article>
-      </div>
-    </section>
+    <section class="section shell project-notes dv2-final-notes" id="sources-method">
+  <p class="eyebrow">SOURCES · METHOD · ACKNOWLEDGEMENTS</p>
+  <h2>Data, definitions and limitations</h2>
+  <p class="dv2-section-lede">This page draws on three distinct reporting scopes. Each visualisation identifies its own period and denominator; figures from different organisations have not been added together.</p>
+  <div class="dv2-notes-grid">
+    <article class="dv2-note-panel">
+      <h3>Original data sources</h3>
+      <ul class="dv2-reference-list">
+        <li><a href="https://www.rspca.org.au/about/annual-statistics/" target="_blank" rel="noopener noreferrer">RSPCA Australia — Annual Statistics</a><span>2024–25 outcomes and euthanasia reasons; archive of 2020–21 to 2023–24 for historical trends (Charts 1, 2, 4–10, 12).</span></li>
+        <li><a href="https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/access-and-downloads/digital-boundary-files" target="_blank" rel="noopener noreferrer">ABS — ASGS Edition 3 digital boundaries</a><span>2021 states and territories used for geographic context (Maps 1–3).</span></li>
+        <li><a href="https://www.rspca.org.au/our-role/caring-for-animals/services-and-shelters/" target="_blank" rel="noopener noreferrer">RSPCA — Shelters and services by jurisdiction</a><span>Directory to state and territory information; Chart 3 maps selected verified RSPCA-operated facilities, not a complete national census.</span></li>
+        <li><a href="https://agriculture.vic.gov.au/livestock-and-animals/animal-welfare-victoria/domestic-animals-act/animal-fate-data-set" target="_blank" rel="noopener noreferrer">Animal Welfare Victoria — 2025 shelter and pound dataset</a><span>Official reporting-entity foster-placement counts, January–December 2025 (Chart 11).</span></li>
+        <li><a href="https://data.gov.au/data/dataset/414d816a-f79c-45c7-af7f-46af1b923bdd" target="_blank" rel="noopener noreferrer">Townsville City Council — Animals Adopted and Reclaimed</a><span>Monthly observations, 2021–2025 full years, used to calculate mean values for each calendar month (Chart 13).</span></li>
+      </ul>
+    </article>
+    <article class="dv2-note-panel">
+      <h3>How the figures were prepared</h3>
+      <p><strong>Outcome groups.</strong> “Reunited” combines Reclaimed and Returned. The outcome share for a species or jurisdiction is its category count divided by that group's recorded total. “In Care” is an ongoing status, not a final exit outcome.</p>
+      <p><strong>Live-release rate.</strong> RSPCA eligible outcomes are used as the denominator; rehomed, reunited and transferred are counted in the live-release numerator. It is not a percentage of all animals entering care.</p>
+      <p><strong>Time comparisons.</strong> Charts 8, 9 and 12 use six selected RSPCA jurisdictions (ACT, QLD, SA, TAS, VIC, WA). NSW and NT are excluded due to changes in reporting coverage. Chart 9 ranks year-on-year percentage change; Chart 12 reports percentage-point differences.</p>
+      <p><strong>Monthly summary.</strong> Chart 13 averages each calendar month's Adopted and Reclaimed observations over five complete years. These figures are Townsville-specific and the source does not distinguish dog versus cat records.</p>
+    </article>
+    <article class="dv2-note-panel">
+      <h3>Limits on interpretation</h3>
+      <p>RSPCA figures describe the reporting RSPCA network, not every Australian animal shelter or council pound. Reporting footprints, contracts, policies and category definitions can change between jurisdictions or years.</p>
+      <p>Victoria's foster data refer to the state's reporting shelters and pounds, and count <em>placements</em>, not unique animals. The Chart 11 top-12 facilities are a subset of Victorian reports.</p>
+      <p>The Townsville series is a single local centre. An apparent monthly peak cannot establish a nationwide seasonal trend, or show why numbers change. The three datasets are not directly additive.</p>
+    </article>
+    <article class="dv2-note-panel">
+      <h3>Project and tools</h3>
+      <p><strong>Course:</strong> FIT3179 Data Visualisation 2<br><strong>Topic:</strong> Animal Shelter<br><strong>Project year:</strong> 2026<br><strong>Updated:</strong> 27 October 2026</p>
+      <p><strong>Built with:</strong> Vega-Lite and Vega-Embed, HTML, CSS, JavaScript and Python-supported data preparation. <a href="https://github.com/vinceyuchen/animal-shelter-dv2" target="_blank" rel="noopener noreferrer">Source code and processed data on GitHub</a>.</p>
+      <h3>AI acknowledgement</h3>
+      <p>Generative AI assisted with code drafting, debugging, data preparation and written explanations. The author remains responsible for checking source data, calculations, interpretation and final visualisation decisions.</p>
+    </article>
+  </div>
+</section>
 
     <footer class="site-footer shell">
       <p>Behind the Shelter Doors · FIT3179 Data Visualisation 2 · 2026</p>
@@ -475,6 +471,6 @@
 
 
 </main>
-  <script src="js/embed.js?v=20261027-colour13-v1"></script>
+  <script src="js/embed.js?v=20261027-finale1"></script>
 </body>
 </html>
