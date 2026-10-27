@@ -721,3 +721,32 @@ html { scroll-padding-top: 90px; }
 /* Round 2: concise plain-language notes for chart interpretations. */
 .dv2-reading-hint { max-width:60ch; margin:12px 4px 15px; padding:1px 0 1px 13px; border-left:2px solid #a9c4c0; color:#48616a; font:400 13.5px/1.6 Helvetica,Arial,sans-serif; }
 .dv2-reading-hint strong {font-weight:700;color:#294b56;}
+
+/* ROUND 3: Neutral editorial accents are UI hierarchy, not data categories.
+   Keep dog/cat/outcome colours reserved for their semantic encodings. */
+:root {
+  --page: #F5F7F8;
+  --soft: #EEF2F4;
+  --line: #DBE3E7;
+  --accent: #50636E;
+  --dv2-ui-border: #B7C4CB;
+  --dv2-ui-secondary: #526774;
+}
+.dv2-story-aside { border-left-color: var(--dv2-ui-border); }
+.dv2-story-kicker { color: var(--dv2-ui-secondary); }
+.dv2-chapter-bridge { border-top-color: var(--dv2-ui-border); }
+.dv2-chapter-bridge span { color: var(--dv2-ui-secondary); }
+.dv2-reading-hint { border-left-color: var(--dv2-ui-border); }
+.dv2-insight-no { color: var(--dv2-ui-secondary); }
+.dv2-final-takeaway { border-left-color: #657984; background: #F0F3F5; }
+.dv2-section-nav { background: rgba(250,251,252,.97); border-color: var(--line); }
+.dv2-section-nav a:hover { background: #EAF0F3; color: #334D5B; }
+.dv2-final-notes a { color: #315A6A; }
+.callout { border: 1px solid #E0E7EB; }
+.source-note { border-top: 1px solid var(--line); padding-top: 11px; margin-top: 20px; }
+@media (min-width: 1150px) { .dv2-story-grid { column-gap: 32px; } }
+@media (max-width: 650px) {
+  .callout { padding: 15px 17px; }
+  .dv2-story-grid { gap: 17px; }
+  .dv2-story-aside { border-left-width: 2px; }
+}
