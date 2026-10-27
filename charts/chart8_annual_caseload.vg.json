@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Reported RSPCA state society dogs and cats, 2020-21 to 2024-25. NSW and NT excluded due to substantial reporting coverage changes.",
+  "description": "Reported RSPCA state society dogs and cats, 2020-21 to 2024-25. NSW and NT excluded due to substantial reporting coverage changes. Final-year values for both species are annotated directly on the line chart.",
   "width": "container",
   "height": 380,
   "background": "#ffffff",
@@ -478,14 +478,6 @@
       "filter": "datum.state == Chart8State"
     }
   ],
-  "mark": {
-    "type": "line",
-    "point": {
-      "filled": true,
-      "size": 100
-    },
-    "strokeWidth": 3
-  },
   "encoding": {
     "x": {
       "field": "financial_year",
@@ -578,5 +570,65 @@
       "font": "Helvetica, Arial, sans-serif",
       "subtitleFont": "Helvetica, Arial, sans-serif"
     }
-  }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "point": {
+          "filled": true,
+          "size": 100
+        },
+        "strokeWidth": 3
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.financial_year === '2024-25' && datum.species === 'Dogs'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -12,
+        "dy": 19,
+        "font": "Helvetica, Arial, sans-serif",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#235789"
+      },
+      "encoding": {
+        "text": {
+          "field": "count",
+          "type": "quantitative",
+          "format": ",d"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.financial_year === '2024-25' && datum.species === 'Cats'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -12,
+        "dy": -16,
+        "font": "Helvetica, Arial, sans-serif",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#C46A2D"
+      },
+      "encoding": {
+        "text": {
+          "field": "count",
+          "type": "quantitative",
+          "format": ",d"
+        }
+      }
+    }
+  ]
 }
