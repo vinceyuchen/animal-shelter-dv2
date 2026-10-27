@@ -12,8 +12,8 @@
   "title": {
     "text": "Which jurisdictions had the fastest year-on-year change?",
     "subtitle": [
-      "Lines rank the year-on-year changes of six RSPCA jurisdictions (1 = highest growth / least decline).",
-      "End-of-line labels identify every jurisdiction. Ranking refers to reported caseload, not welfare performance."
+      "State colours and line patterns trace six RSPCA jurisdictions; the end labels identify each state.",
+      "Rank is the change in reported caseload, not welfare performance."
     ],
     "anchor": "start",
     "font": "Helvetica, Arial, sans-serif",
@@ -944,6 +944,53 @@
         "order": {
           "field": "year_order",
           "type": "quantitative"
+        },
+        "strokeDash": {
+          "field": "state",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "ACT",
+              "QLD",
+              "SA",
+              "TAS",
+              "VIC",
+              "WA"
+            ],
+            "range": [
+              [
+                1,
+                0
+              ],
+              [
+                8,
+                4
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                10,
+                3,
+                2,
+                3
+              ],
+              [
+                5,
+                2,
+                2,
+                2
+              ],
+              [
+                2,
+                2,
+                7,
+                2
+              ]
+            ]
+          },
+          "legend": null
         }
       }
     },
