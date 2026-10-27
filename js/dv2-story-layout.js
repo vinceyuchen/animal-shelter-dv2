@@ -39,23 +39,22 @@
     const rehomed = maxShare("Rehomed");
     if (!euth || !rehomed) return;
 
-    const section = aside?.closest("section");
-    const grid = section?.querySelector("[data-chart7-kpis]");
     const formatRate = row => Number(row.share_pct).toFixed(1) + "%";
     const name = code => states[code] || code;
-    if (grid) {
-      const elements = {
-        eNumber: grid.querySelector("[data-chart7-euth-number]"),
-        eLabel: grid.querySelector("[data-chart7-euth-label]"),
-        rNumber: grid.querySelector("[data-chart7-rehome-number]"),
-        rLabel: grid.querySelector("[data-chart7-rehome-label]")
-      };
-      if (Object.values(elements).every(Boolean)) {
-        elements.eNumber.textContent = formatRate(euth);
-        elements.eLabel.textContent = (species === "Dog" ? "Dogs" : "Cats") + " · " + name(euth.state) + ": highest euthanasia share";
-        elements.rNumber.textContent = formatRate(rehomed);
-        elements.rLabel.textContent = (species === "Dog" ? "Dogs" : "Cats") + " · " + name(rehomed.state) + ": highest rehoming share";
-      }
+    // Select cards directly by section ID. The Vega controls are reparented at
+    // runtime, so anchoring card updates to the story aside can miss the cards.
+    const cards = document.querySelectorAll("#section-07 [data-chart7-kpis] .callout");
+    if (cards.length === 2) {
+      const eNumber = cards[0].querySelector(".callout-number");
+      const eLabel = cards[0].querySelector(".callout-label");
+      const rNumber = cards[1].querySelector(".callout-number");
+      const rLabel = cards[1].querySelector(".callout-label");
+      if (eNumber) eNumber.textContent = formatRate(euth);
+      if (eLabel) eLabel.textContent = (species === "Dog" ? "Dogs" : "Cats") + " · " + name(euth.state) + ": highest euthanasia share";
+      if (rNumber) rNumber.textContent = formatRate(rehomed);
+      if (rLabel) rLabel.textContent = (species === "Dog" ? "Dogs" : "Cats") + " · " + name(rehomed.state) + ": highest rehoming share";
+    } else {
+      console.warn("Chart 7 key percentage cards could not be located.", cards.length);
     }
 
     writeInsight(aside,
