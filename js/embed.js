@@ -73,7 +73,7 @@ vegaEmbed("#chart8-annual-caseload", "charts/chart8_annual_caseload.vg.json?v=20
     if (!host) return;
     vegaEmbed(
       "#chart9-yoy-bump",
-      "charts/chart9_yoy_bump.vg.json?v=20261028-direct-labels1",
+      "charts/chart9_yoy_bump.vg.json?v=20261028-r3-dash1",
       { actions: false, renderer: "svg" }
     ).catch(function(error) {
       console.error("Chart 9 error:", error);
@@ -131,7 +131,7 @@ vegaEmbed('#chart11-foster','charts/chart11_foster_lollipop.vg.json?v=20261028-l
     if (!host) return;
     vegaEmbed(
       "#chart12-cat-share-slope",
-      "charts/chart12_cat_share_slope.vg.json?v=20261027-colour13-v1",
+      "charts/chart12_cat_share_slope.vg.json?v=20261028-r3-dash1",
       { actions: false, renderer: "svg" }
     ).catch(function (error) {
       console.error("Chart 12 rendering error:", error);
