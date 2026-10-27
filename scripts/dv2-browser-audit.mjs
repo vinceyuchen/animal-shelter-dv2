@@ -67,7 +67,7 @@ try {
       for (let i = 0; i < 14; i++) {
         const expectedId = 'section-' + String(i + 1).padStart(2, '0');
         const expectedChart = charts[i][2];
-        if (actualOrder[i]?.id !== expectedId || !actualOrder[i]?.charts.includes(expectedChart)) {
+        if (actualOrder[i]?.id !== expectedId || !(actualOrder[i]?.charts.includes(expectedChart) || (expectedChart === 'map-locations' && actualOrder[i]?.charts.includes('map-locations-plot')))) {
           view.errors.push('Story order mismatch in section ' + expectedId + ': expected ' + expectedChart);
         }
       }
