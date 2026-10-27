@@ -32,6 +32,13 @@ for (const [cls, width] of [['bubble-2k',25],['bubble-8k',49],['bubble-14k',65]]
   expect(css.includes('.' + cls + ' { width: ' + width + 'px; height: ' + width + 'px; }'),
     'HTML circle-size legend inconsistent: ' + cls);
 }
+// Butterfly uses signed data only to position opposing bars. Axis labels must show
+// genuine (nonnegative) species shares, never negative percentages.
+const butterflyAxis = files.butterfly.encoding.x.axis;
+expect(butterflyAxis.labelExpr === "format(abs(datum.value), '.0%')",
+  'Butterfly axis must show absolute rates, including on its left side');
+expect(files.butterfly.encoding.x.field === 'signed_share',
+  'Butterfly must preserve signed positioning around zero');
 const grey = files.heat.layer[0].encoding.color.scale.range;
 expect(JSON.stringify(grey) === '["#F2F2F2","#A4A4A4"]', 'Chart 7 must use a neutral quantitative grey scale');
 expect(files.heat.layer[1].encoding.color.value === '#173642', 'Chart 7 percentage labels must be uniformly dark');

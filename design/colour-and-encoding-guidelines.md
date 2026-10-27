@@ -51,3 +51,7 @@ Townsville's Adopted is styled like Rehomed; Reclaimed is styled like Reunited. 
 3. Do HTML custom legends, Vega-Lite legends, and direct labels agree?
 4. Are quantitative scales ordered and accompanied by a clear explanation?
 5. Are source scopes and caveats unchanged?
+
+## Signed-position encodings are not negative rates
+
+- Chart 6 uses signed values only to place Dogs on the left and Cats on the right. Its tick labels deliberately use `abs()`, so both sides display non-negative within-species percentages. The axis title also explicitly describes its two halves.

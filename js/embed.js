@@ -15,7 +15,7 @@ vegaEmbed("#map-locations-plot", "charts/map_rspca_locations.vg.json?v=20261027-
 vegaEmbed("#connected-dot-lrr", "charts/connected_dot_lrr.vg.json?v=20261028-anotations1", embedOptions)
   .catch(console.error);
 
-vegaEmbed("#butterfly-euthanasia", "charts/chart5_compare.vg.json?v=20261028-anotations1", embedOptions)
+vegaEmbed("#butterfly-euthanasia", "charts/chart5_compare.vg.json?v=20261028-absolute-axis", embedOptions)
   .catch(console.error);
 
 vegaEmbed("#outcome-composition", "charts/outcome_composition.vg.json?v=20261027-colour13-v1", embedOptions)
