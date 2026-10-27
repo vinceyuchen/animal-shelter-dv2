@@ -16,7 +16,7 @@
 
 **Why:** To distinguish outcome *rates* from *volumes*, compare species' pathways through care, identify within-network geographic differences, show changes over time and make clear why unrelated reporting systems cannot be simply combined.
 
-**How:** Fourteen Vega/Vega-Lite charts on a single scrolling GitHub Pages website, organised from geographic context to animal outcomes, changing caseloads, foster care and a local seasonality example. Static summaries and menu-linked key findings support presentation; tooltips and selectors offer limited exploration without hiding the story.
+**How:** Fourteen Vega/Vega-Lite charts on a single scrolling GitHub Pages website, organised from geographic context to animal outcomes, changing caseloads, foster care and a local seasonality example. Static summaries and menu-linked key findings support presentation; tooltips and selectors offer limited exploration without hiding the story. Four short chapter transitions follow the original four-section hand-drawn planning sketch.
 
 ## Chart inventory and idiom rationale
 
@@ -57,5 +57,14 @@ The RSPCA series does **not** describe all shelters or council pounds in Austral
 - `charts/` — human-readable Vega and Vega-Lite specifications.
 - `data/` — cleaned plot-ready datasets and geography.
 - `scripts/dv2-browser-audit.mjs`, `.github/workflows/dv2-live-audit.yml` — automated live Chromium render and interaction checks.
+- `scripts/dv2-semantic-encoding-audit.mjs` — automated cross-chart colour, proportional-area, text-contrast and chapter-sequence checks.
 
 **AI acknowledgement:** Generative AI assisted with code, debugging, data preparation and writing. The author is responsible for checking source data, calculations, design decisions and interpretation. Submitted work must be original and properly attributed.
+
+## October 2026 rubric improvements
+
+- Chart 2 uses one fixed 0–15,000 animal area domain for all species selections, with matching reference-symbol diameters.
+- Chart 7 uses neutral greyscale, dark numeric labels and minimum text contrast above 4.5:1, keeping percentage colours distinct from categories.
+- Four chapter transitions reinforce the original sketch narrative: geography, outcomes, caseload changes and beyond-the-shelter care.
+- Connected-dot and butterfly comparisons now identify two key differences directly on the plots, alongside their existing explanatory notes.
+- The hand-drawn sketch documents preliminary planning, and its handwritten date and provisional conclusions may differ from corrected findings on the final page.
