@@ -61,6 +61,8 @@ const html = read('index.html');
 for (const title of ['PART 01 / GEOGRAPHY','PART 02 / OUTCOMES','PART 03 / CHANGES','PART 04 / BEYOND THE SHELTER']) {
   expect(html.includes(title), 'Missing planning-sketch story chapter: ' + title);
 }
+expect(files.bump.layer[2].transform[0].filter === "datum.financial_year === '2024-25'",
+  'Bump chart should directly label every jurisdiction at its latest end point');
 const color = name => files[name].encoding?.color?.scale?.range ??
   files[name].spec?.encoding?.color?.scale?.range ?? [];
 expect(JSON.stringify(color('bump')) === JSON.stringify(color('slope')),

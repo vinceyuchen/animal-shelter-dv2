@@ -73,7 +73,7 @@ vegaEmbed("#chart8-annual-caseload", "charts/chart8_annual_caseload.vg.json?v=20
     if (!host) return;
     vegaEmbed(
       "#chart9-yoy-bump",
-      "charts/chart9_yoy_bump.vg.json?v=20261027-colour13-v1",
+      "charts/chart9_yoy_bump.vg.json?v=20261028-direct-labels1",
       { actions: false, renderer: "svg" }
     ).catch(function(error) {
       console.error("Chart 9 error:", error);
