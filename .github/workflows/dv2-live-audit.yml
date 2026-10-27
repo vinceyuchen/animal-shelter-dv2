@@ -56,6 +56,39 @@ jobs:
           done
           echo "GitHub Pages did not publish this commit's HTML; inspection was not run against a stale version." >&2
           exit 1
+      - name: Verify published chart assets match this commit
+        run: |
+          set -euo pipefail
+          base="https://vinceyuchen.github.io/animal-shelter-dv2"
+          files=(
+            "js/embed.js"
+            "css/style.css"
+            "charts/chart5_compare.vg.json"
+            "charts/chart11_foster_lollipop.vg.json"
+            "charts/chart7_outcome_heatmap.vg.json"
+            "charts/map_caseload_symbols.vg.json"
+          )
+          for attempt in $(seq 1 36); do
+            fresh=1
+            for file in "${files[@]}"; do
+              remote="/tmp/dv2-${file//\//_}"
+              if ! curl --silent --show-error --fail --max-time 12 \
+                  -H 'Cache-Control: no-cache' \
+                  "${base}/${file}?audit_sha=${GITHUB_SHA}&attempt=${attempt}" \
+                  -o "${remote}" || ! cmp -s "${file}" "${remote}"; then
+                fresh=0
+                echo "Not current yet: ${file} (attempt ${attempt}/36)"
+                break
+              fi
+            done
+            if [ "${fresh}" -eq 1 ]; then
+              echo "Published JS, CSS and critical chart specifications all match this commit."
+              exit 0
+            fi
+            sleep 5
+          done
+          echo "At least one published asset was stale; refusing to certify old chart screenshots." >&2
+          exit 1
       - name: Inspect the actual published GitHub Pages website
         run: node scripts/dv2-browser-audit.mjs
       - name: Upload full screenshots, section screenshots and report

@@ -95,6 +95,22 @@ try {
       }
 
       if (config.name === 'desktop') {
+        const activeEmbedScript = await page.locator('script[src^="js/embed.js"]').getAttribute('src');
+        if (!activeEmbedScript?.includes('20261028-idiom-audit2')) {
+          view.errors.push('Stale embed script was served: ' + activeEmbedScript);
+        }
+        const liveLollipop = await page.evaluate(async () => {
+          const response = await fetch('charts/chart11_foster_lollipop.vg.json?v=20261028-legibility1', {cache:'no-store'});
+          if (!response.ok) throw new Error('Chart 11 spec unavailable');
+          const spec = await response.json();
+          return {width:spec.spec?.width,labels:spec.spec?.encoding?.y?.axis?.labelFontSize};
+        });
+        view.assetVersion = {embedScript:activeEmbedScript,chart11:liveLollipop};
+        if (liveLollipop.width !== 315 || liveLollipop.labels < 12) {
+          view.errors.push('Chart 11 spec is stale in live site: ' + JSON.stringify(liveLollipop));
+        }
+      }
+      if (config.name === 'desktop') {
         // Rubric-specific regressions: honesty of annotations, scale, byline and selected sample.
         const checkContent = await page.evaluate(() => {
           const byline = document.querySelector('.dv2-hero-byline')?.textContent || '';
