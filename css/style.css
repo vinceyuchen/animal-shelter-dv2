@@ -672,3 +672,7 @@ html { scroll-padding-top: 90px; }
 }
 @media print { .dv2-section-nav { display:none !important; } }
 /* DV2 DESKTOP SECTION NAV END */
+
+/* Chart 14: area-proportional treemap */
+#chart14-foster-treemap { width:100%; min-width:0; min-height:530px; }
+#chart14-foster-treemap .vega-embed { width:100%; }

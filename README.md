@@ -16,7 +16,7 @@
 
 **Why:** To distinguish outcome *rates* from *volumes*, compare species' pathways through care, identify within-network geographic differences, show changes over time and make clear why unrelated reporting systems cannot be simply combined.
 
-**How:** Thirteen Vega/Vega-Lite charts on a single scrolling GitHub Pages website, organised from geographic context to animal outcomes, changing caseloads, foster care and a local seasonality example. Static summaries and menu-linked key findings support presentation; tooltips and selectors offer limited exploration without hiding the story.
+**How:** Fourteen Vega/Vega-Lite charts on a single scrolling GitHub Pages website, organised from geographic context to animal outcomes, changing caseloads, foster care and a local seasonality example. Static summaries and menu-linked key findings support presentation; tooltips and selectors offer limited exploration without hiding the story.
 
 ## Chart inventory and idiom rationale
 
@@ -35,6 +35,7 @@
 | 11 | Faceted lollipop plot | Compare reported foster placement episodes across 12 selected Victorian entities and species |
 | 12 | Slopegraph | Compare the cat proportion of dog-and-cat reporting between two financial years |
 | 13 | Streamgraph | Explore mean monthly adopted/reclaimed records over five complete years for one Townsville centre |
+| 14 | Nested treemap (hierarchical area encoding) | Show placement concentration among the 12 selected Victorian reporting entities while subdividing each tile into dogs and cats |
 
 **Marking caution:** A chart's label does not alone establish that it is an 'advanced idiom'. In particular, bars, dot plots and ordinary line charts remain basic under the published rubric. Complex idioms must be used meaningfully, not merely counted.
 

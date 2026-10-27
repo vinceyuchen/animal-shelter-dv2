@@ -1,0 +1,544 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Treemap showing the distribution of 13,797 foster placement episodes among 12 selected Victorian 2025 reporting entities. Tile area is proportional to organisation total, and within each tile Dogs/Cats rectangles subdivide that total; not all Victorian facilities.",
+  "width": "container",
+  "height": 455,
+  "autosize": {
+    "type": "fit-x",
+    "contains": "padding",
+    "resize": true
+  },
+  "title": {
+    "text": "How concentrated are foster placements among these reporting entities?",
+    "subtitle": [
+      "Victoria's 12 leading reporting entities in 2025. Tile area = share of 13,797 placement episodes.",
+      "Within each tile, blue means dogs and orange means cats. Hover for the exact figures."
+    ],
+    "anchor": "start",
+    "font": "Helvetica, Arial, sans-serif",
+    "fontSize": 18,
+    "subtitleFontSize": 12,
+    "subtitlePadding": 8,
+    "offset": 12
+  },
+  "data": {
+    "values": [
+      {
+        "reporting_entity": "The Lost Dogs Home North Melbourne",
+        "short_label": "North Melbourne",
+        "species": "Cats",
+        "placements": 3628,
+        "org_total": 4151,
+        "org_share_pct": 30.1,
+        "species_share_pct": 87.4,
+        "x0": 0,
+        "x1": 0.4363992,
+        "y0": 0,
+        "y1": 0.6025577,
+        "mid_x": 0.2181996,
+        "mid_y": 0.3012789
+      },
+      {
+        "reporting_entity": "The Lost Dogs Home North Melbourne",
+        "short_label": "North Melbourne",
+        "species": "Dogs",
+        "placements": 523,
+        "org_total": 4151,
+        "org_share_pct": 30.1,
+        "species_share_pct": 12.6,
+        "x0": 0,
+        "x1": 0.4363992,
+        "y0": 0.6025577,
+        "y1": 0.6894204,
+        "mid_x": 0.2181996,
+        "mid_y": 0.645989
+      },
+      {
+        "reporting_entity": "The Lost Dogs Home Cranbourne",
+        "short_label": "Cranbourne",
+        "species": "Cats",
+        "placements": 1671,
+        "org_total": 1870,
+        "org_share_pct": 13.6,
+        "species_share_pct": 89.4,
+        "x0": 0,
+        "x1": 0.4363992,
+        "y0": 0.6894204,
+        "y1": 0.966949,
+        "mid_x": 0.2181996,
+        "mid_y": 0.8281847
+      },
+      {
+        "reporting_entity": "The Lost Dogs Home Cranbourne",
+        "short_label": "Cranbourne",
+        "species": "Dogs",
+        "placements": 199,
+        "org_total": 1870,
+        "org_share_pct": 13.6,
+        "species_share_pct": 10.6,
+        "x0": 0,
+        "x1": 0.4363992,
+        "y0": 0.966949,
+        "y1": 1,
+        "mid_x": 0.2181996,
+        "mid_y": 0.9834745
+      },
+      {
+        "reporting_entity": "Geelong Animal Welfare Society",
+        "short_label": "Geelong AWS",
+        "species": "Cats",
+        "placements": 1113,
+        "org_total": 1374,
+        "org_share_pct": 10,
+        "species_share_pct": 81,
+        "x0": 0.4363992,
+        "x1": 0.7801131,
+        "y0": 0,
+        "y1": 0.2347002,
+        "mid_x": 0.6082562,
+        "mid_y": 0.1173501
+      },
+      {
+        "reporting_entity": "Geelong Animal Welfare Society",
+        "short_label": "Geelong AWS",
+        "species": "Dogs",
+        "placements": 261,
+        "org_total": 1374,
+        "org_share_pct": 10,
+        "species_share_pct": 19,
+        "x0": 0.4363992,
+        "x1": 0.7801131,
+        "y0": 0.2347002,
+        "y1": 0.2897377,
+        "mid_x": 0.6082562,
+        "mid_y": 0.2622189
+      },
+      {
+        "reporting_entity": "Victorian Animal Aid Trust Coldstream",
+        "short_label": "Animal Aid",
+        "species": "Cats",
+        "placements": 851,
+        "org_total": 879,
+        "org_share_pct": 6.4,
+        "species_share_pct": 96.8,
+        "x0": 0.7801131,
+        "x1": 1,
+        "y0": 0,
+        "y1": 0.2805082,
+        "mid_x": 0.8900566,
+        "mid_y": 0.1402541
+      },
+      {
+        "reporting_entity": "Victorian Animal Aid Trust Coldstream",
+        "short_label": "Animal Aid",
+        "species": "Dogs",
+        "placements": 28,
+        "org_total": 879,
+        "org_share_pct": 6.4,
+        "species_share_pct": 3.2,
+        "x0": 0.7801131,
+        "x1": 1,
+        "y0": 0.2805082,
+        "y1": 0.2897377,
+        "mid_x": 0.8900566,
+        "mid_y": 0.2851229
+      },
+      {
+        "reporting_entity": "Forever Friends Animal Rescue",
+        "short_label": "Forever Friends",
+        "species": "Cats",
+        "placements": 629,
+        "org_total": 847,
+        "org_share_pct": 6.1,
+        "species_share_pct": 74.3,
+        "x0": 0.4363992,
+        "x1": 0.7208866,
+        "y0": 0.2897377,
+        "y1": 0.4499895,
+        "mid_x": 0.5786429,
+        "mid_y": 0.3698636
+      },
+      {
+        "reporting_entity": "Forever Friends Animal Rescue",
+        "short_label": "Forever Friends",
+        "species": "Dogs",
+        "placements": 218,
+        "org_total": 847,
+        "org_share_pct": 6.1,
+        "species_share_pct": 25.7,
+        "x0": 0.4363992,
+        "x1": 0.7208866,
+        "y0": 0.4499895,
+        "y1": 0.5055298,
+        "mid_x": 0.5786429,
+        "mid_y": 0.4777596
+      },
+      {
+        "reporting_entity": "RSPCA Burwood",
+        "short_label": "RSPCA Burwood",
+        "species": "Cats",
+        "placements": 592,
+        "org_total": 831,
+        "org_share_pct": 6,
+        "species_share_pct": 71.2,
+        "x0": 0.7208866,
+        "x1": 1,
+        "y0": 0.2897377,
+        "y1": 0.4434669,
+        "mid_x": 0.8604433,
+        "mid_y": 0.3666023
+      },
+      {
+        "reporting_entity": "RSPCA Burwood",
+        "short_label": "RSPCA Burwood",
+        "species": "Dogs",
+        "placements": 239,
+        "org_total": 831,
+        "org_share_pct": 6,
+        "species_share_pct": 28.8,
+        "x0": 0.7208866,
+        "x1": 1,
+        "y0": 0.4434669,
+        "y1": 0.5055298,
+        "mid_x": 0.8604433,
+        "mid_y": 0.4744983
+      },
+      {
+        "reporting_entity": "Lort Smith",
+        "short_label": "Lort Smith",
+        "species": "Cats",
+        "placements": 718,
+        "org_total": 811,
+        "org_share_pct": 5.9,
+        "species_share_pct": 88.5,
+        "x0": 0.4363992,
+        "x1": 0.6701946,
+        "y0": 0.5055298,
+        "y1": 0.7281189,
+        "mid_x": 0.5532969,
+        "mid_y": 0.6168244
+      },
+      {
+        "reporting_entity": "Lort Smith",
+        "short_label": "Lort Smith",
+        "species": "Dogs",
+        "placements": 93,
+        "org_total": 811,
+        "org_share_pct": 5.9,
+        "species_share_pct": 11.5,
+        "x0": 0.4363992,
+        "x1": 0.6701946,
+        "y0": 0.7281189,
+        "y1": 0.7569501,
+        "mid_x": 0.5532969,
+        "mid_y": 0.7425345
+      },
+      {
+        "reporting_entity": "Cat Protection Society of Victoria",
+        "short_label": "Cat Protection",
+        "species": "Cats",
+        "placements": 784,
+        "org_total": 784,
+        "org_share_pct": 5.7,
+        "species_share_pct": 100,
+        "x0": 0.4363992,
+        "x1": 0.6701946,
+        "y0": 0.7569501,
+        "y1": 1,
+        "mid_x": 0.5532969,
+        "mid_y": 0.878475
+      },
+      {
+        "reporting_entity": "Cat Protection Society of Victoria",
+        "short_label": "Cat Protection",
+        "species": "Dogs",
+        "placements": 0,
+        "org_total": 784,
+        "org_share_pct": 5.7,
+        "species_share_pct": 0,
+        "x0": 0.4363992,
+        "x1": 0.6701946,
+        "y0": 1,
+        "y1": 1,
+        "mid_x": 0.5532969,
+        "mid_y": 1
+      },
+      {
+        "reporting_entity": "RSPCA Pearcedale",
+        "short_label": "RSPCA Pearcedale",
+        "species": "Cats",
+        "placements": 626,
+        "org_total": 766,
+        "org_share_pct": 5.6,
+        "species_share_pct": 81.7,
+        "x0": 0.6701946,
+        "x1": 1,
+        "y0": 0.5055298,
+        "y1": 0.6431024,
+        "mid_x": 0.8350973,
+        "mid_y": 0.5743161
+      },
+      {
+        "reporting_entity": "RSPCA Pearcedale",
+        "short_label": "RSPCA Pearcedale",
+        "species": "Dogs",
+        "placements": 140,
+        "org_total": 766,
+        "org_share_pct": 5.6,
+        "species_share_pct": 18.3,
+        "x0": 0.6701946,
+        "x1": 1,
+        "y0": 0.6431024,
+        "y1": 0.6738695,
+        "mid_x": 0.8350973,
+        "mid_y": 0.6584859
+      },
+      {
+        "reporting_entity": "Australian Animal Protection Society",
+        "short_label": "Australian Animal Protection Society",
+        "species": "Cats",
+        "placements": 421,
+        "org_total": 718,
+        "org_share_pct": 5.2,
+        "species_share_pct": 58.6,
+        "x0": 0.6701946,
+        "x1": 0.8297635,
+        "y0": 0.6738695,
+        "y1": 0.8650964,
+        "mid_x": 0.7499791,
+        "mid_y": 0.7694829
+      },
+      {
+        "reporting_entity": "Australian Animal Protection Society",
+        "short_label": "Australian Animal Protection Society",
+        "species": "Dogs",
+        "placements": 297,
+        "org_total": 718,
+        "org_share_pct": 5.2,
+        "species_share_pct": 41.4,
+        "x0": 0.6701946,
+        "x1": 0.8297635,
+        "y0": 0.8650964,
+        "y1": 1,
+        "mid_x": 0.7499791,
+        "mid_y": 0.9325482
+      },
+      {
+        "reporting_entity": "Second Chance Animal Rescue",
+        "short_label": "Second Chance Animal Rescue",
+        "species": "Cats",
+        "placements": 267,
+        "org_total": 448,
+        "org_share_pct": 3.2,
+        "species_share_pct": 59.6,
+        "x0": 0.8297635,
+        "x1": 1,
+        "y0": 0.6738695,
+        "y1": 0.7875468,
+        "mid_x": 0.9148818,
+        "mid_y": 0.7307081
+      },
+      {
+        "reporting_entity": "Second Chance Animal Rescue",
+        "short_label": "Second Chance Animal Rescue",
+        "species": "Dogs",
+        "placements": 181,
+        "org_total": 448,
+        "org_share_pct": 3.2,
+        "species_share_pct": 40.4,
+        "x0": 0.8297635,
+        "x1": 1,
+        "y0": 0.7875468,
+        "y1": 0.864609,
+        "mid_x": 0.9148818,
+        "mid_y": 0.8260779
+      },
+      {
+        "reporting_entity": "City of Ballarat Animal Shelter",
+        "short_label": "City of Ballarat Animal Shelter",
+        "species": "Cats",
+        "placements": 212,
+        "org_total": 318,
+        "org_share_pct": 2.3,
+        "species_share_pct": 66.7,
+        "x0": 0.8297635,
+        "x1": 1,
+        "y0": 0.864609,
+        "y1": 0.9548697,
+        "mid_x": 0.9148818,
+        "mid_y": 0.9097393
+      },
+      {
+        "reporting_entity": "City of Ballarat Animal Shelter",
+        "short_label": "City of Ballarat Animal Shelter",
+        "species": "Dogs",
+        "placements": 106,
+        "org_total": 318,
+        "org_share_pct": 2.3,
+        "species_share_pct": 33.3,
+        "x0": 0.8297635,
+        "x1": 1,
+        "y0": 0.9548697,
+        "y1": 1,
+        "mid_x": 0.9148818,
+        "mid_y": 0.9774348
+      }
+    ]
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rect",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 2,
+        "opacity": 0.93
+      },
+      "encoding": {
+        "x": {
+          "field": "x0",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              1
+            ]
+          },
+          "axis": null
+        },
+        "x2": {
+          "field": "x1"
+        },
+        "y": {
+          "field": "y0",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              1
+            ],
+            "reverse": true
+          },
+          "axis": null
+        },
+        "y2": {
+          "field": "y1"
+        },
+        "color": {
+          "field": "species",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Dogs",
+              "Cats"
+            ],
+            "range": [
+              "#235789",
+              "#C46A2D"
+            ]
+          },
+          "legend": {
+            "title": "Placement species",
+            "orient": "top",
+            "direction": "horizontal",
+            "labelFontSize": 12
+          }
+        },
+        "tooltip": [
+          {
+            "field": "reporting_entity",
+            "type": "nominal",
+            "title": "Reporting entity"
+          },
+          {
+            "field": "species",
+            "type": "nominal",
+            "title": "Species"
+          },
+          {
+            "field": "placements",
+            "type": "quantitative",
+            "title": "Foster placement episodes",
+            "format": ","
+          },
+          {
+            "field": "org_total",
+            "type": "quantitative",
+            "title": "Entity total (dogs + cats)",
+            "format": ","
+          },
+          {
+            "field": "org_share_pct",
+            "type": "quantitative",
+            "title": "Share of selected 12 (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "species_share_pct",
+            "type": "quantitative",
+            "title": "Species share within entity (%)",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.species === 'Cats' && datum.org_total >= 830"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "baseline": "middle",
+        "align": "center",
+        "font": "Helvetica, Arial, sans-serif",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#FFFFFF"
+      },
+      "encoding": {
+        "x": {
+          "field": "mid_x",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              1
+            ]
+          },
+          "axis": null
+        },
+        "y": {
+          "field": "mid_y",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              1
+            ],
+            "reverse": true
+          },
+          "axis": null
+        },
+        "text": {
+          "field": "short_label",
+          "type": "nominal"
+        }
+      }
+    }
+  ],
+  "config": {
+    "font": "Helvetica, Arial, sans-serif",
+    "view": {
+      "stroke": null
+    },
+    "title": {
+      "font": "Helvetica, Arial, sans-serif",
+      "subtitleFont": "Helvetica, Arial, sans-serif"
+    },
+    "legend": {
+      "labelFont": "Helvetica, Arial, sans-serif",
+      "titleFont": "Helvetica, Arial, sans-serif"
+    }
+  }
+}
