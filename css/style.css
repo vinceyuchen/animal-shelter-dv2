@@ -717,3 +717,7 @@ html { scroll-padding-top: 90px; }
   text-wrap: pretty;
   overflow-wrap: break-word;
 }
+
+/* Round 2: concise plain-language notes for chart interpretations. */
+.dv2-reading-hint { max-width:60ch; margin:12px 4px 15px; padding:1px 0 1px 13px; border-left:2px solid #a9c4c0; color:#48616a; font:400 13.5px/1.6 Helvetica,Arial,sans-serif; }
+.dv2-reading-hint strong {font-weight:700;color:#294b56;}

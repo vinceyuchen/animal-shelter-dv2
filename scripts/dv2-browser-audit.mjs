@@ -186,6 +186,28 @@ try {
         }
       }
       if (config.name === 'desktop') {
+        // Interactive narrative must describe the selected data, not a stale default.
+        for (const [id, option, expected, reset] of [
+          ['section-08', 'VIC', 'Victoria:', 'QLD'],
+          ['section-09', 'Dogs', 'Dogs in 2024–25:', 'Dogs + cats']
+        ]) {
+          const menu = page.locator('#' + id + ' .dv2-control-toolbar select');
+          const finding = page.locator('#' + id + ' .dv2-story-aside p:not(.dv2-story-kicker)').first();
+          try {
+            if (await menu.count() !== 1) throw new Error('Expected one selector');
+            await menu.selectOption(option);
+            await page.waitForFunction(({id, expected}) => {
+              const panel = document.querySelector('#' + id + ' .dv2-story-aside p:not(.dv2-story-kicker)');
+              return (panel?.textContent || '').startsWith(expected);
+            }, {id, expected}, {timeout:12000});
+            view.rubricChecks['dynamicStory' + id] = {value:await menu.inputValue(),finding:(await finding.innerText()).slice(0,140)};
+            await menu.selectOption(reset);
+          } catch (error) {
+            view.errors.push('Dynamic story failed for ' + id + ': ' + String(error));
+          }
+        }
+      }
+      if (config.name === 'desktop') {
         const selects = page.locator('.dv2-control-toolbar select');
         for (let i = 0, n = await selects.count(); i < n; i++) {
           const select = selects.nth(i);
@@ -217,7 +239,7 @@ report.passed = report.views.every(view =>
   view.chartResults.length === 14 &&
   view.chartResults.every(chart => chart.rendered && (view.viewport.width < 1024 || !chart.internalOverflow)) &&
   !view.overflow?.overflowing &&
-  !view.errors.some(error => /Navigation:|Uncaught|could not render|failed to render|Story order mismatch|Rubric-specific|Stale embed script|Chart 11 spec is stale|Butterfly text visibility|Chart 7 KPI|Chart 7 species/i.test(error))
+  !view.errors.some(error => /Navigation:|Uncaught|could not render|failed to render|Story order mismatch|Rubric-specific|Stale embed script|Chart 11 spec is stale|Butterfly text visibility|Chart 7 KPI|Chart 7 species|Dynamic story failed/i.test(error))
 );
 const lines = ['# DV2 Browser Audit', '', 'Website: ' + URL, 'Checked: ' + report.checkedUTC, 'Result: ' + (report.passed ? 'PASS' : 'REVIEW REQUIRED'), ''];
 for (const view of report.views) {

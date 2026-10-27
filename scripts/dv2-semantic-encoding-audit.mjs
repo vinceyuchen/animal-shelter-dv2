@@ -58,6 +58,15 @@ const relativeLuminance = hex => {
 const contrast = (relativeLuminance(grey[1])+0.05)/(relativeLuminance('#173642')+0.05);
 expect(contrast >= 4.5, 'Chart 7 minimum text contrast must exceed 4.5:1');
 const html = read('index.html');
+expect(html.includes('pp means <em>percentage points</em>'),
+  'Chart 4 must define percentage points at first use');
+expect(html.includes('Which euthanasia reasons were recorded?') &&
+  !html.includes('Why do euthanasia reasons differ?') &&
+  !html.includes('Not every animal has the same chance'),
+  'The story must not imply causation or individual outcome probabilities from aggregate counts');
+expect(html.includes('not the journey of an individual animal'),
+  'Sankey ribbons must be described as aggregate records, not individual animal journeys');
+
 for (const title of ['PART 01 / GEOGRAPHY','PART 02 / OUTCOMES','PART 03 / CHANGES','PART 04 / BEYOND THE SHELTER']) {
   expect(html.includes(title), 'Missing planning-sketch story chapter: ' + title);
 }

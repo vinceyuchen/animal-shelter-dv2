@@ -46,3 +46,13 @@
 - The automated data script cross-checks processed charts. It is **not** an independent verification of every original data source.
 - Browser tests confirm rendering, selected interactions, size/asset consistency and absence of certain errors. They are **not** substitutes for human readability or editorial review.
 - No category is labelled `100% achieved` before all relevant rubric evidence has been reviewed.
+
+## Round 2: Storytelling, annotations, grammar and style (5%)
+
+- Rewrote Chapters 4–6 to describe **observed group rates and classified reasons**, not individual animal probabilities or causes for species differences. The butterfly chart cannot establish why one species has a greater behavioural/medical share.
+- Defined `pp` as percentage points at the first dog–cat comparison.
+- Streamlined the Chart 9 transition from annual totals to ranks, with a short reading hint instead of repeating the same ranking caveat.
+- Reworded Chart 10 as **aggregate recorded categories**, not a trace of individual animal journeys, and corrected conclusion wording accordingly.
+- Simplified the Chart 13 and Chart 14 questions for general readers. Scoped Townsville's averages to one centre and an unsegmented source.
+- Added a browser regression test checking whether Chart 8 (jurisdiction) and Chart 9 (species metric) sidebar findings change with the selector.
+- **Remaining review:** perform human visual inspection of all callouts and graphics; do not claim a 5/5 until the final rendered version is confirmed accessible, engaging and coherent.
