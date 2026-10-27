@@ -95,6 +95,55 @@ try {
       }
 
       if (config.name === 'desktop') {
+        // Rubric-specific regressions: honesty of annotations, scale, byline and selected sample.
+        const checkContent = await page.evaluate(() => {
+          const byline = document.querySelector('.dv2-hero-byline')?.textContent || '';
+          const legend = document.querySelector('#section-01 .legend-scale')?.textContent || '';
+          const gradient = getComputedStyle(document.querySelector('#section-01 .gradient-bar')).backgroundImage;
+          const facility = document.querySelector('#section-03 .section-heading')?.textContent || '';
+          return { byline, legend, gradient, facility };
+        });
+        const checks = {
+          author: checkContent.byline.includes('Yu Chen'),
+          projectDate: checkContent.byline.includes('24 October 2026'),
+          mapScale: checkContent.legend.includes('65%') && checkContent.legend.includes('100%'),
+          mapGradient: checkContent.gradient.includes('237, 240, 248') && checkContent.gradient.includes('91, 90, 147'),
+          locationScope: checkContent.facility.includes('not a complete list')
+        };
+        view.rubricChecks = checks;
+        if (Object.values(checks).some(ok => !ok)) {
+          view.errors.push('Rubric-specific content validation failed: ' + JSON.stringify(checks));
+        }
+        const select7 = page.locator('#section-07 .dv2-control-toolbar select');
+        if (await select7.count() === 1) {
+          const kpis = page.locator('#section-07 [data-chart7-kpis] .callout-number');
+          const valuesMatch = async (left, right) => {
+            await page.waitForFunction(
+              args => {
+                const values = [...document.querySelectorAll('#section-07 [data-chart7-kpis] .callout-number')]
+                  .map(x => x.textContent.trim());
+                return values[0] === args.left && values[1] === args.right;
+              }, {left, right}, {timeout: 12000}
+            );
+          };
+          try {
+            await select7.selectOption('Cat');
+            await valuesMatch('26.7%', '74.1%');
+            await page.waitForFunction(() =>
+              (document.querySelector('#section-07 .dv2-story-aside strong')?.textContent || '').startsWith('Cats:'),
+              {timeout: 12000});
+            await select7.selectOption('Dog');
+            await valuesMatch('26.4%', '58.3%');
+            view.rubricChecks.chart7SyncedToSpecies = true;
+          } catch(error) {
+            view.rubricChecks.chart7SyncedToSpecies = false;
+            view.errors.push('Chart 7 KPIs failed to follow species selector: ' + String(error));
+          }
+        } else {
+          view.errors.push('Chart 7 species selector is missing');
+        }
+      }
+      if (config.name === 'desktop') {
         const selects = page.locator('.dv2-control-toolbar select');
         for (let i = 0, n = await selects.count(); i < n; i++) {
           const select = selects.nth(i);
@@ -126,7 +175,7 @@ report.passed = report.views.every(view =>
   view.chartResults.length === 14 &&
   view.chartResults.every(chart => chart.rendered && (view.viewport.width < 1024 || !chart.internalOverflow)) &&
   !view.overflow?.overflowing &&
-  !view.errors.some(error => /Navigation:|Uncaught|could not render|failed to render|Story order mismatch/i.test(error))
+  !view.errors.some(error => /Navigation:|Uncaught|could not render|failed to render|Story order mismatch|Rubric-specific|Chart 7 species/i.test(error))
 );
 const lines = ['# DV2 Browser Audit', '', 'Website: ' + URL, 'Checked: ' + report.checkedUTC, 'Result: ' + (report.passed ? 'PASS' : 'REVIEW REQUIRED'), ''];
 for (const view of report.views) {
@@ -140,6 +189,7 @@ for (const view of report.views) {
       ' | ' + (item.bounds ? item.bounds.width + '×' + item.bounds.height : 'missing') + (item.internalOverflow ? ' ⚠ inner horizontal overflow' : '') + ' |');
   }
   if (view.viewport.name === 'desktop') {
+    lines.push('', '### Rubric content and interaction checks', JSON.stringify(view.rubricChecks || {}, null, 2));
     lines.push('', '### Filters');
     for (const control of view.controls) {
       lines.push('- ' + control.control + ': ' + (control.switched ? 'switch OK' : 'NOT VERIFIED') +
