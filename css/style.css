@@ -676,3 +676,12 @@ html { scroll-padding-top: 90px; }
 /* Chart 14: area-proportional treemap */
 #chart14-foster-treemap { width:100%; min-width:0; min-height:530px; }
 #chart14-foster-treemap .vega-embed { width:100%; }
+/* DV2 NO HORIZONTAL CHART SCROLL START */
+/* Rubric: the entire visualisation must fit a small laptop without horizontal scrolling. */
+#chart10-outcome-sankey { overflow-x: visible !important; }
+#chart10-outcome-sankey .vega-embed,
+#chart10-outcome-sankey .vega-embed > div { min-width:0 !important; width:100%; max-width:100%; }
+#chart10-outcome-sankey .vega-embed svg { width:100% !important; height:auto !important; max-width:100%; }
+.chart11-scroll { overflow-x:visible !important; }
+#chart11-foster .vega-embed svg { width:100% !important; height:auto !important; max-width:100%; }
+/* DV2 NO HORIZONTAL CHART SCROLL END */

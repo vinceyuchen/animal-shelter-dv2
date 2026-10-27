@@ -67,8 +67,12 @@ try {
         const bounds = count ? await host.evaluate(el => ({
           width: Math.round(el.getBoundingClientRect().width),
           height: Math.round(el.getBoundingClientRect().height),
+          clientWidth: el.clientWidth,
+          scrollWidth: el.scrollWidth,
+          svgWidth: Math.round((el.querySelector('svg') || el).getBoundingClientRect().width),
         })) : null;
-        view.chartResults.push({ number, name, id, rendered: marks > 0, hostFound: count === 1, bounds });
+        const internalOverflow = !!bounds && bounds.scrollWidth > bounds.clientWidth + 5;
+        view.chartResults.push({ number, name, id, rendered: marks > 0, hostFound: count === 1, bounds, internalOverflow });
         if (config.name === 'desktop' && count) {
           try {
             const section = host.locator('xpath=ancestor::section[1]');
@@ -109,7 +113,7 @@ try {
 report.passed = report.views.every(view =>
   view.httpStatus === 200 &&
   view.chartResults.length === 14 &&
-  view.chartResults.every(chart => chart.rendered) &&
+  view.chartResults.every(chart => chart.rendered && (view.viewport.width < 1024 || !chart.internalOverflow)) &&
   !view.overflow?.overflowing &&
   !view.errors.some(error => /Navigation:|Uncaught|could not render|failed to render/i.test(error))
 );
@@ -122,7 +126,7 @@ for (const view of report.views) {
   lines.push('| Chart | Rendered | Visible host size |', '|---|---|---|');
   for (const item of view.chartResults) {
     lines.push('| ' + item.number + ' ' + item.name + ' | ' + (item.rendered ? 'Yes' : 'NO') +
-      ' | ' + (item.bounds ? item.bounds.width + '×' + item.bounds.height : 'missing') + ' |');
+      ' | ' + (item.bounds ? item.bounds.width + '×' + item.bounds.height : 'missing') + (item.internalOverflow ? ' ⚠ inner horizontal overflow' : '') + ' |');
   }
   if (view.viewport.name === 'desktop') {
     lines.push('', '### Filters');
