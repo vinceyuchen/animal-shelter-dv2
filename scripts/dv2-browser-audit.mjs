@@ -28,7 +28,6 @@ try {
   for (const config of [
     { name: 'desktop', width: 1440, height: 900 },
     { name: 'laptop', width: 1024, height: 768 },
-    { name: 'mobile', width: 390, height: 844 },
   ]) {
     const context = await browser.newContext({
       viewport: { width: config.width, height: config.height },
@@ -100,10 +99,6 @@ try {
         }
         try { await page.screenshot({ path: path.join(outputDir, 'full-desktop.png'), fullPage: true, timeout: 40000, animations: 'disabled' }); }
         catch (error) { view.errors.push('Desktop full page screenshot: ' + String(error)); }
-      }
-      if (config.name === 'mobile') {
-        try { await page.screenshot({ path: path.join(outputDir, 'full-mobile.png'), fullPage: true, timeout: 40000, animations: 'disabled' }); }
-        catch (error) { view.errors.push('Mobile full page screenshot: ' + String(error)); }
       }
     } catch (error) { view.errors.push('Navigation: ' + String(error)); }
     await context.close();
