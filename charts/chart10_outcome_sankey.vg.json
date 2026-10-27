@@ -1,0 +1,505 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "Proportional Sankey from animal species to RSPCA 2024–25 recorded outcome classifications; In Care is not a final disposition.",
+  "width": 990,
+  "height": 505,
+  "padding": {
+    "left": 6,
+    "right": 8,
+    "top": 7,
+    "bottom": 8
+  },
+  "background": "#ffffff",
+  "title": {
+    "text": "Where are recorded dog and cat cases classified?",
+    "subtitle": [
+      "RSPCA 2024–25. Ribbon width = number of records, not percentage.",
+      "Hover over ribbons for exact counts. Use Highlight to trace one species."
+    ],
+    "anchor": "start",
+    "font": "Helvetica, Arial, sans-serif",
+    "fontSize": 18,
+    "fontWeight": "bold",
+    "color": "#173642",
+    "subtitleFont": "Helvetica, Arial, sans-serif",
+    "subtitleFontSize": 12,
+    "subtitleColor": "#607077",
+    "subtitlePadding": 7,
+    "offset": 12
+  },
+  "signals": [
+    {
+      "name": "focusSpecies",
+      "value": "All",
+      "bind": {
+        "input": "select",
+        "options": [
+          "All",
+          "Dog",
+          "Cat"
+        ],
+        "labels": [
+          "Both species",
+          "Dogs",
+          "Cats"
+        ],
+        "name": "Highlight: "
+      }
+    }
+  ],
+  "data": [
+    {
+      "name": "flows",
+      "values": [
+        {
+          "source": "Dog",
+          "target": "Rehomed",
+          "count": 6839,
+          "path": "M 194,57.000 C 366,57.000 538,57.000 716,57.000 L 716,119.141 C 538,119.141 366,119.141 194,119.141 Z",
+          "share": 0.4314282109512995,
+          "color": "#2B8C78"
+        },
+        {
+          "source": "Dog",
+          "target": "Reunited",
+          "count": 3930,
+          "path": "M 194,119.141 C 366,119.141 538,281.566 716,281.566 L 716,317.275 C 538,317.275 366,154.850 194,154.850 Z",
+          "share": 0.24791824375473126,
+          "color": "#5B87C2"
+        },
+        {
+          "source": "Dog",
+          "target": "Transferred",
+          "count": 529,
+          "path": "M 194,154.850 C 366,154.850 538,342.632 716,342.632 L 716,347.439 C 538,347.439 366,159.657 194,159.657 Z",
+          "share": 0.033371183446883675,
+          "color": "#A88E5A"
+        },
+        {
+          "source": "Dog",
+          "target": "In Care",
+          "count": 1672,
+          "path": "M 194,159.657 C 366,159.657 538,363.147 716,363.147 L 716,378.339 C 538,378.339 366,174.849 194,174.849 Z",
+          "share": 0.10547564976028262,
+          "color": "#9FAAAE"
+        },
+        {
+          "source": "Dog",
+          "target": "Euthanased",
+          "count": 2768,
+          "path": "M 194,174.849 C 366,174.849 538,410.675 716,410.675 L 716,435.825 C 538,435.825 366,200.000 194,200.000 Z",
+          "share": 0.1746151905122382,
+          "color": "#B65C6A"
+        },
+        {
+          "source": "Dog",
+          "target": "Other",
+          "count": 114,
+          "path": "M 194,200.000 C 366,200.000 538,495.066 716,495.066 L 716,496.101 C 538,496.101 366,201.036 194,201.036 Z",
+          "share": 0.007191521574564724,
+          "color": "#D9C8B2"
+        },
+        {
+          "source": "Cat",
+          "target": "Rehomed",
+          "count": 16445,
+          "path": "M 194,227.036 C 366,227.036 538,119.141 716,119.141 L 716,268.566 C 538,268.566 366,376.460 194,376.460 Z",
+          "share": 0.6414056710480128,
+          "color": "#2B8C78"
+        },
+        {
+          "source": "Cat",
+          "target": "Reunited",
+          "count": 1360,
+          "path": "M 194,376.460 C 366,376.460 538,317.275 716,317.275 L 716,329.632 C 538,329.632 366,388.818 194,388.818 Z",
+          "share": 0.05304419049104879,
+          "color": "#5B87C2"
+        },
+        {
+          "source": "Cat",
+          "target": "Transferred",
+          "count": 298,
+          "path": "M 194,388.818 C 366,388.818 538,347.439 716,347.439 L 716,350.147 C 538,350.147 366,391.526 194,391.526 Z",
+          "share": 0.011622918210538633,
+          "color": "#A88E5A"
+        },
+        {
+          "source": "Cat",
+          "target": "In Care",
+          "count": 2128,
+          "path": "M 194,391.526 C 366,391.526 538,378.339 716,378.339 L 716,397.675 C 538,397.675 366,410.861 194,410.861 Z",
+          "share": 0.08299855688599399,
+          "color": "#9FAAAE"
+        },
+        {
+          "source": "Cat",
+          "target": "Euthanased",
+          "count": 5089,
+          "path": "M 194,410.861 C 366,410.861 538,435.825 716,435.825 L 716,482.066 C 538,482.066 366,457.101 194,457.101 Z",
+          "share": 0.19848668044775536,
+          "color": "#B65C6A"
+        },
+        {
+          "source": "Cat",
+          "target": "Other",
+          "count": 319,
+          "path": "M 194,457.101 C 366,457.101 538,496.101 716,496.101 L 716,499.000 C 538,499.000 366,460.000 194,460.000 Z",
+          "share": 0.012441982916650416,
+          "color": "#D9C8B2"
+        }
+      ]
+    },
+    {
+      "name": "sources",
+      "values": [
+        {
+          "name": "Dog",
+          "label": "Dogs  ·  15,852",
+          "count": 15852,
+          "y0": 57.0,
+          "y1": 201.0361524185968,
+          "mid": 129.01807620929839,
+          "color": "#235789"
+        },
+        {
+          "name": "Cat",
+          "label": "Cats  ·  25,639",
+          "count": 25639,
+          "y0": 227.0361524185968,
+          "y1": 460.0,
+          "mid": 343.5180762092984,
+          "color": "#C46A2D"
+        }
+      ]
+    },
+    {
+      "name": "targets",
+      "values": [
+        {
+          "name": "Rehomed",
+          "label": "Rehomed",
+          "value": "23,284",
+          "count": 23284,
+          "y0": 57.0,
+          "y1": 268.5655925381408,
+          "mid": 162.7827962690704,
+          "color": "#2B8C78"
+        },
+        {
+          "name": "Reunited",
+          "label": "Reunited",
+          "value": "5,290",
+          "count": 5290,
+          "y0": 281.5655925381408,
+          "y1": 329.6321611915837,
+          "mid": 305.59887686486223,
+          "color": "#5B87C2"
+        },
+        {
+          "name": "Transferred",
+          "label": "Transferred",
+          "value": "827",
+          "count": 827,
+          "y0": 342.6321611915837,
+          "y1": 350.14653780337903,
+          "mid": 346.38934949748136,
+          "color": "#A88E5A"
+        },
+        {
+          "name": "In Care",
+          "label": "In Care",
+          "value": "3,800",
+          "count": 3800,
+          "y0": 363.14653780337903,
+          "y1": 397.67450772456675,
+          "mid": 380.4105227639729,
+          "color": "#9FAAAE"
+        },
+        {
+          "name": "Euthanased",
+          "label": "Euthanased",
+          "value": "7,857",
+          "count": 7857,
+          "y0": 410.67450772456675,
+          "y1": 482.0656286905594,
+          "mid": 446.37006820756307,
+          "color": "#B65C6A"
+        },
+        {
+          "name": "Other",
+          "label": "Other",
+          "value": "433",
+          "count": 433,
+          "y0": 495.0656286905594,
+          "y1": 499.0,
+          "mid": 497.0328143452797,
+          "color": "#D9C8B2"
+        }
+      ]
+    }
+  ],
+  "marks": [
+    {
+      "type": "path",
+      "name": "outcomeRibbons",
+      "from": {
+        "data": "flows"
+      },
+      "encode": {
+        "enter": {
+          "path": {
+            "field": "path"
+          },
+          "fill": {
+            "field": "color"
+          },
+          "tooltip": {
+            "signal": "datum.source + ' → ' + datum.target + ': ' + format(datum.count, ',') + ' records (' + format(datum.share, '.1%') + ' of that species)'"
+          }
+        },
+        "update": {
+          "fillOpacity": {
+            "signal": "focusSpecies === 'All' || datum.source === focusSpecies ? 0.69 : 0.055"
+          }
+        }
+      }
+    },
+    {
+      "type": "rect",
+      "name": "speciesNodes",
+      "from": {
+        "data": "sources"
+      },
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 176
+          },
+          "x2": {
+            "value": 194
+          },
+          "y": {
+            "field": "y0"
+          },
+          "y2": {
+            "field": "y1"
+          },
+          "fill": {
+            "field": "color"
+          },
+          "tooltip": {
+            "signal": "datum.name + ': ' + format(datum.count, ',') + ' recorded outcomes'"
+          }
+        },
+        "update": {
+          "fillOpacity": {
+            "signal": "focusSpecies === 'All' || datum.name === focusSpecies ? 1 : 0.25"
+          }
+        }
+      }
+    },
+    {
+      "type": "rect",
+      "name": "outcomeNodes",
+      "from": {
+        "data": "targets"
+      },
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 716
+          },
+          "x2": {
+            "value": 733
+          },
+          "y": {
+            "field": "y0"
+          },
+          "y2": {
+            "field": "y1"
+          },
+          "fill": {
+            "field": "color"
+          },
+          "tooltip": {
+            "signal": "datum.name + ': ' + format(datum.count, ',') + ' records across both species'"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "name": "sourceLabels",
+      "from": {
+        "data": "sources"
+      },
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 166
+          },
+          "y": {
+            "field": "mid"
+          },
+          "align": {
+            "value": "right"
+          },
+          "baseline": {
+            "value": "middle"
+          },
+          "text": {
+            "field": "label"
+          },
+          "font": {
+            "value": "Helvetica, Arial, sans-serif"
+          },
+          "fontSize": {
+            "value": 16
+          },
+          "fontWeight": {
+            "value": "bold"
+          },
+          "fill": {
+            "field": "color"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "name": "outcomeLabels",
+      "from": {
+        "data": "targets"
+      },
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 747
+          },
+          "y": {
+            "field": "mid"
+          },
+          "align": {
+            "value": "left"
+          },
+          "baseline": {
+            "value": "middle"
+          },
+          "text": {
+            "field": "label"
+          },
+          "font": {
+            "value": "Helvetica, Arial, sans-serif"
+          },
+          "fontSize": {
+            "value": 15
+          },
+          "fontWeight": {
+            "value": "bold"
+          },
+          "fill": {
+            "value": "#173642"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "name": "outcomeCounts",
+      "from": {
+        "data": "targets"
+      },
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 965
+          },
+          "y": {
+            "field": "mid"
+          },
+          "align": {
+            "value": "right"
+          },
+          "baseline": {
+            "value": "middle"
+          },
+          "text": {
+            "field": "value"
+          },
+          "font": {
+            "value": "Helvetica, Arial, sans-serif"
+          },
+          "fontSize": {
+            "value": 13
+          },
+          "fill": {
+            "value": "#536b73"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "name": "leftColumnHeader",
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 20
+          },
+          "y": {
+            "value": 15
+          },
+          "text": {
+            "value": "SPECIES"
+          },
+          "font": {
+            "value": "Helvetica, Arial, sans-serif"
+          },
+          "fontSize": {
+            "value": 11
+          },
+          "fontWeight": {
+            "value": "bold"
+          },
+          "fill": {
+            "value": "#5d7279"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "name": "rightColumnHeader",
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 747
+          },
+          "y": {
+            "value": 15
+          },
+          "text": {
+            "value": "RECORDED OUTCOME"
+          },
+          "font": {
+            "value": "Helvetica, Arial, sans-serif"
+          },
+          "fontSize": {
+            "value": 11
+          },
+          "fontWeight": {
+            "value": "bold"
+          },
+          "fill": {
+            "value": "#5d7279"
+          }
+        }
+      }
+    }
+  ],
+  "config": {
+    "text": {
+      "font": "Helvetica, Arial, sans-serif"
+    }
+  }
+}

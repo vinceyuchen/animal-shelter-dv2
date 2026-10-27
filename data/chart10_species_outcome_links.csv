@@ -1,0 +1,13 @@
+species,outcome,count,species_total,share_of_species
+Dog,Rehomed,6839,15852,0.43142821
+Dog,Reunited,3930,15852,0.24791824
+Dog,Transferred,529,15852,0.03337118
+Dog,In Care,1672,15852,0.10547565
+Dog,Euthanased,2768,15852,0.17461519
+Dog,Other,114,15852,0.00719152
+Cat,Rehomed,16445,25639,0.64140567
+Cat,Reunited,1360,25639,0.05304419
+Cat,Transferred,298,25639,0.01162292
+Cat,In Care,2128,25639,0.08299856
+Cat,Euthanased,5089,25639,0.19848668
+Cat,Other,319,25639,0.01244198

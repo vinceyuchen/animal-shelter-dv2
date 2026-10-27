@@ -525,3 +525,14 @@ body {
 #vis-chart7 .vega-embed {
   width: 100%;
 }
+
+/* CHART10 LAYOUT START */
+#chart10-outcome-sankey {
+  width: 100%;
+  overflow-x: auto;
+  min-height: 610px;
+}
+#chart10-outcome-sankey .vega-embed {
+  min-width: 990px;
+}
+/* CHART10 LAYOUT END */

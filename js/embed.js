@@ -89,3 +89,28 @@ vegaEmbed("#chart8-annual-caseload", "charts/chart8_annual_caseload.vg.json?v=20
   }
 })();
 /* CHART9 EMBED END */
+
+/* CHART10 EMBED START */
+(function () {
+  function renderChart10() {
+    const host = document.getElementById("chart10-outcome-sankey");
+    if (!host) return;
+    const showError = function (error) {
+      console.error("Chart 10 error:", error);
+      host.textContent = "Chart 10 could not render. Check the browser console.";
+      host.style.padding = "24px";
+      host.style.color = "#a33b36";
+    };
+    vegaEmbed(
+      "#chart10-outcome-sankey",
+      "charts/chart10_outcome_sankey.vg.json?v=20261027-chart10",
+      { actions: false, renderer: "svg", mode: "vega" }
+    ).catch(showError);
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", renderChart10, { once: true });
+  } else {
+    renderChart10();
+  }
+})();
+/* CHART10 EMBED END */
