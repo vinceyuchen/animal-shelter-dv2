@@ -697,3 +697,23 @@ html { scroll-padding-top: 90px; }
 .dv2-chapter-bridge p{margin:6px 0 0;max-width:78ch;font:400 16px/1.55 Helvetica,Arial,sans-serif;color:#3f565e}
 .dv2-chapter-bridge + .section{padding-top:28px}
 @media(max-width:650px){.dv2-chapter-bridge{padding:16px 18px;margin-top:26px}.dv2-chapter-bridge p{font-size:15px}}
+
+/* DV1 feedback → DV2: consistent paragraph measure and readable line rhythm.
+   Limit narrative line length without shrinking chart real estate. */
+@media (min-width: 720px) {
+  .hero .lede { max-width: 53ch; }
+  .section-heading > p:not(.eyebrow) { max-width: 53ch; }
+  .dv2-chapter-bridge p { max-width: 53ch; }
+  .dv2-conclusion .dv2-section-lede,
+  .dv2-final-notes .dv2-section-lede { max-width: 53ch; }
+  .source-note { max-width: 58ch; }
+}
+.hero .lede,
+.section-heading > p:not(.eyebrow),
+.dv2-chapter-bridge p,
+.dv2-story-aside p:not(.dv2-story-kicker),
+.dv2-section-lede,
+.source-note {
+  text-wrap: pretty;
+  overflow-wrap: break-word;
+}

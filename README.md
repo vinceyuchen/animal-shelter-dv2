@@ -2,6 +2,8 @@
 
 **Live single-page visualisation:** https://vinceyuchen.github.io/animal-shelter-dv2/
 
+**Original hand-drawn sketch (PDF):** https://github.com/vinceyuchen/animal-shelter-dv2/blob/main/design/Behind_the_Shelter_Doors_Hand_Drawn_Sketch.pdf
+
 **Author:** Yu Chen (GitHub: [@vinceyuchen](https://github.com/vinceyuchen))  
 **Project date:** 24 October 2026  
 **Assigned topic:** Animal Shelter

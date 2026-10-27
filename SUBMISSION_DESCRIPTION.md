@@ -3,7 +3,7 @@
 **Project title:** Behind the Shelter Doors  
 **Public single-page visualisation:** https://vinceyuchen.github.io/animal-shelter-dv2/  
 **GitHub repository:** https://github.com/vinceyuchen/animal-shelter-dv2  
-**Sketch PDF URL:** [Upload the original hand-drawn A4 sketch PDF to the GitHub repository and replace this bracketed note with the actual published URL.]  
+**Sketch PDF URL:** https://github.com/vinceyuchen/animal-shelter-dv2/blob/main/design/Behind_the_Shelter_Doors_Hand_Drawn_Sketch.pdf  
 **Author:** Yu Chen (GitHub: @vinceyuchen)  
 **Original project date:** 24 October 2026 (subsequent code refinements documented in GitHub commits)
 
@@ -36,7 +36,7 @@ The 14 charts form a single scrolling data story:
 - **Change and pathways (Charts 8–10):** A two-species line chart shows five annual observations per jurisdiction; a bump chart uses vertical position for the changing year-on-year rank, not welfare performance; a Sankey uses ribbon width to encode aggregate counts from species to outcome category, not individual journeys.
 - **Foster care and timing (Charts 11–14):** A faceted lollipop compares placement episodes for the same twelve Victorian reporting entities. A nested treemap instead makes concentration visible with area, subdivided into dog/cat episodes. A slopegraph connects the 2020–21 and 2024–25 percentage of reported cases that were cats. A Townsville streamgraph provides one explicitly local seasonality example rather than a national conclusion.
 
-**Interaction and design:** Species, jurisdiction and outcome controls are placed near the charts they affect. Key Findings update with the selected data in Charts 7–9. Tooltips provide precise values while headings, callouts and direct labels communicate the main interpretation without interaction. Dog/cat, jurisdiction and outcome colour meanings are kept consistent; quantitative map scales use separate sequential encodings. Fraunces headings, Helvetica labels and a restrained white-space system establish reading hierarchy. Source, denominator and limitation notes are located near the evidence.
+**Why these visual encodings:** The choropleth assigns colour to a *rate*, whereas the proportional-symbol map assigns circle *area* to animal counts, so a high count is not mistaken for a high live-release rate. Connected dots prioritise differences between two species within the same jurisdiction; the butterfly chart uses a common centre to compare opposing species shares. The treemap uses a genuine two-level hierarchy (reporting entity → species) to show concentration, while the lollipop chart is better for reading exact placement differences. The heatmap has an explicitly quantitative legend, and the two separately sourced case studies are not presented as nationwide results.\n\n**Interaction and design:** Species, jurisdiction and outcome controls are placed near the charts they affect. Key Findings update with the selected data in Charts 7–9. Tooltips provide precise values while headings, callouts and direct labels communicate the main interpretation without interaction. Dog/cat, jurisdiction and outcome colour meanings are kept consistent; quantitative map scales use separate sequential encodings. Fraunces headings, Helvetica labels and a restrained white-space system establish reading hierarchy. Source, denominator and limitation notes are located near the evidence.
 
 ## Limitations, authorship and AI acknowledgement
 
