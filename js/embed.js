@@ -147,3 +147,20 @@ vegaEmbed('#chart11-foster','charts/chart11_foster_lollipop.vg.json?v=20261027-c
   }
 })();
 /* CHART12 EMBED END */
+
+/* CHART13 EMBED START */
+(function() {
+  function renderChart13() {
+    const target = document.getElementById('chart13-townsville');
+    if (!target) return;
+    vegaEmbed('#chart13-townsville', 'charts/chart13_townsville_seasonality.vg.json?v=20261027-seasonalfix',
+      { actions:false, renderer:'svg' }).catch(function(error) {
+        console.error('Chart 13 error:', error);
+        target.textContent = 'Chart 13 could not render. Check the browser console.';
+      });
+  }
+  if (document.readyState === 'loading')
+    document.addEventListener('DOMContentLoaded', renderChart13, {once:true});
+  else renderChart13();
+})();
+/* CHART13 EMBED END */
