@@ -10,13 +10,13 @@
 
 ## Domain, who, what, why and how
 
-**Domain:** Animal welfare and animal shelter outcomes, with an Australian focus.
+**Domain:** Dog and cat outcome reporting within Australia's RSPCA network, complemented by separate Victorian foster-placement and Townsville local-outcome examples.
 
-**Who (Malaysia-campus draft):** An average Malaysian reader interested in animal welfare, especially pet owners, potential adopters and shelter supporters. Australian datasets provide a comparative case study rather than Malaysian shelter statistics. Text definitions, direct labels and consistent category colours support non-specialists. For a Clayton submission, the official brief instead requires an average Australian audience.
+**Who (Malaysia-campus draft):** An average Malaysian reader interested in animal welfare, especially pet owners, potential adopters and shelter supporters. Australian datasets provide a comparative case study of concerns such as adoption, reunification and foster care, rather than Malaysian shelter statistics. Text definitions, direct labels and consistent category colours support non-specialists. For a Clayton submission, the official brief instead requires an average Australian audience.
 
 **What:** Publicly reported RSPCA dog/cat outcomes and jurisdiction-level caseloads (2024–25), comparable historical RSPCA caseloads (2020–21 through 2024–25), reported Victorian shelter/pound foster-care placements (2025), a local Townsville monthly adoption/reclaim case study (2021–2025), ABS administrative geography and selected official RSPCA facility locations.
 
-**Why:** To distinguish outcome *rates* from *volumes*, compare species' pathways through care, identify within-network geographic differences, show changes over time and make clear why unrelated reporting systems cannot be simply combined.
+**Why:** To distinguish outcome *rates* from *volumes*, compare species' recorded outcome profiles, identify within-network geographic differences, show changes over time and make clear why unrelated reporting systems cannot be simply combined.
 
 **How:** Fourteen Vega/Vega-Lite charts on a single scrolling GitHub Pages website, organised from geographic context to animal outcomes, changing caseloads, foster care and a local seasonality example. Static summaries and menu-linked key findings support presentation; tooltips and selectors offer limited exploration without hiding the story. Four short chapter transitions follow the original four-section hand-drawn planning sketch.
 
