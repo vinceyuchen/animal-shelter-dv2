@@ -38,6 +38,9 @@ try {
           chartCount:document.querySelectorAll('.vega-embed svg, .vega-embed canvas').length,
           headline:getComputedStyle(document.querySelector('.hero h1')).fontSize,
           body:getComputedStyle(document.querySelector('#section-10 .section-heading > p:not(.eyebrow)')).fontSize,
+          map1:{viewportWidth:document.querySelector('#map-live-release').clientWidth,scrollWidth:document.querySelector('#map-live-release').scrollWidth},
+          map2:{viewportWidth:document.querySelector('#map-caseload').clientWidth,scrollWidth:document.querySelector('#map-caseload').scrollWidth},
+          heatmap:{viewportWidth:document.querySelector('#section-07 .dv2-story-figure .vis-card').clientWidth,scrollWidth:document.querySelector('#section-07 .dv2-story-figure .vis-card').scrollWidth},
           sankey:{
             viewportWidth:host.clientWidth,scrollWidth:host.scrollWidth,
             overflowX:getComputedStyle(host).overflowX,
@@ -57,6 +60,10 @@ try {
       });
       view.checks=result;
       if(result.chartCount<14) view.errors.push('Not all charts rendered');
+      for(const [name,region] of [['map1',result.map1],['map2',result.map2],['heatmap',result.heatmap]]) {
+        if(!(region.scrollWidth>region.viewportWidth+40))
+          view.errors.push('Narrow-screen '+name+' is still compressed instead of scrollable: '+JSON.stringify(region));
+      }
       if(result.pageWidth>result.viewport+5) view.errors.push('Page-level horizontal overflow');
       if(!(result.sankey.scrollWidth>result.sankey.viewportWidth+50) ||
          !['auto','scroll'].includes(result.sankey.overflowX) ||

@@ -868,3 +868,41 @@ html { scroll-padding-top: 90px; }
     height:auto!important;
   }
 }
+
+/* Extend narrow-screen legibility to the two maps and 48-cell heatmap.
+   Keep the chart scrolling inside its card, not in the entire document. */
+@media (max-width:850px) {
+  #map-live-release, #map-caseload {
+    overflow-x:auto!important;
+    overscroll-behavior-x:contain;
+    -webkit-overflow-scrolling:touch;
+    max-width:100%;
+  }
+  #map-live-release svg, #map-caseload svg {
+    width:1100px!important;
+    min-width:1100px!important;
+    max-width:none!important;
+    height:auto!important;
+  }
+  #section-07 .dv2-story-figure .vis-card {
+    overflow-x:auto!important;
+    overscroll-behavior-x:contain;
+    -webkit-overflow-scrolling:touch;
+  }
+  #vis-chart7 {
+    width:790px!important;
+    min-width:790px!important;
+    max-width:none!important;
+  }
+  #vis-chart7 .vega-embed {
+    width:790px!important;
+    min-width:790px!important;
+    max-width:none!important;
+  }
+  #vis-chart7 svg {
+    width:790px!important;
+    min-width:790px!important;
+    max-width:none!important;
+    height:auto!important;
+  }
+}
