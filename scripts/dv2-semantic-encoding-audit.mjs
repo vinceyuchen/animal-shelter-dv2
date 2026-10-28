@@ -50,6 +50,13 @@ expect(files.foster.spec.width >= 300 &&
   files.foster.spec.encoding.y.axis.labelFontSize >= 12 &&
   files.foster.facet.column.header.labelFontSize >= 16,
   'Foster lollipop requires readable entity labels and sufficient facet width');
+expect(files.heat.encoding.x.axis.labelFontSize >= 13 &&
+       files.heat.encoding.y.axis.labelFontSize >= 13 &&
+       files.heat.encoding.x.axis.labelFontWeight === 'bold' &&
+       files.heat.encoding.y.axis.labelFontWeight === 'bold' &&
+       files.heat.layer[1].mark.fontSize === 12 &&
+       files.heat.layer[0].encoding.color.legend.titleFontSize >= 13,
+  'Heatmap must distinguish category headings from cell values');
 const grey = files.heat.layer[0].encoding.color.scale.range;
 expect(JSON.stringify(grey) === '["#F2F2F2","#A4A4A4"]', 'Chart 7 must use a neutral quantitative grey scale');
 expect(files.heat.layer[1].encoding.color.value === '#173642', 'Chart 7 percentage labels must be uniformly dark');
@@ -115,7 +122,7 @@ const sankeyFont = name => sankey.marks.find(m=>m.name===name)?.encode?.enter?.f
 expect(sankeyFont('sourceLabels')>=17 &&
        sankeyFont('outcomeLabels')>=16 &&
        sankeyFont('outcomeCounts')>=16 &&
-       sankeyFont('leftColumnHeader')>=13 && sankeyFont('rightColumnHeader')>=13,
+       sankeyFont('leftColumnHeader')>=15 && sankeyFont('rightColumnHeader')>=15,
   'SVG-scaled Sankey labels must remain readable at small laptop width');
 expect(files.foster.spec.encoding.y.axis.labelFontSize>=13 &&
        files.foster.spec.encoding.x.axis.labelFontSize>=13 &&
@@ -154,8 +161,10 @@ expect(files.map.layer[1].encoding.color.value==='#5B7482' &&
   'Chart 2 neutral circle fill must accompany the quantitative size encoding');
 const pageHtml=read('index.html');
 expect((pageHtml.match(/class="dv2-species-cue"/g)||[]).length===2 &&
-  pageHtml.includes('Purple map shading = live-release rate, not species') &&
-  pageHtml.includes('purple means percentage, not Dogs/Cats'),
+  pageHtml.includes('Live-release rate (%) · darker purple = higher rate') &&
+  pageHtml.includes('Animals recorded · circle area') &&
+  !pageHtml.includes('Blue dot = Dogs; orange dot = Cats.') &&
+  !pageHtml.includes('Blue/orange dots identify the selection.'),
   'Both maps require a visible, unambiguous species identity/quantitative legend');
 const code=read('js/dv2-story-layout.js');
 expect(code.includes('function connectSpeciesCue(') &&
