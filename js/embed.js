@@ -3,10 +3,23 @@ const embedOptions = {
   renderer: "svg"
 };
 
-vegaEmbed("#map-live-release", "charts/map_live_release.vg.json?v=20261028-dynamic-labels1", embedOptions)
-  .catch(console.error);
+// Mobile maps must be recompiled with a full plot width. Scaling a compact
+// 'container' SVG to 1100px makes its title enormous while enlarging tiny marks.
+async function embedResponsiveMap(target, url) {
+  if (!window.matchMedia("(max-width:850px)").matches) {
+    return vegaEmbed(target, url, embedOptions);
+  }
+  const response = await fetch(url);
+  if (!response.ok) throw new Error("Map specification unavailable: " + url);
+  const spec = await response.json();
+  spec.width = 850;
+  spec.autosize = {type:"pad",contains:"padding",resize:false};
+  return vegaEmbed(target, spec, embedOptions);
+}
 
-vegaEmbed("#map-caseload", "charts/map_caseload_symbols.vg.json?v=20261028-fixed-area1", embedOptions)
+embedResponsiveMap("#map-live-release", "charts/map_live_release.vg.json?v=20261028-dynamic-labels1")
+  .catch(console.error);
+embedResponsiveMap("#map-caseload", "charts/map_caseload_symbols.vg.json?v=20261028-fixed-area1")
   .catch(console.error);
 
 vegaEmbed("#map-locations-plot", "charts/map_rspca_locations.vg.json?v=20261028-sample-note1", embedOptions)

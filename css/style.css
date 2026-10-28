@@ -906,3 +906,14 @@ html { scroll-padding-top: 90px; }
     height:auto!important;
   }
 }
+
+/* Recompiled maps have an intrinsic 850px plotting width on narrow screens;
+   keep original glyph sizes. Never magnify an already-cramped 390px SVG. */
+@media (max-width:850px) {
+  #map-live-release svg, #map-caseload svg {
+    width:auto!important;
+    min-width:850px!important;
+    max-width:none!important;
+    height:auto!important;
+  }
+}

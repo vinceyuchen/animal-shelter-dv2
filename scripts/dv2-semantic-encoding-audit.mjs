@@ -179,6 +179,12 @@ expect(css.includes('@media (max-width:850px)') &&
        css.includes('.vis-card.chart11-scroll') &&
        css.includes('min-width:980px!important;'),
   'Mobile chart overflow must preserve legible Sankey and lollipop intrinsic widths');
+const mapEmbedding = read('js/embed.js');
+expect(mapEmbedding.includes('spec.width = 850;') &&
+       mapEmbedding.includes('spec.autosize = {type:"pad",contains:"padding",resize:false};') &&
+       mapEmbedding.includes('embedResponsiveMap("#map-live-release"') &&
+       mapEmbedding.includes('embedResponsiveMap("#map-caseload"'),
+  'Mobile maps must recompile at full width rather than magnify tiny viewBox text');
 const html = read('index.html');
 expect((html.match(/class="dv2-mobile-chart-hint"/g)||[]).length===5,
   'Mobile map, heatmap, Sankey and lollipop swipe hints must be visible');
