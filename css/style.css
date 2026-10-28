@@ -767,3 +767,13 @@ html { scroll-padding-top: 90px; }
 @media (min-width:1150px) {
   .dv2-story-grid > .dv2-story-aside { align-self:center; }
 }
+
+/* ROUND 4: Readability-first typography. A restrained Fraunces/Helvetica hierarchy.
+   Minimum explanatory notes 14px, stronger Key Finding hierarchy, no arbitrary text-centering. */
+.source-note { font-size: 14px; line-height: 1.65; }
+.dv2-story-kicker { font-size: 12px; letter-spacing: .105em; }
+.dv2-story-aside h3 { line-height: 1.35; }
+@media (max-width: 650px) {
+  .source-note { font-size: 14px; line-height: 1.65; }
+  .section-heading > p:not(.eyebrow) { line-height: 1.62; }
+}

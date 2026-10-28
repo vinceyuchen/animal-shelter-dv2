@@ -156,7 +156,7 @@
           "name": "Dog",
           "label": "Dogs  ·  15,852",
           "count": 15852,
-          "y0": 57.0,
+          "y0": 57,
           "y1": 201.0361524185968,
           "mid": 129.01807620929839,
           "color": "#235789"
@@ -166,7 +166,7 @@
           "label": "Cats  ·  25,639",
           "count": 25639,
           "y0": 227.0361524185968,
-          "y1": 460.0,
+          "y1": 460,
           "mid": 343.5180762092984,
           "color": "#C46A2D"
         }
@@ -180,7 +180,7 @@
           "label": "Rehomed",
           "value": "23,284",
           "count": 23284,
-          "y0": 57.0,
+          "y0": 57,
           "y1": 268.5655925381408,
           "mid": 162.7827962690704,
           "color": "#2B8C78"
@@ -231,7 +231,7 @@
           "value": "433",
           "count": 433,
           "y0": 495.0656286905594,
-          "y1": 499.0,
+          "y1": 499,
           "mid": 497.0328143452797,
           "color": "#D9C8B2"
         }
@@ -354,7 +354,7 @@
             "value": "Helvetica, Arial, sans-serif"
           },
           "fontSize": {
-            "value": 16
+            "value": 17
           },
           "fontWeight": {
             "value": "bold"
@@ -392,7 +392,7 @@
             "value": "Helvetica, Arial, sans-serif"
           },
           "fontSize": {
-            "value": 15
+            "value": 16
           },
           "fontWeight": {
             "value": "bold"
@@ -430,7 +430,7 @@
             "value": "Helvetica, Arial, sans-serif"
           },
           "fontSize": {
-            "value": 13
+            "value": 16
           },
           "fill": {
             "value": "#536b73"
@@ -456,7 +456,7 @@
             "value": "Helvetica, Arial, sans-serif"
           },
           "fontSize": {
-            "value": 11
+            "value": 13
           },
           "fontWeight": {
             "value": "bold"
@@ -485,7 +485,7 @@
             "value": "Helvetica, Arial, sans-serif"
           },
           "fontSize": {
-            "value": 11
+            "value": 13
           },
           "fontWeight": {
             "value": "bold"

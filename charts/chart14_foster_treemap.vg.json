@@ -440,7 +440,7 @@
             "title": "Placement species",
             "orient": "top",
             "direction": "horizontal",
-            "labelFontSize": 12
+            "labelFontSize": 13
           }
         },
         "tooltip": [
@@ -492,9 +492,11 @@
         "baseline": "middle",
         "align": "center",
         "font": "Helvetica, Arial, sans-serif",
-        "fontSize": 12,
+        "fontSize": 14,
         "fontWeight": "bold",
-        "color": "#FFFFFF"
+        "color": "#FFFFFF",
+        "stroke": "#173642",
+        "strokeWidth": 0.75
       },
       "encoding": {
         "x": {

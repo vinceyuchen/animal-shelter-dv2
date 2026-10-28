@@ -197,7 +197,7 @@
       "header": {
         "title": null,
         "labelFont": "Helvetica, Arial, sans-serif",
-        "labelFontSize": 16,
+        "labelFontSize": 17,
         "labelColor": "#173642",
         "labelFontWeight": "bold"
       }
@@ -228,7 +228,7 @@
         ],
         "title": null,
         "axis": {
-          "labelFontSize": 12,
+          "labelFontSize": 13,
           "labelLimit": 340,
           "ticks": false,
           "domain": false
@@ -244,10 +244,10 @@
         "axis": {
           "format": ",d",
           "tickCount": 5,
-          "labelFontSize": 12,
+          "labelFontSize": 13,
           "grid": true,
           "gridColor": "#e4eceb",
-          "titleFontSize": 12
+          "titleFontSize": 13
         }
       },
       "color": {

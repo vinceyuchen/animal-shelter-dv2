@@ -103,7 +103,7 @@ vegaEmbed("#chart8-annual-caseload", "charts/chart8_annual_caseload.vg.json?v=20
     };
     vegaEmbed(
       "#chart10-outcome-sankey",
-      "charts/chart10_outcome_sankey.vg.json?v=20261027-colour13-v1",
+      "charts/chart10_outcome_sankey.vg.json?v=20261028-type1",
       { actions: false, renderer: "svg", mode: "vega" }
     ).catch(showError);
   }
@@ -116,7 +116,7 @@ vegaEmbed("#chart8-annual-caseload", "charts/chart8_annual_caseload.vg.json?v=20
 /* CHART10 EMBED END */
 
 /* CHART11 EMBED START */
-vegaEmbed('#chart11-foster','charts/chart11_foster_lollipop.vg.json?v=20261028-legibility1',{actions:false,renderer:'svg'})
+vegaEmbed('#chart11-foster','charts/chart11_foster_lollipop.vg.json?v=20261028-type1',{actions:false,renderer:'svg'})
   .catch(function(err){
     console.error('Chart 11 error:',err);
     const el=document.getElementById('chart11-foster');
@@ -169,7 +169,7 @@ vegaEmbed('#chart11-foster','charts/chart11_foster_lollipop.vg.json?v=20261028-l
 (function(){
   const target=document.getElementById("chart14-foster-treemap");
   if(!target) return;
-  vegaEmbed("#chart14-foster-treemap","charts/chart14_foster_treemap.vg.json?v=20261027-treemap14",{actions:false,renderer:"svg"})
+  vegaEmbed("#chart14-foster-treemap","charts/chart14_foster_treemap.vg.json?v=20261028-type1",{actions:false,renderer:"svg"})
     .catch(function(error){console.error("Chart 14 treemap error:",error);target.textContent="Chart 14 could not render. Please check the browser console.";});
 })();
 /* CHART14 TREEMAP EMBED END */
