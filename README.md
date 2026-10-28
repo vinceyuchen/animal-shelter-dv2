@@ -12,7 +12,7 @@
 
 **Domain:** Animal welfare and animal shelter outcomes, with an Australian focus.
 
-**Who:** A non-specialist Australian or Malaysian reader interested in companion-animal welfare, including pet owners, potential adopters and shelter supporters. Australian readers gain evidence from a familiar network; Malaysian readers can explore comparable issues in pet adoption, owner reunification and fostering, but the Australian statistics do not describe Malaysia. Definitions, colour meanings and near-chart notes do not assume statistical experience.
+**Who (Malaysia-campus draft):** An average Malaysian reader interested in animal welfare, especially pet owners, potential adopters and shelter supporters. Australian datasets provide a comparative case study rather than Malaysian shelter statistics. Text definitions, direct labels and consistent category colours support non-specialists. For a Clayton submission, the official brief instead requires an average Australian audience.
 
 **What:** Publicly reported RSPCA dog/cat outcomes and jurisdiction-level caseloads (2024–25), comparable historical RSPCA caseloads (2020–21 through 2024–25), reported Victorian shelter/pound foster-care placements (2025), a local Townsville monthly adoption/reclaim case study (2021–2025), ABS administrative geography and selected official RSPCA facility locations.
 
