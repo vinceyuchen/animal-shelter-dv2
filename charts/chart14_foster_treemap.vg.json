@@ -494,9 +494,7 @@
         "font": "Helvetica, Arial, sans-serif",
         "fontSize": 14,
         "fontWeight": "bold",
-        "color": "#FFFFFF",
-        "stroke": "#173642",
-        "strokeWidth": 0.75
+        "color": "#0A1920"
       },
       "encoding": {
         "x": {

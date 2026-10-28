@@ -122,7 +122,8 @@ expect(files.foster.spec.encoding.y.axis.labelFontSize>=13 &&
        files.foster.facet.column.header.labelFontSize>=17,
   'Foster care labels need consistent minimum typography');
 expect(files.treemap.layer[1].mark.fontSize>=14 &&
-       files.treemap.layer[1].mark.strokeWidth>0 &&
+       files.treemap.layer[1].mark.color === '#0A1920' &&
+       files.treemap.layer[1].mark.strokeWidth === undefined &&
        files.treemap.layer[0].encoding.color.legend.labelFontSize>=13,
   'Treemap labels need sufficient size and text contrast');
 expect(css.includes('.source-note { font-size: 14px; line-height: 1.65; }'),

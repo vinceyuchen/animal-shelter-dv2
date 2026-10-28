@@ -93,3 +93,5 @@
 - **Page typography:** retained Fraunces for display and Helvetica for data/body, improved 14px chart-source text line height and the 12px Key Finding kicker, retaining ~53ch narrative lines.
 - **Live verification:** browser audit now checks computed font stacks and rendered SVG effective pixel sizes at both 1440px and 1024px, saves new `laptop-chart-10/11/12.png` screenshots and fails on undersized or missing labels.
 - **Remaining work:** visually inspect the newly rendered desktop and 1024px images for overlap or overfull labels before treating the 2% criterion as HD-competitive.
+
+**Visual follow-up:** The first Treemap revision's white text outline introduced distracting chromatic edging in screenshots. Replaced it with 14px dark ink `#0A1920` on orange, no outline; the text-to-orange contrast exceeds 4.5:1. This keeps labels readable without creating edge artefacts.

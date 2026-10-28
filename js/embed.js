@@ -169,7 +169,7 @@ vegaEmbed('#chart11-foster','charts/chart11_foster_lollipop.vg.json?v=20261028-t
 (function(){
   const target=document.getElementById("chart14-foster-treemap");
   if(!target) return;
-  vegaEmbed("#chart14-foster-treemap","charts/chart14_foster_treemap.vg.json?v=20261028-type1",{actions:false,renderer:"svg"})
+  vegaEmbed("#chart14-foster-treemap","charts/chart14_foster_treemap.vg.json?v=20261028-type2",{actions:false,renderer:"svg"})
     .catch(function(error){console.error("Chart 14 treemap error:",error);target.textContent="Chart 14 could not render. Please check the browser console.";});
 })();
 /* CHART14 TREEMAP EMBED END */
