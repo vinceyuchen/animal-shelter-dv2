@@ -831,7 +831,9 @@
           "legend": {
             "orient": "bottom",
             "gradientLength": 280,
-            "format": ".0f"
+            "format": ".0f",
+            "labelFontSize": 12,
+            "titleFontSize": 13
           }
         },
         "tooltip": [
@@ -926,7 +928,9 @@
       "title": null,
       "axis": {
         "labelAngle": 0,
-        "labelLimit": 120
+        "labelLimit": 120,
+        "labelFontSize": 13,
+        "labelFontWeight": "bold"
       }
     },
     "y": {
@@ -942,7 +946,12 @@
         "VIC",
         "WA"
       ],
-      "title": null
+      "title": null,
+      "axis": {
+        "labelFontSize": 13,
+        "labelFontWeight": "bold",
+        "labelLimit": 80
+      }
     }
   },
   "resolve": {
