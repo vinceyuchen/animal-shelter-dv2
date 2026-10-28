@@ -60,6 +60,46 @@ try {
         overflowing: document.documentElement.scrollWidth > window.innerWidth + 5,
       }));
 
+      // Colour-semantics regression: a species is always the same blue/orange
+      // category even when chart fill encodes a quantitative rate or count.
+      view.speciesIdentity = [];
+      for (const [id,steps] of [
+        ['section-01',[['Dog','dogs','Dogs'],['Cat','cats','Cats'],['Dog','dogs','Dogs']]],
+        ['section-02',[['Companion','both','Dogs + cats'],['Dog','dogs','Dogs'],['Cat','cats','Cats'],['Companion','both','Dogs + cats']]]
+      ]) {
+        try {
+          const select=page.locator('#'+id+' .dv2-control-toolbar select');
+          if(await select.count()!==1) throw new Error('Missing selector for '+id);
+          for(const [value,choice,label] of steps) {
+            await select.selectOption(value);
+            await page.waitForFunction(({id,choice,label}) => {
+              const el=document.querySelector('#'+id+' .dv2-species-cue');
+              return el?.dataset.speciesChoice===choice &&
+                el.querySelector('.dv2-species-cue-value')?.textContent===label;
+            },{id,choice,label},{timeout:10000});
+            const actual=await page.locator('#'+id+' .dv2-species-cue').evaluate(node=>{
+              const dog=node.querySelector('.dv2-cue-dog'),cat=node.querySelector('.dv2-cue-cat');
+              return {
+                selection:node.dataset.speciesChoice,
+                label:node.querySelector('.dv2-species-cue-value')?.textContent,
+                dogColor:getComputedStyle(dog).backgroundColor,
+                catColor:getComputedStyle(cat).backgroundColor,
+                dogVisible:getComputedStyle(dog).display!=='none',
+                catVisible:getComputedStyle(cat).display!=='none'
+              };
+            });
+            view.speciesIdentity.push({section:id,value,...actual});
+            if(actual.dogColor!=='rgb(35, 87, 137)' ||
+               actual.catColor!=='rgb(196, 106, 45)' ||
+               actual.dogVisible===(choice==='cats') ||
+               actual.catVisible===(choice==='dogs')) {
+              throw new Error('Wrong categorical identity colour at '+id+': '+JSON.stringify(actual));
+            }
+          }
+        } catch(e) {
+          view.errors.push('Species semantic colour regression: '+String(e));
+        }
+      }
       const actualOrder = await page.locator('section[id^="section-"]').evaluateAll(sections =>
         sections.map(section => ({id: section.id, charts: Array.from(section.querySelectorAll('.vis-host[id]')).map(host => host.id)}))
       );
@@ -376,7 +416,7 @@ report.passed = report.views.every(view =>
   view.chartResults.length === 14 &&
   view.chartResults.every(chart => chart.rendered && (view.viewport.width < 1024 || !chart.internalOverflow)) &&
   !view.overflow?.overflowing &&
-  !view.errors.some(error => /Navigation:|Uncaught|could not render|failed to render|Story order mismatch|Rubric-specific|Stale embed script|Chart 11 spec is stale|Butterfly text visibility|Chart 7 KPI|Chart 7 species|Dynamic story failed|Round 2 annotation failure|Figure-ground and layout alignment regression|Round 3 local palette or editorial balance failure|Typography hierarchy \/ scaled SVG text regression/i.test(error))
+  !view.errors.some(error => /Navigation:|Uncaught|could not render|failed to render|Story order mismatch|Rubric-specific|Stale embed script|Chart 11 spec is stale|Butterfly text visibility|Chart 7 KPI|Chart 7 species|Dynamic story failed|Round 2 annotation failure|Figure-ground and layout alignment regression|Round 3 local palette or editorial balance failure|Typography hierarchy \/ scaled SVG text regression|Species semantic colour regression/i.test(error))
 );
 const lines = ['# DV2 Browser Audit', '', 'Website: ' + URL, 'Checked: ' + report.checkedUTC, 'Result: ' + (report.passed ? 'PASS' : 'REVIEW REQUIRED'), ''];
 for (const view of report.views) {
