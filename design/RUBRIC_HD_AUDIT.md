@@ -77,3 +77,10 @@
 
 - Source links in chart notes use neutral slate `#315A6A` with an underline. Against white, this text has approximately 7.5:1 contrast, stays recognisable as a link, and avoids using saturated browser blue that competes with categorical blue marks.
 - This resolves only a visible hierarchy detail, not the remaining judgement-based colour-semantic and visual-balance risks.
+
+## Round 3 closeout: separate Townsville colours and balance insight rails
+
+- Chart 14 uses unique plum and umber colours for local Adopted and Reclaimed, without reusing the RSPCA network's categorical palette. The series, legend, tooltips, underlying values and peak labels retain their original meaning and data.
+- On wide screens, each of the five Key Finding panels is vertically centred beside its corresponding chart; smaller screens retain stacked reading order.
+- CI checks ensure the colour values are exclusive and browser tests check the live palette and wide-screen balance.
+- **Not guaranteed 3/3:** an assessor can still interpret aesthetic decisions differently, and typography and source-definition precision are separate rubric considerations.

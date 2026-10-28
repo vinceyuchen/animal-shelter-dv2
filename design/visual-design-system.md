@@ -37,3 +37,10 @@
 - Interactive controls and chart/aside grids retain the original functional layout, with a consistent 32px desktop gap and constrained mobile spacing.
 - Headings and body typography remain Fraunces + Helvetica.
 - The newly added line patterns in Charts 9 and 13 are identical by jurisdiction, supplementing consistent categorical colours.
+
+## Source-specific local outcomes and editorial balance
+
+- Townsville Adopted: `--dv2-townsville-adopted` `#76518F`.
+- Townsville Reclaimed: `--dv2-townsville-reclaimed` `#91622F`.
+- Neither is an alias for national RSPCA Rehomed / Reunited outcomes.
+- Wide-screen Key Finding panels are vertically centred beside their chart to balance large chart areas; at 1024px the panels follow the chart in normal reading order.

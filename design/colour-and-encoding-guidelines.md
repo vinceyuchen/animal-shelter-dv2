@@ -35,7 +35,7 @@ These six encode RSPCA jurisdictions, not outcome quality.
 | Euthanased | #B65C6A |
 | Other | #D9C8B2 |
 
-Townsville's Adopted is styled like Rehomed; Reclaimed is styled like Reunited. This is a visual analogy only: different sources and reporting scopes remain separate.
+Townsville's **Adopted** and **Reclaimed** use dedicated colours (#76518F and #91622F), separate from RSPCA **Rehomed** and **Reunited**. The categories have different reporting scopes and may not be merged.
 
 ## Quantitative and location encodings
 
@@ -61,3 +61,9 @@ Townsville's Adopted is styled like Rehomed; Reclaimed is styled like Reunited. 
 The categorical jurisdiction palette remains **unchanged and identical** across Chart 9 and Chart 13. The six states also have the same explicit line-dash encodings in both charts, reinforced by direct labels. The added line style is a redundant recognition cue for colour-blind viewers, not a seventh data category.
 
 Editorial accents, including navigation, chapter separators, Key Finding borders and reading-hint rails, now use slate-grey UI tokens rather than similar green decorative accents. Outcome and species hues are reserved for data categories; map gradients remain quantitative.
+
+## Townsville source-specific colours (Round 3)
+
+- Adopted: **#76518F**, a muted plum.
+- Reclaimed: **#91622F**, a dark umber.
+- Their hexadecimal values do not duplicate species, jurisdiction, national outcome or facility colours. Direct annotations and the local legend still identify the actual categories.
