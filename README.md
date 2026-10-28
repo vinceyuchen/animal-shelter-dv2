@@ -12,7 +12,7 @@
 
 **Domain:** Animal welfare and animal shelter outcomes, with an Australian focus.
 
-**Who:** General readers, including Australian and Malaysian audiences who may not know shelter reporting terminology. Each chart explains its denominator and limitations in plain language.
+**Who:** A non-specialist Australian or Malaysian reader interested in companion-animal welfare, including pet owners, potential adopters and shelter supporters. Australian reporting scope is explicit; definitions, colour meanings and near-chart notes do not assume statistical experience.
 
 **What:** Publicly reported RSPCA dog/cat outcomes and jurisdiction-level caseloads (2024–25), comparable historical RSPCA caseloads (2020–21 through 2024–25), reported Victorian shelter/pound foster-care placements (2025), a local Townsville monthly adoption/reclaim case study (2021–2025), ABS administrative geography and selected official RSPCA facility locations.
 
@@ -47,7 +47,7 @@
 2. [Australian Bureau of Statistics ASGS Edition 3](https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/access-and-downloads/digital-boundary-files) — mapping geometry and geographic context.
 3. [RSPCA shelter and services directory](https://www.rspca.org.au/our-role/caring-for-animals/services-and-shelters/) and official jurisdiction webpages — selected verified facility locations.
 4. [Animal Welfare Victoria, shelter and pound reporting](https://agriculture.vic.gov.au/livestock-and-animals/animal-welfare-victoria/domestic-animals-act/animal-fate-data-set) — recorded foster-care placement episodes, not unique animals.
-5. [Townsville City Council, Animals Adopted and Reclaimed](https://data.gov.au/data/dataset/414d816a-f79c-45c7-af7f-46af1b923bdd) — mean monthly totals for one local care centre, without a dog/cat split.
+5. [Townsville City Council, Animals Adopted and Reclaimed](https://data.gov.au/data/dataset/414d816a-f79c-45c7-af7f-46af1b923bdd) — mean monthly totals for one local care centre; the plotted series aggregate animal types, even though the broader published dataset contains more animal-type detail.
 
 The RSPCA series does **not** describe all shelters or council pounds in Australia. RSPCA reporting coverage can differ by jurisdiction and year; NSW and NT are omitted from historical comparisons due to material coverage changes. Animal Welfare Victoria and Townsville observations must **not** be added to national RSPCA totals. 'Reunited' combines RSPCA Reclaimed and Returned records; 'In Care' is not a final exit outcome. A Sankey ribbon illustrates aggregate classifications, not the journeys of identifiable animals.
 
@@ -70,3 +70,9 @@ The RSPCA series does **not** describe all shelters or council pounds in Austral
 - Four chapter transitions reinforce the original sketch narrative: geography, outcomes, caseload changes and beyond-the-shelter care.
 - Connected-dot and butterfly comparisons now identify two key differences directly on the plots, alongside their existing explanatory notes.
 - The hand-drawn sketch documents preliminary planning, and its handwritten date and provisional conclusions may differ from corrected findings on the final page.
+
+## Moodle Part B: assessed domain description
+
+- **[Ready-to-copy answers for the four Moodle prompts](MOODLE_PART_B_READY.md)**: Domain; Why and Who; What; How. Includes the required website/sketch links, source attribution and AI acknowledgement.
+- **[Detailed 14-chart Munzner Why–What–How rationale](SUBMISSION_DESCRIPTION.md)**: A chart-by-chart table of audience tasks, dataset attributes, marks/channels and reasons for each idiom. Intended to address DV1 feedback asking for more detail on **How**, and to prepare for the interview.
+- The brief is for a **general reader** in the relevant national audience. This report uses Australian datasets; the project never implies its numerical findings describe Malaysian shelters.
