@@ -12,7 +12,7 @@ My domain is **Australian animal-shelter welfare**, focusing on recorded outcome
 
 **Why:** An adoption count alone cannot show whether animals were rehomed, reunited with owners, transferred, euthanased or still in care. Nor does a large reported caseload necessarily imply a high or low live-release rate. The visualisation helps viewers **compare** dogs and cats, **identify** regional differences and temporal changes, and **distinguish** rates from counts. Its goal is to explain *observed* outcomes, not to assign causes or rank shelter quality.
 
-**Who:** The target is a **non-specialist Australian or Malaysian reader** interested in animal welfare, such as a pet owner, potential adopter or shelter supporter. Australian reporting scope is clearly identified to avoid suggesting that the results describe Malaysian shelters. Descriptive questions, plain-language definitions, direct labels, stable colour semantics and nearby sources make the charts understandable without statistical training.
+**Who:** The target is a **non-specialist Australian or Malaysian reader** interested in animal welfare, such as a pet owner, potential adopter or shelter supporter. For Australian readers, these are locally relevant RSPCA figures; for Malaysian readers, the same questions about adoption, lost-pet reunification and foster care are relevant, but the figures are explicitly Australian and cannot be applied to Malaysian shelters. Descriptive questions, plain-language definitions, direct labels, stable colour semantics and nearby sources make the charts understandable without statistical training.
 
 ## 3. Describe the What aspect of your DV II
 

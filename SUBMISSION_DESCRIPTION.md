@@ -13,7 +13,7 @@
 
 **Why:** A single adoption total or live-release rate cannot describe the experiences of dogs and cats across shelters. The visualisation examines how reported caseloads, outcomes, species differences and paths through care vary across jurisdictions and time. It distinguishes outcome percentages from recorded volumes and explains why changes in RSPCA coverage, contracts and recording practices limit comparisons.
 
-**Who:** A non-specialist Australian or Malaysian reader interested in companion-animal welfare, including pet owners, prospective adopters and shelter supporters. The Australian geographic and institutional scope is explicit so readers do not mistake the statistics for Malaysian shelters. Plain-language labels, definitions, stable category colours and source notes support readers without statistical training.
+**Who:** A non-specialist Australian or Malaysian reader interested in companion-animal welfare, including pet owners, prospective adopters and shelter supporters. For Australians the observations describe a familiar shelter network; for Malaysians, adoption, reunification and foster care are relevant comparison questions, although the Australian rates cannot be transferred to Malaysian shelters. Plain-language labels, definitions, stable category colours and source notes support readers without statistical training.
 
 ## What: data and provenance
 
