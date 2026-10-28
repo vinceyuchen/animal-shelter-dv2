@@ -856,3 +856,15 @@ html { scroll-padding-top: 90px; }
     height:auto!important;
   }
 }
+
+/* Fix Vega-Embed's target-node variant: .vega-embed may be added to the
+   target #chart10 element itself, not to a descendant. The generic descendant
+   rule above alone does not catch this case. Set SVG width directly. */
+@media (max-width:850px) {
+  #chart10-outcome-sankey svg {
+    width:1100px!important;
+    min-width:1100px!important;
+    max-width:none!important;
+    height:auto!important;
+  }
+}
