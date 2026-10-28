@@ -102,3 +102,11 @@
 - However, these two selector-driven maps lacked a clearly visible species identity cue. Added blue/orange synced dots and explicit on-chart explanations, without changing any quantitative map value, colour ramp or circle area.
 - Added strict mapping-aware tests for every species domain, Sankey source nodes, and both map encoding fields; a previous substring-only audit would not detect wrong category assignments.
 - Review browser snapshots and selector interactions before closing this risk.
+
+## Round 4 follow-up: effective typography and legend economy
+
+- **Chart 10:** Increase both Sankey column headers to 15 Vega pixels, with live verification requiring at least 13 *rendered* pixels at 1024px.
+- **Chart 7:** 13px bold state/outcome tick labels, 12px normal-weight cell percentages and 13px legend title. This supports scanning 48 cells without making all 48 numbers bold.
+- **Charts 1–2:** Keep the canonical blue/orange active species cue but remove lengthy repeated colour explanations. The map's quantitative legend is the sole explanation of the purple rate or neutral count/area encoding.
+- **Constraints unchanged:** 14 charts, data records, computed rates, category-to-hex mappings, canonical fonts and four-act narrative.
+- **Residual:** inspect the latest actual screenshots for clipping, visual congestion and loading the correct asset version before asserting HD confidence.
