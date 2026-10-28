@@ -96,6 +96,8 @@ expect(JSON.stringify(bumpColour.domain) === JSON.stringify(jurisdiction) &&
   'Jurisdictions need identical colour and uniquely distinguishable line patterns across both charts');
 expect(css.includes('--accent: #50636E;') && css.includes('--dv2-ui-border: #B7C4CB;'),
   'Editorial decoration should use neutral UI colours rather than data-category hues');
+expect(css.includes('.source-note a {') && css.includes('color: #315A6A;'),
+  'Source links must use neutral, accessible editorial colours rather than a default saturated blue');
 const html = read('index.html');
 expect(html.includes('pp means <em>percentage points</em>'),
   'Chart 4 must define percentage points at first use');

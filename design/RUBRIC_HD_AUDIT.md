@@ -72,3 +72,8 @@
 - **Implemented:** callout borders, source-note separators, and figure/insight spacing standardised without removing chart context.
 - **Verification:** the CI semantic audit checks state palette/pattern correspondence. The Chromium visual audit checks body/card background, insight border colour and left-edge chart/heading alignment at both 1440px and 1024px.
 - **Residual risk:** an HD judgement on perceived colour differentiation, responsive readability and aesthetics is not replaceable by automated tests. The teacher's exact score remains unknown.
+
+## Round 3 link contrast follow-up
+
+- Source links in chart notes use neutral slate `#315A6A` with an underline. Against white, this text has approximately 7.5:1 contrast, stays recognisable as a link, and avoids using saturated browser blue that competes with categorical blue marks.
+- This resolves only a visible hierarchy detail, not the remaining judgement-based colour-semantic and visual-balance risks.

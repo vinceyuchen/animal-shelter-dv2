@@ -750,3 +750,14 @@ html { scroll-padding-top: 90px; }
   .dv2-story-grid { gap: 17px; }
   .dv2-story-aside { border-left-width: 2px; }
 }
+
+/* ROUND 3 FINAL: source-link hierarchy.
+   A source citation should be recognisable as a link but not compete with encoded blue category marks. */
+.source-note a {
+  color: #315A6A;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+.source-note a:hover { color: #173642; }
+.source-note a:focus-visible { outline: 2px solid #315A6A; outline-offset: 3px; }
