@@ -142,7 +142,7 @@ try {
 
       if (config.name === 'desktop') {
         const activeEmbedScript = await page.locator('script[src^="js/embed.js"]').getAttribute('src');
-        if (!activeEmbedScript?.includes('20261028-type2')) {
+        if (!activeEmbedScript?.includes('20261028-type-polish2')) {
           view.errors.push('Stale embed script was served: ' + activeEmbedScript);
         }
         const liveLollipop = await page.evaluate(async () => {
