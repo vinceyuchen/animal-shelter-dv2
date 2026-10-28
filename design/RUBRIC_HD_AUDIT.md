@@ -89,7 +89,7 @@
 
 - **Evidence-based issue:** a fixed 990px Sankey SVG is downscaled at 1024px, making its 13px outcome counts approximately 11.5 rendered pixels. Raised source labels to 17px, outcomes to 16px, counts to 16px and compact headers to 13px in Vega.
 - **Foster-care lollipop:** increased entity and numeric axis labels to 13px and species facet headers to 17px, preserving both data channels and meaningful order.
-- **Treemap:** raised entity labels from 12px to 14px and added a subtle dark 0.75px edge around white text, to improve readability against the fixed orange categorical fill; also increased legend labels.
+- **Treemap:** raised entity labels from 12px to 14px and used clean high-contrast dark ink against the fixed orange categorical fill, without distracting outlines; increased legend labels.
 - **Page typography:** retained Fraunces for display and Helvetica for data/body, improved 14px chart-source text line height and the 12px Key Finding kicker, retaining ~53ch narrative lines.
 - **Live verification:** browser audit now checks computed font stacks and rendered SVG effective pixel sizes at both 1440px and 1024px, saves new `laptop-chart-10/11/12.png` screenshots and fails on undersized or missing labels.
 - **Remaining work:** visually inspect the newly rendered desktop and 1024px images for overlap or overfull labels before treating the 2% criterion as HD-competitive.

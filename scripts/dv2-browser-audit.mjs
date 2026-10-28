@@ -102,7 +102,7 @@ try {
 
       if (config.name === 'desktop') {
         const activeEmbedScript = await page.locator('script[src^="js/embed.js"]').getAttribute('src');
-        if (!activeEmbedScript?.includes('20261028-type1')) {
+        if (!activeEmbedScript?.includes('20261028-type2')) {
           view.errors.push('Stale embed script was served: ' + activeEmbedScript);
         }
         const liveLollipop = await page.evaluate(async () => {
@@ -215,7 +215,12 @@ try {
           sankeyHeader:mark('#chart10-outcome-sankey','RECORDED OUTCOME'),
           sankeyValue:mark('#chart10-outcome-sankey','23,284'),
           fosterEntity:mark('#chart11-foster','The Lost Dogs Home North Melbourne'),
-          treemapLabel:mark('#chart14-foster-treemap','North Melbourne')
+          treemapLabel:mark('#chart14-foster-treemap','North Melbourne'),
+          treemapInk:(() => {
+            const svg=document.querySelector('#chart14-foster-treemap svg');
+            const label=[...(svg?.querySelectorAll('text')||[])].find(x=>x.textContent?.trim()==='North Melbourne');
+            return label ? getComputedStyle(label).fill : null;
+          })()
         };
       });
       const fontAudit=view.typography;
@@ -227,7 +232,8 @@ try {
           !fontAudit.sankeyHeader || fontAudit.sankeyHeader.effectivePx < 10 ||
           !fontAudit.sankeyValue || fontAudit.sankeyValue.effectivePx < 12 ||
           !fontAudit.fosterEntity || fontAudit.fosterEntity.effectivePx < 11.5 ||
-          !fontAudit.treemapLabel || fontAudit.treemapLabel.effectivePx < 12) {
+          !fontAudit.treemapLabel || fontAudit.treemapLabel.effectivePx < 12 ||
+          fontAudit.treemapInk !== 'rgb(10, 25, 32)') {
         view.errors.push('Typography hierarchy / scaled SVG text regression: '+JSON.stringify(fontAudit));
       }
       // Round 3: inspect actual computed figure-ground styling and shared layout grid.
