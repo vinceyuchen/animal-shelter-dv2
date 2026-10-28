@@ -84,6 +84,12 @@ try {
         })) : null;
         const internalOverflow = !!bounds && bounds.scrollWidth > bounds.clientWidth + 5;
         view.chartResults.push({ number, name, id, rendered: marks > 0, hostFound: count === 1, bounds, internalOverflow });
+        if (config.name === 'laptop' && ['10','11','12'].includes(number) && count) {
+          try {
+            const section = host.locator('xpath=ancestor::section[1]');
+            await section.screenshot({ path: path.join(outputDir, 'laptop-chart-' + number + '.png'), timeout:20000, animations:'disabled' });
+          } catch (error) { view.errors.push('Laptop typography screenshot ' + number + ': ' + String(error)); }
+        }
         if (config.name === 'desktop' && count) {
           try {
             const section = host.locator('xpath=ancestor::section[1]');
@@ -96,11 +102,11 @@ try {
 
       if (config.name === 'desktop') {
         const activeEmbedScript = await page.locator('script[src^="js/embed.js"]').getAttribute('src');
-        if (!activeEmbedScript?.includes('20261028-r3-local-palette3')) {
+        if (!activeEmbedScript?.includes('20261028-type1')) {
           view.errors.push('Stale embed script was served: ' + activeEmbedScript);
         }
         const liveLollipop = await page.evaluate(async () => {
-          const response = await fetch('charts/chart11_foster_lollipop.vg.json?v=20261028-legibility1', {cache:'no-store'});
+          const response = await fetch('charts/chart11_foster_lollipop.vg.json?v=20261028-type1', {cache:'no-store'});
           if (!response.ok) throw new Error('Chart 11 spec unavailable');
           const spec = await response.json();
           return {width:spec.spec?.width,labels:spec.spec?.encoding?.y?.axis?.labelFontSize};
@@ -183,6 +189,46 @@ try {
          view.localBalance.figures.length !== 5 ||
          (config.width >= 1150 && view.localBalance.figures.some(x=>!x.valid||x.alignSelf!=='center'||x.centerGap>8))) {
         view.errors.push('Round 3 local palette or editorial balance failure: '+JSON.stringify(view.localBalance));
+      }
+      // Round 4: assess final rendered typography, including SVG resizing on small laptops.
+      view.typography = await page.evaluate(() => {
+        const fontOf = selector => {
+          const node=document.querySelector(selector);
+          return node ? {family:getComputedStyle(node).fontFamily,px:parseFloat(getComputedStyle(node).fontSize),height:Math.round(node.getBoundingClientRect().height)} : null;
+        };
+        const mark = (selector,needle) => {
+          const svg=document.querySelector(selector+' svg');
+          if (!svg) return null;
+          const node=[...svg.querySelectorAll('text')].find(n=>n.textContent?.trim()===needle || n.textContent?.includes(needle));
+          if(!node) return null;
+          const nominal=parseFloat(getComputedStyle(node).fontSize);
+          const vb=svg.viewBox?.baseVal?.width || parseFloat(svg.getAttribute('width')) || svg.getBoundingClientRect().width;
+          const ratio=svg.getBoundingClientRect().width / vb;
+          return {text:node.textContent.trim(),nominalPx:nominal,scale:+ratio.toFixed(3),effectivePx:+(nominal*ratio).toFixed(2)};
+        };
+        return {
+          hero:fontOf('.hero h1'),
+          section:fontOf('#section-10 .section-heading h2'),
+          body:fontOf('#section-10 .section-heading > p:not(.eyebrow)'),
+          source:fontOf('#section-10 .source-note'),
+          insight:fontOf('#section-14 .dv2-story-aside h3'),
+          sankeyHeader:mark('#chart10-outcome-sankey','RECORDED OUTCOME'),
+          sankeyValue:mark('#chart10-outcome-sankey','23,284'),
+          fosterEntity:mark('#chart11-foster','The Lost Dogs Home North Melbourne'),
+          treemapLabel:mark('#chart14-foster-treemap','North Melbourne')
+        };
+      });
+      const fontAudit=view.typography;
+      if (!fontAudit.hero?.family.includes('Fraunces') ||
+          !fontAudit.section?.family.includes('Fraunces') ||
+          !fontAudit.body?.family.includes('Helvetica') ||
+          fontAudit.body.px < 16 ||
+          fontAudit.source?.px < 14 ||
+          !fontAudit.sankeyHeader || fontAudit.sankeyHeader.effectivePx < 10 ||
+          !fontAudit.sankeyValue || fontAudit.sankeyValue.effectivePx < 12 ||
+          !fontAudit.fosterEntity || fontAudit.fosterEntity.effectivePx < 11.5 ||
+          !fontAudit.treemapLabel || fontAudit.treemapLabel.effectivePx < 12) {
+        view.errors.push('Typography hierarchy / scaled SVG text regression: '+JSON.stringify(fontAudit));
       }
       // Round 3: inspect actual computed figure-ground styling and shared layout grid.
       view.figureGround = await page.evaluate(() => {
@@ -324,7 +370,7 @@ report.passed = report.views.every(view =>
   view.chartResults.length === 14 &&
   view.chartResults.every(chart => chart.rendered && (view.viewport.width < 1024 || !chart.internalOverflow)) &&
   !view.overflow?.overflowing &&
-  !view.errors.some(error => /Navigation:|Uncaught|could not render|failed to render|Story order mismatch|Rubric-specific|Stale embed script|Chart 11 spec is stale|Butterfly text visibility|Chart 7 KPI|Chart 7 species|Dynamic story failed|Round 2 annotation failure|Figure-ground and layout alignment regression|Round 3 local palette or editorial balance failure/i.test(error))
+  !view.errors.some(error => /Navigation:|Uncaught|could not render|failed to render|Story order mismatch|Rubric-specific|Stale embed script|Chart 11 spec is stale|Butterfly text visibility|Chart 7 KPI|Chart 7 species|Dynamic story failed|Round 2 annotation failure|Figure-ground and layout alignment regression|Round 3 local palette or editorial balance failure|Typography hierarchy \/ scaled SVG text regression/i.test(error))
 );
 const lines = ['# DV2 Browser Audit', '', 'Website: ' + URL, 'Checked: ' + report.checkedUTC, 'Result: ' + (report.passed ? 'PASS' : 'REVIEW REQUIRED'), ''];
 for (const view of report.views) {

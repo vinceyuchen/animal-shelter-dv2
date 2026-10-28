@@ -109,6 +109,24 @@ expect(css.includes('--dv2-townsville-adopted:#76518F;') &&
   css.includes('--dv2-townsville-reclaimed:#91622F;') &&
   css.includes('.dv2-story-grid > .dv2-story-aside { align-self:center; }'),
   'Local outcome tokens and desktop insight alignment must remain consistent');
+// Round 4: retained Fraunces/Helvetica hierarchy and minimum chart-label font sizes.
+const sankey=json('charts/chart10_outcome_sankey.vg.json');
+const sankeyFont = name => sankey.marks.find(m=>m.name===name)?.encode?.enter?.fontSize?.value;
+expect(sankeyFont('sourceLabels')>=17 &&
+       sankeyFont('outcomeLabels')>=16 &&
+       sankeyFont('outcomeCounts')>=16 &&
+       sankeyFont('leftColumnHeader')>=13 && sankeyFont('rightColumnHeader')>=13,
+  'SVG-scaled Sankey labels must remain readable at small laptop width');
+expect(files.foster.spec.encoding.y.axis.labelFontSize>=13 &&
+       files.foster.spec.encoding.x.axis.labelFontSize>=13 &&
+       files.foster.facet.column.header.labelFontSize>=17,
+  'Foster care labels need consistent minimum typography');
+expect(files.treemap.layer[1].mark.fontSize>=14 &&
+       files.treemap.layer[1].mark.strokeWidth>0 &&
+       files.treemap.layer[0].encoding.color.legend.labelFontSize>=13,
+  'Treemap labels need sufficient size and text contrast');
+expect(css.includes('.source-note { font-size: 14px; line-height: 1.65; }'),
+  'Chart sources must retain a legible 14px editorial font');
 const html = read('index.html');
 expect(html.includes('pp means <em>percentage points</em>'),
   'Chart 4 must define percentage points at first use');
