@@ -95,3 +95,10 @@
 - **Remaining work:** visually inspect the newly rendered desktop and 1024px images for overlap or overfull labels before treating the 2% criterion as HD-competitive.
 
 **Visual follow-up:** The first Treemap revision's white text outline introduced distracting chromatic edging in screenshots. Replaced it with 14px dark ink `#0A1920` on orange, no outline; the text-to-orange contrast exceeds 4.5:1. This keeps labels readable without creating edge artefacts.
+
+## Post-round colour-semantics audit: map selections vs encoded fields
+
+- Verified all fourteen Vega/Vega-Lite specifications. The categorical identity mapping for Dogs and Cats is already consistent wherever species is encoded directly, while Chart 1's purple is a numeric live-release-rate gradient and Chart 2's neutral circles encode total recorded caseload with area.
+- However, these two selector-driven maps lacked a clearly visible species identity cue. Added blue/orange synced dots and explicit on-chart explanations, without changing any quantitative map value, colour ramp or circle area.
+- Added strict mapping-aware tests for every species domain, Sankey source nodes, and both map encoding fields; a previous substring-only audit would not detect wrong category assignments.
+- Review browser snapshots and selector interactions before closing this risk.

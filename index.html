@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261028-type1">
+  <link rel="stylesheet" href="css/style.css?v=20261028-species-roles1">
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
@@ -52,9 +52,14 @@
         </p>
       </div>
       <div class="vis-card">
+        <div class="dv2-species-cue" data-species-choice="dogs" role="status" aria-live="polite">
+          <span class="dv2-species-cue-dots" aria-hidden="true"><span class="dv2-species-cue-dot dv2-cue-dog"></span><span class="dv2-species-cue-dot dv2-cue-cat"></span></span>
+          <span class="dv2-species-cue-label">Showing: <strong class="dv2-species-cue-value">Dogs</strong></span>
+          <span class="dv2-encoding-explainer">Blue dot = Dogs; orange dot = Cats. Purple map shading = live-release rate, not species.</span>
+        </div>
         <div id="map-live-release" class="vis-host"></div>
         <div class="manual-legend gradient-legend" aria-label="Live release rate legend">
-          <span class="manual-legend-title">Live release rate</span>
+          <span class="manual-legend-title">Live-release rate (%) · purple means percentage, not Dogs/Cats</span>
           <div class="gradient-bar"></div>
           <div class="legend-scale"><span>65%</span><span>100%</span></div>
         </div>
@@ -87,6 +92,11 @@
         </div>
       </div>
       <div class="vis-card">
+        <div class="dv2-species-cue" data-species-choice="both" role="status" aria-live="polite">
+          <span class="dv2-species-cue-dots" aria-hidden="true"><span class="dv2-species-cue-dot dv2-cue-dog"></span><span class="dv2-species-cue-dot dv2-cue-cat"></span></span>
+          <span class="dv2-species-cue-label">Showing: <strong class="dv2-species-cue-value">Dogs + cats</strong></span>
+          <span class="dv2-encoding-explainer">Blue/orange dots identify the selection. Neutral circles encode reported animal counts by area.</span>
+        </div>
         <div id="map-caseload" class="vis-host"></div>
         <div class="manual-legend bubble-legend" aria-label="Animals recorded legend">
           <span class="manual-legend-title">Animals recorded (same size scale for every selection)</span>
@@ -580,6 +590,6 @@
 
 </main>
   <script src="js/embed.js?v=20261028-type2"></script>
-  <script src="js/dv2-story-layout.js?v=20261027-rubric3kpi2" defer></script>
+  <script src="js/dv2-story-layout.js?v=20261028-species-roles1" defer></script>
 </body>
 </html>

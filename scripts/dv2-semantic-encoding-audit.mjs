@@ -128,6 +128,43 @@ expect(files.treemap.layer[1].mark.fontSize>=14 &&
   'Treemap labels need sufficient size and text contrast');
 expect(css.includes('.source-note { font-size: 14px; line-height: 1.65; }'),
   'Chart sources must retain a legible 14px editorial font');
+// Strict, field-level semantic validation, not simple substring searches.
+const speciesColour = {Dogs:DOG,Cats:CAT,Dog:DOG,Cat:CAT};
+for (const [name,encoding] of [
+  ['connected dots',files.comparison.layer[1].encoding.color],
+  ['butterfly',files.butterfly.encoding.color],
+  ['annual trend',files.annual.encoding.color],
+  ['foster lollipop',files.foster.spec.encoding.color],
+  ['foster treemap',files.treemap.layer[0].encoding.color]
+]) {
+  expect(encoding.field === 'species' &&
+    encoding.scale.domain.every((key,i)=>speciesColour[key]===encoding.scale.range[i]),
+    'Species domain-to-colour identity must be identical for '+name);
+}
+const sankeySource = sankey.data.find(x=>x.name==='sources')?.values||[];
+expect(sankeySource.length===2 && sankeySource.every(x=>speciesColour[x.name]===x.color),
+  'Sankey source nodes must use the same Dog/Cat colour identity');
+const choroplethColour=files.mapLrr.layer[0].encoding.color;
+expect(choroplethColour.field==='selected_lrr' && choroplethColour.type==='quantitative' &&
+  JSON.stringify(choroplethColour.scale.range)===JSON.stringify(['#EDF0F8','#5B5A93']) &&
+  files.mapLrr.params[0].name==='Species_selection',
+  'Chart 1's purple must encode numeric live-release rate, never a species');
+expect(files.map.layer[1].encoding.color.value==='#5B7482' &&
+       files.map.layer[1].encoding.size.field==='selected_total',
+  'Chart 2's neutral circle fill must only accompany the quantitative size encoding');
+const pageHtml=read('index.html');
+expect((pageHtml.match(/class="dv2-species-cue"/g)||[]).length===2 &&
+  pageHtml.includes('Purple map shading = live-release rate, not species') &&
+  pageHtml.includes('purple means percentage, not Dogs/Cats'),
+  'Both maps require a visible, unambiguous species identity/quantitative legend');
+const code=read('js/dv2-story-layout.js');
+expect(code.includes('function connectSpeciesCue(') &&
+  code.includes('select.addEventListener("change", update)') &&
+  code.includes('connectSpeciesCue(id, card);'),
+  'Map species identity badges must stay synced to the live Vega selectors');
+expect(css.includes('.dv2-cue-dog {background:var(--dv2-dog);}') &&
+  css.includes('.dv2-cue-cat {background:var(--dv2-cat);}'),
+  'Selection dots must use the canonical categorical palette');
 const html = read('index.html');
 expect(html.includes('pp means <em>percentage points</em>'),
   'Chart 4 must define percentage points at first use');

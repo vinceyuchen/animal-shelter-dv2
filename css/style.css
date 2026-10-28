@@ -777,3 +777,24 @@ html { scroll-padding-top: 90px; }
   .source-note { font-size: 14px; line-height: 1.65; }
   .section-heading > p:not(.eyebrow) { line-height: 1.62; }
 }
+
+/* STRICT COLOUR ROLES: the selection is a category, map fill is a rate or magnitude.
+   Never recolour a choropleth by species. Keep Dogs blue and Cats orange as identity cues. */
+.dv2-species-cue {
+  display:flex; align-items:center; flex-wrap:wrap; gap:9px;
+  margin:2px 0 12px; padding:9px 12px;
+  background:#F5F7F8; border:1px solid #DBE3E7; border-radius:9px;
+  font:400 13px/1.55 Helvetica,Arial,sans-serif; color:#173642;
+}
+.dv2-species-cue-label {white-space:nowrap;}
+.dv2-species-cue-value {font-weight:700;}
+.dv2-species-cue[data-species-choice="dogs"] .dv2-species-cue-value {color:var(--dv2-dog);}
+.dv2-species-cue[data-species-choice="cats"] .dv2-species-cue-value {color:var(--dv2-cat);}
+.dv2-species-cue-dots {display:inline-flex;align-items:center;gap:5px;}
+.dv2-species-cue-dot {display:inline-block;flex:none;width:12px;height:12px;border-radius:50%;border:1px solid rgba(23,54,66,.18);}
+.dv2-cue-dog {background:var(--dv2-dog);}
+.dv2-cue-cat {background:var(--dv2-cat);}
+.dv2-species-cue[data-species-choice="dogs"] .dv2-cue-cat,
+.dv2-species-cue[data-species-choice="cats"] .dv2-cue-dog {display:none;}
+.dv2-encoding-explainer {flex:1 1 230px;color:#526774;font-size:12.5px;}
+@media(max-width:650px){.dv2-species-cue{gap:8px;padding:9px 10px}.dv2-encoding-explainer{flex-basis:100%;font-size:12px}}

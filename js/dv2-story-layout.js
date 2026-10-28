@@ -117,6 +117,26 @@
     "chart9-yoy-bump": describeChart9
   };
 
+  // Species identity is a fixed categorical mapping. Map fill encodes a different
+  // quantitative variable (rate on Chart 1, neutral count symbols on Chart 2).
+  function connectSpeciesCue(id, card) {
+    if (id !== "map-live-release" && id !== "map-caseload") return;
+    const cue = card.querySelector(".dv2-species-cue");
+    const select = card.querySelector(".dv2-control-toolbar select");
+    if (!cue || !select || select.dataset.dv2SpeciesCueConnected === "yes") return;
+    select.dataset.dv2SpeciesCueConnected = "yes";
+    const label = cue.querySelector(".dv2-species-cue-value");
+    const update = () => {
+      const value = select.value;
+      const choice = value === "Dog" ? "dogs" : value === "Cat" ? "cats" : "both";
+      cue.dataset.speciesChoice = choice;
+      if (label) label.textContent = choice === "dogs" ? "Dogs" :
+        choice === "cats" ? "Cats" : "Dogs + cats";
+    };
+    select.addEventListener("change", update);
+    update();
+  }
+
   function connectStory(id, card) {
     const src = chartSources[id];
     if (!src) return;
@@ -157,6 +177,7 @@
         if (existing) {
           if (observer) observer.disconnect();
           connectStory(id, card);
+          connectSpeciesCue(id, card);
           return;
         }
         const bindings = card.querySelector(".vega-bindings");
@@ -170,6 +191,7 @@
         card.insertBefore(toolbar, card.firstChild);
         toolbar.appendChild(bindings);
         connectStory(id, card);
+        connectSpeciesCue(id, card);
       }
 
       moveControl();

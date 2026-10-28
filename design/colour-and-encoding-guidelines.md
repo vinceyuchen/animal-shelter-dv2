@@ -67,3 +67,11 @@ Editorial accents, including navigation, chapter separators, Key Finding borders
 - Adopted: **#76518F**, a muted plum.
 - Reclaimed: **#91622F**, a dark umber.
 - Their hexadecimal values do not duplicate species, jurisdiction, national outcome or facility colours. Direct annotations and the local legend still identify the actual categories.
+
+## Strict species identity versus quantitative encoding (verified across 14 charts)
+
+- **Whenever the categorical variable is species**, Dogs = **#235789** and Cats = **#C46A2D**, including connected dots, butterfly marks, annual trend, Sankey species nodes, foster lollipop and the treemap.
+- **Chart 1** colours encode a *quantitative live-release rate* with one stable purple gradient for both selections. They must **never** be relabelled as Dogs or Cats. A blue/orange identity dot and the "Showing" label now change with the Dogs/Cats selector.
+- **Chart 2** keeps neutral circle fills (#5B7482), because circle **area** encodes recorded caseload, not species. The same blue/orange identity dots follow Dogs, Cats and Dogs + cats selections.
+- **Other semantic fields** use their own exclusive encodings: locations, RSPCA outcomes, jurisdictions, and local Townsville outcomes. A mark's colour must agree with the field named in its legend. A quantitative gradient is a different encoding channel from an animal's categorical identity.
+- The visible map legend explicitly states that purple means rate, not species. The semantic regression checks also compare exact domain-to-colour assignments, not just the presence of the right hex strings somewhere in a JSON file.
