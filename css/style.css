@@ -798,3 +798,8 @@ html { scroll-padding-top: 90px; }
 .dv2-species-cue[data-species-choice="cats"] .dv2-cue-dog {display:none;}
 .dv2-encoding-explainer {flex:1 1 230px;color:#526774;font-size:12.5px;}
 @media(max-width:650px){.dv2-species-cue{gap:8px;padding:9px 10px}.dv2-encoding-explainer{flex-basis:100%;font-size:12px}}
+
+/* ROUND 4: make map selection cues brief, leaving quantitative meaning to each legend. */
+.dv2-species-cue { gap:8px; margin-bottom:8px; padding:7px 11px; }
+.dv2-species-cue-dots { gap:5px; }
+.dv2-species-cue-dot { width:11px; height:11px; }
