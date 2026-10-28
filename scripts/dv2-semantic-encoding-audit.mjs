@@ -98,6 +98,17 @@ expect(css.includes('--accent: #50636E;') && css.includes('--dv2-ui-border: #B7C
   'Editorial decoration should use neutral UI colours rather than data-category hues');
 expect(css.includes('.source-note a {') && css.includes('color: #315A6A;'),
   'Source links must use neutral, accessible editorial colours rather than a default saturated blue');
+// Round 3: separate local outcome colours from RSPCA's national reporting categories.
+const townsvilleColour = files.seasonal.layer[0].encoding.color.scale;
+const otherColours = new Set([DOG,CAT,'#2B8C78','#5B87C2','#A88E5A','#9FAAAE','#B65C6A','#D9C8B2','#6950A1','#07827A','#C07822','#A84677','#2B5F91','#71882E']);
+expect(JSON.stringify(townsvilleColour.domain) === JSON.stringify(['Adopted','Reclaimed']) &&
+  JSON.stringify(townsvilleColour.range) === JSON.stringify(['#76518F','#91622F']) &&
+  townsvilleColour.range.every(value=>!otherColours.has(value)),
+  'Townsville outcomes require dedicated category colours, distinct from RSPCA outcomes');
+expect(css.includes('--dv2-townsville-adopted:#76518F;') &&
+  css.includes('--dv2-townsville-reclaimed:#91622F;') &&
+  css.includes('.dv2-story-grid > .dv2-story-aside { align-self:center; }'),
+  'Local outcome tokens and desktop insight alignment must remain consistent');
 const html = read('index.html');
 expect(html.includes('pp means <em>percentage points</em>'),
   'Chart 4 must define percentage points at first use');

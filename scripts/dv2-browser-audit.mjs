@@ -96,7 +96,7 @@ try {
 
       if (config.name === 'desktop') {
         const activeEmbedScript = await page.locator('script[src^="js/embed.js"]').getAttribute('src');
-        if (!activeEmbedScript?.includes('20261028-r3-cleanlegend2')) {
+        if (!activeEmbedScript?.includes('20261028-r3-local-palette3')) {
           view.errors.push('Stale embed script was served: ' + activeEmbedScript);
         }
         const liveLollipop = await page.evaluate(async () => {
@@ -163,6 +163,26 @@ try {
           view.rubricChecks.round2VisibleAnnotations = false;
           view.errors.push('Round 2 annotation failure: ' + String(error));
         }
+      }
+      // Round 3 final: verify that published local category fills and editorial alignment match design intent.
+      view.localBalance = await page.evaluate(async () => {
+        const r = await fetch('charts/chart13_townsville_seasonality.vg.json?v=20261028-local-palette3',{cache:'no-store'});
+        if(!r.ok) throw new Error('Townsville source spec did not load');
+        const chart = await r.json();
+        const figures = [...document.querySelectorAll('.dv2-story-grid')].map(grid => {
+          const card=grid.querySelector('.dv2-story-figure .vis-card');
+          const aside=grid.querySelector('.dv2-story-aside');
+          if(!card||!aside) return {valid:false};
+          const a=card.getBoundingClientRect(),b=aside.getBoundingClientRect();
+          return {valid:true,alignSelf:getComputedStyle(aside).alignSelf,centerGap:Math.round(Math.abs((a.top+a.bottom)/2-(b.top+b.bottom)/2))};
+        });
+        return {domain:chart.layer[0].encoding.color.scale.domain,range:chart.layer[0].encoding.color.scale.range,figures};
+      });
+      if(JSON.stringify(view.localBalance.domain) !== JSON.stringify(['Adopted','Reclaimed']) ||
+         JSON.stringify(view.localBalance.range) !== JSON.stringify(['#76518F','#91622F']) ||
+         view.localBalance.figures.length !== 5 ||
+         (config.width >= 1150 && view.localBalance.figures.some(x=>!x.valid||x.alignSelf!=='center'||x.centerGap>8))) {
+        view.errors.push('Round 3 local palette or editorial balance failure: '+JSON.stringify(view.localBalance));
       }
       // Round 3: inspect actual computed figure-ground styling and shared layout grid.
       view.figureGround = await page.evaluate(() => {
@@ -304,7 +324,7 @@ report.passed = report.views.every(view =>
   view.chartResults.length === 14 &&
   view.chartResults.every(chart => chart.rendered && (view.viewport.width < 1024 || !chart.internalOverflow)) &&
   !view.overflow?.overflowing &&
-  !view.errors.some(error => /Navigation:|Uncaught|could not render|failed to render|Story order mismatch|Rubric-specific|Stale embed script|Chart 11 spec is stale|Butterfly text visibility|Chart 7 KPI|Chart 7 species|Dynamic story failed|Round 2 annotation failure|Figure-ground and layout alignment regression/i.test(error))
+  !view.errors.some(error => /Navigation:|Uncaught|could not render|failed to render|Story order mismatch|Rubric-specific|Stale embed script|Chart 11 spec is stale|Butterfly text visibility|Chart 7 KPI|Chart 7 species|Dynamic story failed|Round 2 annotation failure|Figure-ground and layout alignment regression|Round 3 local palette or editorial balance failure/i.test(error))
 );
 const lines = ['# DV2 Browser Audit', '', 'Website: ' + URL, 'Checked: ' + report.checkedUTC, 'Result: ' + (report.passed ? 'PASS' : 'REVIEW REQUIRED'), ''];
 for (const view of report.views) {
