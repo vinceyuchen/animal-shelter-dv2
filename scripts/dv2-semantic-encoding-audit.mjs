@@ -180,8 +180,8 @@ expect(css.includes('@media (max-width:850px)') &&
        css.includes('min-width:980px!important;'),
   'Mobile chart overflow must preserve legible Sankey and lollipop intrinsic widths');
 const html = read('index.html');
-expect((html.match(/class="dv2-mobile-chart-hint"/g)||[]).length===2,
-  'Mobile chart swipe hints must exist for both fixed-width dense charts');
+expect((html.match(/class="dv2-mobile-chart-hint"/g)||[]).length===5,
+  'Mobile map, heatmap, Sankey and lollipop swipe hints must be visible');
 expect(html.includes('pp means <em>percentage points</em>'),
   'Chart 4 must define percentage points at first use');
 expect(html.includes('Which euthanasia reasons were recorded?') &&
