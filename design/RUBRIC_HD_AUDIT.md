@@ -110,3 +110,13 @@
 - **Charts 1–2:** Keep the canonical blue/orange active species cue but remove lengthy repeated colour explanations. The map's quantitative legend is the sole explanation of the purple rate or neutral count/area encoding.
 - **Constraints unchanged:** 14 charts, data records, computed rates, category-to-hex mappings, canonical fonts and four-act narrative.
 - **Residual:** inspect the latest actual screenshots for clipping, visual congestion and loading the correct asset version before asserting HD confidence.
+
+## Round 4: 768px and 390px typography stress test (28 October 2026)
+
+- **Before:** On a 390px viewport, Chart 10 Sankey's column heading and numeric labels shrank to roughly 4.8px and 5.1px. Chart 7's 48 percentage labels overlapped; maps collapsed to small geographical silhouettes. The original 1440/1024 tests did not detect these failures.
+- **Fixed:** Sankey uses its original intrinsic SVG width and an internal swipe region at <=850px; 390px/768px tests measure heading **16.43px**, count **17.53px**. The foster lollipop remains internally scrollable at **13px** entity text.
+- **Fixed:** Heatmap uses a wide chart region rather than squeezing six outcome columns. Maps are recompiled with 850px plot widths and native text sizes instead of enlarging a compressed tiny SVG; text and geography now scale together.
+- **Interaction:** Five mobile chart-swipe hints cover Maps 1–2, Heatmap 7, Sankey 10 and Foster 11. Whole-page horizontal scrolling remains absent.
+- **Evidence:** `scripts/dv2-mobile-type-audit.mjs` runs Chromium at **768px and 390px** and checks all 14 charts, no page-level overflow, dedicated scroll areas and actual text sizes. It saves 8 chart-level screenshots alongside the existing desktop/laptop artifacts. The final strict browser audit is [GitHub Actions run 40673205199](https://github.com/vinceyuchen/animal-shelter-dv2/actions/runs/40673205199).
+- **Scope:** The 1024px small-laptop layout keeps the full-chart presentation without internal scroll, preserving the assignment's desktop reading experience. Narrow-screen swipe is an accessibility enhancement, not a replacement for the main data visualisation.
+- **Limit:** Browser checks cannot guarantee 2/2 from the grader; they confirm specifically tested fonts, visibility, no page overflow and the reported chart interactions.
