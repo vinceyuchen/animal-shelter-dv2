@@ -148,10 +148,10 @@ const choroplethColour=files.mapLrr.layer[0].encoding.color;
 expect(choroplethColour.field==='selected_lrr' && choroplethColour.type==='quantitative' &&
   JSON.stringify(choroplethColour.scale.range)===JSON.stringify(['#EDF0F8','#5B5A93']) &&
   files.mapLrr.params[0].name==='Species_selection',
-  'Chart 1's purple must encode numeric live-release rate, never a species');
+  'Chart 1 purple must encode numeric live-release rate, never species identity');
 expect(files.map.layer[1].encoding.color.value==='#5B7482' &&
        files.map.layer[1].encoding.size.field==='selected_total',
-  'Chart 2's neutral circle fill must only accompany the quantitative size encoding');
+  'Chart 2 neutral circle fill must accompany the quantitative size encoding');
 const pageHtml=read('index.html');
 expect((pageHtml.match(/class="dv2-species-cue"/g)||[]).length===2 &&
   pageHtml.includes('Purple map shading = live-release rate, not species') &&
