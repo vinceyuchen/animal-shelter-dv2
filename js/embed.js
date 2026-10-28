@@ -153,7 +153,7 @@ vegaEmbed('#chart11-foster','charts/chart11_foster_lollipop.vg.json?v=20261028-l
   function renderChart13() {
     const target = document.getElementById('chart13-townsville');
     if (!target) return;
-    vegaEmbed('#chart13-townsville', 'charts/chart13_townsville_seasonality.vg.json?v=20261028-peak-style2',
+    vegaEmbed('#chart13-townsville', 'charts/chart13_townsville_seasonality.vg.json?v=20261028-local-palette3',
       { actions:false, renderer:'svg' }).catch(function(error) {
         console.error('Chart 13 error:', error);
         target.textContent = 'Chart 13 could not render. Check the browser console.';

@@ -12,8 +12,8 @@
   "title": {
     "text": "When do recorded adoptions and reclaims peak?",
     "subtitle": [
-      "Townsville, monthly averages across 2021–2025. Labels identify each category's peak.",
-      "Band thickness shows average numbers recorded, not individual animal movements."
+      "Townsville, average monthly records from 2021–2025. Purple and umber distinguish the two local categories.",
+      "Each peak comes from monthly values; band thickness shows the average number of recorded outcomes."
     ],
     "font": "Helvetica",
     "fontSize": 18,
@@ -262,8 +262,8 @@
               "Reclaimed"
             ],
             "range": [
-              "#2B8C78",
-              "#5B87C2"
+              "#76518F",
+              "#91622F"
             ]
           },
           "legend": {
