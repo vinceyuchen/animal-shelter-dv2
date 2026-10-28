@@ -11,6 +11,7 @@ on:
       - "charts/**"
       - ".github/workflows/dv2-live-audit.yml"
       - "scripts/dv2-browser-audit.mjs"
+      - "scripts/dv2-mobile-type-audit.mjs"
       - "scripts/dv2-data-integrity.mjs"
       - "scripts/dv2-semantic-encoding-audit.mjs"
 
@@ -99,6 +100,8 @@ jobs:
           exit 1
       - name: Inspect the actual published GitHub Pages website
         run: node scripts/dv2-browser-audit.mjs
+      - name: Verify narrow-screen typography and scroll regions (768px / 390px)
+        run: node scripts/dv2-mobile-type-audit.mjs
       - name: Upload full screenshots, section screenshots and report
         if: always()
         uses: actions/upload-artifact@v4
