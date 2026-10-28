@@ -269,7 +269,7 @@ try {
           !fontAudit.body?.family.includes('Helvetica') ||
           fontAudit.body.px < 16 ||
           fontAudit.source?.px < 14 ||
-          !fontAudit.sankeyHeader || fontAudit.sankeyHeader.effectivePx < 10 ||
+          !fontAudit.sankeyHeader || fontAudit.sankeyHeader.effectivePx < 13 ||
           !fontAudit.sankeyValue || fontAudit.sankeyValue.effectivePx < 12 ||
           !fontAudit.fosterEntity || fontAudit.fosterEntity.effectivePx < 11.5 ||
           !fontAudit.treemapLabel || fontAudit.treemapLabel.effectivePx < 12 ||
