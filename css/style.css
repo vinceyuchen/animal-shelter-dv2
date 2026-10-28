@@ -803,3 +803,56 @@ html { scroll-padding-top: 90px; }
 .dv2-species-cue { gap:8px; margin-bottom:8px; padding:7px 11px; }
 .dv2-species-cue-dots { gap:5px; }
 .dv2-species-cue-dot { width:11px; height:11px; }
+
+/* ROUND 4: narrow screens preserve intrinsic chart-label sizes rather than
+   shrinking a 990px Sankey or two-facet lollipop into 390px. The scroll
+   is INSIDE the chart, never on the page; 1024px laptop stays unchanged. */
+.dv2-mobile-chart-hint { display:none; }
+@media (max-width:850px) {
+  .dv2-mobile-chart-hint {
+    display:block; margin:14px 0 7px;
+    font:400 14px/1.55 Helvetica,Arial,sans-serif;
+    color:#526774;
+  }
+  .dv2-mobile-chart-hint strong {font-weight:700;color:#173642;}
+  #chart10-outcome-sankey {
+    overflow-x:auto!important;
+    max-width:100%;
+    overscroll-behavior-x:contain;
+    -webkit-overflow-scrolling:touch;
+  }
+  #chart10-outcome-sankey .vega-embed,
+  #chart10-outcome-sankey .vega-embed > div {
+    width:max-content!important;
+    min-width:990px!important;
+    max-width:none!important;
+  }
+  #chart10-outcome-sankey .vega-embed svg {
+    width:auto!important;
+    max-width:none!important;
+    min-width:990px!important;
+    height:auto!important;
+  }
+  .vis-card.chart11-scroll {
+    overflow-x:auto!important;
+    max-width:100%;
+    overscroll-behavior-x:contain;
+    -webkit-overflow-scrolling:touch;
+  }
+  #chart11-foster {
+    min-width:980px!important;
+    width:max-content!important;
+  }
+  #chart11-foster .vega-embed,
+  #chart11-foster .vega-embed > div {
+    min-width:980px!important;
+    width:max-content!important;
+    max-width:none!important;
+  }
+  #chart11-foster .vega-embed svg {
+    width:auto!important;
+    max-width:none!important;
+    min-width:980px!important;
+    height:auto!important;
+  }
+}
