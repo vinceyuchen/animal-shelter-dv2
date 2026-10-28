@@ -39,7 +39,7 @@ vegaEmbed("#outcome-composition", "charts/outcome_composition.vg.json?v=20261027
     try {
       vegaEmbed(
         "#vis-chart7",
-        "charts/chart7_outcome_heatmap.vg.json?v=20261028-readable-grey2",
+        "charts/chart7_outcome_heatmap.vg.json?v=20261028-type-polish2",
         { actions: false, renderer: "svg" }
       ).catch(showError);
     } catch (error) {
@@ -103,7 +103,7 @@ vegaEmbed("#chart8-annual-caseload", "charts/chart8_annual_caseload.vg.json?v=20
     };
     vegaEmbed(
       "#chart10-outcome-sankey",
-      "charts/chart10_outcome_sankey.vg.json?v=20261028-type1",
+      "charts/chart10_outcome_sankey.vg.json?v=20261028-type-polish2",
       { actions: false, renderer: "svg", mode: "vega" }
     ).catch(showError);
   }
