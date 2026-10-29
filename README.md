@@ -4,9 +4,9 @@
 
 [**Explore the live experience**](https://vinceyuchen.github.io/animal-shelter-dv2/) · [**Review the implementation**](js/embed.js) · [**View the design decisions**](design/visual-design-system.md)
 
-<a href="https://vinceyuchen.github.io/animal-shelter-dv2/"><img src="assets/project-preview.svg" alt="Illustrated editorial preview of the animal-shelter data visualization site's typography, geographic exploration, outcome comparisons and time trends. This is a design illustration, not a browser screenshot or measured chart." width="700" /></a>
+<a href="https://vinceyuchen.github.io/animal-shelter-dv2/"><img src="assets/real-site-preview.png" alt="Actual Chromium browser screenshot of the published Behind the Shelter Doors data visualization, showing the introductory page, navigation and first interactive map." width="780" /></a>
 
-<sub>Illustrative preview based on this project's actual typography, palette and chapter structure; open the live site for the real interactive charts.</sub>
+<sub>Actual published website screenshot captured with Chromium. [Open the interactive site](https://vinceyuchen.github.io/animal-shelter-dv2/) or [review the capture workflow](.github/workflows/refresh-portfolio-preview.yml).</sub>
 
 **Project at a glance:** A responsive, single-page story built around 14 Vega / Vega-Lite charts. It separates RSPCA Australia outcomes from the Victorian foster-care and Townsville local case studies, with source notes and documented design decisions.
 
