@@ -1,0 +1,45 @@
+name: Refresh authentic website screenshot
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/refresh-portfolio-preview.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: website-portfolio-preview
+  cancel-in-progress: false
+
+jobs:
+  capture:
+    name: Capture published site in Chromium
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install screenshot dependencies
+        run: |
+          npm install --no-save --no-package-lock playwright@1.57.0 sharp@0.34.4
+          npx playwright install --with-deps chromium
+      - name: Capture rendered page and map
+        run: node scripts/capture-portfolio-preview.mjs
+      - name: Commit real screenshot only
+        run: |
+          git add assets/real-site-preview.png
+          if git diff --cached --quiet; then
+            echo "Screenshot is unchanged"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "docs: refresh screenshot from published visualization"
+            git push origin HEAD:main
+          fi
