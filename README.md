@@ -1,5 +1,17 @@
 # Behind the Shelter Doors — FIT3179 Data Visualisation 2
 
+**Interactive data storytelling · JavaScript · Vega / Vega-Lite · HTML/CSS**
+
+[**Explore the live experience**](https://vinceyuchen.github.io/animal-shelter-dv2/) · [**Review the implementation**](js/embed.js) · [**View the design decisions**](design/visual-design-system.md)
+
+<a href="https://vinceyuchen.github.io/animal-shelter-dv2/"><img src="assets/project-preview.svg" alt="Illustrated editorial preview of the animal-shelter data visualization site's typography, geographic exploration, outcome comparisons and time trends. This is a design illustration, not a browser screenshot or measured chart." width="700" /></a>
+
+<sub>Illustrative preview based on this project's actual typography, palette and chapter structure; open the live site for the real interactive charts.</sub>
+
+**Project at a glance:** A responsive, single-page story built around 14 Vega / Vega-Lite charts. It separates RSPCA Australia outcomes from the Victorian foster-care and Townsville local case studies, with source notes and documented design decisions.
+
+---
+
 **Live single-page visualisation:** https://vinceyuchen.github.io/animal-shelter-dv2/
 
 **Original hand-drawn sketch (PDF):** https://github.com/vinceyuchen/animal-shelter-dv2/blob/main/design/Behind_the_Shelter_Doors_Hand_Drawn_Sketch.pdf  
