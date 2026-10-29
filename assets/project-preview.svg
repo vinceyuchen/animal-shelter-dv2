@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title description">
+  <title id="title">Behind the Shelter Doors — interactive data visualization</title>
+  <desc id="description">An editorial preview illustration based on the project's existing typography, colors and chapters. It is not a screenshot or a graph of measured data.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#F3F7F4"/>
+      <stop offset="1" stop-color="#EAF2F0"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0" x2="1">
+      <stop stop-color="#D2E9E5"/>
+      <stop offset="1" stop-color="#83B9B5"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect x="24" y="24" width="1152" height="627" rx="23" fill="#FFFFFF" stroke="#DFE7E4" stroke-width="2"/>
+  <rect x="24" y="24" width="1152" height="56" rx="23" fill="#F8FBF9"/>
+  <path d="M24 61h1152" stroke="#E2E9E6" stroke-width="1.3"/>
+  <circle cx="61" cy="52" r="5" fill="#93C2BF"/><circle cx="79" cy="52" r="5" fill="#BAD8D5"/><circle cx="97" cy="52" r="5" fill="#DCE9E6"/>
+  <text x="128" y="57" fill="#607077" font-family="Arial, sans-serif" font-size="15">Interactive data story</text>
+  <text x="1145" y="57" text-anchor="end" fill="#3F7F80" font-family="Arial, sans-serif" font-size="14" font-weight="700">EXPLORE  /  RESEARCH  /  SOURCES</text>
+  <text x="77" y="132" fill="#3F7F80" font-family="Arial, sans-serif" letter-spacing="2" font-size="16" font-weight="700">AUSTRALIA  ·  ANIMAL OUTCOMES</text>
+  <text x="74" y="196" fill="#173642" font-family="Georgia, 'Times New Roman', serif" font-size="55" font-weight="700">Behind the Shelter Doors</text>
+  <text x="77" y="236" fill="#3F7F80" font-family="Georgia, 'Times New Roman', serif" font-size="24">Making shelter data easier to explore and understand.</text>
+  <text x="77" y="274" fill="#607077" font-family="Arial, sans-serif" font-size="17">Geography  ·  Dogs vs cats  ·  Outcomes  ·  Trends  ·  Foster care</text>
+  <path d="M77 308h1046" stroke="#DFE7E4" stroke-width="2"/>
+  <rect x="77" y="337" width="501" height="257" rx="13" fill="#F8FAF9" stroke="#DCE7E2"/>
+  <text x="101" y="370" fill="#173642" font-family="Georgia, serif" font-size="23" font-weight="700">Geographic context</text>
+  <text x="102" y="395" fill="#607077" font-family="Arial, sans-serif" font-size="14">Explore state and territory patterns</text>
+  <g stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round">
+    <path d="M224 448l20-32 57-9 31 14 33-9 44 20 19 43-26 29-37-5-13 31-69 7-53-36-18-30z" fill="#B8DAD4"/>
+    <path d="M247 418l-20 29-17 27 53 27 31-23-1-61z" fill="#90BDB5"/>
+    <path d="M294 417l43 5 28-10 45 20-10 37-51 12-56-3z" fill="#5D9C98"/>
+    <path d="M264 503l30-25 55 3 15 20-13 28-66 7z" fill="#6FADA7"/>
+    <path d="M351 481l49-11 28 4-18 30-44-1z" fill="#3F7F80"/>
+    <ellipse cx="390" cy="552" rx="11" ry="7" fill="#A4CCC6"/>
+  </g>
+  <g fill="#173642" font-family="Arial, sans-serif" font-size="12">
+    <text x="440" y="451">MAP</text><text x="440" y="471" fill="#607077">Interactive</text><text x="440" y="488" fill="#607077">layers</text>
+  </g>
+  <rect x="608" y="337" width="515" height="119" rx="13" fill="#F8FAF9" stroke="#DCE7E2"/>
+  <text x="632" y="368" fill="#173642" font-family="Georgia, serif" font-size="21" font-weight="700">Outcome comparisons</text>
+  <g fill="none" stroke-linecap="round" stroke-width="11">
+    <path d="M644 402h295" stroke="#D9E9E6"/><path d="M644 402h204" stroke="#3F7F80"/>
+    <path d="M644 430h295" stroke="#D9E9E6"/><path d="M644 430h132" stroke="#9EC8C0"/>
+  </g>
+  <circle cx="849" cy="402" r="7" fill="#FFFFFF" stroke="#3F7F80" stroke-width="4"/>
+  <circle cx="775" cy="430" r="7" fill="#FFFFFF" stroke="#7CB5AC" stroke-width="4"/>
+  <text x="965" y="408" fill="#607077" font-family="Arial, sans-serif" font-size="13">Dogs</text>
+  <text x="965" y="436" fill="#607077" font-family="Arial, sans-serif" font-size="13">Cats</text>
+  <rect x="608" y="475" width="515" height="119" rx="13" fill="#F8FAF9" stroke="#DCE7E2"/>
+  <text x="632" y="507" fill="#173642" font-family="Georgia, serif" font-size="21" font-weight="700">Trends over time</text>
+  <g fill="none">
+    <path d="M644 567H1072" stroke="#C5D6D3" stroke-width="1"/>
+    <path d="M649 549l52-24 47 12 52-25 62 10 50-18 64 16 81-23" stroke="#3F7F80" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M649 560l52-5 47-12 52 6 62-13 50 14 64-19 81 11" stroke="#94BCB5" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+  </g>
+  <text x="77" y="623" fill="#738C89" font-family="Arial, sans-serif" font-size="13">DESIGN PREVIEW — illustrative chart marks; not measured values or a captured screenshot.</text>
+</svg>
